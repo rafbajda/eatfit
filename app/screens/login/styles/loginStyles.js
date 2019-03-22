@@ -10,7 +10,7 @@ export const PickerColumn = styled(Col)`
     width: 15;
     border-radius: 30;
     border-width: 1;
-    padding-left: 15
+    padding-left: 15;
     border-color: #bdc3c7;
     overflow: hidden;
 `;

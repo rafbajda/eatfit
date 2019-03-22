@@ -1,30 +1,33 @@
 import React from 'react';
 import { Grid, Col, Item, Picker, Icon } from 'native-base';
 import { LanguageRow, PickerColumn } from '../styles/loginStyles';
+import { placeholderStyle, placeholderIconColor } from '../styles/languagePickerStyles';
 
-export default class LanguagePicker extends React.Component {
-    render() {
-        return (
-            <Grid>
-                <LanguageRow>
-                    <Col />
-                    <Col />
-                    <PickerColumn>
-                        <Item picker>
-                            <Picker
-                                mode="dropdown"
-                                iosIcon={<Icon name="arrow-down" />}
-                                placeholder="Select your SIM"
-                                placeholderStyle={{ color: '#bfc6ea' }}
-                                placeholderIconColor="#007aff"
-                            >
-                                <Picker.Item label="Eng" value="en" />
-                                <Picker.Item label="Pol" value="pl" />
-                            </Picker>
-                        </Item>
-                    </PickerColumn>
-                </LanguageRow>
-            </Grid>
-        );
-    }
-}
+const LanguagePicker = props => {
+    const { languages } = { ...props };
+    const PickerItems = languages.map(language => (
+        <Picker.Item label={language.id} value={language.id} key={language.id} />
+    ));
+    return (
+        <Grid>
+            <LanguageRow>
+                <Col />
+                <Col />
+                <PickerColumn>
+                    <Item picker>
+                        <Picker
+                            mode="dropdown"
+                            iosIcon={<Icon name="arrow-down" />}
+                            placeholderStyle={placeholderStyle}
+                            placeholderIconColor={placeholderIconColor}
+                        >
+                            {PickerItems}
+                        </Picker>
+                    </Item>
+                </PickerColumn>
+            </LanguageRow>
+        </Grid>
+    );
+};
+
+export default LanguagePicker;

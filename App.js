@@ -1,10 +1,12 @@
 import React from 'react';
-import LoginScreen from './app/screens/login/login';
+import { Provider } from 'react-redux';
+import LoginScreen from './app/screens/login';
+import store from './app/shared/modules/store';
 
-export default class App extends React.Component {
-    render() {
-        return (
-            <LoginScreen />
-        );
-    }
-}
+const App = () => (
+    <Provider store={store}>
+        <LoginScreen />
+    </Provider>
+);
+
+export default App;
