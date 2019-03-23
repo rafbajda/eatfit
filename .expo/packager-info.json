@@ -3,8 +3,8 @@
   "webpackServerPort": null,
   "expoServerNgrokUrl": "https://qy-wis.anonymous.eatfit.exp.direct",
   "packagerNgrokUrl": "https://packager.qy-wis.anonymous.eatfit.exp.direct",
-  "ngrokPid": 17356,
+  "ngrokPid": 21958,
   "devToolsPort": 19002,
   "packagerPort": 19001,
-  "packagerPid": 17332
+  "packagerPid": 21932
 }

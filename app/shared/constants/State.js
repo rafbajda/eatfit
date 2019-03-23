@@ -1,5 +1,8 @@
 const initialState = {
-    config: null,
+    config: {
+        languages: [],
+        isDataLoading: true,
+    },
 };
 
 export default initialState;
