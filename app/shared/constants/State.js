@@ -1,6 +1,5 @@
 const initialState = {
     config: {
-        languages: [],
         isDataLoading: true,
     },
 };

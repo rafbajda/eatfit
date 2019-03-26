@@ -1,6 +1,7 @@
 /* eslint-disable import/prefer-default-export */
-import * as firebase from 'firebase';
-import firestore from 'firebase/firestore';
+import firebase from 'firebase/app';
+import 'firebase/firestore';
+// import 'firebase/auth';
 
 const config = {
     apiKey: 'AIzaSyATKIiKmLxx0wPQJ48MTAAfoPM55Aj_cbI',
@@ -11,5 +12,5 @@ const config = {
     messagingSenderId: '1017284811206',
 };
 firebase.initializeApp(config);
-
-export const db = firebase.firestore();
+firebase.firestore();
+export default firebase;
