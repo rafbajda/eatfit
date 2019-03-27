@@ -1,5 +1,5 @@
 import initialState from '../../../shared/constants/State';
-import { LOAD_CONFIG, LOAD_CONFIG_DONE } from './actions';
+import { LOAD_CONFIG, LOAD_CONFIG_DONE, SET_LANGUAGE } from './actions';
 
 const loginReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -12,6 +12,11 @@ const loginReducer = (state = initialState, action) => {
             return {
                 ...state,
                 isDataLoading: false,
+            };
+        case SET_LANGUAGE:
+            return {
+                ...state,
+                pickedLanguage: action.payload,
             };
         default:
             return state;

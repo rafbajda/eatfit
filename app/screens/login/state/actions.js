@@ -9,6 +9,7 @@ export const LOAD_CONFIG_DONE = '[login] load config done';
 export const GET_FONTS = '[login] get fonts';
 export const GET_FONTS_SUCCESS = '[login] get fonts success';
 export const GET_FONTS_ERROR = '[login] get fonts error';
+export const SET_LANGUAGE = '[login] set language';
 
 export const loadConfig = () => ({
     type: LOAD_CONFIG,
@@ -38,6 +39,11 @@ export const getFonts = () => {
             .catch(error => dispatch(getFontsError(error)));
     };
 };
+
+export const setLanguage = payload => ({
+    type: SET_LANGUAGE,
+    payload,
+});
 
 export const loadConfigDone = payload => ({
     type: LOAD_CONFIG_DONE,

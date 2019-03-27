@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 export const LanguageRow = styled(Row)`
     padding: 20px;
+    padding-bottom: 0px;
 `;
 
 export const PickerColumn = styled(Col)`
