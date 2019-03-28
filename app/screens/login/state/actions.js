@@ -10,6 +10,16 @@ export const GET_FONTS = '[login] get fonts';
 export const GET_FONTS_SUCCESS = '[login] get fonts success';
 export const GET_FONTS_ERROR = '[login] get fonts error';
 export const SET_LANGUAGE = '[login] set language';
+export const LOGIN_EMAIL = '[login] login email';
+
+export const loginEmail = payload => (dispatch, getState, { getFirebase }) => {
+    const firebase = getFirebase();
+    console.log('im here!');
+    return dispatch({
+        type: LOGIN_EMAIL,
+        payload,
+    });
+};
 
 export const loadConfig = () => ({
     type: LOAD_CONFIG,

@@ -1,5 +1,6 @@
 import { Row, Col } from 'native-base';
 import styled from 'styled-components';
+import { lightGrey } from '../../../shared/constants/Colors';
 
 export const LanguageRow = styled(Row)`
     padding: 20px;
@@ -12,6 +13,6 @@ export const PickerColumn = styled(Col)`
     border-radius: 30;
     border-width: 1;
     padding-left: 15;
-    border-color: #bdc3c7;
+    border-color: ${lightGrey};
     overflow: hidden;
 `;

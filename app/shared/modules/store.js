@@ -1,18 +1,19 @@
 import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
 import { getFirestore, reduxFirestore, firestoreReducer } from 'redux-firestore';
-import { getFirebase, reactReduxFirebase } from 'react-redux-firebase';
+import { getFirebase, reactReduxFirebase, firebaseReducer } from 'react-redux-firebase';
+import { composeWithDevTools } from 'redux-devtools-extension';
 import initialState from '../constants/State';
 import loginReducer from '../../screens/login/state/reducer';
 import firebaseConfig from '../../../Firebase';
 import configMiddleware from '../../screens/login/state/middleware';
-import { composeWithDevTools } from 'redux-devtools-extension';
 
 let store = null; // eslint-disable-line
 
 const combinedReducer = combineReducers({
     config: loginReducer,
-    firestore: firestoreReducer
+    firestore: firestoreReducer,
+    firebase: firebaseReducer,
 });
 
 if (__DEV__) {    // eslint-disable-line

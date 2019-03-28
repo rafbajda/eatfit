@@ -2,9 +2,10 @@ import React from 'react';
 import { Grid, Col, Item, Picker, Icon } from 'native-base';
 import { connect } from 'react-redux';
 import { LanguageRow, PickerColumn } from '../styles/loginStyles';
-import { placeholderStyle, placeholderIconColor } from '../styles/languagePickerStyles';
+import { placeholderStyle } from '../styles/languagePickerStyles';
 import { setLanguage } from '../state/actions';
 import { pickedLanguageSelector } from '../state/selectors';
+import { deepBlue } from '../../../shared/constants/Colors';
 
 const LanguagePicker = props => {
     const { languages, setCurrentLanguage, currentLanguage } = { ...props };
@@ -22,7 +23,7 @@ const LanguagePicker = props => {
                             mode="dropdown"
                             iosIcon={<Icon name="arrow-down" />}
                             placeholderStyle={placeholderStyle}
-                            placeholderIconColor={placeholderIconColor}
+                            placeholderIconColor={deepBlue}
                             selectedValue={currentLanguage}
                             onValueChange={language => setCurrentLanguage(language)}
                         >

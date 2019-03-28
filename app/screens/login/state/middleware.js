@@ -7,6 +7,7 @@ import {
 } from './actions';
 
 const configMiddleware = store => next => action => {
+    console.log(action);
     if (typeof action === 'object') {
         switch (action.type) {
             case LOAD_CONFIG:

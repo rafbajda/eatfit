@@ -1,2 +1,4 @@
-export const placeholderStyle = { color: '#bfc6ea' };
-export const placeholderIconColor = '#007aff';
+/* eslint-disable import/prefer-default-export */
+import { lightGrey } from '../../../shared/constants/Colors';
+
+export const placeholderStyle = { color: lightGrey };
