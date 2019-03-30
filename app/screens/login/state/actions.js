@@ -11,14 +11,26 @@ export const GET_FONTS_SUCCESS = '[login] get fonts success';
 export const GET_FONTS_ERROR = '[login] get fonts error';
 export const SET_LANGUAGE = '[login] set language';
 export const LOGIN_EMAIL = '[login] login email';
+export const LOGIN_EMAIL_SUCCESS = '[login] login email success';
+export const LOGIN_EMAIL_ERROR = '[login] login email error';
+
+export const loginEmailSuccess = payload => ({ type: LOGIN_EMAIL_SUCCESS, payload });
+export const loginEmailError = payload => ({ type: LOGIN_EMAIL_ERROR, payload });
 
 export const loginEmail = payload => (dispatch, getState, { getFirebase }) => {
     const firebase = getFirebase();
-    console.log('im here!');
-    return dispatch({
+    const { email, password } = { ...payload };
+    dispatch({
         type: LOGIN_EMAIL,
         payload,
     });
+    firebase
+        .auth()
+        .signInWithEmailAndPassword(email, password)
+        .then(user => {
+            dispatch(loginEmailSuccess(user));
+        })
+        .catch(error => dispatch(loginEmailError(error)));
 };
 
 export const loadConfig = () => ({
