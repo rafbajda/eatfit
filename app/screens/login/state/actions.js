@@ -7,7 +7,6 @@ export const SET_LANGUAGE = '[login] set language';
 export const LOGIN_EMAIL = '[login] login email';
 export const LOGIN_EMAIL_SUCCESS = '[login] login email success';
 export const LOGIN_EMAIL_ERROR = '[login] login email error';
-export const LOGIN_SUCCESS = '[login] login success';
 export const LOGOUT = '[login] logout';
 export const LOGOUT_SUCCESS = '[login] logout success';
 export const LOGOUT_ERROR = '[login] logout error';
@@ -31,7 +30,6 @@ export const logout = () => dispatch => {
         .catch(error => dispatch(logoutError(error)));
 };
 
-export const loginSuccess = payload => ({ type: LOGIN_SUCCESS, payload });
 export const loginEmailSuccess = payload => ({ type: LOGIN_EMAIL_SUCCESS, payload });
 export const loginEmailError = payload => ({ type: LOGIN_EMAIL_ERROR, payload });
 

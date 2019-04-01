@@ -4,7 +4,10 @@ const initialState = {
         pickedLanguage: 'Pol', // TODO: make setting default language based on GPS
         keyboardOnScreen: false,
     },
-    user: null,
+    auth: {
+        user: null,
+        isLoading: false,
+    },
 };
 
 export default initialState;

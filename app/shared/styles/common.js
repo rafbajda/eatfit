@@ -1,6 +1,6 @@
 /* eslint-disable import/prefer-default-export */
 import styled from 'styled-components';
-import { Content, Row } from 'native-base';
+import { Content, Row, Form, Text } from 'native-base';
 import { getStatusBarHeight } from 'react-native-status-bar-height';
 
 export const GlobalSpinnerContainer = styled(Content).attrs({
@@ -18,4 +18,13 @@ export const GlobalContainer = styled(Content).attrs({
 
 export const CenterRow = styled(Row)`
     justify-content: center;
+`;
+
+export const CenterFormContainer = styled(Form)`
+    width: 80%;
+`;
+
+export const ErrorText = styled(Text)`
+    font-size: 13;
+    color: red;
 `;

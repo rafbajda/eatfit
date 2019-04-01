@@ -1,20 +1,53 @@
-import { LOGIN_SUCCESS, LOGOUT_SUCCESS } from './actions';
+import {
+    LOGIN_SUCCESS,
+    LOGOUT_SUCCESS,
+    LOGIN_EMAIL,
+    LOGOUT,
+    LOGOUT_ERROR,
+    LOGIN_EMAIL_ERROR,
+    LOGIN_EMAIL_SUCCESS,
+} from './actions';
 import initialState from '../../../shared/constants/State';
 
-const initialUserState = initialState.user;
+const initialAuthState = initialState.auth;
 
-const userReducer = (state = initialUserState, action) => {
+const authReducer = (state = initialAuthState, action) => {
     switch (action.type) {
-        case LOGIN_SUCCESS:
+        case LOGIN_EMAIL:
             return {
                 ...state,
-                ...action.payload,
+                isLoading: true,
+            };
+        case LOGOUT:
+            return {
+                ...state,
+                isLoading: true,
+            };
+        case LOGIN_EMAIL_SUCCESS:
+            return {
+                ...state,
+                isLoading: false,
+                user: action.payload,
+            };
+        case LOGIN_EMAIL_ERROR:
+            return {
+                ...state,
+                isLoading: false,
             };
         case LOGOUT_SUCCESS:
-            return null;
+            return {
+                ...state,
+                isLoading: false,
+                user: null,
+            };
+        case LOGOUT_ERROR:
+            return {
+                ...state,
+                isLoading: false,
+            };
         default:
             return state;
     }
 };
 
-export default userReducer;
+export default authReducer;

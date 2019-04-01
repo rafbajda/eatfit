@@ -1,23 +1,24 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from 'react';
-import { Spinner } from 'native-base';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { firestoreConnect } from 'react-redux-firebase';
 
 import { Keyboard } from 'react-native';
-import { globalGreen } from '../../shared/constants/Colors';
-import { GlobalSpinnerContainer, GlobalContainer } from '../../shared/styles/common';
+import { GlobalContainer } from '../../shared/styles/common';
 import LanguagePicker from './components/LanguagePicker';
-import { loginSuccess, keyboardShow, keyboardHide } from './state/actions';
-import { languagesSelector, keyboardOnScreenSelector } from './state/selectors';
+import { keyboardShow, keyboardHide, loginEmailSuccess } from './state/actions';
+import {
+    languagesSelector,
+    keyboardOnScreenSelector,
+    authLoadingSelector,
+} from './state/selectors';
 import LoginForm from './components/LoginForm';
 import LoginDivider from './components/LoginDivider';
 import SocialLogin from './components/SocialLogin';
 import SignUp from './components/SignUp';
 import LoginIcon from './components/LoginIcon';
 import firebaseOperations from '../../shared/utils/firebaseOperations';
-import { loadingSelector } from '../../shared/state/selectors';
 
 class LoginScreen extends React.Component {
     componentWillMount() {
@@ -41,19 +42,14 @@ class LoginScreen extends React.Component {
     }
 
     render() {
-        const { loading, languages, firebase, isKeyboardVisible, navigation } = { ...this.props };
-        if (loading || firebase.isInitializing) {
-            return (
-                <GlobalSpinnerContainer>
-                    <Spinner color={globalGreen} />
-                </GlobalSpinnerContainer>
-            );
-        }
+        const { languages, isKeyboardVisible, navigation, isAuthLoading } = {
+            ...this.props,
+        };
         return (
             <GlobalContainer>
                 <LanguagePicker languages={languages} hidden={isKeyboardVisible} />
                 <LoginIcon hidden={isKeyboardVisible} />
-                <LoginForm isKeyboardVisible />
+                <LoginForm authLoading={isAuthLoading} isKeyboardVisible />
                 <LoginDivider />
                 <SocialLogin />
                 <SignUp nav={navigation} />
@@ -63,13 +59,13 @@ class LoginScreen extends React.Component {
 }
 
 const mapStateToProps = state => ({
-    loading: loadingSelector(state),
     languages: languagesSelector(state),
     isKeyboardVisible: keyboardOnScreenSelector(state),
+    isAuthLoading: authLoadingSelector(state),
 });
 
 const mapDispatchToProps = dispatch => ({
-    setUser: user => dispatch(loginSuccess(user)),
+    setUser: user => dispatch(loginEmailSuccess(user)),
     onShowKeyboard: () => dispatch(keyboardShow()),
     onHideKeyboard: () => dispatch(keyboardHide()),
 });

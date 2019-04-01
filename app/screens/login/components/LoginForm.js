@@ -3,16 +3,12 @@ import { Item, Input, Content, Text } from 'native-base';
 import { Formik } from 'formik';
 import { connect } from 'react-redux';
 import * as yup from 'yup';
-import { CenterRow } from '../../../shared/styles/common';
-import {
-    LoginFormContainer,
-    ForgotPasswordText,
-    LoginButton,
-    ErrorText,
-    additionalTopPadding,
-} from '../styles/loginFormStyles';
+import { DotIndicator, UIActivityIndicator } from 'react-native-indicators';
+import { CenterRow, CenterFormContainer, ErrorText } from '../../../shared/styles/common';
+import { ForgotPasswordText, LoginButton, additionalTopPadding } from '../styles/loginFormStyles';
 import { loginEmail } from '../state/actions';
 import { emailValidator, passwordValidator } from '../../../shared/utils/validators';
+import { globalGreen } from '../../../shared/constants/Colors';
 
 const validationSchema = yup.object().shape({
     email: emailValidator,
@@ -20,7 +16,8 @@ const validationSchema = yup.object().shape({
 });
 
 const LoginForm = props => {
-    const { login, isKeyboardVisible } = { ...props };
+    const { login, isKeyboardVisible, authLoading } = { ...props };
+
     return (
         <Formik
             initialValues={{ email: '', password: '' }}
@@ -29,13 +26,18 @@ const LoginForm = props => {
         >
             {formikProps => (
                 <Content>
+                    {authLoading ? <DotIndicator color={globalGreen} count={5} /> : null}
                     <CenterRow>
-                        <LoginFormContainer style={isKeyboardVisible ? additionalTopPadding : null}>
+                        <CenterFormContainer
+                            style={isKeyboardVisible ? additionalTopPadding : null}
+                        >
                             <Item regular>
                                 <Input
+                                    keyboardType="email-address"
                                     placeholder="Email"
                                     onChangeText={formikProps.handleChange('email')}
                                     onBlur={formikProps.handleBlur('email')}
+                                    disabled={authLoading}
                                 />
                             </Item>
                             <ErrorText>
@@ -47,17 +49,22 @@ const LoginForm = props => {
                                     onChangeText={formikProps.handleChange('password')}
                                     onBlur={formikProps.handleBlur('password')}
                                     secureTextEntry
+                                    disabled={authLoading}
                                 />
                             </Item>
                             <ErrorText>
                                 {formikProps.touched.password && formikProps.errors.password}
                             </ErrorText>
                             <ForgotPasswordText>Forgot password?</ForgotPasswordText>
-                        </LoginFormContainer>
+                        </CenterFormContainer>
                     </CenterRow>
                     <CenterRow>
-                        <LoginButton onPress={formikProps.handleSubmit}>
-                            <Text>Login</Text>
+                        <LoginButton onPress={formikProps.handleSubmit} disabled={authLoading}>
+                            {authLoading ? (
+                                <UIActivityIndicator size={30} color="#fff" />
+                            ) : (
+                                <Text>Login</Text>
+                            )}
                         </LoginButton>
                     </CenterRow>
                 </Content>

@@ -5,6 +5,7 @@ import { Spinner } from 'native-base';
 import { compose } from 'redux';
 import { firestoreConnect } from 'react-redux-firebase';
 import { connect } from 'react-redux';
+import { PacmanIndicator } from 'react-native-indicators';
 import { GlobalSpinnerContainer } from './shared/styles/common';
 import { globalGreen } from './shared/constants/Colors';
 import { loadingSelector } from './shared/state/selectors';
@@ -24,7 +25,7 @@ class Application extends React.Component {
         if (loading || firebase.isInitializing) {
             return (
                 <GlobalSpinnerContainer>
-                    <Spinner color={globalGreen} />
+                    <PacmanIndicator color={globalGreen} size={200} />
                 </GlobalSpinnerContainer>
             );
         }

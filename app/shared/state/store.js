@@ -12,15 +12,15 @@ import globalReducers from './reducer';
 import firebaseConfig from '../modules/firebase';
 import RootNavigator from '../../navigation/RootNavigator';
 import initialState from '../constants/State';
-import userReducer from '../../screens/login/state/reducer';
 import globalMiddlewares from './middleware';
+import authReducer from '../../screens/login/state/reducer';
 
 let store = null; // eslint-disable-line
 const navReducer = createNavigationReducer(RootNavigator);
 const navMiddleware = createReactNavigationReduxMiddleware(state => state.nav);
 
 const combinedReducer = combineReducers({
-    user: userReducer,
+    auth: authReducer,
     config: globalReducers.configReducer,
     nav: navReducer,
     firestore: firestoreReducer,
