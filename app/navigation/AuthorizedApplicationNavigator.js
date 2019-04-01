@@ -1,12 +1,14 @@
-import { createStackNavigator } from 'react-navigation';
+import { createDrawerNavigator } from 'react-navigation';
 import screens from './screens';
-import HomeScreen from '../screens/home';
+import SideBar from '../shared/components/Sidebar';
+import HomeNavigator from './HomeNavigator';
 
-export default createStackNavigator(
+export default createDrawerNavigator(
     {
         [screens.Home]: {
-            screen: HomeScreen,
+            screen: HomeNavigator,
+            drawerLabel: 'Home',
         },
     },
-    { initialRouteName: screens.Home }
+    { drawerPosition: 'left', contentComponent: SideBar }
 );

@@ -1,27 +1,26 @@
 import React from 'react';
 import { Item, Input, Content, Text } from 'native-base';
-import * as yup from 'yup';
 import { Formik } from 'formik';
 import { connect } from 'react-redux';
+import * as yup from 'yup';
 import { CenterRow } from '../../../shared/styles/common';
-import { LoginFormContainer, ForgotPasswordText, LoginButton } from '../styles/loginFormStyles';
+import {
+    LoginFormContainer,
+    ForgotPasswordText,
+    LoginButton,
+    ErrorText,
+    additionalTopPadding,
+} from '../styles/loginFormStyles';
 import { loginEmail } from '../state/actions';
+import { emailValidator, passwordValidator } from '../../../shared/utils/validators';
 
 const validationSchema = yup.object().shape({
-    email: yup
-        .string()
-        .label('Email')
-        .email()
-        .required(),
-    password: yup
-        .string()
-        .label('Password')
-        .required()
-        .min(6, 'Minimal length is 6 characters'),
+    email: emailValidator,
+    password: passwordValidator,
 });
 
 const LoginForm = props => {
-    const { login } = { ...props };
+    const { login, isKeyboardVisible } = { ...props };
     return (
         <Formik
             initialValues={{ email: '', password: '' }}
@@ -31,7 +30,7 @@ const LoginForm = props => {
             {formikProps => (
                 <Content>
                     <CenterRow>
-                        <LoginFormContainer>
+                        <LoginFormContainer style={isKeyboardVisible ? additionalTopPadding : null}>
                             <Item regular>
                                 <Input
                                     placeholder="Email"
@@ -39,9 +38,9 @@ const LoginForm = props => {
                                     onBlur={formikProps.handleBlur('email')}
                                 />
                             </Item>
-                            <Text style={{ color: 'red' }}>
+                            <ErrorText>
                                 {formikProps.touched.email && formikProps.errors.email}
-                            </Text>
+                            </ErrorText>
                             <Item regular>
                                 <Input
                                     placeholder="Password"
@@ -50,9 +49,9 @@ const LoginForm = props => {
                                     secureTextEntry
                                 />
                             </Item>
-                            <Text style={{ color: 'red' }}>
+                            <ErrorText>
                                 {formikProps.touched.password && formikProps.errors.password}
-                            </Text>
+                            </ErrorText>
                             <ForgotPasswordText>Forgot password?</ForgotPasswordText>
                         </LoginFormContainer>
                     </CenterRow>

@@ -1,16 +1,11 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { createAppContainer } from 'react-navigation';
-import store from './app/shared/modules/store';
-import LoginScreen from './app/screens/login';
-import RootNavigator from './app/navigation/RootNavigator';
-
-const AppContainer = createAppContainer(RootNavigator);
+import store from './app/shared/state/store';
+import Application from './app/index';
 
 const App = () => (
     <Provider store={store}>
-        {/* <LoginScreen /> */}
-        <AppContainer />
+        <Application />
     </Provider>
 );
 

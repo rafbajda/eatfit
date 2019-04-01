@@ -1,13 +1,15 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from 'react';
 import { SignUpContainer, InformationText, SignUpText } from '../styles/signUpStyles';
+import screens from '../../../navigation/screens';
 
-const SignUp = () => {
+const SignUp = props => {
+    const { nav } = { ...props };
     return (
         <SignUpContainer>
             <InformationText>
                 Don't have an account?
-                <SignUpText> Sign up</SignUpText>
+                <SignUpText onPress={() => nav.navigate(screens.SignUp)}> Sign up</SignUpText>
             </InformationText>
         </SignUpContainer>
     );

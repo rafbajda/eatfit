@@ -5,7 +5,11 @@ import { iconStyle } from '../styles/loginIconStyles';
 
 const logoImage = require('../../../assets/images/logo2.png');
 
-const LoginIcon = () => {
+const LoginIcon = props => {
+    const { hidden } = { ...props };
+    if (hidden) {
+        return null;
+    }
     return (
         <CenterRow>
             <Thumbnail square source={logoImage} style={iconStyle} />

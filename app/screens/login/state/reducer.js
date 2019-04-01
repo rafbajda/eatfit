@@ -1,26 +1,20 @@
+import { LOGIN_SUCCESS, LOGOUT_SUCCESS } from './actions';
 import initialState from '../../../shared/constants/State';
-import { LOAD_CONFIG, LOAD_CONFIG_DONE, SET_LANGUAGE } from './actions';
 
-const loginReducer = (state = initialState, action) => {
+const initialUserState = initialState.user;
+
+const userReducer = (state = initialUserState, action) => {
     switch (action.type) {
-        case LOAD_CONFIG:
+        case LOGIN_SUCCESS:
             return {
                 ...state,
-                isDataLoading: true,
+                ...action.payload,
             };
-        case LOAD_CONFIG_DONE:
-            return {
-                ...state,
-                isDataLoading: false,
-            };
-        case SET_LANGUAGE:
-            return {
-                ...state,
-                pickedLanguage: action.payload,
-            };
+        case LOGOUT_SUCCESS:
+            return null;
         default:
             return state;
     }
 };
 
-export default loginReducer;
+export default userReducer;

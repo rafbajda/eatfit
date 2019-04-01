@@ -5,26 +5,44 @@ import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { firestoreConnect } from 'react-redux-firebase';
 
+import { Keyboard } from 'react-native';
 import { globalGreen } from '../../shared/constants/Colors';
 import { GlobalSpinnerContainer, GlobalContainer } from '../../shared/styles/common';
 import LanguagePicker from './components/LanguagePicker';
-import { loadConfig } from './state/actions';
-import { loadingSelector, languagesSelector } from './state/selectors';
+import { loginSuccess, keyboardShow, keyboardHide } from './state/actions';
+import { languagesSelector, keyboardOnScreenSelector } from './state/selectors';
 import LoginForm from './components/LoginForm';
 import LoginDivider from './components/LoginDivider';
 import SocialLogin from './components/SocialLogin';
 import SignUp from './components/SignUp';
 import LoginIcon from './components/LoginIcon';
+import firebaseOperations from '../../shared/utils/firebaseOperations';
+import { loadingSelector } from '../../shared/state/selectors';
 
 class LoginScreen extends React.Component {
-    async componentWillMount() {
-        const { getConfig } = { ...this.props };
-        getConfig();
+    componentWillMount() {
+        const { navigation, setUser } = { ...this.props };
+        firebaseOperations.checkUserNavigation(navigation, setUser);
+    }
+
+    componentDidMount() {
+        const { onShowKeyboard, onHideKeyboard } = { ...this.props };
+        this.keyboardDidShowListener = Keyboard.addListener('keyboardDidShow', () =>
+            onShowKeyboard()
+        );
+        this.keyboardDidHideListener = Keyboard.addListener('keyboardDidHide', () =>
+            onHideKeyboard()
+        );
+    }
+
+    componentWillUnmount() {
+        this.keyboardDidShowListener.remove();
+        this.keyboardDidHideListener.remove();
     }
 
     render() {
-        const { loading, languages } = { ...this.props };
-        if (loading) {
+        const { loading, languages, firebase, isKeyboardVisible, navigation } = { ...this.props };
+        if (loading || firebase.isInitializing) {
             return (
                 <GlobalSpinnerContainer>
                     <Spinner color={globalGreen} />
@@ -33,12 +51,12 @@ class LoginScreen extends React.Component {
         }
         return (
             <GlobalContainer>
-                <LanguagePicker languages={languages} />
-                <LoginIcon />
-                <LoginForm />
+                <LanguagePicker languages={languages} hidden={isKeyboardVisible} />
+                <LoginIcon hidden={isKeyboardVisible} />
+                <LoginForm isKeyboardVisible />
                 <LoginDivider />
                 <SocialLogin />
-                <SignUp />
+                <SignUp nav={navigation} />
             </GlobalContainer>
         );
     }
@@ -47,10 +65,13 @@ class LoginScreen extends React.Component {
 const mapStateToProps = state => ({
     loading: loadingSelector(state),
     languages: languagesSelector(state),
+    isKeyboardVisible: keyboardOnScreenSelector(state),
 });
 
 const mapDispatchToProps = dispatch => ({
-    getConfig: () => dispatch(loadConfig()),
+    setUser: user => dispatch(loginSuccess(user)),
+    onShowKeyboard: () => dispatch(keyboardShow()),
+    onHideKeyboard: () => dispatch(keyboardHide()),
 });
 
 export default compose(

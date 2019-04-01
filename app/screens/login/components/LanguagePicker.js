@@ -8,10 +8,13 @@ import { pickedLanguageSelector } from '../state/selectors';
 import { deepBlue } from '../../../shared/constants/Colors';
 
 const LanguagePicker = props => {
-    const { languages, setCurrentLanguage, currentLanguage } = { ...props };
+    const { languages, setCurrentLanguage, currentLanguage, hidden } = { ...props };
     const PickerItems = languages.map(language => (
         <Picker.Item label={language.id} value={language.id} key={language.id} />
     ));
+    if (hidden) {
+        return null;
+    }
     return (
         <Grid>
             <LanguageRow>

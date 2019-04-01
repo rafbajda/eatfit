@@ -1,3 +1,4 @@
+/* global __DEV__ */
 import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
 import { getFirestore, reduxFirestore, firestoreReducer } from 'redux-firestore';
@@ -7,18 +8,20 @@ import {
     createReactNavigationReduxMiddleware,
     createNavigationReducer,
 } from 'react-navigation-redux-helpers';
-import initialState from '../constants/State';
-import loginReducer from '../../screens/login/state/reducer';
-import firebaseConfig from './firebase';
-import configMiddleware from '../../screens/login/state/middleware';
+import globalReducers from './reducer';
+import firebaseConfig from '../modules/firebase';
 import RootNavigator from '../../navigation/RootNavigator';
+import initialState from '../constants/State';
+import userReducer from '../../screens/login/state/reducer';
+import globalMiddlewares from './middleware';
 
 let store = null; // eslint-disable-line
 const navReducer = createNavigationReducer(RootNavigator);
 const navMiddleware = createReactNavigationReduxMiddleware(state => state.nav);
 
 const combinedReducer = combineReducers({
-    config: loginReducer,
+    user: userReducer,
+    config: globalReducers.configReducer,
     nav: navReducer,
     firestore: firestoreReducer,
     firebase: firebaseReducer,
@@ -33,7 +36,7 @@ if (__DEV__) {
         composeWithDevTools(
             applyMiddleware(
                 navMiddleware,
-                configMiddleware,
+                globalMiddlewares.configMiddleware,
                 thunk.withExtraArgument({ getFirebase, getFirestore })
             ),
             reactReduxFirebase(firebaseConfig),
@@ -47,7 +50,7 @@ if (__DEV__) {
         compose(
             applyMiddleware(
                 navMiddleware,
-                configMiddleware,
+                globalMiddlewares.configMiddleware,
                 thunk.withExtraArgument({ getFirebase, getFirestore })
             ),
             reduxFirestore(firebaseConfig),

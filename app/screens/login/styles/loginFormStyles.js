@@ -11,7 +11,6 @@ export const ForgotPasswordText = styled(Text)`
     font-size: 13;
     text-align: right;
     color: ${deepBlue};
-    margin-top: 5;
     margin-bottom: 5;
 `;
 
@@ -22,3 +21,12 @@ export const LoginButton = styled(Button)`
     margin-top: 10;
     font-weight: bold;
 `;
+
+export const ErrorText = styled(Text)`
+    font-size: 13;
+    color: red;
+`;
+
+export const additionalTopPadding = {
+    paddingTop: 15,
+};
