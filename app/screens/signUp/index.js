@@ -2,6 +2,7 @@ import React from 'react';
 import { Item, Input, Content, Text, CheckBox, Body } from 'native-base';
 import { Formik } from 'formik';
 import * as yup from 'yup';
+import { connect } from 'react-redux';
 import {
     emailValidator,
     passwordValidator,
@@ -18,6 +19,7 @@ import {
 } from './styles/singUpStyles';
 import { globalGreen } from '../../shared/constants/Colors';
 import { checkBoxSetter } from '../../shared/utils/formHelpers';
+import { createAccount } from './state/actions';
 
 const validationSchema = yup.object().shape({
     email: emailValidator,
@@ -27,7 +29,8 @@ const validationSchema = yup.object().shape({
     newsletter: checkboxValidator,
 });
 
-const SignUpScreen = () => {
+const SignUpScreen = props => {
+    const { signUp } = { ...props };
     return (
         <Formik
             initialValues={{
@@ -37,7 +40,7 @@ const SignUpScreen = () => {
                 terms: false,
                 newsletter: false,
             }}
-            onSubmit={values => console.log(values)}
+            onSubmit={values => signUp(values)}
             validationSchema={validationSchema}
         >
             {formikProps => (
@@ -118,4 +121,11 @@ const SignUpScreen = () => {
     );
 };
 
-export default SignUpScreen;
+const mapDispatchToProps = dispatch => ({
+    signUp: user => dispatch(createAccount(user)),
+});
+
+export default connect(
+    null,
+    mapDispatchToProps
+)(SignUpScreen);

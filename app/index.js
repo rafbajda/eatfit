@@ -1,7 +1,6 @@
 /* eslint-disable no-underscore-dangle */
 import React from 'react';
 import { createAppContainer } from 'react-navigation';
-import { Spinner } from 'native-base';
 import { compose } from 'redux';
 import { firestoreConnect } from 'react-redux-firebase';
 import { connect } from 'react-redux';
