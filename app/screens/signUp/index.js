@@ -9,7 +9,7 @@ import {
     checkboxRequiredValidator,
     checkboxValidator,
 } from '../../shared/utils/validators';
-import { CenterRow, ErrorText } from '../../shared/styles/common';
+import { CenterRow, ErrorText, ErrorTextPaddingLeft } from '../../shared/styles/common';
 import {
     CreateButton,
     SignUpContainer,
@@ -17,6 +17,7 @@ import {
     CheckboxItem,
 } from './styles/singUpStyles';
 import { globalGreen } from '../../shared/constants/Colors';
+import { checkBoxSetter } from '../../shared/utils/formHelpers';
 
 const validationSchema = yup.object().shape({
     email: emailValidator,
@@ -77,28 +78,21 @@ const SignUpScreen = () => {
                                 {formikProps.touched.confirmPassword &&
                                     formikProps.errors.confirmPassword}
                             </ErrorText>
-                            <CheckboxItem>
-                                <CheckBox
-                                    checked={formikProps.values.terms}
-                                    color={globalGreen}
-                                    onChange={formikProps.handleChange('terms')}
-                                    onBlur={formikProps.handleBlur('terms')}
-                                />
+                            <CheckboxItem onPress={() => checkBoxSetter(formikProps, 'terms')}>
+                                <CheckBox checked={formikProps.values.terms} color={globalGreen} />
                                 <Body>
                                     <CheckboxInformationText>
                                         I have read and accept the Terms and Conditions.
                                     </CheckboxInformationText>
                                 </Body>
                             </CheckboxItem>
-                            <ErrorText>
+                            <ErrorTextPaddingLeft>
                                 {formikProps.touched.terms && formikProps.errors.terms}
-                            </ErrorText>
-                            <CheckboxItem>
+                            </ErrorTextPaddingLeft>
+                            <CheckboxItem onPress={() => checkBoxSetter(formikProps, 'newsletter')}>
                                 <CheckBox
-                                    checked={formikProps.values.newsletter}
                                     color={globalGreen}
-                                    onChange={formikProps.handleChange('newsletter')}
-                                    onBlur={formikProps.handleBlur('newsletter')}
+                                    checked={formikProps.values.newsletter}
                                 />
                                 <Body>
                                     <CheckboxInformationText>

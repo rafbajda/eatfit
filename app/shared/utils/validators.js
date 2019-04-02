@@ -20,5 +20,9 @@ export const passwordValidator = yup
     .required()
     .min(6, 'Minimal length is 6 characters');
 
-export const checkboxRequiredValidator = yup.boolean().required();
-export const checkboxValidator = yup.boolean();
+export const checkboxRequiredValidator = yup
+    .boolean()
+    .required()
+    .oneOf([true], 'Accepting Terms and Conditions is required');
+
+export const checkboxValidator = yup.boolean().required();

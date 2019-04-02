@@ -28,3 +28,7 @@ export const ErrorText = styled(Text)`
     font-size: 13;
     color: red;
 `;
+
+export const ErrorTextPaddingLeft = styled(ErrorText)`
+    padding-left: 25;
+`;
