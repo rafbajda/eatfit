@@ -49,7 +49,7 @@ const createUserInstance = user => {
         .doc(user.uid)
         .set({
             uid: user.uid,
-            photoURL: null,
+            photoUrl: null,
             email: user.email,
             emailVerified: user.emailVerified,
             lastLoginAt: new Date(),
