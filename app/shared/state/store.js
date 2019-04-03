@@ -13,15 +13,15 @@ import firebaseConfig from '../modules/firebase';
 import RootNavigator from '../../navigation/RootNavigator';
 import initialState from '../constants/State';
 import globalMiddlewares from './middleware';
-import authReducer from '../../screens/login/state/reducer';
 import signUpMiddleware from '../../screens/signUp/state/middleware';
+import verificationMiddleware from '../../screens/notVerified/state/middleware';
 
 let store = null; // eslint-disable-line
 const navReducer = createNavigationReducer(RootNavigator);
 const navMiddleware = createReactNavigationReduxMiddleware(state => state.nav);
 
 const combinedReducer = combineReducers({
-    auth: authReducer,
+    auth: globalReducers.authReducer,
     config: globalReducers.configReducer,
     nav: navReducer,
     firestore: firestoreReducer,
@@ -39,6 +39,7 @@ if (__DEV__) {
                 navMiddleware,
                 globalMiddlewares.configMiddleware,
                 signUpMiddleware,
+                verificationMiddleware,
                 thunk.withExtraArgument({ getFirebase, getFirestore })
             ),
             reactReduxFirebase(firebaseConfig),
@@ -54,6 +55,7 @@ if (__DEV__) {
                 navMiddleware,
                 globalMiddlewares.configMiddleware,
                 signUpMiddleware,
+                verificationMiddleware,
                 thunk.withExtraArgument({ getFirebase, getFirestore })
             ),
             reduxFirestore(firebaseConfig),

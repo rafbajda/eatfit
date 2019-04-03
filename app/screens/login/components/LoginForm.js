@@ -8,7 +8,8 @@ import { CenterRow, CenterFormContainer, ErrorText } from '../../../shared/style
 import { ForgotPasswordText, LoginButton, additionalTopPadding } from '../styles/loginFormStyles';
 import { loginEmail } from '../state/actions';
 import { emailValidator, passwordValidator } from '../../../shared/utils/validators';
-import { globalGreen } from '../../../shared/constants/Colors';
+import { globalGreen, globalWhite } from '../../../shared/constants/Colors';
+import screens from '../../../navigation/screens';
 
 const validationSchema = yup.object().shape({
     email: emailValidator,
@@ -16,7 +17,7 @@ const validationSchema = yup.object().shape({
 });
 
 const LoginForm = props => {
-    const { login, isKeyboardVisible, authLoading } = { ...props };
+    const { login, isKeyboardVisible, authLoading, nav } = { ...props };
 
     return (
         <Formik
@@ -55,13 +56,15 @@ const LoginForm = props => {
                             <ErrorText>
                                 {formikProps.touched.password && formikProps.errors.password}
                             </ErrorText>
-                            <ForgotPasswordText>Forgot password?</ForgotPasswordText>
+                            <ForgotPasswordText onPress={() => nav.navigate(screens.NotVerified)}>
+                                Forgot password?
+                            </ForgotPasswordText>
                         </CenterFormContainer>
                     </CenterRow>
                     <CenterRow>
                         <LoginButton onPress={formikProps.handleSubmit} disabled={authLoading}>
                             {authLoading ? (
-                                <UIActivityIndicator size={30} color="#fff" />
+                                <UIActivityIndicator size={30} color={globalWhite} />
                             ) : (
                                 <Text>Login</Text>
                             )}

@@ -8,17 +8,14 @@ import { Keyboard } from 'react-native';
 import { GlobalContainer } from '../../shared/styles/common';
 import LanguagePicker from './components/LanguagePicker';
 import { keyboardShow, keyboardHide, loginEmailSuccess } from './state/actions';
-import {
-    languagesSelector,
-    keyboardOnScreenSelector,
-    authLoadingSelector,
-} from './state/selectors';
+import { languagesSelector, keyboardOnScreenSelector } from './state/selectors';
 import LoginForm from './components/LoginForm';
 import LoginDivider from './components/LoginDivider';
 import SocialLogin from './components/SocialLogin';
 import SignUp from './components/SignUp';
 import LoginIcon from './components/LoginIcon';
 import firebaseOperations from '../../shared/utils/firebaseOperations';
+import { authLoadingSelector } from '../../shared/state/selectors';
 
 class LoginScreen extends React.Component {
     componentWillMount() {
@@ -49,7 +46,7 @@ class LoginScreen extends React.Component {
             <GlobalContainer>
                 <LanguagePicker languages={languages} hidden={isKeyboardVisible} />
                 <LoginIcon hidden={isKeyboardVisible} />
-                <LoginForm authLoading={isAuthLoading} isKeyboardVisible />
+                <LoginForm authLoading={isAuthLoading} nav={navigation} isKeyboardVisible />
                 <LoginDivider />
                 <SocialLogin />
                 <SignUp nav={navigation} />

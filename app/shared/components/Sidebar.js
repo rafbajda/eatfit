@@ -2,7 +2,7 @@ import React from 'react';
 import { Text, Content, List, ListItem } from 'native-base';
 import { connect } from 'react-redux';
 import { GlobalContainer } from '../styles/common';
-import { logout } from '../../screens/login/state/actions';
+import { logout } from '../state/actions';
 
 const SideBar = props => {
     const { signOut } = { ...props };

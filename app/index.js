@@ -21,6 +21,7 @@ class Application extends React.Component {
 
     render() {
         const { loading, firebase } = { ...this.props };
+
         if (loading || firebase.isInitializing) {
             return (
                 <GlobalSpinnerContainer>

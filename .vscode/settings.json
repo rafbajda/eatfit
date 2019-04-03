@@ -5,6 +5,7 @@
         "dropdown",
         "firestore",
         "formik",
-        "reselect"
+        "reselect",
+        "validators"
     ]
 }

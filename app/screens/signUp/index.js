@@ -3,6 +3,7 @@ import { Item, Input, Content, Text, CheckBox, Body } from 'native-base';
 import { Formik } from 'formik';
 import * as yup from 'yup';
 import { connect } from 'react-redux';
+import { UIActivityIndicator } from 'react-native-indicators';
 import {
     emailValidator,
     passwordValidator,
@@ -17,9 +18,10 @@ import {
     CheckboxInformationText,
     CheckboxItem,
 } from './styles/singUpStyles';
-import { globalGreen } from '../../shared/constants/Colors';
+import { globalGreen, globalWhite } from '../../shared/constants/Colors';
 import { checkBoxSetter } from '../../shared/utils/formHelpers';
 import { createAccount } from './state/actions';
+import { authLoadingSelector } from '../../shared/state/selectors';
 
 const validationSchema = yup.object().shape({
     email: emailValidator,
@@ -30,7 +32,7 @@ const validationSchema = yup.object().shape({
 });
 
 const SignUpScreen = props => {
-    const { signUp } = { ...props };
+    const { signUp, isAuthLoading } = { ...props };
     return (
         <Formik
             initialValues={{
@@ -53,6 +55,7 @@ const SignUpScreen = props => {
                                     placeholder="Email"
                                     onChangeText={formikProps.handleChange('email')}
                                     onBlur={formikProps.handleBlur('email')}
+                                    disabled={isAuthLoading}
                                 />
                             </Item>
                             <ErrorText>
@@ -64,6 +67,7 @@ const SignUpScreen = props => {
                                     onChangeText={formikProps.handleChange('password')}
                                     onBlur={formikProps.handleBlur('password')}
                                     secureTextEntry
+                                    disabled={isAuthLoading}
                                 />
                             </Item>
                             <ErrorText>
@@ -75,6 +79,7 @@ const SignUpScreen = props => {
                                     onChangeText={formikProps.handleChange('confirmPassword')}
                                     onBlur={formikProps.handleBlur('confirmPassword')}
                                     secureTextEntry
+                                    disabled={isAuthLoading}
                                 />
                             </Item>
                             <ErrorText>
@@ -111,8 +116,12 @@ const SignUpScreen = props => {
                         </SignUpContainer>
                     </CenterRow>
                     <CenterRow>
-                        <CreateButton onPress={formikProps.handleSubmit}>
-                            <Text>Create</Text>
+                        <CreateButton onPress={formikProps.handleSubmit} disabled={isAuthLoading}>
+                            {isAuthLoading ? (
+                                <UIActivityIndicator size={30} color={globalWhite} />
+                            ) : (
+                                <Text>Create</Text>
+                            )}
                         </CreateButton>
                     </CenterRow>
                 </Content>
@@ -121,11 +130,15 @@ const SignUpScreen = props => {
     );
 };
 
+const mapStateToProps = state => ({
+    isAuthLoading: authLoadingSelector(state),
+});
+
 const mapDispatchToProps = dispatch => ({
     signUp: user => dispatch(createAccount(user)),
 });
 
 export default connect(
-    null,
+    mapStateToProps,
     mapDispatchToProps
 )(SignUpScreen);

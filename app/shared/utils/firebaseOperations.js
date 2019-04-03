@@ -13,12 +13,18 @@ const getUserById = id => {
 
 const checkUserNavigation = (nav, setUser) => {
     firebase.auth().onAuthStateChanged(user => {
+        console.log(user);
         if (user) {
             getUserById(user.uid)
                 .then(doc => {
                     if (doc.exists) {
-                        setUser(doc.data());
-                        nav.navigate(screens.Home);
+                        const userObject = doc.data();
+                        setUser(userObject);
+                        if (userObject.emailVerified) {
+                            nav.navigate(screens.Home);
+                        } else {
+                            nav.navigate(screens.NotVerified);
+                        }
                     } else {
                         nav.navigate(screens.Login);
                         Toast.show(UserMismatchingToast);
@@ -33,6 +39,13 @@ const checkUserNavigation = (nav, setUser) => {
     });
 };
 
+const updateUserVerificationProperty = (uid, emailVerified) => {
+    return firebase
+        .firestore()
+        .doc(`users/${uid}`)
+        .update({ emailVerified });
+};
+
 const signOut = () => {
     return firebase.auth().signOut();
 };
@@ -41,8 +54,12 @@ const signUp = (email, password) => {
     return firebase.auth().createUserWithEmailAndPassword(email, password);
 };
 
+const sendVerificationEmail = () => {
+    console.log('jestem tutaj');
+    return firebase.auth().currentUser.sendEmailVerification();
+};
+
 const createUserInstance = user => {
-    console.log(user);
     return firebase
         .firestore()
         .collection('users')
@@ -64,4 +81,6 @@ export default {
     signUp,
     createUserInstance,
     getUserById,
+    sendVerificationEmail,
+    updateUserVerificationProperty,
 };

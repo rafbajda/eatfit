@@ -2,7 +2,8 @@ import { createStackNavigator } from 'react-navigation';
 import screens from './screens';
 import LoginScreen from '../screens/login';
 import SignUpScreen from '../screens/signUp';
-import { globalGreen } from '../shared/constants/Colors';
+import { globalGreen, globalWhite } from '../shared/constants/Colors';
+import NotVerifiedScreen from '../screens/notVerified';
 
 export default createStackNavigator(
     {
@@ -15,12 +16,18 @@ export default createStackNavigator(
         [screens.SignUp]: {
             screen: SignUpScreen,
         },
+        [screens.NotVerified]: {
+            screen: NotVerifiedScreen,
+            navigationOptions: {
+                header: null,
+            },
+        },
     },
     {
         initialRouteName: screens.Login,
         defaultNavigationOptions: {
             title: 'Create an Account',
-            headerTintColor: '#fff',
+            headerTintColor: globalWhite,
             headerStyle: {
                 backgroundColor: globalGreen,
             },
