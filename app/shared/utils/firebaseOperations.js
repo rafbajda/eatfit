@@ -14,6 +14,9 @@ const getUserById = id => {
 const checkUserNavigation = (nav, setUser) => {
     firebase.auth().onAuthStateChanged(user => {
         console.log(user);
+        // implement this somewhere
+        //         await auth.currentUser.reload()
+        // auth.currentUser.getToken(true)
         if (user) {
             getUserById(user.uid)
                 .then(doc => {
