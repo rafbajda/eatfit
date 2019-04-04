@@ -1,15 +1,23 @@
 import React from 'react';
+import { UIActivityIndicator } from 'react-native-indicators';
 import { Icon, Text, Button, Row } from 'native-base';
 import { connect } from 'react-redux';
 import Divider from 'react-native-divider';
 import { CenterContainer, mailIconStyle } from './styles/notVerifiedStyles';
-import { lightGrey, deepGrey, mediumGrey, globalGreen } from '../../shared/constants/Colors';
+import {
+    lightGrey,
+    deepGrey,
+    mediumGrey,
+    globalGreen,
+    globalWhite,
+} from '../../shared/constants/Colors';
 import { userSelector } from '../login/state/selectors';
 import { logout } from '../../shared/state/actions';
-import { sendVerificationEmail } from './state/actions';
+import { sendVerificationEmail, checkVerificationStatus } from './state/actions';
+import { authLoadingSelector } from '../../shared/state/selectors';
 
 const NotVerifiedScreen = props => {
-    const { user, signOut, sendEmail } = { ...props };
+    const { user, signOut, sendEmail, checkVerification, navigation, isAuthLoading } = { ...props };
     return (
         <CenterContainer>
             <Icon type="MaterialIcons" name="email" style={mailIconStyle} />
@@ -17,6 +25,33 @@ const NotVerifiedScreen = props => {
             <Text style={{ fontSize: 15, color: mediumGrey }}>
                 Check {user && user.email ? user.email : 'email'} and click on verification link.
             </Text>
+            <Row
+                style={{
+                    flexDirection: 'row',
+                    justifyContent: 'center',
+                    height: 'auto',
+                    paddingBottom: 12,
+                    paddingTop: 12,
+                }}
+            >
+                <Button
+                    onPress={() => checkVerification(navigation)}
+                    style={{
+                        backgroundColor: globalGreen,
+                        fontWeight: 'bold',
+                        height: 70,
+                        width: 300,
+                        justifyContent: 'center',
+                    }}
+                    disabled={isAuthLoading}
+                >
+                    {isAuthLoading ? (
+                        <UIActivityIndicator size={30} color={globalWhite} />
+                    ) : (
+                        <Text style={{ fontSize: 18 }}>Refresh verification status</Text>
+                    )}
+                </Button>
+            </Row>
             <Text style={{ paddingTop: 40, fontSize: 24, color: mediumGrey }}>
                 did not receive any email?
             </Text>
@@ -74,11 +109,13 @@ const NotVerifiedScreen = props => {
 
 const mapStateToProps = state => ({
     user: userSelector(state),
+    isAuthLoading: authLoadingSelector(state),
 });
 
 const mapDispatchToProps = dispatch => ({
     sendEmail: () => dispatch(sendVerificationEmail()),
     signOut: () => dispatch(logout()),
+    checkVerification: nav => dispatch(checkVerificationStatus(nav)),
 });
 
 export default connect(

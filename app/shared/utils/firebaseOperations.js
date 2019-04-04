@@ -10,13 +10,11 @@ const getUserById = id => {
         .doc(id)
         .get();
 };
+const getAuthCurrentUser = () => firebase.auth().currentUser;
+const reloadUserAuth = () => firebase.auth().currentUser.reload();
 
 const checkUserNavigation = (nav, setUser) => {
     firebase.auth().onAuthStateChanged(user => {
-        console.log(user);
-        // implement this somewhere
-        //         await auth.currentUser.reload()
-        // auth.currentUser.getToken(true)
         if (user) {
             getUserById(user.uid)
                 .then(doc => {
@@ -58,7 +56,6 @@ const signUp = (email, password) => {
 };
 
 const sendVerificationEmail = () => {
-    console.log('jestem tutaj');
     return firebase.auth().currentUser.sendEmailVerification();
 };
 
@@ -86,4 +83,6 @@ export default {
     getUserById,
     sendVerificationEmail,
     updateUserVerificationProperty,
+    reloadUserAuth,
+    getAuthCurrentUser,
 };

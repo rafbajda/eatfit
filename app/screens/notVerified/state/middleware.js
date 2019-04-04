@@ -1,10 +1,10 @@
-import { SEND_VERIFICATION_MAIL_SUCCESS, UPDATE_USER_VERIFICATION } from './actions';
+import { CHECK_VERIFICATION_STATUS_SUCCESS, updateUserVerification } from './actions';
 
 const verificationMiddleware = store => next => action => {
     if (typeof action === 'object') {
         switch (action.type) {
-            case SEND_VERIFICATION_MAIL_SUCCESS:
-                store.dispatch(UPDATE_USER_VERIFICATION);
+            case CHECK_VERIFICATION_STATUS_SUCCESS:
+                store.dispatch(updateUserVerification(action.payload));
                 break;
             default:
                 return next(action);

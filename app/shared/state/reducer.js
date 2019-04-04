@@ -1,15 +1,12 @@
 import initialState from '../constants/State';
-import { LOAD_CONFIG, LOAD_CONFIG_DONE } from './actions';
+import { LOAD_CONFIG, LOAD_CONFIG_DONE, LOGOUT, LOGOUT_SUCCESS, LOGOUT_ERROR } from './actions';
 import {
     SET_LANGUAGE,
     KEYBOARD_SHOW,
     KEYBOARD_HIDE,
     LOGIN_EMAIL,
-    LOGOUT,
     LOGIN_EMAIL_SUCCESS,
     LOGIN_EMAIL_ERROR,
-    LOGOUT_SUCCESS,
-    LOGOUT_ERROR,
 } from '../../screens/login/state/actions';
 import {
     CREATE_ACCOUNT,
@@ -17,6 +14,12 @@ import {
     CREATE_ACCOUNT_ERROR,
     CREATE_USER_OBJECT_ERROR,
 } from '../../screens/signUp/state/actions';
+import {
+    UPDATE_USER_VERIFICATION_SUCCESS,
+    UPDATE_USER_VERIFICATION_ERROR,
+    CHECK_VERIFICATION_STATUS_ERROR,
+    CHECK_VERIFICATION_STATUS_SUCCESS,
+} from '../../screens/notVerified/state/actions';
 
 const initialConfigState = initialState.config;
 const initialAuthState = initialState.auth;
@@ -103,6 +106,26 @@ const authReducer = (state = initialAuthState, action) => {
                 isLoading: false,
             };
         case CREATE_USER_OBJECT_ERROR:
+            return {
+                ...state,
+                isLoading: false,
+            };
+        case CHECK_VERIFICATION_STATUS_SUCCESS:
+            return {
+                ...state,
+                isLoading: true,
+            };
+        case CHECK_VERIFICATION_STATUS_ERROR:
+            return {
+                ...state,
+                isLoading: false,
+            };
+        case UPDATE_USER_VERIFICATION_SUCCESS:
+            return {
+                ...state,
+                isLoading: false,
+            };
+        case UPDATE_USER_VERIFICATION_ERROR:
             return {
                 ...state,
                 isLoading: false,

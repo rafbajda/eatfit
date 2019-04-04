@@ -4,3 +4,9 @@ export const UserMismatchingToast = {
     type: 'danger',
     duration: 3000,
 };
+
+export const CheckVerificationRefreshToast = {
+    text: 'Verification refreshed',
+    type: 'warning',
+    duration: 3000,
+};
