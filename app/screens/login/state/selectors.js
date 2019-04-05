@@ -2,7 +2,7 @@
 
 export const pickedLanguageSelector = state => state.config.pickedLanguage;
 export const keyboardOnScreenSelector = state => state.config.keyboardOnScreen;
-export const userSelector = state => state.user;
+export const userSelector = state => state.auth.user;
 
 export const languagesSelector = state => {
     if (state.firestore.data.config) {

@@ -11,7 +11,7 @@ import {
 import globalReducers from './reducer';
 import firebaseConfig from '../modules/firebase';
 import RootNavigator from '../../navigation/RootNavigator';
-import initialState from '../constants/State';
+import initialState from '../constants/state';
 import globalMiddlewares from './middleware';
 import signUpMiddleware from '../../screens/signUp/state/middleware';
 import verificationMiddleware from '../../screens/notVerified/state/middleware';

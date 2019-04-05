@@ -1,7 +1,7 @@
 import { Toast } from 'native-base';
 import firebase from '../modules/firebase';
 import screens from '../../navigation/screens';
-import { UserMismatchingToast } from '../constants/Toasts';
+import { UserMismatchingToast } from '../constants/toasts';
 
 const getUserById = id => {
     return firebase

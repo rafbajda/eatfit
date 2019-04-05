@@ -18,7 +18,7 @@ import {
     CheckboxInformationText,
     CheckboxItem,
 } from './styles/singUpStyles';
-import { globalGreen, globalWhite } from '../../shared/constants/Colors';
+import { globalGreen, globalWhite } from '../../shared/constants/colors';
 import { checkBoxSetter } from '../../shared/utils/formHelpers';
 import { createAccount } from './state/actions';
 import { authLoadingSelector } from '../../shared/state/selectors';

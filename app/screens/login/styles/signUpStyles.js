@@ -2,7 +2,7 @@
 import styled from 'styled-components';
 import { Text } from 'native-base';
 import { CenterRow } from '../../../shared/styles/common';
-import { lightBlue, deepBlue } from '../../../shared/constants/Colors';
+import { lightBlue, deepBlue } from '../../../shared/constants/colors';
 
 // TODO: handle responsive margins
 export const SignUpContainer = styled(CenterRow)`

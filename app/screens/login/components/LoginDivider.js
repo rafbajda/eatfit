@@ -1,7 +1,7 @@
 import React from 'react';
 import Divider from 'react-native-divider';
 import { DividerContainer, DividerText } from '../styles/loginDividerStyles';
-import { lightGrey } from '../../../shared/constants/Colors';
+import { lightGrey } from '../../../shared/constants/colors';
 
 const LoginDivider = () => {
     return (

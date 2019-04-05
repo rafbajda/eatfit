@@ -8,7 +8,7 @@ import { CenterRow, CenterFormContainer, ErrorText } from '../../../shared/style
 import { ForgotPasswordText, LoginButton, additionalTopPadding } from '../styles/loginFormStyles';
 import { loginEmail } from '../state/actions';
 import { emailValidator, passwordValidator } from '../../../shared/utils/validators';
-import { globalGreen, globalWhite } from '../../../shared/constants/Colors';
+import { globalGreen, globalWhite } from '../../../shared/constants/colors';
 import screens from '../../../navigation/screens';
 
 const validationSchema = yup.object().shape({

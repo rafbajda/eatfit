@@ -3,7 +3,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { firestoreConnect } from 'react-redux-firebase';
-
 import { Keyboard } from 'react-native';
 import { GlobalContainer } from '../../shared/styles/common';
 import LanguagePicker from './components/LanguagePicker';
@@ -16,6 +15,7 @@ import SignUp from './components/SignUp';
 import LoginIcon from './components/LoginIcon';
 import firebaseOperations from '../../shared/utils/firebaseOperations';
 import { authLoadingSelector } from '../../shared/state/selectors';
+import GlobalLoader from '../../shared/components/GlobalLoader';
 
 class LoginScreen extends React.Component {
     componentWillMount() {
@@ -39,9 +39,12 @@ class LoginScreen extends React.Component {
     }
 
     render() {
-        const { languages, isKeyboardVisible, navigation, isAuthLoading } = {
+        const { languages, isKeyboardVisible, navigation, isAuthLoading, firebase } = {
             ...this.props,
         };
+        if (!firebase.auth.isLoaded && firebase.auth.isEmpty) {
+            return <GlobalLoader />;
+        }
         return (
             <GlobalContainer>
                 <LanguagePicker languages={languages} hidden={isKeyboardVisible} />

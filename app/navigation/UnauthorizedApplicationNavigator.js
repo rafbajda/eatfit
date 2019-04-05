@@ -2,7 +2,7 @@ import { createStackNavigator } from 'react-navigation';
 import screens from './screens';
 import LoginScreen from '../screens/login';
 import SignUpScreen from '../screens/signUp';
-import { globalGreen, globalWhite } from '../shared/constants/Colors';
+import { globalGreen, globalWhite } from '../shared/constants/colors';
 import NotVerifiedScreen from '../screens/notVerified';
 
 export default createStackNavigator(

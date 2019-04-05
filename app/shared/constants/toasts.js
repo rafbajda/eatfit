@@ -1,4 +1,4 @@
-import { globalWhite } from './Colors';
+import { globalWhite } from './colors';
 import { globalInfoToastStyle } from '../styles/toasts';
 
 /* eslint-disable import/prefer-default-export */

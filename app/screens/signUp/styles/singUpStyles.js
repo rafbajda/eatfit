@@ -2,7 +2,7 @@
 
 import styled from 'styled-components';
 import { Button, Text, Item } from 'native-base';
-import { globalGreen, deepGrey } from '../../../shared/constants/Colors';
+import { globalGreen, deepGrey } from '../../../shared/constants/colors';
 import { CenterFormContainer } from '../../../shared/styles/common';
 
 export const CreateButton = styled(Button)`

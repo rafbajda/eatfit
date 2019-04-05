@@ -1,4 +1,4 @@
-import initialState from '../constants/State';
+import initialState from '../constants/state';
 import { LOAD_CONFIG, LOAD_CONFIG_DONE, LOGOUT, LOGOUT_SUCCESS, LOGOUT_ERROR } from './actions';
 import {
     SET_LANGUAGE,

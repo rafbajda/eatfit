@@ -1,7 +1,7 @@
 /* eslint-disable import/prefer-default-export */
 import styled from 'styled-components';
 import { Text, Button } from 'native-base';
-import { deepBlue } from '../../../shared/constants/Colors';
+import { deepBlue } from '../../../shared/constants/colors';
 
 export const ForgotPasswordText = styled(Text)`
     font-size: 13;

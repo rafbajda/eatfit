@@ -5,7 +5,7 @@ import { LanguageRow, PickerColumn } from '../styles/loginStyles';
 import { placeholderStyle } from '../styles/languagePickerStyles';
 import { setLanguage } from '../state/actions';
 import { pickedLanguageSelector } from '../state/selectors';
-import { deepBlue } from '../../../shared/constants/Colors';
+import { deepBlue } from '../../../shared/constants/colors';
 
 const LanguagePicker = props => {
     const { languages, setCurrentLanguage, currentLanguage, hidden } = { ...props };

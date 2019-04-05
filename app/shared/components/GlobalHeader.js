@@ -1,6 +1,6 @@
 import React from 'react';
 import { Header, Left, Button, Icon, Body, Title, Right, Thumbnail } from 'native-base';
-import { globalGreen } from '../constants/Colors';
+import { globalGreen } from '../constants/colors';
 
 const GlobalHeader = props => {
     const { nav } = { ...props };

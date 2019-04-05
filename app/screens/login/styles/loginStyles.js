@@ -1,6 +1,6 @@
 import { Row, Col } from 'native-base';
 import styled from 'styled-components';
-import { lightGrey } from '../../../shared/constants/Colors';
+import { lightGrey } from '../../../shared/constants/colors';
 
 export const LanguageRow = styled(Row)`
     padding: 20px;
