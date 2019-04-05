@@ -18,7 +18,7 @@ import {
     UPDATE_USER_VERIFICATION_SUCCESS,
     UPDATE_USER_VERIFICATION_ERROR,
     CHECK_VERIFICATION_STATUS_ERROR,
-    CHECK_VERIFICATION_STATUS_SUCCESS,
+    CHECK_VERIFICATION_STATUS,
 } from '../../screens/notVerified/state/actions';
 
 const initialConfigState = initialState.config;
@@ -110,7 +110,7 @@ const authReducer = (state = initialAuthState, action) => {
                 ...state,
                 isLoading: false,
             };
-        case CHECK_VERIFICATION_STATUS_SUCCESS:
+        case CHECK_VERIFICATION_STATUS:
             return {
                 ...state,
                 isLoading: true,

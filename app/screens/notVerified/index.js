@@ -48,7 +48,7 @@ const NotVerifiedScreen = props => {
                     {isAuthLoading ? (
                         <UIActivityIndicator size={30} color={globalWhite} />
                     ) : (
-                        <Text style={{ fontSize: 18 }}>Refresh verification status</Text>
+                        <Text style={{ fontSize: 17 }}>Refresh verification status</Text>
                     )}
                 </Button>
             </Row>

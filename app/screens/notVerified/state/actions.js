@@ -1,7 +1,7 @@
 /* eslint-disable import/prefer-default-export */
 import { Toast } from 'native-base';
 import firebaseOps from '../../../shared/utils/firebaseOperations';
-import { CheckVerificationRefreshToast } from '../../../shared/constants/Toasts';
+import { CheckVerificationRefreshToast, emailSentToast } from '../../../shared/constants/Toasts';
 import screens from '../../../navigation/screens';
 
 export const SEND_VERIFICATION_MAIL = '[verification] send verification email';
@@ -16,6 +16,8 @@ export const CHECK_VERIFICATION_STATUS = '[verification] check verification stat
 export const CHECK_VERIFICATION_STATUS_SUCCESS = '[verification] check verification status success';
 export const CHECK_VERIFICATION_STATUS_ERROR = '[verification] check verification status error';
 
+let verificationToastInstance = null;
+
 export const checkVerificationStatusSuccess = payload => ({
     type: CHECK_VERIFICATION_STATUS_SUCCESS,
     payload,
@@ -29,7 +31,7 @@ export const checkVerificationStatus = payload => dispatch => {
     dispatch({
         type: CHECK_VERIFICATION_STATUS,
     });
-    Toast.show(CheckVerificationRefreshToast);
+    verificationToastInstance = Toast.show(CheckVerificationRefreshToast);
 
     firebaseOps
         .reloadUserAuth()
@@ -48,6 +50,7 @@ export const sendVerificationEmail = () => dispatch => {
     dispatch({
         type: SEND_VERIFICATION_MAIL,
     });
+    Toast.show(emailSentToast);
     firebaseOps
         .sendVerificationEmail()
         .then(user => sendVerificationEmailSuccess(user))
@@ -73,6 +76,7 @@ export const updateUserVerification = payload => dispatch => {
         firebaseOps
             .updateUserVerificationProperty(user.uid, user.emailVerified)
             .then(() => {
+                Toast.hide(verificationToastInstance);
                 nav.navigate(screens.Home);
                 dispatch(updateUserVerificationSuccess());
             })
