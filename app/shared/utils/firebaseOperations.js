@@ -15,8 +15,24 @@ const getUserById = id => {
 const getAuthCurrentUser = () => firebase.auth().currentUser;
 const reloadUserAuth = () => firebase.auth().currentUser.reload();
 
+const createUserSocialInstance = user =>
+    firebase
+        .firestore()
+        .collection('users')
+        .doc(user.uid)
+        .set({
+            uid: user.uid,
+            photo_url: null,
+            email: user.email,
+            email_verified: user.emailVerified,
+            newsletter: user.newsletter,
+            is_social: true,
+        });
+
 const checkUserNavigation = (nav, setUser) => {
     firebase.auth().onAuthStateChanged(user => {
+        console.log(user);
+
         if (user) {
             getUserById(user.uid)
                 .then(doc => {
@@ -29,6 +45,8 @@ const checkUserNavigation = (nav, setUser) => {
                             nav.navigate(screens.NotVerified);
                         }
                     } else {
+                        createUserSocialInstance(user);
+                        console.log('no ni ma ;p');
                         nav.navigate(screens.Login);
                         Toast.show(UserMismatchingToast);
                     }
@@ -61,21 +79,19 @@ const sendVerificationEmail = () => {
     return firebase.auth().currentUser.sendEmailVerification();
 };
 
-const createUserInstance = user => {
-    return firebase
+const createUserInstance = user =>
+    firebase
         .firestore()
         .collection('users')
         .doc(user.uid)
         .set({
             uid: user.uid,
-            photoUrl: null,
+            photo_url: null,
             email: user.email,
-            emailVerified: user.emailVerified,
-            lastLoginAt: new Date(),
-            createdAt: new Date(),
+            email_verified: user.emailVerified,
             newsletter: user.newsletter,
+            is_social: false,
         });
-};
 
 export default {
     checkUserNavigation,

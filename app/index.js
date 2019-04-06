@@ -8,12 +8,14 @@ import { loadingSelector } from './shared/state/selectors';
 import { loadConfig } from './shared/state/actions';
 import RootNavigator from './navigation/RootNavigator';
 import GlobalLoader from './shared/components/GlobalLoader';
+import firebaseOperations from './shared/utils/firebaseOperations';
 
 const AppContainer = createAppContainer(RootNavigator);
 
 class Application extends React.Component {
     componentWillMount() {
         const { getConfig } = { ...this.props };
+        firebaseOperations.signOut();
         getConfig();
     }
 
