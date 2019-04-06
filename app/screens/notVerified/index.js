@@ -1,7 +1,7 @@
 import React from 'react';
 import { Icon } from 'native-base';
 import { connect } from 'react-redux';
-import { CenterContainer, mailIconStyle } from './styles/notVerifiedStyles';
+import { mailIconStyle } from './styles/notVerifiedStyles';
 import { userSelector } from '../login/state/selectors';
 import { logout } from '../../shared/state/actions';
 import { sendVerificationEmail, checkVerificationStatus } from './state/actions';
@@ -12,6 +12,7 @@ import NoEmailMessage from './components/NoEmailMessage';
 import SendEmailButton from './components/SendEmailButton';
 import NotVerifyDivider from './components/NotVerifyDivider';
 import LogoutButton from './components/LogoutButton';
+import { CenterContainer } from '../../shared/styles/common';
 
 const NotVerifiedScreen = props => {
     const { user, signOut, sendEmail, checkVerification, navigation, isAuthLoading } = { ...props };

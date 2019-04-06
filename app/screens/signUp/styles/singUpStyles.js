@@ -1,21 +1,8 @@
 /* eslint-disable import/prefer-default-export */
 
 import styled from 'styled-components';
-import { Button, Text, Item } from 'native-base';
-import { globalGreen, deepGrey } from '../../../shared/constants/colors';
-import { CenterFormContainer } from '../../../shared/styles/common';
-
-export const CreateButton = styled(Button)`
-    background-color: ${globalGreen};
-    width: 70%;
-    justify-content: center;
-    margin-top: 10;
-    font-weight: bold;
-`;
-
-export const SignUpContainer = styled(CenterFormContainer)`
-    padding-top: 15;
-`;
+import { Text, Item } from 'native-base';
+import { deepGrey } from '../../../shared/constants/colors';
 
 export const CheckboxInformationText = styled(Text)`
     color: ${deepGrey}

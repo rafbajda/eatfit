@@ -5,4 +5,5 @@ export default {
     SignUp: 'SignUpScreen',
     Home: 'HomeScreen',
     NotVerified: 'NotVerifiedScreen',
+    ForgotPassword: 'ForgotPasswordScreen',
 };

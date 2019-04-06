@@ -4,6 +4,7 @@ import LoginScreen from '../screens/login';
 import SignUpScreen from '../screens/signUp';
 import { globalGreen, globalWhite } from '../shared/constants/colors';
 import NotVerifiedScreen from '../screens/notVerified';
+import ForgotPasswordScreen from '../screens/forgotPassword';
 
 export default createStackNavigator(
     {
@@ -15,6 +16,12 @@ export default createStackNavigator(
         },
         [screens.SignUp]: {
             screen: SignUpScreen,
+        },
+        [screens.ForgotPassword]: {
+            screen: ForgotPasswordScreen,
+            navigationOptions: {
+                title: 'Forgot password',
+            },
         },
         [screens.NotVerified]: {
             screen: NotVerifiedScreen,

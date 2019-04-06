@@ -35,3 +35,14 @@ export const CheckVerificationRefreshToast = {
         color: globalWhite,
     },
 };
+
+export const PasswordResetEmailSentToast = {
+    text: 'Reset password email has been sent',
+    type: 'warning',
+    duration: 2000,
+    position: 'top',
+    style: globalInfoToastStyle,
+    textStyle: {
+        color: globalWhite,
+    },
+};

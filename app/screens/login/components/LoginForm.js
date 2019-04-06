@@ -2,28 +2,23 @@ import React from 'react';
 import { Item, Input, Content, Text } from 'native-base';
 import { Formik } from 'formik';
 import { connect } from 'react-redux';
-import * as yup from 'yup';
 import { DotIndicator, UIActivityIndicator } from 'react-native-indicators';
 import { CenterRow, CenterFormContainer, ErrorText } from '../../../shared/styles/common';
 import { ForgotPasswordText, LoginButton, additionalTopPadding } from '../styles/loginFormStyles';
 import { loginEmail } from '../state/actions';
-import { emailValidator, passwordValidator } from '../../../shared/utils/validators';
 import { globalGreen, globalWhite } from '../../../shared/constants/colors';
 import screens from '../../../navigation/screens';
-
-const validationSchema = yup.object().shape({
-    email: emailValidator,
-    password: passwordValidator,
-});
+import { loginSchema } from '../../../shared/utils/validationSchemas';
+import { loginInitialValues } from '../../../shared/constants/formInitialValues';
 
 const LoginForm = props => {
     const { login, isKeyboardVisible, authLoading, nav } = { ...props };
 
     return (
         <Formik
-            initialValues={{ email: '', password: '' }}
+            initialValues={loginInitialValues}
             onSubmit={values => login(values)}
-            validationSchema={validationSchema}
+            validationSchema={loginSchema}
         >
             {formikProps => (
                 <Content>
@@ -56,7 +51,9 @@ const LoginForm = props => {
                             <ErrorText>
                                 {formikProps.touched.password && formikProps.errors.password}
                             </ErrorText>
-                            <ForgotPasswordText onPress={() => nav.navigate(screens.NotVerified)}>
+                            <ForgotPasswordText
+                                onPress={() => nav.navigate(screens.ForgotPassword)}
+                            >
                                 Forgot password?
                             </ForgotPasswordText>
                         </CenterFormContainer>

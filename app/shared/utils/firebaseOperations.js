@@ -3,6 +3,8 @@ import firebase from '../modules/firebase';
 import screens from '../../navigation/screens';
 import { UserMismatchingToast } from '../constants/toasts';
 
+const resetPassword = email => firebase.auth().sendPasswordResetEmail(email);
+
 const getUserById = id => {
     return firebase
         .firestore()
@@ -85,4 +87,5 @@ export default {
     updateUserVerificationProperty,
     reloadUserAuth,
     getAuthCurrentUser,
+    resetPassword,
 };

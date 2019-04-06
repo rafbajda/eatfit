@@ -14,7 +14,7 @@ import SocialLogin from './components/SocialLogin';
 import SignUp from './components/SignUp';
 import LoginIcon from './components/LoginIcon';
 import firebaseOperations from '../../shared/utils/firebaseOperations';
-import { authLoadingSelector } from '../../shared/state/selectors';
+import { authLoadingSelector, isNoUserLoggedInSelector } from '../../shared/state/selectors';
 import GlobalLoader from '../../shared/components/GlobalLoader';
 
 class LoginScreen extends React.Component {
@@ -39,10 +39,10 @@ class LoginScreen extends React.Component {
     }
 
     render() {
-        const { languages, isKeyboardVisible, navigation, isAuthLoading, firebase } = {
+        const { languages, isKeyboardVisible, navigation, isAuthLoading, isNoUserLoggedIn } = {
             ...this.props,
         };
-        if (!firebase.auth.isLoaded && firebase.auth.isEmpty) {
+        if (!isNoUserLoggedIn) {
             return <GlobalLoader />;
         }
         return (
@@ -62,6 +62,7 @@ const mapStateToProps = state => ({
     languages: languagesSelector(state),
     isKeyboardVisible: keyboardOnScreenSelector(state),
     isAuthLoading: authLoadingSelector(state),
+    isNoUserLoggedIn: isNoUserLoggedInSelector(state),
 });
 
 const mapDispatchToProps = dispatch => ({

@@ -1,13 +1,7 @@
 /* eslint-disable import/prefer-default-export */
 import styled from 'styled-components';
-import { Container, Button } from 'native-base';
+import { Button } from 'native-base';
 import { globalGreen } from '../../../shared/constants/colors';
-
-export const CenterContainer = styled(Container)`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-`;
 
 export const OtherActionButton = styled(Button)`
     background-color: ${globalGreen};

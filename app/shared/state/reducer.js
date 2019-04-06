@@ -20,6 +20,11 @@ import {
     CHECK_VERIFICATION_STATUS_ERROR,
     CHECK_VERIFICATION_STATUS,
 } from '../../screens/notVerified/state/actions';
+import {
+    SEND_RESET_PASSWORD_MAIL,
+    SEND_RESET_PASSWORD_MAIL_ERROR,
+    SEND_RESET_PASSWORD_MAIL_SUCCESS,
+} from '../../screens/forgotPassword/state/actions';
 
 const initialConfigState = initialState.config;
 const initialAuthState = initialState.auth;
@@ -59,14 +64,27 @@ const configReducer = (state = initialConfigState, action) => {
 const authReducer = (state = initialAuthState, action) => {
     switch (action.type) {
         case LOGIN_EMAIL:
+        case LOGOUT:
+        case CREATE_ACCOUNT:
+        case CHECK_VERIFICATION_STATUS:
+        case SEND_RESET_PASSWORD_MAIL:
             return {
                 ...state,
                 isLoading: true,
             };
-        case LOGOUT:
+        case SEND_RESET_PASSWORD_MAIL_ERROR:
+        case SEND_RESET_PASSWORD_MAIL_SUCCESS:
+        case LOGIN_EMAIL_ERROR:
+        case LOGOUT_ERROR:
+        case CREATE_USER_OBJECT_SUCCESS:
+        case CREATE_ACCOUNT_ERROR:
+        case CREATE_USER_OBJECT_ERROR:
+        case CHECK_VERIFICATION_STATUS_ERROR:
+        case UPDATE_USER_VERIFICATION_SUCCESS:
+        case UPDATE_USER_VERIFICATION_ERROR:
             return {
                 ...state,
-                isLoading: true,
+                isLoading: false,
             };
         case LOGIN_EMAIL_SUCCESS:
             return {
@@ -74,61 +92,12 @@ const authReducer = (state = initialAuthState, action) => {
                 isLoading: false,
                 user: action.payload,
             };
-        case LOGIN_EMAIL_ERROR:
-            return {
-                ...state,
-                isLoading: false,
-            };
+
         case LOGOUT_SUCCESS:
             return {
                 ...state,
                 isLoading: false,
                 user: null,
-            };
-        case LOGOUT_ERROR:
-            return {
-                ...state,
-                isLoading: false,
-            };
-        case CREATE_ACCOUNT:
-            return {
-                ...state,
-                isLoading: true,
-            };
-        case CREATE_USER_OBJECT_SUCCESS:
-            return {
-                ...state,
-                isLoading: false,
-            };
-        case CREATE_ACCOUNT_ERROR:
-            return {
-                ...state,
-                isLoading: false,
-            };
-        case CREATE_USER_OBJECT_ERROR:
-            return {
-                ...state,
-                isLoading: false,
-            };
-        case CHECK_VERIFICATION_STATUS:
-            return {
-                ...state,
-                isLoading: true,
-            };
-        case CHECK_VERIFICATION_STATUS_ERROR:
-            return {
-                ...state,
-                isLoading: false,
-            };
-        case UPDATE_USER_VERIFICATION_SUCCESS:
-            return {
-                ...state,
-                isLoading: false,
-            };
-        case UPDATE_USER_VERIFICATION_ERROR:
-            return {
-                ...state,
-                isLoading: false,
             };
         default:
             return state;
