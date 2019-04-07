@@ -46,3 +46,14 @@ export const PasswordResetEmailSentToast = {
         color: globalWhite,
     },
 };
+
+export const WarningToastMessage = message => ({
+    text: message,
+    type: 'warning',
+    duration: 2000,
+    position: 'top',
+    style: globalInfoToastStyle,
+    textStyle: {
+        color: globalWhite,
+    },
+});

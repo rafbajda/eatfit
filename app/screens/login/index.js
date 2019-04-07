@@ -6,7 +6,7 @@ import { firestoreConnect } from 'react-redux-firebase';
 import { Keyboard } from 'react-native';
 import { GlobalContainer } from '../../shared/styles/common';
 import LanguagePicker from './components/LanguagePicker';
-import { keyboardShow, keyboardHide, loginEmailSuccess } from './state/actions';
+import { keyboardShow, keyboardHide, loginFacebook, setUser } from './state/actions';
 import { languagesSelector, keyboardOnScreenSelector } from './state/selectors';
 import LoginForm from './components/LoginForm';
 import LoginDivider from './components/LoginDivider';
@@ -19,8 +19,8 @@ import GlobalLoader from '../../shared/components/GlobalLoader';
 
 class LoginScreen extends React.Component {
     componentWillMount() {
-        const { navigation, setUser } = { ...this.props };
-        firebaseOperations.checkUserNavigation(navigation, setUser);
+        const { navigation, setUserState } = { ...this.props };
+        firebaseOperations.checkUserNavigation(navigation, setUserState);
     }
 
     componentDidMount() {
@@ -39,7 +39,14 @@ class LoginScreen extends React.Component {
     }
 
     render() {
-        const { languages, isKeyboardVisible, navigation, isAuthLoading, isNoUserLoggedIn } = {
+        const {
+            languages,
+            isKeyboardVisible,
+            navigation,
+            isAuthLoading,
+            isNoUserLoggedIn,
+            loginSocialFacebook,
+        } = {
             ...this.props,
         };
         if (!isNoUserLoggedIn) {
@@ -51,7 +58,7 @@ class LoginScreen extends React.Component {
                 <LoginIcon hidden={isKeyboardVisible} />
                 <LoginForm authLoading={isAuthLoading} nav={navigation} isKeyboardVisible />
                 <LoginDivider />
-                <SocialLogin />
+                <SocialLogin loginFacebook={loginSocialFacebook} />
                 <SignUp nav={navigation} />
             </GlobalContainer>
         );
@@ -66,7 +73,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-    setUser: user => dispatch(loginEmailSuccess(user)),
+    setUserState: user => dispatch(setUser(user)),
+    loginSocialFacebook: () => dispatch(loginFacebook()),
     onShowKeyboard: () => dispatch(keyboardShow()),
     onHideKeyboard: () => dispatch(keyboardHide()),
 });

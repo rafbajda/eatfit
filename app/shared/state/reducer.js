@@ -7,6 +7,7 @@ import {
     LOGIN_EMAIL,
     LOGIN_EMAIL_SUCCESS,
     LOGIN_EMAIL_ERROR,
+    SET_USER,
 } from '../../screens/login/state/actions';
 import {
     CREATE_ACCOUNT,
@@ -25,6 +26,8 @@ import {
     SEND_RESET_PASSWORD_MAIL_ERROR,
     SEND_RESET_PASSWORD_MAIL_SUCCESS,
 } from '../../screens/forgotPassword/state/actions';
+
+import ops from '../utils/helpers';
 
 const initialConfigState = initialState.config;
 const initialAuthState = initialState.auth;
@@ -82,15 +85,16 @@ const authReducer = (state = initialAuthState, action) => {
         case CHECK_VERIFICATION_STATUS_ERROR:
         case UPDATE_USER_VERIFICATION_SUCCESS:
         case UPDATE_USER_VERIFICATION_ERROR:
-            return {
-                ...state,
-                isLoading: false,
-            };
         case LOGIN_EMAIL_SUCCESS:
             return {
                 ...state,
                 isLoading: false,
-                user: action.payload,
+            };
+        case SET_USER:
+            return {
+                ...state,
+                isLoading: false,
+                user: ops.normalizeKeysToCamelCase(action.payload),
             };
 
         case LOGOUT_SUCCESS:

@@ -16,6 +16,7 @@ import globalMiddlewares from './middleware';
 import signUpMiddleware from '../../screens/signUp/state/middleware';
 import verificationMiddleware from '../../screens/notVerified/state/middleware';
 import forgotPasswordMiddleware from '../../screens/forgotPassword/state/middleware';
+import loginMiddleware from '../../screens/login/state/middleware';
 
 let store = null; // eslint-disable-line
 const navReducer = createNavigationReducer(RootNavigator);
@@ -42,6 +43,7 @@ if (__DEV__) {
                 signUpMiddleware,
                 verificationMiddleware,
                 forgotPasswordMiddleware,
+                loginMiddleware,
                 thunk.withExtraArgument({ getFirebase, getFirestore })
             ),
             reactReduxFirebase(firebaseConfig),
@@ -59,6 +61,7 @@ if (__DEV__) {
                 signUpMiddleware,
                 verificationMiddleware,
                 forgotPasswordMiddleware,
+                loginMiddleware,
                 thunk.withExtraArgument({ getFirebase, getFirestore })
             ),
             reduxFirestore(firebaseConfig),
