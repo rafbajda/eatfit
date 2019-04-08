@@ -2,6 +2,7 @@ import { Toast } from 'native-base';
 import firebase from '../modules/firebase';
 import screens from '../../navigation/screens';
 import { UserMismatchingToast } from '../constants/toasts';
+import ops from './helpers';
 
 const resetPassword = email => firebase.auth().sendPasswordResetEmail(email);
 
@@ -17,6 +18,7 @@ const reloadUserAuth = () => firebase.auth().currentUser.reload();
 
 const checkUserNavigation = (nav, setUser) => {
     firebase.auth().onAuthStateChanged(user => {
+        console.log('user: ', user);
         if (user) {
             getUserById(user.uid)
                 .then(doc => {
@@ -62,28 +64,16 @@ const sendVerificationEmail = () => {
 };
 
 const createUserInstance = data => {
+    console.log('D: ', data);
     let user = null;
+    let provider = 'email';
     if (data.user && data.additionalUserInfo) {
-        user = {
-            uid: data.user.uid || null,
-            firstName: data.additionalUserInfo.profile.first_name || null,
-            lastName: data.additionalUserInfo.profile.last_name || null,
-            email: data.user.email || null,
-            emailVerified: data.user.emailVerified || false,
-            photoUrl: data.user.photoURL || null,
-            loginProvider: data.additionalUserInfo.providerId || null,
-            isSocial: true,
-        };
-    } else {
-        user = {
-            uid: data.uid || null,
-            email: data.email || null,
-            emailVerified: data.emailVerified || false,
-            newsletter: data.newsletter || false,
-            loginProvider: 'email',
-            isSocial: false,
-        };
+        provider = data.additionalUserInfo.providerId;
     }
+    user = ops.createUserObjectByProvider(provider, data);
+
+    console.log('established user: ', user);
+
     return firebase
         .firestore()
         .collection('users')
@@ -97,6 +87,7 @@ const createUserInstance = data => {
             photo_url: user.photoUrl || null,
             login_provider: user.loginProvider || null,
             is_social: user.isSocial || false,
+            newsletter: user.newsletter || false,
         });
 };
 

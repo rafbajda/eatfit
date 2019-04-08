@@ -6,7 +6,7 @@ import { firestoreConnect } from 'react-redux-firebase';
 import { Keyboard } from 'react-native';
 import { GlobalContainer } from '../../shared/styles/common';
 import LanguagePicker from './components/LanguagePicker';
-import { keyboardShow, keyboardHide, loginFacebook, setUser } from './state/actions';
+import { keyboardShow, keyboardHide, loginFacebook, setUser, loginGoogle } from './state/actions';
 import { languagesSelector, keyboardOnScreenSelector } from './state/selectors';
 import LoginForm from './components/LoginForm';
 import LoginDivider from './components/LoginDivider';
@@ -46,6 +46,7 @@ class LoginScreen extends React.Component {
             isAuthLoading,
             isNoUserLoggedIn,
             loginSocialFacebook,
+            loginSocialGoogle,
         } = {
             ...this.props,
         };
@@ -58,7 +59,7 @@ class LoginScreen extends React.Component {
                 <LoginIcon hidden={isKeyboardVisible} />
                 <LoginForm authLoading={isAuthLoading} nav={navigation} isKeyboardVisible />
                 <LoginDivider />
-                <SocialLogin loginFacebook={loginSocialFacebook} />
+                <SocialLogin loginFacebook={loginSocialFacebook} loginGoogle={loginSocialGoogle} />
                 <SignUp nav={navigation} />
             </GlobalContainer>
         );
@@ -75,6 +76,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
     setUserState: user => dispatch(setUser(user)),
     loginSocialFacebook: () => dispatch(loginFacebook()),
+    loginSocialGoogle: () => dispatch(loginGoogle()),
     onShowKeyboard: () => dispatch(keyboardShow()),
     onHideKeyboard: () => dispatch(keyboardHide()),
 });

@@ -1,12 +1,16 @@
-import { Facebook } from 'expo';
-import { FACEBOOK_APP_ID, FACEBOOK_APP_SECRET } from 'react-native-dotenv';
+import { Facebook, Google } from 'expo';
+
+import { FACEBOOK_APP_ID, GOOGLE_CLIENT_ID } from 'react-native-dotenv';
 import { Toast } from 'native-base';
 import firebase from './firebase';
 import { WarningToastMessage } from '../constants/toasts';
 
 const facebookConfig = {
     appId: FACEBOOK_APP_ID,
-    appSecret: FACEBOOK_APP_SECRET,
+};
+
+const googleConfig = {
+    clientId: GOOGLE_CLIENT_ID,
 };
 
 export default class socialService {
@@ -31,10 +35,33 @@ export default class socialService {
                 // Sign in with credential from the Facebook user.
                 return firebase.auth().signInAndRetrieveDataWithCredential(credential);
             }
-            return new Promise({ error: true });
+            return new Promise(resolve => resolve({ cancelled: true }));
         } catch ({ message }) {
             Toast.show(WarningToastMessage(message));
         }
-        return new Promise({ error: true });
+        return new Promise(resolve => resolve({ error: true }));
+    }
+
+    static async loginWithGoogle() {
+        try {
+            const { clientId } = googleConfig;
+
+            const { type, accessToken, idToken } = await Google.logInAsync({ clientId });
+
+            if (type === 'success' && accessToken && idToken) {
+                console.log('type: ', type);
+                /* `accessToken` is now valid and can be used to get data from the Google API with HTTP requests */
+                const credential = firebase.auth.GoogleAuthProvider.credential(
+                    idToken,
+                    accessToken
+                );
+                console.log('cred: ', credential);
+                return firebase.auth().signInAndRetrieveDataWithCredential(credential);
+            }
+            return new Promise(resolve => resolve({ cancelled: true }));
+        } catch ({ message }) {
+            Toast.show(WarningToastMessage(message));
+        }
+        return new Promise(resolve => resolve({ error: true }));
     }
 }
