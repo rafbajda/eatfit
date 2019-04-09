@@ -40,6 +40,7 @@ if (__DEV__) {
             applyMiddleware(
                 navMiddleware,
                 globalMiddlewares.configMiddleware,
+                globalMiddlewares.authMiddleware,
                 signUpMiddleware,
                 verificationMiddleware,
                 forgotPasswordMiddleware,
@@ -58,6 +59,7 @@ if (__DEV__) {
             applyMiddleware(
                 navMiddleware,
                 globalMiddlewares.configMiddleware,
+                globalMiddlewares.authMiddleware,
                 signUpMiddleware,
                 verificationMiddleware,
                 forgotPasswordMiddleware,

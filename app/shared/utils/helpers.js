@@ -46,7 +46,13 @@ const createUserObjectByProvider = (provider, data) => {
     }
 };
 
+const checkBoxSetter = (props, fieldName) => {
+    props.setFieldValue(fieldName, !props.values[fieldName]);
+    props.setFieldTouched(fieldName, true);
+};
+
 export default {
     normalizeKeysToCamelCase,
     createUserObjectByProvider,
+    checkBoxSetter,
 };

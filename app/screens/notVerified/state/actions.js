@@ -1,9 +1,4 @@
 /* eslint-disable import/prefer-default-export */
-import { Toast } from 'native-base';
-import firebaseOps from '../../../shared/utils/firebaseOperations';
-import { emailSentToast, CheckVerificationRefreshToast } from '../../../shared/constants/toasts';
-import screens from '../../../navigation/screens';
-
 export const SEND_VERIFICATION_MAIL = '[verification] send verification email';
 export const SEND_VERIFICATION_MAIL_SUCCESS = '[verification] send verification email success';
 export const SEND_VERIFICATION_MAIL_ERROR = '[verification] send verification email error';
@@ -25,58 +20,34 @@ export const checkVerificationStatusError = payload => ({
     payload,
 });
 
-export const checkVerificationStatus = payload => dispatch => {
-    dispatch({
-        type: CHECK_VERIFICATION_STATUS,
-    });
+export const checkVerificationStatus = payload => ({
+    type: CHECK_VERIFICATION_STATUS,
+    payload,
+});
 
-    firebaseOps
-        .reloadUserAuth()
-        .then(() => {
-            const user = firebaseOps.getAuthCurrentUser();
-            const pd = { user, nav: payload };
-            dispatch(checkVerificationStatusSuccess(pd));
-        })
-        .catch(error => checkVerificationStatusError(error));
-};
+export const sendVerificationEmailSuccess = payload => ({
+    type: SEND_VERIFICATION_MAIL_SUCCESS,
+    payload,
+});
+export const sendVerificationEmailError = payload => ({
+    type: SEND_VERIFICATION_MAIL_ERROR,
+    payload,
+});
 
-const sendVerificationEmailSuccess = payload => ({ type: SEND_VERIFICATION_MAIL_SUCCESS, payload });
-const sendVerificationEmailError = payload => ({ type: SEND_VERIFICATION_MAIL_ERROR, payload });
-
-export const sendVerificationEmail = () => dispatch => {
-    dispatch({
-        type: SEND_VERIFICATION_MAIL,
-    });
-    Toast.show(emailSentToast);
-    firebaseOps
-        .sendVerificationEmail()
-        .then(user => sendVerificationEmailSuccess(user))
-        .catch(error => sendVerificationEmailError(error));
-};
+export const sendVerificationEmail = () => ({
+    type: SEND_VERIFICATION_MAIL,
+});
 
 export const updateUserVerificationSuccess = () => ({
     type: UPDATE_USER_VERIFICATION_SUCCESS,
 });
+
 export const updateUserVerificationError = payload => ({
     type: UPDATE_USER_VERIFICATION_ERROR,
     payload,
 });
 
-export const updateUserVerification = payload => dispatch => {
-    const { user, nav } = { ...payload };
-    dispatch({
-        type: UPDATE_USER_VERIFICATION,
-    });
-    if (!user.emailVerified) {
-        Toast.show(CheckVerificationRefreshToast);
-        dispatch(updateUserVerificationSuccess());
-    } else {
-        firebaseOps
-            .updateUserVerificationProperty(user.uid, user.emailVerified)
-            .then(() => {
-                nav.navigate(screens.Home);
-                dispatch(updateUserVerificationSuccess());
-            })
-            .catch(error => dispatch(updateUserVerificationError(error)));
-    }
-};
+export const updateUserVerification = payload => ({
+    type: UPDATE_USER_VERIFICATION,
+    payload,
+});

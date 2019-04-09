@@ -1,3 +1,4 @@
+/* eslint-disable no-case-declarations */
 import {
     LOGIN_FACEBOOK,
     loginFacebookError,
@@ -7,13 +8,26 @@ import {
     LOGIN_GOOGLE,
     loginGoogleError,
     loginGoogleSuccess,
+    loginEmailSuccess,
+    loginEmailError,
+    LOGIN_EMAIL,
 } from './actions';
 import socialService from '../../../shared/modules/socialService';
 import { createUserObject } from '../../signUp/state/actions';
+import firebaseOperations from '../../../shared/utils/firebaseOperations';
 
 const loginMiddleware = store => next => action => {
     if (typeof action === 'object') {
         switch (action.type) {
+            case LOGIN_EMAIL:
+                const { email, password, newsletter } = { ...action.payload };
+                firebaseOperations
+                    .signInEmail(email, password)
+                    .then(user => {
+                        store.dispatch(loginEmailSuccess({ ...user, newsletter }));
+                    })
+                    .catch(error => store.dispatch(loginEmailError(error)));
+                break;
             case LOGIN_FACEBOOK:
                 socialService
                     .loginWithFacebook()
@@ -39,7 +53,6 @@ const loginMiddleware = store => next => action => {
                         if (login && login.error) {
                             store.dispatch(loginGoogleError(login.error));
                         } else {
-                            console.log('l: ', login);
                             const { user, additionalUserInfo } = { ...login };
                             store.dispatch(
                                 loginGoogleSuccess({

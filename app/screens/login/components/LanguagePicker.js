@@ -1,10 +1,7 @@
 import React from 'react';
 import { Grid, Col, Item, Picker, Icon } from 'native-base';
-import { connect } from 'react-redux';
 import { LanguageRow, PickerColumn } from '../styles/loginStyles';
 import { placeholderStyle } from '../styles/languagePickerStyles';
-import { setLanguage } from '../state/actions';
-import { pickedLanguageSelector } from '../state/selectors';
 import { deepBlue } from '../../../shared/constants/colors';
 
 const LanguagePicker = props => {
@@ -39,15 +36,4 @@ const LanguagePicker = props => {
     );
 };
 
-const mapStateToProps = state => ({
-    currentLanguage: pickedLanguageSelector(state),
-});
-
-const mapDispatchToProps = dispatch => ({
-    setCurrentLanguage: language => dispatch(setLanguage(language)),
-});
-
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(LanguagePicker);
+export default LanguagePicker;

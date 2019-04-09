@@ -4,6 +4,9 @@ import screens from '../../navigation/screens';
 import { UserMismatchingToast } from '../constants/toasts';
 import ops from './helpers';
 
+const signInEmail = (email, password) =>
+    firebase.auth().signInWithEmailAndPassword(email, password);
+
 const resetPassword = email => firebase.auth().sendPasswordResetEmail(email);
 
 const getUserById = id => {
@@ -18,7 +21,6 @@ const reloadUserAuth = () => firebase.auth().currentUser.reload();
 
 const checkUserNavigation = (nav, setUser) => {
     firebase.auth().onAuthStateChanged(user => {
-        console.log('user: ', user);
         if (user) {
             getUserById(user.uid)
                 .then(doc => {
@@ -64,15 +66,12 @@ const sendVerificationEmail = () => {
 };
 
 const createUserInstance = data => {
-    console.log('D: ', data);
     let user = null;
     let provider = 'email';
     if (data.user && data.additionalUserInfo) {
         provider = data.additionalUserInfo.providerId;
     }
     user = ops.createUserObjectByProvider(provider, data);
-
-    console.log('established user: ', user);
 
     return firebase
         .firestore()
@@ -102,4 +101,5 @@ export default {
     reloadUserAuth,
     getAuthCurrentUser,
     resetPassword,
+    signInEmail,
 };

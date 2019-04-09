@@ -1,6 +1,3 @@
-/* eslint-disable import/prefer-default-export */
-/* eslint-disable global-require */
-
 export const SET_LANGUAGE = '[login] set language';
 export const SET_USER = '[login] set user';
 
@@ -27,21 +24,10 @@ export const keyboardHide = () => ({ type: KEYBOARD_HIDE });
 export const loginEmailSuccess = payload => ({ type: LOGIN_EMAIL_SUCCESS, payload });
 export const loginEmailError = payload => ({ type: LOGIN_EMAIL_ERROR, payload });
 
-export const loginEmail = payload => (dispatch, getState, { getFirebase }) => {
-    const firebase = getFirebase();
-    const { email, password, newsletter } = { ...payload };
-    dispatch({
-        type: LOGIN_EMAIL,
-        payload,
-    });
-    firebase
-        .auth()
-        .signInWithEmailAndPassword(email, password)
-        .then(user => {
-            dispatch(loginEmailSuccess({ ...user, newsletter }));
-        })
-        .catch(error => dispatch(loginEmailError(error)));
-};
+export const loginEmail = payload => ({
+    type: LOGIN_EMAIL,
+    payload,
+});
 
 export const loginFacebook = () => ({ type: LOGIN_FACEBOOK });
 export const loginFacebookSuccess = payload => ({ type: LOGIN_FACEBOOK_SUCCESS, payload });

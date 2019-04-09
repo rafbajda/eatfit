@@ -1,11 +1,9 @@
 import React from 'react';
 import { Item, Input, Content, Text } from 'native-base';
 import { Formik } from 'formik';
-import { connect } from 'react-redux';
 import { DotIndicator, UIActivityIndicator } from 'react-native-indicators';
 import { CenterRow, CenterFormContainer, ErrorText } from '../../../shared/styles/common';
 import { ForgotPasswordText, LoginButton, additionalTopPadding } from '../styles/loginFormStyles';
-import { loginEmail } from '../state/actions';
 import { globalGreen, globalWhite } from '../../../shared/constants/colors';
 import screens from '../../../navigation/screens';
 import { loginSchema } from '../../../shared/utils/validationSchemas';
@@ -73,11 +71,4 @@ const LoginForm = props => {
     );
 };
 
-const mapDispatchToProps = dispatch => ({
-    login: payload => dispatch(loginEmail(payload)),
-});
-
-export default connect(
-    null,
-    mapDispatchToProps
-)(LoginForm);
+export default LoginForm;

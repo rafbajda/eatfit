@@ -5,7 +5,7 @@ import { Text, Item } from 'native-base';
 import { deepGrey } from '../../../shared/constants/colors';
 
 export const CheckboxInformationText = styled(Text)`
-    color: ${deepGrey}
+    color: ${deepGrey};
     font-size: 13;
     font-weight: 400;
     padding-left: 15;

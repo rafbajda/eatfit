@@ -11,9 +11,9 @@ import {
 } from '../../../shared/styles/common';
 import { CheckboxItem, CheckboxInformationText } from '../styles/singUpStyles';
 import { globalGreen, globalWhite } from '../../../shared/constants/colors';
-import { checkBoxSetter } from '../../../shared/utils/formHelpers';
 import { signUpSchema } from '../../../shared/utils/validationSchemas';
 import { signUpInitialValues } from '../../../shared/constants/formInitialValues';
+import ops from '../../../shared/utils/helpers';
 
 const SignUpForm = props => {
     const { signUp, isAuthLoading } = { ...props };
@@ -64,7 +64,7 @@ const SignUpForm = props => {
                                 {formikProps.touched.confirmPassword &&
                                     formikProps.errors.confirmPassword}
                             </ErrorText>
-                            <CheckboxItem onPress={() => checkBoxSetter(formikProps, 'terms')}>
+                            <CheckboxItem onPress={() => ops.checkBoxSetter(formikProps, 'terms')}>
                                 <CheckBox checked={formikProps.values.terms} color={globalGreen} />
                                 <Body>
                                     <CheckboxInformationText>
@@ -75,7 +75,9 @@ const SignUpForm = props => {
                             <ErrorTextPaddingLeft>
                                 {formikProps.touched.terms && formikProps.errors.terms}
                             </ErrorTextPaddingLeft>
-                            <CheckboxItem onPress={() => checkBoxSetter(formikProps, 'newsletter')}>
+                            <CheckboxItem
+                                onPress={() => ops.checkBoxSetter(formikProps, 'newsletter')}
+                            >
                                 <CheckBox
                                     color={globalGreen}
                                     checked={formikProps.values.newsletter}

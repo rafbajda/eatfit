@@ -6,8 +6,20 @@ import { firestoreConnect } from 'react-redux-firebase';
 import { Keyboard } from 'react-native';
 import { GlobalContainer } from '../../shared/styles/common';
 import LanguagePicker from './components/LanguagePicker';
-import { keyboardShow, keyboardHide, loginFacebook, setUser, loginGoogle } from './state/actions';
-import { languagesSelector, keyboardOnScreenSelector } from './state/selectors';
+import {
+    keyboardShow,
+    keyboardHide,
+    loginFacebook,
+    setUser,
+    loginGoogle,
+    setLanguage,
+    loginEmail,
+} from './state/actions';
+import {
+    languagesSelector,
+    keyboardOnScreenSelector,
+    pickedLanguageSelector,
+} from './state/selectors';
 import LoginForm from './components/LoginForm';
 import LoginDivider from './components/LoginDivider';
 import SocialLogin from './components/SocialLogin';
@@ -47,6 +59,9 @@ class LoginScreen extends React.Component {
             isNoUserLoggedIn,
             loginSocialFacebook,
             loginSocialGoogle,
+            setCurrentLanguage,
+            currentLanguage,
+            login,
         } = {
             ...this.props,
         };
@@ -55,9 +70,19 @@ class LoginScreen extends React.Component {
         }
         return (
             <GlobalContainer>
-                <LanguagePicker languages={languages} hidden={isKeyboardVisible} />
+                <LanguagePicker
+                    languages={languages}
+                    hidden={isKeyboardVisible}
+                    setCurrentLanguage={setCurrentLanguage}
+                    currentLanguage={currentLanguage}
+                />
                 <LoginIcon hidden={isKeyboardVisible} />
-                <LoginForm authLoading={isAuthLoading} nav={navigation} isKeyboardVisible />
+                <LoginForm
+                    authLoading={isAuthLoading}
+                    nav={navigation}
+                    login={login}
+                    isKeyboardVisible={isKeyboardVisible}
+                />
                 <LoginDivider />
                 <SocialLogin loginFacebook={loginSocialFacebook} loginGoogle={loginSocialGoogle} />
                 <SignUp nav={navigation} />
@@ -71,9 +96,12 @@ const mapStateToProps = state => ({
     isKeyboardVisible: keyboardOnScreenSelector(state),
     isAuthLoading: authLoadingSelector(state),
     isNoUserLoggedIn: isNoUserLoggedInSelector(state),
+    currentLanguage: pickedLanguageSelector(state),
 });
 
 const mapDispatchToProps = dispatch => ({
+    login: payload => dispatch(loginEmail(payload)),
+    setCurrentLanguage: language => dispatch(setLanguage(language)),
     setUserState: user => dispatch(setUser(user)),
     loginSocialFacebook: () => dispatch(loginFacebook()),
     loginSocialGoogle: () => dispatch(loginGoogle()),
