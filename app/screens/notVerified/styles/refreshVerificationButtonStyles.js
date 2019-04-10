@@ -1,4 +1,3 @@
-/* eslint-disable import/prefer-default-export */
 import styled from 'styled-components';
 import { Row, Button } from 'native-base';
 import { globalGreen } from '../../../shared/constants/colors';
@@ -17,4 +16,8 @@ export const RefreshButton = styled(Button)`
     justify-content: center;
 `;
 
-export const RefreshButtonTextStyle = { fontSize: 17 };
+const RefreshButtonTextStyle = { fontSize: 17 };
+
+export default {
+    RefreshButtonTextStyle,
+};

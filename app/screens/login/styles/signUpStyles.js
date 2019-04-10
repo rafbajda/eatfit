@@ -1,4 +1,3 @@
-/* eslint-disable import/prefer-default-export */
 import styled from 'styled-components';
 import { Text } from 'native-base';
 import { CenterRow } from '../../../shared/styles/common';
@@ -19,3 +18,9 @@ export const SignUpText = styled(Text)`
     color: ${deepBlue};
     font-weight: bold;
 `;
+
+export default {
+    SignUpContainer,
+    InformationText,
+    SignUpText,
+};

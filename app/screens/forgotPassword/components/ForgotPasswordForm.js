@@ -8,12 +8,22 @@ import {
     ErrorText,
     SubmitFormButton,
 } from '../../../shared/styles/common';
-import { forgotPasswordInitialValues } from '../../../shared/constants/formInitialValues';
+import initialFormValues from '../../../shared/constants/formInitialValues';
 import { globalWhite } from '../../../shared/constants/colors';
-import { forgotPasswordSchema } from '../../../shared/utils/validationSchemas';
+import validationSchemas from '../../../shared/utils/validationSchemas';
 
 const ForgotPasswordForm = props => {
-    const { resetPassword, isAuthLoading, nav } = { ...props };
+    const {
+        resetPassword,
+        isAuthLoading,
+        nav,
+        forgotPasswordInitialValues,
+        forgotPasswordSchema,
+    } = {
+        ...props,
+        ...initialFormValues,
+        ...validationSchemas,
+    };
     return (
         <Formik
             initialValues={forgotPasswordInitialValues}

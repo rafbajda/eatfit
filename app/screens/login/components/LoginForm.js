@@ -3,14 +3,27 @@ import { Item, Input, Content, Text } from 'native-base';
 import { Formik } from 'formik';
 import { DotIndicator, UIActivityIndicator } from 'react-native-indicators';
 import { CenterRow, CenterFormContainer, ErrorText } from '../../../shared/styles/common';
-import { ForgotPasswordText, LoginButton, additionalTopPadding } from '../styles/loginFormStyles';
+import styles, { ForgotPasswordText, LoginButton } from '../styles/loginFormStyles';
 import { globalGreen, globalWhite } from '../../../shared/constants/colors';
 import screens from '../../../navigation/screens';
-import { loginSchema } from '../../../shared/utils/validationSchemas';
-import { loginInitialValues } from '../../../shared/constants/formInitialValues';
+import validationSchemas from '../../../shared/utils/validationSchemas';
+import formInitialValues from '../../../shared/constants/formInitialValues';
 
 const LoginForm = props => {
-    const { login, isKeyboardVisible, authLoading, nav } = { ...props };
+    const {
+        login,
+        isKeyboardVisible,
+        authLoading,
+        nav,
+        additionalTopPadding,
+        loginInitialValues,
+        loginSchema,
+    } = {
+        ...props,
+        ...styles,
+        ...formInitialValues,
+        ...validationSchemas,
+    };
 
     return (
         <Formik

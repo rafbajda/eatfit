@@ -1,7 +1,8 @@
 import { globalWhite } from './colors';
-import { globalInfoToastStyle } from '../styles/toasts';
+import toastStyles from '../styles/toasts';
 
-/* eslint-disable import/prefer-default-export */
+const { globalInfoToastStyle } = { ...toastStyles };
+
 export const UserMismatchingToast = {
     text: 'User account object error occurred!',
     type: 'warning',
@@ -57,3 +58,11 @@ export const WarningToastMessage = message => ({
         color: globalWhite,
     },
 });
+
+export default {
+    WarningToastMessage,
+    PasswordResetEmailSentToast,
+    CheckVerificationRefreshToast,
+    emailSentToast,
+    UserMismatchingToast,
+};

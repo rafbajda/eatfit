@@ -1,12 +1,12 @@
 import React from 'react';
 import { Thumbnail } from 'native-base';
 import { CenterRow } from '../../../shared/styles/common';
-import { iconStyle } from '../styles/loginIconStyles';
+import styles from '../styles/loginIconStyles';
 
 const logoImage = require('../../../assets/images/logo2.png');
 
 const LoginIcon = props => {
-    const { hidden } = { ...props };
+    const { hidden, iconStyle } = { ...props, ...styles };
     if (hidden) {
         return null;
     }

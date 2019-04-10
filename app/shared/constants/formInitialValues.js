@@ -1,14 +1,19 @@
-/* eslint-disable import/prefer-default-export */
-export const forgotPasswordInitialValues = {
+const forgotPasswordInitialValues = {
     email: '',
 };
 
-export const loginInitialValues = { email: '', password: '' };
+const loginInitialValues = { email: '', password: '' };
 
-export const signUpInitialValues = {
+const signUpInitialValues = {
     email: '',
     password: '',
     confirmPassword: '',
     terms: false,
     newsletter: false,
+};
+
+export default {
+    signUpInitialValues,
+    loginInitialValues,
+    forgotPasswordInitialValues,
 };

@@ -1,4 +1,3 @@
-/* eslint-disable import/prefer-default-export */
 import styled from 'styled-components';
 import { Button } from 'native-base';
 import { globalGreen } from '../../../shared/constants/colors';
@@ -11,7 +10,7 @@ export const OtherActionButton = styled(Button)`
     justify-content: center;
 `;
 
-export const OtherActionRowStyle = {
+const OtherActionRowStyle = {
     flexDirection: 'row',
     justifyContent: 'center',
     height: 'auto',
@@ -19,6 +18,12 @@ export const OtherActionRowStyle = {
     paddingTop: 12,
 };
 
-export const OtherActionTextStyle = { fontSize: 16 };
+const OtherActionTextStyle = { fontSize: 16 };
 
-export const mailIconStyle = { color: globalGreen, fontSize: 200 };
+const mailIconStyle = { color: globalGreen, fontSize: 200 };
+
+export default {
+    OtherActionTextStyle,
+    mailIconStyle,
+    OtherActionRowStyle,
+};

@@ -1,4 +1,3 @@
-/* eslint-disable import/prefer-default-export */
 import styled from 'styled-components';
 import { Text, Button } from 'native-base';
 import { deepBlue } from '../../../shared/constants/colors';
@@ -18,6 +17,12 @@ export const LoginButton = styled(Button)`
     font-weight: bold;
 `;
 
-export const additionalTopPadding = {
+const additionalTopPadding = {
     paddingTop: 15,
+};
+
+export default {
+    additionalTopPadding,
+    LoginButton,
+    ForgotPasswordText,
 };

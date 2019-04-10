@@ -1,18 +1,8 @@
 import initialState from '../constants/state';
-import { LOAD_CONFIG, LOAD_CONFIG_DONE, LOGOUT, LOGOUT_SUCCESS, LOGOUT_ERROR } from './actions';
-import loginActionTypes from '../../screens/login/state/actions';
-import {
-    CREATE_ACCOUNT,
-    CREATE_USER_OBJECT_SUCCESS,
-    CREATE_ACCOUNT_ERROR,
-    CREATE_USER_OBJECT_ERROR,
-} from '../../screens/signUp/state/actions';
-import {
-    UPDATE_USER_VERIFICATION_SUCCESS,
-    UPDATE_USER_VERIFICATION_ERROR,
-    CHECK_VERIFICATION_STATUS_ERROR,
-    CHECK_VERIFICATION_STATUS,
-} from '../../screens/notVerified/state/actions';
+import { actionTypes as globalActionTypes } from './actions';
+import { actionTypes as loginActionTypes } from '../../screens/login/state/actions';
+import signUpActions from '../../screens/signUp/state/actions';
+import { actionTypes as verificationActionTypes } from '../../screens/notVerified/state/actions';
 import forgotPasswordActions from '../../screens/forgotPassword/state/actions';
 
 import ops from '../utils/helpers';
@@ -22,12 +12,12 @@ const initialAuthState = initialState.auth;
 
 const configReducer = (state = initialConfigState, action) => {
     switch (action.type) {
-        case LOAD_CONFIG:
+        case globalActionTypes.LOAD_CONFIG:
             return {
                 ...state,
                 isDataLoading: true,
             };
-        case LOAD_CONFIG_DONE:
+        case globalActionTypes.LOAD_CONFIG_DONE:
             return {
                 ...state,
                 isDataLoading: false,
@@ -55,9 +45,9 @@ const configReducer = (state = initialConfigState, action) => {
 const authReducer = (state = initialAuthState, action) => {
     switch (action.type) {
         case loginActionTypes.LOGIN_EMAIL:
-        case LOGOUT:
-        case CREATE_ACCOUNT:
-        case CHECK_VERIFICATION_STATUS:
+        case globalActionTypes.LOGOUT:
+        case signUpActions.CREATE_ACCOUNT:
+        case verificationActionTypes.CHECK_VERIFICATION_STATUS:
         case forgotPasswordActions.SEND_RESET_PASSWORD_MAIL:
             return {
                 ...state,
@@ -66,13 +56,13 @@ const authReducer = (state = initialAuthState, action) => {
         case forgotPasswordActions.SEND_RESET_PASSWORD_MAIL_ERROR:
         case forgotPasswordActions.SEND_RESET_PASSWORD_MAIL_SUCCESS:
         case loginActionTypes.LOGIN_EMAIL_ERROR:
-        case LOGOUT_ERROR:
-        case CREATE_USER_OBJECT_SUCCESS:
-        case CREATE_ACCOUNT_ERROR:
-        case CREATE_USER_OBJECT_ERROR:
-        case CHECK_VERIFICATION_STATUS_ERROR:
-        case UPDATE_USER_VERIFICATION_SUCCESS:
-        case UPDATE_USER_VERIFICATION_ERROR:
+        case globalActionTypes.LOGOUT_ERROR:
+        case signUpActions.CREATE_USER_OBJECT_SUCCESS:
+        case signUpActions.CREATE_ACCOUNT_ERROR:
+        case signUpActions.CREATE_USER_OBJECT_ERROR:
+        case verificationActionTypes.CHECK_VERIFICATION_STATUS_ERROR:
+        case verificationActionTypes.UPDATE_USER_VERIFICATION_SUCCESS:
+        case verificationActionTypes.UPDATE_USER_VERIFICATION_ERROR:
         case loginActionTypes.LOGIN_EMAIL_SUCCESS:
             return {
                 ...state,
@@ -85,7 +75,7 @@ const authReducer = (state = initialAuthState, action) => {
                 user: ops.normalizeKeysToCamelCase(action.payload),
             };
 
-        case LOGOUT_SUCCESS:
+        case globalActionTypes.LOGOUT_SUCCESS:
             return {
                 ...state,
                 isLoading: false,

@@ -11,12 +11,16 @@ import {
 } from '../../../shared/styles/common';
 import { CheckboxItem, CheckboxInformationText } from '../styles/singUpStyles';
 import { globalGreen, globalWhite } from '../../../shared/constants/colors';
-import { signUpSchema } from '../../../shared/utils/validationSchemas';
-import { signUpInitialValues } from '../../../shared/constants/formInitialValues';
+import validationSchemas from '../../../shared/utils/validationSchemas';
+import formInitialValues from '../../../shared/constants/formInitialValues';
 import ops from '../../../shared/utils/helpers';
 
 const SignUpForm = props => {
-    const { signUp, isAuthLoading } = { ...props };
+    const { signUp, isAuthLoading, signUpInitialValues, signUpSchema } = {
+        ...props,
+        ...formInitialValues,
+        ...validationSchemas,
+    };
     return (
         <Formik
             initialValues={signUpInitialValues}

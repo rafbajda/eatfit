@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { createAccount } from './state/actions';
-import { authLoadingSelector } from '../../shared/state/selectors';
+import actions from './state/actions';
+import globalSelectors from '../../shared/state/selectors';
 import SignUpForm from './components/SignUpForm';
 
 const SignUpScreen = props => {
@@ -10,11 +10,11 @@ const SignUpScreen = props => {
 };
 
 const mapStateToProps = state => ({
-    isAuthLoading: authLoadingSelector(state),
+    isAuthLoading: globalSelectors.authLoadingSelector(state),
 });
 
 const mapDispatchToProps = dispatch => ({
-    signUp: user => dispatch(createAccount(user)),
+    signUp: user => dispatch(actions.createAccount(user)),
 });
 
 export default connect(

@@ -1,4 +1,3 @@
-/* eslint-disable import/prefer-default-export */
 import { Text } from 'native-base';
 import styled from 'styled-components';
 import { deepGrey, mediumGrey } from '../../../shared/constants/colors';
@@ -12,3 +11,8 @@ export const VerificationInfoMessageText = styled(Text)`
     font-size: 15;
     color: ${mediumGrey};
 `;
+
+export default {
+    VerificationMainMessageText,
+    VerificationInfoMessageText,
+};

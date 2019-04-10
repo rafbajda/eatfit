@@ -31,7 +31,6 @@ const combinedReducer = combineReducers({
 });
 
 if (__DEV__) {
-    // eslint-disable-line
   const devToolsEnhancer = require('remote-redux-devtools'); // eslint-disable-line
     store = createStore(
         combinedReducer,

@@ -1,11 +1,11 @@
 import React from 'react';
 import { Icon } from 'native-base';
 import { connect } from 'react-redux';
-import { mailIconStyle } from './styles/notVerifiedStyles';
-import { userSelector } from '../login/state/selectors';
-import { logout } from '../../shared/state/actions';
-import { sendVerificationEmail, checkVerificationStatus } from './state/actions';
-import { authLoadingSelector } from '../../shared/state/selectors';
+import styles from './styles/notVerifiedStyles';
+import loginSelectors from '../login/state/selectors';
+import globalActions from '../../shared/state/actions';
+import actions from './state/actions';
+import globalSelectors from '../../shared/state/selectors';
 import VerificationMessage from './components/VerificationMessage';
 import RefreshVerificationButton from './components/RefreshVerificationButton';
 import NoEmailMessage from './components/NoEmailMessage';
@@ -15,7 +15,15 @@ import LogoutButton from './components/LogoutButton';
 import { CenterContainer } from '../../shared/styles/common';
 
 const NotVerifiedScreen = props => {
-    const { user, signOut, sendEmail, checkVerification, navigation, isAuthLoading } = { ...props };
+    const {
+        user,
+        signOut,
+        sendEmail,
+        checkVerification,
+        navigation,
+        isAuthLoading,
+        mailIconStyle,
+    } = { ...props, ...styles };
     return (
         <CenterContainer>
             <Icon type="MaterialIcons" name="email" style={mailIconStyle} />
@@ -34,14 +42,14 @@ const NotVerifiedScreen = props => {
 };
 
 const mapStateToProps = state => ({
-    user: userSelector(state),
-    isAuthLoading: authLoadingSelector(state),
+    user: loginSelectors.userSelector(state),
+    isAuthLoading: globalSelectors.authLoadingSelector(state),
 });
 
 const mapDispatchToProps = dispatch => ({
-    sendEmail: () => dispatch(sendVerificationEmail()),
-    signOut: () => dispatch(logout()),
-    checkVerification: nav => dispatch(checkVerificationStatus(nav)),
+    sendEmail: () => dispatch(actions.sendVerificationEmail()),
+    signOut: () => dispatch(globalActions.logout()),
+    checkVerification: nav => dispatch(actions.checkVerificationStatus(nav)),
 });
 
 export default connect(

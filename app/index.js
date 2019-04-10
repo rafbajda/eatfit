@@ -3,8 +3,8 @@ import { createAppContainer } from 'react-navigation';
 import { compose } from 'redux';
 import { firestoreConnect } from 'react-redux-firebase';
 import { connect } from 'react-redux';
-import { loadingSelector } from './shared/state/selectors';
-import { loadConfig } from './shared/state/actions';
+import globalSelectors from './shared/state/selectors';
+import globalActions from './shared/state/actions';
 import RootNavigator from './navigation/RootNavigator';
 import GlobalLoader from './shared/components/GlobalLoader';
 
@@ -27,11 +27,11 @@ class Application extends React.Component {
 }
 
 const mapStateToProps = state => ({
-    loading: loadingSelector(state),
+    loading: globalSelectors.loadingSelector(state),
 });
 
 const mapDispatchToProps = dispatch => ({
-    getConfig: () => dispatch(loadConfig()),
+    getConfig: () => dispatch(globalActions.loadConfig()),
 });
 
 export default compose(

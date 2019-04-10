@@ -6,18 +6,14 @@ import { Keyboard } from 'react-native';
 import { GlobalContainer } from '../../shared/styles/common';
 import LanguagePicker from './components/LanguagePicker';
 import actions from './state/actions';
-import {
-    languagesSelector,
-    keyboardOnScreenSelector,
-    pickedLanguageSelector,
-} from './state/selectors';
+import loginSelectors from './state/selectors';
 import LoginForm from './components/LoginForm';
 import LoginDivider from './components/LoginDivider';
 import SocialLogin from './components/SocialLogin';
 import SignUp from './components/SignUp';
 import LoginIcon from './components/LoginIcon';
 import firebaseOperations from '../../shared/utils/firebaseOperations';
-import { authLoadingSelector, isNoUserLoggedInSelector } from '../../shared/state/selectors';
+import globalSelectors from '../../shared/state/selectors';
 import GlobalLoader from '../../shared/components/GlobalLoader';
 
 class LoginScreen extends React.Component {
@@ -83,11 +79,11 @@ class LoginScreen extends React.Component {
 }
 
 const mapStateToProps = state => ({
-    languages: languagesSelector(state),
-    isKeyboardVisible: keyboardOnScreenSelector(state),
-    isAuthLoading: authLoadingSelector(state),
-    isNoUserLoggedIn: isNoUserLoggedInSelector(state),
-    currentLanguage: pickedLanguageSelector(state),
+    languages: loginSelectors.languagesSelector(state),
+    isKeyboardVisible: loginSelectors.keyboardOnScreenSelector(state),
+    isAuthLoading: globalSelectors.authLoadingSelector(state),
+    isNoUserLoggedIn: globalSelectors.isNoUserLoggedInSelector(state),
+    currentLanguage: loginSelectors.pickedLanguageSelector(state),
 });
 
 const mapDispatchToProps = dispatch => ({

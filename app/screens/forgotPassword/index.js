@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { authLoadingSelector } from '../../shared/state/selectors';
+import globalSelectors from '../../shared/state/selectors';
 import ForgotPasswordForm from './components/ForgotPasswordForm';
 import { CenterContainer } from '../../shared/styles/common';
 import actions from './state/actions';
@@ -21,7 +21,7 @@ const ForgotPasswordScreen = props => {
 };
 
 const mapStateToProps = state => ({
-    isAuthLoading: authLoadingSelector(state),
+    isAuthLoading: globalSelectors.authLoadingSelector(state),
 });
 
 const mapDispatchToProps = dispatch => ({

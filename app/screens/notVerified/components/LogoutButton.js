@@ -1,13 +1,9 @@
 import React from 'react';
 import { Row, Text } from 'native-base';
-import {
-    OtherActionRowStyle,
-    OtherActionButton,
-    OtherActionTextStyle,
-} from '../styles/notVerifiedStyles';
+import styles, { OtherActionButton } from '../styles/notVerifiedStyles';
 
 const LogoutButton = props => {
-    const { signOut } = { ...props };
+    const { signOut, OtherActionRowStyle, OtherActionTextStyle } = { ...props, ...styles };
     return (
         <Row style={OtherActionRowStyle}>
             <OtherActionButton onPress={() => signOut()} rounded>

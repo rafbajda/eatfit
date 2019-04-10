@@ -1,5 +1,3 @@
-/* eslint-disable import/prefer-default-export */
-
 import styled from 'styled-components';
 import { Text, Item } from 'native-base';
 import { deepGrey } from '../../../shared/constants/colors';
@@ -15,3 +13,8 @@ export const CheckboxItem = styled(Item)`
     border-color: transparent;
     padding-top: 5;
 `;
+
+export default {
+    CheckboxInformationText,
+    CheckboxItem,
+};

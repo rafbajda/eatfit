@@ -1,13 +1,9 @@
 import React from 'react';
 import { Row, Text } from 'native-base';
-import {
-    OtherActionButton,
-    OtherActionTextStyle,
-    OtherActionRowStyle,
-} from '../styles/notVerifiedStyles';
+import styles, { OtherActionButton } from '../styles/notVerifiedStyles';
 
 const SendEmailButton = props => {
-    const { sendEmail } = { ...props };
+    const { sendEmail, OtherActionTextStyle, OtherActionRowStyle } = { ...props, ...styles };
     return (
         <Row style={OtherActionRowStyle}>
             <OtherActionButton onPress={() => sendEmail()} rounded>

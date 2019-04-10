@@ -1,4 +1,3 @@
-/* eslint-disable import/prefer-default-export */
 import styled from 'styled-components';
 import { Content, Row, Form, Text, Button, Container } from 'native-base';
 import { getStatusBarHeight } from 'react-native-status-bar-height';
@@ -51,3 +50,15 @@ export const CenterContainer = styled(Container)`
     justify-content: center;
     align-items: center;
 `;
+
+export default {
+    GlobalSpinnerContainer,
+    GlobalContainer,
+    CenterRow,
+    CenterFormContainer,
+    CenterFormContainerPaddingTop,
+    ErrorText,
+    ErrorTextPaddingLeft,
+    SubmitFormButton,
+    CenterContainer,
+};

@@ -2,7 +2,7 @@ import React from 'react';
 import { Text, Content, List, ListItem } from 'native-base';
 import { connect } from 'react-redux';
 import { GlobalContainer } from '../styles/common';
-import { logout } from '../state/actions';
+import actions from '../state/actions';
 
 const SideBar = props => {
     const { signOut } = { ...props };
@@ -31,7 +31,7 @@ const SideBar = props => {
 };
 
 export const mapDispatchToProps = dispatch => ({
-    signOut: () => dispatch(logout()),
+    signOut: () => dispatch(actions.logout()),
 });
 
 export default connect(

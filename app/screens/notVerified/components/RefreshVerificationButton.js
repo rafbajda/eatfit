@@ -2,14 +2,13 @@ import React from 'react';
 import { UIActivityIndicator } from 'react-native-indicators';
 import { Text } from 'native-base';
 import { globalWhite } from '../../../shared/constants/colors';
-import {
-    RefreshRow,
-    RefreshButton,
-    RefreshButtonTextStyle,
-} from '../styles/refreshVerificationButtonStyles';
+import styles, { RefreshRow, RefreshButton } from '../styles/refreshVerificationButtonStyles';
 
 const RefreshVerificationButton = props => {
-    const { nav, isAuthLoading, checkVerification } = { ...props };
+    const { nav, isAuthLoading, checkVerification, RefreshButtonTextStyle } = {
+        ...props,
+        ...styles,
+    };
     return (
         <RefreshRow>
             <RefreshButton onPress={() => checkVerification(nav)} disabled={isAuthLoading}>

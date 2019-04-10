@@ -1,4 +1,3 @@
-/* eslint-disable import/prefer-default-export */
 import * as yup from 'yup';
 import {
     emailValidator,
@@ -8,19 +7,25 @@ import {
     confirmPasswordValidator,
 } from './validators';
 
-export const forgotPasswordSchema = yup.object().shape({
+const forgotPasswordSchema = yup.object().shape({
     email: emailValidator,
 });
 
-export const loginSchema = yup.object().shape({
+const loginSchema = yup.object().shape({
     email: emailValidator,
     password: passwordValidator,
 });
 
-export const signUpSchema = yup.object().shape({
+const signUpSchema = yup.object().shape({
     email: emailValidator,
     password: passwordValidator,
     confirmPassword: confirmPasswordValidator('password'),
     terms: checkboxRequiredValidator,
     newsletter: checkboxValidator,
 });
+
+export default {
+    signUpSchema,
+    loginSchema,
+    forgotPasswordSchema,
+};
