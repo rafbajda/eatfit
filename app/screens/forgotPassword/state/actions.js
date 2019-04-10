@@ -1,16 +1,25 @@
-/* eslint-disable import/prefer-default-export */
-export const SEND_RESET_PASSWORD_MAIL = '[forgot password] send reset password mail';
-export const SEND_RESET_PASSWORD_MAIL_SUCCESS =
-    '[forgot password] send reset password mail success';
-export const SEND_RESET_PASSWORD_MAIL_ERROR = '[forgot password] send reset password mail error';
+export const actionTypes = {
+    SEND_RESET_PASSWORD_MAIL: '[forgot password] send reset password mail',
+    SEND_RESET_PASSWORD_MAIL_SUCCESS: '[forgot password] send reset password mail success',
+    SEND_RESET_PASSWORD_MAIL_ERROR: '[forgot password] send reset password mail error',
+};
 
-export const sendResetPasswordMailSuccess = payload => ({
-    type: SEND_RESET_PASSWORD_MAIL_SUCCESS,
+const sendResetPasswordMailSuccess = payload => ({
+    type: actionTypes.SEND_RESET_PASSWORD_MAIL_SUCCESS,
     payload,
 });
-export const sendResetPasswordMailError = payload => ({
-    type: SEND_RESET_PASSWORD_MAIL_ERROR,
+const sendResetPasswordMailError = payload => ({
+    type: actionTypes.SEND_RESET_PASSWORD_MAIL_ERROR,
     payload,
 });
 
-export const sendResetPasswordMail = payload => ({ type: SEND_RESET_PASSWORD_MAIL, payload });
+const sendResetPasswordMail = payload => ({
+    type: actionTypes.SEND_RESET_PASSWORD_MAIL,
+    payload,
+});
+
+export default {
+    sendResetPasswordMail,
+    sendResetPasswordMailSuccess,
+    sendResetPasswordMailError,
+};

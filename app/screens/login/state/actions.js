@@ -1,43 +1,55 @@
-export const SET_LANGUAGE = '[login] set language';
-export const SET_USER = '[login] set user';
+export const actionTypes = {
+    SET_LANGUAGE: '[login] set language',
+    SET_USER: '[login] set user',
+    LOGIN_EMAIL: '[login] login email',
+    LOGIN_EMAIL_SUCCESS: '[login] login email success',
+    LOGIN_EMAIL_ERROR: '[login] login email error',
+    LOGIN_FACEBOOK: '[login] login facebook',
+    LOGIN_FACEBOOK_SUCCESS: '[login] login facebook success',
+    LOGIN_FACEBOOK_ERROR: '[login] login facebook error',
+    LOGIN_GOOGLE: '[login] login google',
+    LOGIN_GOOGLE_SUCCESS: '[login] login google success',
+    LOGIN_GOOGLE_ERROR: '[login] login google error',
+    KEYBOARD_SHOW: '[login] show keyboard',
+    KEYBOARD_HIDE: '[login] hide keyboard',
+};
 
-export const LOGIN_EMAIL = '[login] login email';
-export const LOGIN_EMAIL_SUCCESS = '[login] login email success';
-export const LOGIN_EMAIL_ERROR = '[login] login email error';
-
-export const LOGIN_FACEBOOK = '[login] login facebook';
-export const LOGIN_FACEBOOK_SUCCESS = '[login] login facebook success';
-export const LOGIN_FACEBOOK_ERROR = '[login] login facebook error';
-
-export const LOGIN_GOOGLE = '[login] login google';
-export const LOGIN_GOOGLE_SUCCESS = '[login] login google success';
-export const LOGIN_GOOGLE_ERROR = '[login] login google error';
-
-export const KEYBOARD_SHOW = '[login] show keyboard';
-export const KEYBOARD_HIDE = '[login] hide keyboard';
-
-export const setUser = payload => ({ type: SET_USER, payload });
-
-export const keyboardShow = () => ({ type: KEYBOARD_SHOW });
-export const keyboardHide = () => ({ type: KEYBOARD_HIDE });
-
-export const loginEmailSuccess = payload => ({ type: LOGIN_EMAIL_SUCCESS, payload });
-export const loginEmailError = payload => ({ type: LOGIN_EMAIL_ERROR, payload });
-
-export const loginEmail = payload => ({
-    type: LOGIN_EMAIL,
+const setUser = payload => ({ type: actionTypes.SET_USER, payload });
+const setLanguage = payload => ({
+    type: actionTypes.SET_LANGUAGE,
     payload,
 });
 
-export const loginFacebook = () => ({ type: LOGIN_FACEBOOK });
-export const loginFacebookSuccess = payload => ({ type: LOGIN_FACEBOOK_SUCCESS, payload });
-export const loginFacebookError = payload => ({ type: LOGIN_FACEBOOK_ERROR, payload });
+const keyboardShow = () => ({ type: actionTypes.KEYBOARD_SHOW });
+const keyboardHide = () => ({ type: actionTypes.KEYBOARD_HIDE });
 
-export const loginGoogle = () => ({ type: LOGIN_GOOGLE });
-export const loginGoogleSuccess = payload => ({ type: LOGIN_GOOGLE_SUCCESS, payload });
-export const loginGoogleError = payload => ({ type: LOGIN_GOOGLE_ERROR, payload });
-
-export const setLanguage = payload => ({
-    type: SET_LANGUAGE,
+const loginEmail = payload => ({
+    type: actionTypes.LOGIN_EMAIL,
     payload,
 });
+const loginEmailSuccess = payload => ({ type: actionTypes.LOGIN_EMAIL_SUCCESS, payload });
+const loginEmailError = payload => ({ type: actionTypes.LOGIN_EMAIL_ERROR, payload });
+
+const loginFacebook = () => ({ type: actionTypes.LOGIN_FACEBOOK });
+const loginFacebookSuccess = payload => ({ type: actionTypes.LOGIN_FACEBOOK_SUCCESS, payload });
+const loginFacebookError = payload => ({ type: actionTypes.LOGIN_FACEBOOK_ERROR, payload });
+
+const loginGoogle = () => ({ type: actionTypes.LOGIN_GOOGLE });
+const loginGoogleSuccess = payload => ({ type: actionTypes.LOGIN_GOOGLE_SUCCESS, payload });
+const loginGoogleError = payload => ({ type: actionTypes.LOGIN_GOOGLE_ERROR, payload });
+
+export default {
+    setUser,
+    setLanguage,
+    keyboardShow,
+    keyboardHide,
+    loginEmail,
+    loginEmailSuccess,
+    loginEmailError,
+    loginFacebook,
+    loginFacebookSuccess,
+    loginFacebookError,
+    loginGoogle,
+    loginGoogleSuccess,
+    loginGoogleError,
+};

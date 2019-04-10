@@ -1,4 +1,3 @@
-/* eslint-disable react/no-unescaped-entities */
 import React from 'react';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
@@ -6,15 +5,7 @@ import { firestoreConnect } from 'react-redux-firebase';
 import { Keyboard } from 'react-native';
 import { GlobalContainer } from '../../shared/styles/common';
 import LanguagePicker from './components/LanguagePicker';
-import {
-    keyboardShow,
-    keyboardHide,
-    loginFacebook,
-    setUser,
-    loginGoogle,
-    setLanguage,
-    loginEmail,
-} from './state/actions';
+import actions from './state/actions';
 import {
     languagesSelector,
     keyboardOnScreenSelector,
@@ -100,13 +91,13 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-    login: payload => dispatch(loginEmail(payload)),
-    setCurrentLanguage: language => dispatch(setLanguage(language)),
-    setUserState: user => dispatch(setUser(user)),
-    loginSocialFacebook: () => dispatch(loginFacebook()),
-    loginSocialGoogle: () => dispatch(loginGoogle()),
-    onShowKeyboard: () => dispatch(keyboardShow()),
-    onHideKeyboard: () => dispatch(keyboardHide()),
+    login: payload => dispatch(actions.loginEmail(payload)),
+    setCurrentLanguage: language => dispatch(actions.setLanguage(language)),
+    setUserState: user => dispatch(actions.setUser(user)),
+    loginSocialFacebook: () => dispatch(actions.loginFacebook()),
+    loginSocialGoogle: () => dispatch(actions.loginGoogle()),
+    onShowKeyboard: () => dispatch(actions.keyboardShow()),
+    onHideKeyboard: () => dispatch(actions.keyboardHide()),
 });
 
 export default compose(
