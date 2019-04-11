@@ -1,5 +1,6 @@
 import { actionTypes } from './actions';
 import ops from '../utils/operations';
+import signUpOperations from '../../screens/signUp/utils/operations';
 
 const configMiddleware = store => next => action => {
     const { dispatch } = { ...store };
@@ -21,10 +22,16 @@ const configMiddleware = store => next => action => {
 };
 
 const authMiddleware = store => next => action => {
-    const { dispatch } = { ...store };
+    const { payload, dispatch } = { ...store, ...action };
     switch (action.type) {
         case actionTypes.LOGOUT:
             ops.logout(dispatch);
+            break;
+        case actionTypes.CREATE_USER_OBJECT:
+            ops.createUserObject(payload, dispatch);
+            break;
+        case actionTypes.CREATE_USER_OBJECT_SUCCESS:
+            signUpOperations.sendVerification(store);
             break;
         default:
             return next(action);

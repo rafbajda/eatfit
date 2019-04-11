@@ -15,7 +15,7 @@ const loginMiddleware = store => next => action => {
             break;
         case actionTypes.LOGIN_FACEBOOK_SUCCESS:
         case actionTypes.LOGIN_GOOGLE_SUCCESS:
-            ops.createUserObject(payload, dispatch);
+            ops.dispatchCreateUserObject(payload, dispatch);
             break;
         default:
             return next(action);

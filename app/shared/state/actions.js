@@ -7,7 +7,17 @@ export const actionTypes = {
     LOGOUT: '[auth] logout',
     LOGOUT_SUCCESS: '[auth] logout success',
     LOGOUT_ERROR: '[auth] logout error',
+    CREATE_USER_OBJECT: '[sign up] create user object',
+    CREATE_USER_OBJECT_SUCCESS: '[sign up] create user object success',
+    CREATE_USER_OBJECT_ERROR: '[sign up] create user object error',
 };
+
+const createUserObject = payload => ({ type: actionTypes.CREATE_USER_OBJECT, payload });
+const createUserObjectSuccess = payload => ({
+    type: actionTypes.CREATE_USER_OBJECT_SUCCESS,
+    payload,
+});
+const createUserObjectError = payload => ({ type: actionTypes.CREATE_USER_OBJECT_ERROR, payload });
 
 const logout = () => ({
     type: actionTypes.LOGOUT,
@@ -46,4 +56,7 @@ export default {
     getFontsError,
     getFonts,
     loadConfigDone,
+    createUserObject,
+    createUserObjectSuccess,
+    createUserObjectError,
 };

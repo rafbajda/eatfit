@@ -1,4 +1,5 @@
 import actions from '../state/actions';
+import globalActions from '../../../shared/state/actions';
 import firebaseOps from '../../../shared/utils/firebaseOperations';
 import socialService from '../../../shared/modules/socialService';
 
@@ -49,11 +50,11 @@ const signInGoogle = dispatch => {
         .catch(error => dispatch(actions.loginGoogleError(error)));
 };
 
-const createUserObject = (data, dispatch) => dispatch(createUserObject(data));
+const dispatchCreateUserObject = (data, dispatch) => dispatch(globalActions.createUserObject(data));
 
 export default {
     signInEmail,
     signInFacebook,
     signInGoogle,
-    createUserObject,
+    dispatchCreateUserObject,
 };

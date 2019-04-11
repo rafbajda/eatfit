@@ -5,15 +5,11 @@ import firebaseOps from '../../../shared/utils/firebaseOperations';
 import screens from '../../../navigation/screens';
 
 const updateUserVerification = (data, dispatch) => {
-    console.log(data);
-    console.log('d: ', dispatch);
     const { user, nav } = { ...data };
-    console.log(user, user.emailVerified);
     if (!user.emailVerified) {
         Toast.show(CheckVerificationRefreshToast);
         dispatch(actions.updateUserVerificationSuccess());
     } else {
-        console.log('111');
         firebaseOps
             .updateUserVerificationProperty(user.uid, user.emailVerified)
             .then(() => {
@@ -44,7 +40,8 @@ const sendVerificationMail = dispatch => {
 
 const showEmailToast = () => Toast.show(emailSentToast);
 
-const dispatchUpdateVerification = (data, dispatch) => dispatch(updateUserVerification(data));
+const dispatchUpdateVerification = (data, dispatch) =>
+    dispatch(actions.updateUserVerification(data));
 
 export default {
     sendVerificationMail,

@@ -3,11 +3,10 @@ import { actionTypes } from './actions';
 import ops from '../utils/operations';
 
 const verificationMiddleware = store => next => action => {
-    const { payload } = action;
-    const { dispatch } = store;
+    const { payload, dispatch } = { ...store, ...action };
     switch (action.type) {
         case actionTypes.UPDATE_USER_VERIFICATION:
-            ops.updateUserVerification(payload, store.dispatch);
+            ops.updateUserVerification(payload, dispatch);
             break;
         case actionTypes.CHECK_VERIFICATION_STATUS:
             ops.checkVerificationStatus(payload, dispatch);

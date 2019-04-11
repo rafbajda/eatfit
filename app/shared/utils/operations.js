@@ -22,9 +22,17 @@ const logout = dispatch => {
         .catch(error => dispatch(actions.logoutError(error)));
 };
 
+const createUserObject = (data, dispatch) => {
+    firebaseOps
+        .createUserInstance(data)
+        .then(user => dispatch(actions.createUserObjectSuccess(user)))
+        .catch(error => dispatch(actions.createUserObjectError(error)));
+};
+
 export default {
     dispatchGetFonts,
     getFonts,
     dispatchDoneConfig,
     logout,
+    createUserObject,
 };
