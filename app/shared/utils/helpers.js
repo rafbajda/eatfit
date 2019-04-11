@@ -4,6 +4,8 @@ const normalizeKeysToCamelCase = obj => {
     return _.mapKeys(obj, (val, key) => _.camelCase(key));
 };
 
+const getInitialsFromUser = user => user.firstName[0].concat(user.lastName[0]).toUpperCase();
+
 const createUserObjectEmail = data => ({
     uid: data.uid || null,
     email: data.email || null,
@@ -55,4 +57,5 @@ export default {
     normalizeKeysToCamelCase,
     createUserObjectByProvider,
     checkBoxSetter,
+    getInitialsFromUser,
 };

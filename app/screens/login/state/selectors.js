@@ -1,6 +1,5 @@
 const pickedLanguageSelector = state => state.config.pickedLanguage;
 const keyboardOnScreenSelector = state => state.config.keyboardOnScreen;
-const userSelector = state => state.auth.user;
 
 const languagesSelector = state => {
     if (state.firestore.data.config) {
@@ -13,5 +12,4 @@ export default {
     keyboardOnScreenSelector,
     pickedLanguageSelector,
     languagesSelector,
-    userSelector,
 };

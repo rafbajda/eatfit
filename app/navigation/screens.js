@@ -6,4 +6,5 @@ export default {
     Home: 'HomeScreen',
     NotVerified: 'NotVerifiedScreen',
     ForgotPassword: 'ForgotPasswordScreen',
+    Profile: 'ProfileScreen',
 };

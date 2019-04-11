@@ -42,7 +42,7 @@ const NotVerifiedScreen = props => {
 };
 
 const mapStateToProps = state => ({
-    user: loginSelectors.userSelector(state),
+    user: globalSelectors.userSelector(state),
     isAuthLoading: globalSelectors.authLoadingSelector(state),
 });
 

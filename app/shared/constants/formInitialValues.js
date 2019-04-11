@@ -12,8 +12,15 @@ const signUpInitialValues = {
     newsletter: false,
 };
 
+const profileInitialValues = {
+    firstName: '',
+    lastName: '',
+    birthday: null,
+};
+
 export default {
     signUpInitialValues,
     loginInitialValues,
     forgotPasswordInitialValues,
+    profileInitialValues,
 };

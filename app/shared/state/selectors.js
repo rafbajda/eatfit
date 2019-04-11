@@ -8,6 +8,8 @@ const authLoadingSelector = state => state.auth.isLoading;
 const isAuthLoadedSelector = state => state.firebase.auth.isLoaded;
 const isAuthEmptySelector = state => state.firebase.auth.isEmpty;
 
+const userSelector = state => state.auth.user;
+
 const isNoUserLoggedInSelector = createSelector(
     isAuthLoadedSelector,
     isAuthEmptySelector,
@@ -28,4 +30,5 @@ export default {
     isAuthEmptySelector,
     isNoUserLoggedInSelector,
     loadingSelector,
+    userSelector,
 };

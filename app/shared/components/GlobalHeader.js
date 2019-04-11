@@ -1,9 +1,10 @@
 import React from 'react';
 import { Header, Left, Button, Icon, Body, Title, Right, Thumbnail } from 'native-base';
 import { globalGreen } from '../constants/colors';
+import screens from '../../navigation/screens';
 
 const GlobalHeader = props => {
-    const { nav } = { ...props };
+    const { nav, avatar } = { ...props };
     return (
         <Header style={{ backgroundColor: globalGreen }}>
             <Left style={{ flex: 1 }}>
@@ -15,12 +16,11 @@ const GlobalHeader = props => {
                 <Title>logo temp</Title>
             </Body>
             <Right style={{ flex: 1 }}>
-                <Button transparent>
+                <Button onPress={() => nav.navigate(screens.Profile)} transparent>
                     <Thumbnail
                         small
                         source={{
-                            uri:
-                                'https://i.kinja-img.com/gawker-media/image/upload/s--Tg_qqR3r--/c_scale,f_auto,fl_progressive,q_80,w_800/dnmtn4ksijwyep0xmljk.jpg',
+                            uri: avatar,
                         }}
                     />
                 </Button>
