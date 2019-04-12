@@ -4,6 +4,9 @@ import screens from '../../navigation/screens';
 import { UserMismatchingToast } from '../constants/toasts';
 import ops from './helpers';
 
+// TODO: find better solution for this problem
+let navigation;
+
 const signInEmail = (email, password) =>
     firebase.auth().signInWithEmailAndPassword(email, password);
 
@@ -19,27 +22,33 @@ const getUserById = id => {
 const getAuthCurrentUser = () => firebase.auth().currentUser;
 const reloadUserAuth = () => firebase.auth().currentUser.reload();
 
+const prepareUserToLogIn = (user, setUser) => {
+    getUserById(user.uid)
+        .then(doc => {
+            if (doc.exists) {
+                doc.ref.update({
+                    ...doc.data(),
+                    last_login_at: new Date(),
+                });
+                const userObject = doc.data();
+                setUser(userObject);
+                if (userObject.email_verified || userObject.is_social) {
+                    navigation.navigate(screens.Home);
+                } else {
+                    navigation.navigate(screens.NotVerified);
+                }
+            }
+        })
+        .catch(() => {
+            Toast.show(UserMismatchingToast);
+        });
+};
+
 const checkUserNavigation = (nav, setUser) => {
+    navigation = nav;
     firebase.auth().onAuthStateChanged(user => {
         if (user) {
-            getUserById(user.uid)
-                .then(doc => {
-                    if (doc.exists) {
-                        const userObject = doc.data();
-                        setUser(userObject);
-                        if (userObject.emailVerified || userObject.is_social) {
-                            nav.navigate(screens.Home);
-                        } else {
-                            nav.navigate(screens.NotVerified);
-                        }
-                    } else {
-                        nav.navigate(screens.Login);
-                        Toast.show(UserMismatchingToast);
-                    }
-                })
-                .catch(() => {
-                    Toast.show(UserMismatchingToast);
-                });
+            prepareUserToLogIn(user, setUser, nav);
         } else {
             nav.navigate(screens.Login);
         }
@@ -102,4 +111,5 @@ export default {
     getAuthCurrentUser,
     resetPassword,
     signInEmail,
+    prepareUserToLogIn,
 };

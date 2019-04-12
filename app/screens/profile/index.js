@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, Content, Item, Input } from 'native-base';
+import { Text, Content, Item, Input, DatePicker, Label } from 'native-base';
 import { connect } from 'react-redux';
 import { Avatar } from 'react-native-elements';
 import { Formik } from 'formik';
@@ -15,19 +15,20 @@ import globalSelectors from '../../shared/state/selectors';
 import hps from '../../shared/utils/helpers';
 import formInitialValues from '../../shared/constants/formInitialValues';
 import validationSchemas from '../../shared/utils/validationSchemas';
-import { globalWhite } from '../../shared/constants/colors';
+import { globalWhite, mediumGrey, lightGrey } from '../../shared/constants/colors';
 
 const ProfileScreen = props => {
-    const { isAuthLoading, user, profileInitialValues, profileSchema } = {
+    const { isAuthLoading, user, profileSchema } = {
         ...props,
-        ...formInitialValues,
         ...validationSchemas,
     };
-    console.log(hps.getInitialsFromUser(user));
+    const profileInitialValues = formInitialValues.getProfileInitialValues(user);
+    const initials = hps.getInitialsFromUser(user);
     return (
         <CenterContainer>
             <Avatar
-                title={hps.getInitialsFromUser(user)}
+                containerStyle={{ marginTop: 20 }}
+                title={initials}
                 size={130}
                 source={{
                     uri: user.photoUrl,
@@ -44,9 +45,14 @@ const ProfileScreen = props => {
                     <Content>
                         <CenterRow>
                             <CenterFormContainerPaddingTop>
-                                <Item regular>
+                                <Item stackedLabel>
+                                    <Label style={{ color: mediumGrey }}>First name</Label>
                                     <Input
-                                        placeholder="First name"
+                                        style={{
+                                            paddingLeft: 6,
+                                        }}
+                                        placeholder="Your name"
+                                        placeholderTextColor={lightGrey}
                                         onChangeText={formikProps.handleChange('firstName')}
                                         onBlur={formikProps.handleBlur('firstName')}
                                         disabled={isAuthLoading}
@@ -55,9 +61,14 @@ const ProfileScreen = props => {
                                 <ErrorText>
                                     {formikProps.touched.firstName && formikProps.errors.firstName}
                                 </ErrorText>
-                                <Item regular>
+                                <Item stackedLabel>
+                                    <Label>Last name</Label>
                                     <Input
-                                        placeholder="Last Name"
+                                        style={{
+                                            paddingLeft: 6,
+                                        }}
+                                        placeholder="Your last name"
+                                        placeholderTextColor={lightGrey}
                                         onChangeText={formikProps.handleChange('lastName')}
                                         onBlur={formikProps.handleBlur('lastName')}
                                         disabled={isAuthLoading}
@@ -66,6 +77,41 @@ const ProfileScreen = props => {
                                 <ErrorText>
                                     {formikProps.touched.lastName && formikProps.errors.lastName}
                                 </ErrorText>
+                                <Item
+                                    style={{
+                                        display: 'flex',
+                                        paddingLeft: 0,
+                                        justifyContent: 'flex-start',
+                                        alignItems: 'flex-start',
+                                    }}
+                                    stackedLabel
+                                >
+                                    <Label>Birthday</Label>
+                                    <DatePicker
+                                        style={{
+                                            paddingLeft: 0,
+                                            marginLeft: 0,
+                                            justifyContent: 'flex-start',
+                                            alignItems: 'flex-start',
+                                        }}
+                                        maximumDate={new Date()}
+                                        locale="en"
+                                        timeZoneOffsetInMinutes={undefined}
+                                        modalTransparent={false}
+                                        animationType="slide"
+                                        androidMode="spinner"
+                                        placeHolderText="Your Birthday date"
+                                        textStyle={{
+                                            paddingLeft: 0,
+                                            marginLeft: 0,
+                                            // justifyContent: 'flex-start',
+                                        }}
+                                        placeHolderTextStyle={{ color: lightGrey }}
+                                        onDateChange={formikProps.handleChange('birthday')}
+                                        onBlur={formikProps.handleBlur('birthday')}
+                                        disabled={isAuthLoading}
+                                    />
+                                </Item>
                             </CenterFormContainerPaddingTop>
                         </CenterRow>
                         <CenterRow>

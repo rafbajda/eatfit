@@ -1,6 +1,7 @@
 import { Font } from 'expo';
 import actions from '../state/actions';
 import firebaseOps from './firebaseOperations';
+import loginActions from '../../screens/login/state/actions';
 
 const Roboto = require('../../assets/fonts/Roboto.ttf');
 const RobotoMedium = require('../../assets/fonts/Roboto_medium.ttf');
@@ -25,8 +26,15 @@ const logout = dispatch => {
 const createUserObject = (data, dispatch) => {
     firebaseOps
         .createUserInstance(data)
-        .then(user => dispatch(actions.createUserObjectSuccess(user)))
+        .then(() => {
+            dispatch(actions.createUserObjectSuccess(data.user));
+        })
         .catch(error => dispatch(actions.createUserObjectError(error)));
+};
+
+const refreshUser = (data, dispatch) => {
+    const setUser = user => dispatch(loginActions.setUser(user));
+    firebaseOps.prepareUserToLogIn(data, setUser);
 };
 
 export default {
@@ -35,4 +43,5 @@ export default {
     dispatchDoneConfig,
     logout,
     createUserObject,
+    refreshUser,
 };

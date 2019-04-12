@@ -12,6 +12,9 @@ export const actionTypes = {
     LOGIN_GOOGLE_ERROR: '[login] login google error',
     KEYBOARD_SHOW: '[login] show keyboard',
     KEYBOARD_HIDE: '[login] hide keyboard',
+    CHECK_USER_OBJECT_EXISTENCE: '[login] check user existence',
+    CHECK_USER_OBJECT_EXISTENCE_SUCCESS: '[login] check user existence success',
+    CHECK_USER_OBJECT_EXISTENCE_ERROR: '[login] check user existence error',
 };
 
 const setUser = payload => ({ type: actionTypes.SET_USER, payload });
@@ -38,6 +41,19 @@ const loginGoogle = () => ({ type: actionTypes.LOGIN_GOOGLE });
 const loginGoogleSuccess = payload => ({ type: actionTypes.LOGIN_GOOGLE_SUCCESS, payload });
 const loginGoogleError = payload => ({ type: actionTypes.LOGIN_GOOGLE_ERROR, payload });
 
+const checkUserObjectExistence = payload => ({
+    type: actionTypes.CHECK_USER_OBJECT_EXISTENCE,
+    payload,
+});
+const checkUserObjectExistenceSuccess = payload => ({
+    type: actionTypes.CHECK_USER_OBJECT_EXISTENCE_SUCCESS,
+    payload,
+});
+const checkUserObjectExistenceError = payload => ({
+    type: actionTypes.CHECK_USER_OBJECT_EXISTENCE_ERROR,
+    payload,
+});
+
 export default {
     setUser,
     setLanguage,
@@ -52,4 +68,7 @@ export default {
     loginGoogle,
     loginGoogleSuccess,
     loginGoogleError,
+    checkUserObjectExistence,
+    checkUserObjectExistenceSuccess,
+    checkUserObjectExistenceError,
 };

@@ -12,15 +12,14 @@ const signUpInitialValues = {
     newsletter: false,
 };
 
-const profileInitialValues = {
-    firstName: '',
-    lastName: '',
-    birthday: null,
+const getProfileInitialValues = user => {
+    const { firstName, lastName, birthday } = { ...user };
+    return { firstName, lastName, birthday };
 };
 
 export default {
     signUpInitialValues,
     loginInitialValues,
     forgotPasswordInitialValues,
-    profileInitialValues,
+    getProfileInitialValues,
 };

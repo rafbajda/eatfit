@@ -3,11 +3,13 @@ import { db, storage, BUCKET_NAME } from '../firebase'
 import { completeUserInstance } from "./helpers";
 import { User } from "../models/User";
 
+const bucket = storage.bucket(BUCKET_NAME);
+
+
 const defaultImagePath = 'defaults/default-avatar.jpg';
 
 export const onUserCreate = functions.firestore.document('users/{userId}').onCreate(async (snap, context) => {
     const batch = db.batch();
-    const bucket = storage.bucket(BUCKET_NAME);
     const userId = context.params.userId;
     const userRef = db.doc(`users/${userId}`)
     const file = bucket.file(defaultImagePath);
@@ -22,16 +24,20 @@ export const onUserCreate = functions.firestore.document('users/{userId}').onCre
         }
     }).catch(error => console.log(error));
 
-    await file.getSignedUrl({
-        action: 'read',
-        expires: '03-09-2491'
-    }).then(urls => {
-        const downloadUrl = urls[0];
-        batch.update(userRef, {
-            ...user,
-            photo_url: downloadUrl,
-        })
-    }).catch(err => console.log(err))
-
+    if (!user.photo_url) {
+        console.log('setting default avatar')
+        await file.getSignedUrl({
+            action: 'read',
+            expires: '03-09-2491'
+        }).then(urls => {
+            const downloadUrl = urls[0];
+            batch.update(userRef, {
+                ...user,
+                photo_url: downloadUrl,
+            })
+        }).catch(err => console.log(err))
+    } else {
+        batch.update(userRef, user)
+    }
     return batch.commit();
 })

@@ -50,11 +50,41 @@ const signInGoogle = dispatch => {
         .catch(error => dispatch(actions.loginGoogleError(error)));
 };
 
-const dispatchCreateUserObject = (data, dispatch) => dispatch(globalActions.createUserObject(data));
+const dispatchCreateUserObjectOnCondition = (data, dispatch) => {
+    if (!data.userObjectExists) {
+        dispatch(globalActions.createUserObject(data));
+    }
+};
+const dispatchCheckIfUserExists = (data, dispatch) => {
+    dispatch(actions.checkUserObjectExistence(data));
+};
+
+const checkUserObjectExistence = async (data, dispatch) => {
+    const { user } = { ...data };
+    await firebaseOps
+        .getUserById(user.uid)
+        .then(doc => {
+            if (doc.exists) {
+                dispatch(
+                    actions.checkUserObjectExistenceSuccess({ ...data, userObjectExists: true })
+                );
+            } else {
+                dispatch(
+                    actions.checkUserObjectExistenceSuccess({
+                        ...data,
+                        userObjectExists: false,
+                    })
+                );
+            }
+        })
+        .catch(error => dispatch(actions.checkUserObjectExistenceError(error)));
+};
 
 export default {
     signInEmail,
     signInFacebook,
     signInGoogle,
-    dispatchCreateUserObject,
+    dispatchCreateUserObjectOnCondition,
+    dispatchCheckIfUserExists,
+    checkUserObjectExistence,
 };

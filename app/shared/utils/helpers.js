@@ -4,7 +4,11 @@ const normalizeKeysToCamelCase = obj => {
     return _.mapKeys(obj, (val, key) => _.camelCase(key));
 };
 
-const getInitialsFromUser = user => user.firstName[0].concat(user.lastName[0]).toUpperCase();
+const getInitialsFromUser = user => {
+    const firstLetter = user.firstName ? user.firstName[0] : '';
+    const secondLetter = user.lastName ? user.lastName[0] : '';
+    return firstLetter.concat(secondLetter).toUpperCase;
+};
 
 const createUserObjectEmail = data => ({
     uid: data.uid || null,

@@ -31,6 +31,7 @@ const authMiddleware = store => next => action => {
             ops.createUserObject(payload, dispatch);
             break;
         case actionTypes.CREATE_USER_OBJECT_SUCCESS:
+            ops.refreshUser(payload, dispatch);
             signUpOperations.sendVerification(store);
             break;
         default:

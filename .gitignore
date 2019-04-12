@@ -75,3 +75,9 @@ RNTester/build
 /template/ios/Podfile.lock
 
 /.env
+
+/android
+/ios
+/.vscode
+/.idea
+/.expo

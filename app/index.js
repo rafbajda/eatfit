@@ -12,8 +12,9 @@ const AppContainer = createAppContainer(RootNavigator);
 
 class Application extends React.Component {
     componentWillMount() {
-        const { getConfig } = { ...this.props };
+        const { getConfig, signOut } = { ...this.props };
         getConfig();
+        signOut();
     }
 
     render() {
@@ -32,6 +33,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
     getConfig: () => dispatch(globalActions.loadConfig()),
+    signOut: () => dispatch(globalActions.logout()),
 });
 
 export default compose(
