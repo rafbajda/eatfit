@@ -1,11 +1,49 @@
 import { Toast } from 'native-base';
+import RNFetchBlob from 'react-native-fetch-blob';
+import { Platform } from 'react-native';
 import firebase from '../modules/firebase';
 import screens from '../../navigation/screens';
 import { UserMismatchingToast } from '../constants/toasts';
 import ops from './helpers';
 
+// Prepare Blob support
+const { Blob } = { ...RNFetchBlob.polyfill };
+const { fs } = { ...RNFetchBlob };
+window.XMLHttpRequest = RNFetchBlob.polyfill.XMLHttpRequest;
+window.Blob = Blob;
+
 // TODO: find better solution for this problem
 let navigation;
+
+const uploadAvatar = (uri, userId, mime = 'image/jpeg') =>
+    new Promise((resolve, reject) => {
+        const imgUri = uri;
+        let uploadBlob = null;
+        const uploadUri = Platform.OS === 'ios' ? imgUri.replace('file://', '') : imgUri;
+        const imageRef = firebase
+            .storage()
+            .ref(`/users/${userId}/avatars`)
+            .child(`avatar_${new Date()}`);
+
+        fs.readFile(uploadUri, 'base64')
+            .then(data => {
+                return Blob.build(data, { type: `${mime};BASE64` });
+            })
+            .then(blob => {
+                uploadBlob = blob;
+                return imageRef.put(blob, { contentType: mime });
+            })
+            .then(() => {
+                uploadBlob.close();
+                return imageRef.getDownloadURL();
+            })
+            .then(url => {
+                resolve(url);
+            })
+            .catch(error => {
+                reject(error);
+            });
+    });
 
 const updateUser = (uid, data) =>
     firebase
@@ -134,4 +172,5 @@ export default {
     prepareUserToLogIn,
     updateUser,
     reloadUser,
+    uploadAvatar,
 };
