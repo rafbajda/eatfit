@@ -8,6 +8,12 @@ const initialState = {
         user: null,
         isLoading: false,
     },
+    profile: {
+        photoUrl: null,
+        firstName: null,
+        lastName: null,
+        birthday: null,
+    },
 };
 
 export default initialState;

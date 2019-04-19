@@ -1,6 +1,5 @@
 export const actionTypes = {
     SET_LANGUAGE: '[login] set language',
-    SET_USER: '[login] set user',
     LOGIN_EMAIL: '[login] login email',
     LOGIN_EMAIL_SUCCESS: '[login] login email success',
     LOGIN_EMAIL_ERROR: '[login] login email error',
@@ -17,7 +16,6 @@ export const actionTypes = {
     CHECK_USER_OBJECT_EXISTENCE_ERROR: '[login] check user existence error',
 };
 
-const setUser = payload => ({ type: actionTypes.SET_USER, payload });
 const setLanguage = payload => ({
     type: actionTypes.SET_LANGUAGE,
     payload,
@@ -55,7 +53,6 @@ const checkUserObjectExistenceError = payload => ({
 });
 
 export default {
-    setUser,
     setLanguage,
     keyboardShow,
     keyboardHide,

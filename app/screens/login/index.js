@@ -6,20 +6,21 @@ import { Keyboard } from 'react-native';
 import { GlobalContainer } from '../../shared/styles/common';
 import LanguagePicker from './components/LanguagePicker';
 import actions from './state/actions';
+import globalActions from '../../shared/state/actions';
 import loginSelectors from './state/selectors';
 import LoginForm from './components/LoginForm';
 import LoginDivider from './components/LoginDivider';
 import SocialLogin from './components/SocialLogin';
 import SignUp from './components/SignUp';
 import LoginIcon from './components/LoginIcon';
-import firebaseOperations from '../../shared/utils/firebaseOperations';
+import firebaseOps from '../../shared/utils/firebaseOperations';
 import globalSelectors from '../../shared/state/selectors';
 import GlobalLoader from '../../shared/components/GlobalLoader';
 
 class LoginScreen extends React.Component {
     componentWillMount() {
         const { navigation, setUserState } = { ...this.props };
-        firebaseOperations.checkUserNavigation(navigation, setUserState);
+        firebaseOps.checkUserNavigation(navigation, setUserState);
     }
 
     componentDidMount() {
@@ -89,7 +90,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
     login: payload => dispatch(actions.loginEmail(payload)),
     setCurrentLanguage: language => dispatch(actions.setLanguage(language)),
-    setUserState: user => dispatch(actions.setUser(user)),
+    setUserState: user => dispatch(globalActions.setUser(user)),
     loginSocialFacebook: () => dispatch(actions.loginFacebook()),
     loginSocialGoogle: () => dispatch(actions.loginGoogle()),
     onShowKeyboard: () => dispatch(actions.keyboardShow()),

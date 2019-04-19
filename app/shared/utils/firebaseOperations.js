@@ -7,6 +7,12 @@ import ops from './helpers';
 // TODO: find better solution for this problem
 let navigation;
 
+const updateUser = (uid, data) =>
+    firebase
+        .firestore()
+        .doc(`/users/${uid}`)
+        .set(data);
+
 const signInEmail = (email, password) =>
     firebase.auth().signInWithEmailAndPassword(email, password);
 
@@ -21,6 +27,20 @@ const getUserById = id => {
 };
 const getAuthCurrentUser = () => firebase.auth().currentUser;
 const reloadUserAuth = () => firebase.auth().currentUser.reload();
+
+const reloadUser = (uid, setUser, updateUserSuccess) => {
+    getUserById(uid)
+        .then(doc => {
+            if (doc.exists) {
+                const userObject = doc.data();
+                setUser(userObject);
+                updateUserSuccess();
+            }
+        })
+        .catch(() => {
+            Toast.show(UserMismatchingToast);
+        });
+};
 
 const prepareUserToLogIn = (user, setUser) => {
     getUserById(user.uid)
@@ -112,4 +132,6 @@ export default {
     resetPassword,
     signInEmail,
     prepareUserToLogIn,
+    updateUser,
+    reloadUser,
 };

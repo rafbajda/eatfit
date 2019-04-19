@@ -1,4 +1,5 @@
 export const actionTypes = {
+    SET_USER: '[login] set user',
     LOAD_CONFIG: '[config] load config',
     LOAD_CONFIG_DONE: '[config] load config done',
     GET_FONTS: '[config] get fonts',
@@ -11,6 +12,7 @@ export const actionTypes = {
     CREATE_USER_OBJECT_SUCCESS: '[sign up] create user object success',
     CREATE_USER_OBJECT_ERROR: '[sign up] create user object error',
 };
+const setUser = payload => ({ type: actionTypes.SET_USER, payload });
 
 const createUserObject = payload => ({ type: actionTypes.CREATE_USER_OBJECT, payload });
 const createUserObjectSuccess = payload => ({
@@ -48,6 +50,7 @@ const loadConfigDone = payload => ({
 });
 
 export default {
+    setUser,
     logout,
     logoutSuccess,
     logoutError,

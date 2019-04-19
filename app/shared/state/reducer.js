@@ -4,8 +4,9 @@ import { actionTypes as loginActionTypes } from '../../screens/login/state/actio
 import signUpActions from '../../screens/signUp/state/actions';
 import { actionTypes as verificationActionTypes } from '../../screens/notVerified/state/actions';
 import forgotPasswordActions from '../../screens/forgotPassword/state/actions';
+import { actionTypes as profileActionTypes } from '../../screens/profile/state/actions';
 
-import ops from '../utils/helpers';
+import hps from '../utils/helpers';
 
 const initialConfigState = initialState.config;
 const initialAuthState = initialState.auth;
@@ -49,6 +50,7 @@ const authReducer = (state = initialAuthState, action) => {
         case signUpActions.CREATE_ACCOUNT:
         case verificationActionTypes.CHECK_VERIFICATION_STATUS:
         case forgotPasswordActions.SEND_RESET_PASSWORD_MAIL:
+        case profileActionTypes.UPDATE_USER:
             return {
                 ...state,
                 isLoading: true,
@@ -64,15 +66,17 @@ const authReducer = (state = initialAuthState, action) => {
         case verificationActionTypes.UPDATE_USER_VERIFICATION_SUCCESS:
         case verificationActionTypes.UPDATE_USER_VERIFICATION_ERROR:
         case loginActionTypes.LOGIN_EMAIL_SUCCESS:
+        case profileActionTypes.UPDATE_USER_SUCCESS:
+        case profileActionTypes.UPDATE_USER_ERROR:
             return {
                 ...state,
                 isLoading: false,
             };
-        case loginActionTypes.SET_USER:
+        case globalActionTypes.SET_USER:
             return {
                 ...state,
                 isLoading: false,
-                user: ops.normalizeKeysToCamelCase(action.payload),
+                user: hps.normalizeKeysToCamelCase(action.payload),
             };
 
         case globalActionTypes.LOGOUT_SUCCESS:

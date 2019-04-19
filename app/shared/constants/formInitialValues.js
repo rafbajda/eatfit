@@ -1,3 +1,5 @@
+import hps from '../utils/helpers';
+
 const forgotPasswordInitialValues = {
     email: '',
 };
@@ -13,7 +15,8 @@ const signUpInitialValues = {
 };
 
 const getProfileInitialValues = user => {
-    const { firstName, lastName, birthday } = { ...user };
+    const { firstName, lastName } = { ...user };
+    const birthday = hps.getDateFromFirebaseTimestamp(user.birthday);
     return { firstName, lastName, birthday };
 };
 

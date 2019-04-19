@@ -13,7 +13,7 @@ import { CheckboxItem, CheckboxInformationText } from '../styles/singUpStyles';
 import { globalGreen, globalWhite } from '../../../shared/constants/colors';
 import validationSchemas from '../../../shared/utils/validationSchemas';
 import formInitialValues from '../../../shared/constants/formInitialValues';
-import ops from '../../../shared/utils/helpers';
+import hps from '../../../shared/utils/helpers';
 
 const SignUpForm = props => {
     const { signUp, isAuthLoading, signUpInitialValues, signUpSchema } = {
@@ -68,7 +68,7 @@ const SignUpForm = props => {
                                 {formikProps.touched.confirmPassword &&
                                     formikProps.errors.confirmPassword}
                             </ErrorText>
-                            <CheckboxItem onPress={() => ops.checkBoxSetter(formikProps, 'terms')}>
+                            <CheckboxItem onPress={() => hps.checkBoxSetter(formikProps, 'terms')}>
                                 <CheckBox checked={formikProps.values.terms} color={globalGreen} />
                                 <Body>
                                     <CheckboxInformationText>
@@ -80,7 +80,7 @@ const SignUpForm = props => {
                                 {formikProps.touched.terms && formikProps.errors.terms}
                             </ErrorTextPaddingLeft>
                             <CheckboxItem
-                                onPress={() => ops.checkBoxSetter(formikProps, 'newsletter')}
+                                onPress={() => hps.checkBoxSetter(formikProps, 'newsletter')}
                             >
                                 <CheckBox
                                     color={globalGreen}

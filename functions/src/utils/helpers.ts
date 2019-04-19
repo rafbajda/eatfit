@@ -1,7 +1,7 @@
 import * as _ from 'lodash';
 import { User, getUserInitialValue, UserInitialValues, createUserMap } from '../models/User';
 
-export const completeUserInstance = (user: User) => {
+const completeUserInstance = (user: User) => {
     const map = createUserMap(user);
 
     return _.mapValues(UserInitialValues, (val, key: String) => {
@@ -10,4 +10,14 @@ export const completeUserInstance = (user: User) => {
         }
         return map.get(key);
     })
+}
+
+const checkEmptyStrings = (user: User) =>
+    _.mapValues(user, val => val === '' ? null : val)
+
+
+export default {
+    completeUserInstance,
+    checkEmptyStrings,
+
 }

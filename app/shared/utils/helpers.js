@@ -1,13 +1,22 @@
 import * as _ from 'lodash';
 
+const getDateFromFirebaseTimestamp = timestamp => {
+    const { seconds, nanoseconds } = { ...timestamp };
+    return new Date(seconds * 1000 + nanoseconds * 0.000001);
+};
+
 const normalizeKeysToCamelCase = obj => {
     return _.mapKeys(obj, (val, key) => _.camelCase(key));
+};
+
+const normalizeCamelCaseToSnakeCase = obj => {
+    return _.mapKeys(obj, (val, key) => key.replace(/([A-Z])/g, '_$1').toLowerCase());
 };
 
 const getInitialsFromUser = user => {
     const firstLetter = user.firstName ? user.firstName[0] : '';
     const secondLetter = user.lastName ? user.lastName[0] : '';
-    return firstLetter.concat(secondLetter).toUpperCase;
+    return (firstLetter + secondLetter).toUpperCase();
 };
 
 const createUserObjectEmail = data => ({
@@ -58,8 +67,10 @@ const checkBoxSetter = (props, fieldName) => {
 };
 
 export default {
+    getDateFromFirebaseTimestamp,
     normalizeKeysToCamelCase,
     createUserObjectByProvider,
     checkBoxSetter,
     getInitialsFromUser,
+    normalizeCamelCaseToSnakeCase,
 };

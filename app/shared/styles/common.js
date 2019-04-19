@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Content, Row, Form, Text, Button, Container } from 'native-base';
-import { getStatusBarHeight } from 'react-native-status-bar-height';
+import { Constants } from 'expo';
 import { globalGreen } from '../constants/colors';
 
 export const GlobalSpinnerContainer = styled(Content).attrs({
@@ -12,12 +12,16 @@ export const GlobalSpinnerContainer = styled(Content).attrs({
 
 export const GlobalContainer = styled(Content).attrs({
     contentContainerStyle: {
-        paddingTop: getStatusBarHeight(),
+        paddingTop: Constants.statusBarHeight,
     },
 })``;
 
 export const CenterRow = styled(Row)`
     justify-content: center;
+`;
+
+export const CenterRowPaddingTop = styled(CenterRow)`
+    padding-top: 15;
 `;
 
 export const CenterFormContainer = styled(Form)`

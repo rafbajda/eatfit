@@ -1,7 +1,6 @@
 import { Font } from 'expo';
 import actions from '../state/actions';
 import firebaseOps from './firebaseOperations';
-import loginActions from '../../screens/login/state/actions';
 
 const Roboto = require('../../assets/fonts/Roboto.ttf');
 const RobotoMedium = require('../../assets/fonts/Roboto_medium.ttf');
@@ -33,7 +32,7 @@ const createUserObject = (data, dispatch) => {
 };
 
 const refreshUser = (data, dispatch) => {
-    const setUser = user => dispatch(loginActions.setUser(user));
+    const setUser = user => dispatch(actions.setUser(user));
     firebaseOps.prepareUserToLogIn(data, setUser);
 };
 

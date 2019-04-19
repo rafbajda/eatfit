@@ -17,6 +17,8 @@ import signUpMiddleware from '../../screens/signUp/state/middleware';
 import verificationMiddleware from '../../screens/notVerified/state/middleware';
 import forgotPasswordMiddleware from '../../screens/forgotPassword/state/middleware';
 import loginMiddleware from '../../screens/login/state/middleware';
+import profileMiddleware from '../../screens/profile/state/middleware';
+import profileReducer from '../../screens/profile/state/reducer';
 
 let store = null; // eslint-disable-line
 const navReducer = createNavigationReducer(RootNavigator);
@@ -26,6 +28,7 @@ const combinedReducer = combineReducers({
     auth: globalReducers.authReducer,
     config: globalReducers.configReducer,
     nav: navReducer,
+    profile: profileReducer,
     firestore: firestoreReducer,
     firebase: firebaseReducer,
 });
@@ -37,6 +40,7 @@ if (__DEV__) {
         initialState,
         composeWithDevTools(
             applyMiddleware(
+                profileMiddleware,
                 navMiddleware,
                 globalMiddlewares.configMiddleware,
                 globalMiddlewares.authMiddleware,
@@ -56,6 +60,7 @@ if (__DEV__) {
         initialState,
         compose(
             applyMiddleware(
+                profileMiddleware,
                 navMiddleware,
                 globalMiddlewares.configMiddleware,
                 globalMiddlewares.authMiddleware,
