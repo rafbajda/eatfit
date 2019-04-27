@@ -1,31 +1,55 @@
 import React from 'react';
-import { Text } from 'native-base';
 import { connect } from 'react-redux';
+import { Button } from 'react-native-elements';
 import GlobalHeader from '../../shared/components/GlobalHeader';
-import { GlobalContainer } from '../../shared/styles/common';
+import { GlobalContainer, CenterContainer } from '../../shared/styles/common';
 import globalSelectors from '../../shared/state/selectors';
 import GlobalLoader from '../../shared/components/GlobalLoader';
+import { globalGreen } from '../../shared/constants/colors';
+import actions from './state/actions';
 
-const HomeScreen = props => {
-    const { navigation, user, isAuthLoading } = { ...props };
+class HomeScreen extends React.Component {
+    render() {
+        const { navigation, user, isAuthLoading, scan } = { ...this.props };
 
-    if (isAuthLoading) {
-        return <GlobalLoader />;
+        if (isAuthLoading) {
+            return <GlobalLoader />;
+        }
+        return (
+            <GlobalContainer>
+                <GlobalHeader
+                    nav={navigation}
+                    avatar={user && user.photoUrl ? user.photoUrl : null}
+                />
+                <CenterContainer>
+                    <Button
+                        title="Scan"
+                        titleStyle={{
+                            fontSize: 30,
+                        }}
+                        buttonStyle={{
+                            backgroundColor: globalGreen,
+                            height: 80,
+                            width: 200,
+                        }}
+                        onPress={() => scan(this.camera)}
+                    />
+                </CenterContainer>
+            </GlobalContainer>
+        );
     }
-    return (
-        <GlobalContainer>
-            <GlobalHeader nav={navigation} avatar={user && user.photoUrl ? user.photoUrl : null} />
-            <Text>abecadlo</Text>
-        </GlobalContainer>
-    );
-};
+}
 
 const mapStateToProps = state => ({
     user: globalSelectors.userSelector(state),
     isAuthLoading: globalSelectors.authLoadingSelector(state),
 });
 
+const mapDispatchToProps = dispatch => ({
+    scan: () => dispatch(actions.makeScan()),
+});
+
 export default connect(
     mapStateToProps,
-    null
+    mapDispatchToProps
 )(HomeScreen);

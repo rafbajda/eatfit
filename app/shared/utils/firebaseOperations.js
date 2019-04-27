@@ -1,49 +1,59 @@
 import { Toast } from 'native-base';
-import RNFetchBlob from 'react-native-fetch-blob';
-import { Platform } from 'react-native';
 import firebase from '../modules/firebase';
 import screens from '../../navigation/screens';
 import { UserMismatchingToast } from '../constants/toasts';
 import ops from './helpers';
 
-// Prepare Blob support
-const { Blob } = { ...RNFetchBlob.polyfill };
-const { fs } = { ...RNFetchBlob };
-window.XMLHttpRequest = RNFetchBlob.polyfill.XMLHttpRequest;
-window.Blob = Blob;
-
 // TODO: find better solution for this problem
 let navigation;
 
-const uploadAvatar = (uri, userId, mime = 'image/jpeg') =>
-    new Promise((resolve, reject) => {
-        const imgUri = uri;
-        let uploadBlob = null;
-        const uploadUri = Platform.OS === 'ios' ? imgUri.replace('file://', '') : imgUri;
-        const imageRef = firebase
-            .storage()
-            .ref(`/users/${userId}/avatars`)
-            .child(`avatar_${new Date()}`);
+const getAuthCurrentUser = () => firebase.auth().currentUser;
+const reloadUserAuth = () => firebase.auth().currentUser.reload();
 
-        fs.readFile(uploadUri, 'base64')
-            .then(data => {
-                return Blob.build(data, { type: `${mime};BASE64` });
-            })
-            .then(blob => {
-                uploadBlob = blob;
-                return imageRef.put(blob, { contentType: mime });
-            })
-            .then(() => {
-                uploadBlob.close();
-                return imageRef.getDownloadURL();
-            })
-            .then(url => {
-                resolve(url);
-            })
-            .catch(error => {
-                reject(error);
-            });
+const uploadAvatar = async (uri, userId) => {
+    const blob = await new Promise((resolve, reject) => {
+        const xhr = new XMLHttpRequest();
+        xhr.onload = () => resolve(xhr.response);
+        xhr.onerror = () => reject(new TypeError('Network request failed'));
+        xhr.responseType = 'blob';
+        xhr.open('GET', uri, true);
+        xhr.send(null);
     });
+
+    const ref = firebase
+        .storage()
+        .ref(`users/${userId}/avatars`)
+        .child(`avatar_${+new Date()}`);
+    const snapshot = await ref.put(blob);
+
+    blob.close();
+    const downloadUrl = await snapshot.ref.getDownloadURL();
+
+    return downloadUrl;
+};
+
+const uploadScan = async uri => {
+    // TODO: check why uploadScan doesnt work every time
+    const { uid } = await getAuthCurrentUser();
+    const blob = await new Promise((resolve, reject) => {
+        const xhr = new XMLHttpRequest();
+        xhr.onload = () => resolve(xhr.response);
+        xhr.onerror = () => reject(new TypeError('Network request failed'));
+        xhr.responseType = 'blob';
+        xhr.open('GET', uri, true);
+        xhr.send(null);
+    });
+
+    const ref = firebase
+        .storage()
+        .ref(`users/${uid}/scans`)
+        .child(`scan_${+new Date()}`);
+    const snapshot = await ref.put(blob);
+    console.log('snap', snapshot);
+    blob.close();
+    const downloadUrl = await snapshot.ref.getDownloadURL();
+    return downloadUrl;
+};
 
 const updateUser = (uid, data) =>
     firebase
@@ -63,8 +73,6 @@ const getUserById = id => {
         .doc(id)
         .get();
 };
-const getAuthCurrentUser = () => firebase.auth().currentUser;
-const reloadUserAuth = () => firebase.auth().currentUser.reload();
 
 const reloadUser = (uid, setUser, updateUserSuccess) => {
     getUserById(uid)
@@ -173,4 +181,5 @@ export default {
     updateUser,
     reloadUser,
     uploadAvatar,
+    uploadScan,
 };

@@ -11,6 +11,7 @@ import {
 
 import 'firebase/firestore';
 import 'firebase/auth';
+import 'firebase/storage';
 
 const config = {
     apiKey: FIREBASE_API_KEY,

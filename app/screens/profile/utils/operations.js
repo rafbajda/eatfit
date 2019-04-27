@@ -72,20 +72,19 @@ const updateUserProfile = async (data, dispatch) => {
     };
     if (dataToUpdate.photoUrl) {
         dataToUpdate.photoUrl = await firebaseOps
-            .uploadAvatar(dataToUpdate.photoUrl, dataToUpdate.authUser.uid)
+            .uploadAvatar(dataToUpdate.photoUrl, dataToUpdate.uid)
             .then(url => url)
             .catch(error => dispatch(actions.updateUserError(error)));
     }
     const normalizedData = hps.normalizeCamelCaseToSnakeCase(dataToUpdate);
-    console.log(normalizedData);
-    // firebaseOps
-    //     .updateUser(data.authUser.uid, normalizedData)
-    //     .then(async () => {
-    //         const updateUserSuccess = () => dispatch(actions.updateUserSuccess());
-    //         const setUser = user => dispatch(globalActions.setUser(user));
-    //         await firebaseOps.reloadUser(data.authUser.uid, setUser, updateUserSuccess);
-    //     })
-    //     .catch(error => dispatch(actions.updateUserError(error)));
+    firebaseOps
+        .updateUser(data.authUser.uid, normalizedData)
+        .then(async () => {
+            const updateUserSuccess = () => dispatch(actions.updateUserSuccess());
+            const setUser = user => dispatch(globalActions.setUser(user));
+            await firebaseOps.reloadUser(data.authUser.uid, setUser, updateUserSuccess);
+        })
+        .catch(error => dispatch(actions.updateUserError(error)));
 };
 
 export default {

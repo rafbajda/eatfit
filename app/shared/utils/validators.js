@@ -27,7 +27,10 @@ export const checkboxRequiredValidator = yup
 
 export const checkboxValidator = yup.boolean().required();
 
-export const noNumbersValidator = yup.string().matches(/[a-zA-Z]+/, {
-    message: 'Only letters are available',
-    excludeEmptyString: true,
-});
+export const noNumbersValidator = yup
+    .string()
+    .nullable()
+    .matches(/[a-zA-Z]+/, {
+        message: 'Only letters are available',
+        excludeEmptyString: true,
+    });

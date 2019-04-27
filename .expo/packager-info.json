@@ -1,10 +1,10 @@
 {
-  "expoServerPort": null,
+  "expoServerPort": 19000,
   "webpackServerPort": null,
-  "expoServerNgrokUrl": null,
-  "packagerNgrokUrl": null,
-  "ngrokPid": null,
+  "expoServerNgrokUrl": "https://qy-wis.anonymous.eatfit.exp.direct",
+  "packagerNgrokUrl": "https://packager.qy-wis.anonymous.eatfit.exp.direct",
+  "ngrokPid": 14966,
   "devToolsPort": 19002,
-  "packagerPort": null,
-  "packagerPid": null
+  "packagerPort": 19001,
+  "packagerPid": 14942
 }

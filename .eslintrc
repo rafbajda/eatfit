@@ -25,7 +25,8 @@
     },
     "globals": {
         "document": true,
-        "window": true
+        "window": true,
+        "XMLHttpRequest": true
     },
     "plugins": [
         "prettier"

@@ -1,5 +1,8 @@
 import * as _ from 'lodash';
 
+const completeSideBarListWithActions = (items, actions) =>
+    items.map(item => ({ ...item, action: actions[item.id] }));
+
 const getDateFromFirebaseTimestamp = timestamp => {
     const { seconds, nanoseconds } = { ...timestamp };
     return new Date(seconds * 1000 + nanoseconds * 0.000001);
@@ -73,4 +76,5 @@ export default {
     checkBoxSetter,
     getInitialsFromUser,
     normalizeCamelCaseToSnakeCase,
+    completeSideBarListWithActions,
 };
