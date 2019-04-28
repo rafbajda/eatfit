@@ -1,5 +1,5 @@
 import { Permissions, ImagePicker } from 'expo';
-import RNTextDetector from 'react-native-text-detector';
+import Api from '../../../shared/utils/api';
 import actions from '../state/actions';
 import firebaseOps from '../../../shared/utils/firebaseOperations';
 
@@ -10,30 +10,43 @@ const makeScan = async dispatch => {
         Permissions.CAMERA_ROLL
     ).catch(err => dispatch(actions.makeScanError(err)));
     if (status === 'granted') {
-        const result = await ImagePicker.launchCameraAsync({
+        console.log('perm granted');
+        ImagePicker.launchCameraAsync({
             quality: 1,
-        }).catch(err => dispatch(actions.makeScanError(err)));
+        })
+            .then(result => {
+                console.log('res: ', result);
 
-        if (!result.cancelled) {
-            console.log('not cancelled :D!', result);
-            dispatch(actions.makeScanSuccess(result.uri));
-        }
+                if (!result.cancelled) {
+                    console.log('not cancelled :D!', result);
+                    dispatch(actions.makeScanSuccess(result.uri));
+                }
+            })
+            .catch(err => dispatch(actions.makeScanError(err)));
     }
 };
-
-const handleScan = async (scanUri, dispatch) => {
-    console.log('handle scan :D!', scanUri);
-    await firebaseOps
-        .uploadScan(scanUri)
-        .then(async downloadUrl => {
-            console.log(downloadUrl);
-            const visionResp = await RNTextDetector.detectFromUri(scanUri);
-            console.log('visionResp', visionResp);
+const performScan = async (scanUri, dispatch) => {
+    console.log('performing scan :)');
+    const scanObject = await firebaseOps
+        .createScanObject(scanUri)
+        .catch(err => dispatch(actions.performScanError(err)));
+    console.log('performing api: ', scanObject);
+    Api.useVisionApi(scanObject.scan_url)
+        .then(res => {
+            console.log('resp from api: ', res);
         })
-        .catch(err => dispatch(actions.makeScanError(err)));
+        .catch(error => {
+            console.log('error from api', error);
+        });
 };
+
+// const handleScan = (scanUri, dispatch) => {
+//     console.log('handle scan :D!', scanUri);
+//     firebaseOps.createScanObject();
+// };
 
 export default {
     makeScan,
-    handleScan,
+    performScan,
+    // handleScan,
 };

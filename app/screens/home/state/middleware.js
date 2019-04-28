@@ -1,4 +1,4 @@
-import { actionTypes } from './actions';
+import actions, { actionTypes } from './actions';
 import ops from '../utils/operations';
 
 const homeMiddleware = store => next => action => {
@@ -8,7 +8,11 @@ const homeMiddleware = store => next => action => {
             ops.makeScan(dispatch);
             break;
         case actionTypes.MAKE_SCAN_SUCCESS:
-            ops.handleScan(payload, dispatch);
+            dispatch(actions.performScan(payload));
+            // ops.handleScan(payload, dispatch);
+            break;
+        case actionTypes.PERFORM_SCAN:
+            ops.performScan(payload, dispatch);
             break;
         default:
             return next(action);

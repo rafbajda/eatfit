@@ -10,6 +10,49 @@ let navigation;
 const getAuthCurrentUser = () => firebase.auth().currentUser;
 const reloadUserAuth = () => firebase.auth().currentUser.reload();
 
+const uploadScan = async (uri, scanId) => {
+    console.log('uploading scan');
+    const { uid } = await getAuthCurrentUser();
+    const blob = await new Promise((resolve, reject) => {
+        const xhr = new XMLHttpRequest();
+        xhr.onload = () => resolve(xhr.response);
+        xhr.onerror = () => reject(new TypeError('Network request failed'));
+        xhr.responseType = 'blob';
+        xhr.open('GET', uri, true);
+        xhr.send(null);
+    });
+
+    const ref = firebase
+        .storage()
+        .ref(`users/${uid}/scans`)
+        .child(scanId);
+    const snapshot = await ref.put(blob);
+    console.log('snap', snapshot);
+    blob.close();
+    const downloadUrl = await snapshot.ref.getDownloadURL();
+    return downloadUrl;
+};
+
+const createScanObject = async scanUri => {
+    console.log('creating scan obj!');
+    const scanRef = firebase
+        .firestore()
+        .collection('scans')
+        .doc();
+    console.log('scanRef: ', scanRef);
+    const scanId = scanRef.id;
+    console.log('scanId: ', scanId);
+    const scanUrl = await uploadScan(scanUri, scanId);
+    const scanObject = {
+        id: scanId,
+        name: `scan_${+new Date()}`,
+        scan_url: scanUrl,
+        created_at: new Date(),
+    };
+    await scanRef.set(scanObject);
+    return scanObject;
+};
+
 const uploadAvatar = async (uri, userId) => {
     const blob = await new Promise((resolve, reject) => {
         const xhr = new XMLHttpRequest();
@@ -29,29 +72,6 @@ const uploadAvatar = async (uri, userId) => {
     blob.close();
     const downloadUrl = await snapshot.ref.getDownloadURL();
 
-    return downloadUrl;
-};
-
-const uploadScan = async uri => {
-    // TODO: check why uploadScan doesnt work every time
-    const { uid } = await getAuthCurrentUser();
-    const blob = await new Promise((resolve, reject) => {
-        const xhr = new XMLHttpRequest();
-        xhr.onload = () => resolve(xhr.response);
-        xhr.onerror = () => reject(new TypeError('Network request failed'));
-        xhr.responseType = 'blob';
-        xhr.open('GET', uri, true);
-        xhr.send(null);
-    });
-
-    const ref = firebase
-        .storage()
-        .ref(`users/${uid}/scans`)
-        .child(`scan_${+new Date()}`);
-    const snapshot = await ref.put(blob);
-    console.log('snap', snapshot);
-    blob.close();
-    const downloadUrl = await snapshot.ref.getDownloadURL();
     return downloadUrl;
 };
 
@@ -181,5 +201,5 @@ export default {
     updateUser,
     reloadUser,
     uploadAvatar,
-    uploadScan,
+    createScanObject,
 };
