@@ -30,6 +30,7 @@ const combinedReducer = combineReducers({
     config: globalReducers.configReducer,
     nav: navReducer,
     profile: profileReducer,
+    scans: globalReducers.scansReducer,
     firestore: firestoreReducer,
     firebase: firebaseReducer,
 });

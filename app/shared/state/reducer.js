@@ -5,11 +5,24 @@ import signUpActions from '../../screens/signUp/state/actions';
 import { actionTypes as verificationActionTypes } from '../../screens/notVerified/state/actions';
 import forgotPasswordActions from '../../screens/forgotPassword/state/actions';
 import { actionTypes as profileActionTypes } from '../../screens/profile/state/actions';
+import { actionTypes as homeActionTypes } from '../../screens/home/state/actions';
 
 import hps from '../utils/helpers';
 
 const initialConfigState = initialState.config;
 const initialAuthState = initialState.auth;
+const initialScansState = initialState.scans;
+
+const scansReducer = (state = initialScansState, action) => {
+    switch (action.type) {
+        case homeActionTypes.MAKE_SCAN:
+            return { ...state, isLoading: true };
+        case homeActionTypes.PERFORM_SCAN_SUCCESS:
+            return { ...state, isLoading: false };
+        default:
+            return state;
+    }
+};
 
 const configReducer = (state = initialConfigState, action) => {
     switch (action.type) {
@@ -93,4 +106,5 @@ const authReducer = (state = initialAuthState, action) => {
 export default {
     configReducer,
     authReducer,
+    scansReducer,
 };

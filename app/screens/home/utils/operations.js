@@ -32,12 +32,11 @@ const performScan = async (scanUri, dispatch) => {
         .catch(err => dispatch(actions.performScanError(err)));
     console.log('performing api: ', scanObject);
     Api.useVisionApi(scanObject.scan_url)
-        .then(res => {
-            console.log('resp from api: ', res);
-        })
-        .catch(error => {
-            console.log('error from api', error);
-        });
+        .then(res => dispatch(actions.performScanSuccess(res.data.data)))
+        .catch(error => dispatch(actions.performScanError(error)));
+};
+const analyzeScan = (detections, dispatch) => {
+    console.log(detections);
 };
 
 // const handleScan = (scanUri, dispatch) => {
@@ -48,5 +47,6 @@ const performScan = async (scanUri, dispatch) => {
 export default {
     makeScan,
     performScan,
+    analyzeScan,
     // handleScan,
 };

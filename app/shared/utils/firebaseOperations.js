@@ -48,6 +48,7 @@ const createScanObject = async scanUri => {
         name: `scan_${+new Date()}`,
         scan_url: scanUrl,
         created_at: new Date(),
+        user_id: getAuthCurrentUser().uid,
     };
     await scanRef.set(scanObject);
     return scanObject;

@@ -14,6 +14,9 @@ const initialState = {
         lastName: null,
         birthday: null,
     },
+    scans: {
+        isLoading: false,
+    },
 };
 
 export default initialState;

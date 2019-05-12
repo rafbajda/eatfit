@@ -9,10 +9,12 @@ const homeMiddleware = store => next => action => {
             break;
         case actionTypes.MAKE_SCAN_SUCCESS:
             dispatch(actions.performScan(payload));
-            // ops.handleScan(payload, dispatch);
             break;
         case actionTypes.PERFORM_SCAN:
             ops.performScan(payload, dispatch);
+            break;
+        case actionTypes.PERFORM_SCAN_SUCCESS:
+            ops.analyzeScan(payload, dispatch);
             break;
         default:
             return next(action);
