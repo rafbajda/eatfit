@@ -35,8 +35,12 @@ const performScan = async (scanUri, dispatch) => {
         .then(res => dispatch(actions.performScanSuccess(res.data.data)))
         .catch(error => dispatch(actions.performScanError(error)));
 };
-const analyzeScan = (detections, dispatch) => {
-    console.log(detections);
+const analyzeScan = async (detections, dispatch) => {
+    Api.analyzeScanDetections(detections)
+        .then(res => {
+            console.log('substances found: ', res.data);
+        })
+        .catch(error => console.log(error));
 };
 
 // const handleScan = (scanUri, dispatch) => {
