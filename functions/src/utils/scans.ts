@@ -7,21 +7,30 @@ import { Shot } from "../models/Scans";
 import * as _ from 'lodash';
 
 export const analyzeScan = functions.https.onRequest(async (req, res) => {
-    console.log('Scan analysing started', req.body);
-    const detections = req.body;
+    const batch = db.batch();
+    const detections = req.body.detections;
+    const scan = req.body.scan;
+    const scanRef = db.doc(`scans/${scan.id}`);
     const shotsRef = db.collection('/substance_shot');
     const substancesRef = db.collection('/substances');
     const shots = await shotsRef.get().then(snap => snap.docs.map(doc => doc.data()));
-    console.log('shots: ', shots);
     const substances = await substancesRef.get().then(snap => snap.docs.map(doc => doc.data()));
-    console.log('substances: ', substances);
-    const normalizedShots: Array<Shot> = hps.normalizeKeysToCamelCase(shots) as Shot[];
-    console.log('normalized shots: ', normalizedShots);
+    const normalizedShots: Array<Shot> = shots.map(shot => hps.normalizeKeysToCamelCase(shot)) as Shot[];
     const substanceIds = hps.findSubstanceIds(detections, normalizedShots);
-    console.log('substanceIds: ', substanceIds)
     const matchedSubstances = substances.filter(sub => _.includes(substanceIds, sub.id));
-    console.log('found subs: ', matchedSubstances);
-    res.send({ data: matchedSubstances });
+    await scanRef.get().then(doc => {
+        if (doc.exists) {
+            const scanObject = doc.data();
+            const updatedObject = {
+                ...scanObject,
+                substances: matchedSubstances
+            }
+            console.log('final scan: ', updatedObject);
+            batch.update(scanRef, updatedObject);
+            res.send({ data: updatedObject });
+        }
+    }).catch(err => console.log(err))
+    return batch.commit();
 });
 
 export const performScan = functions.https.onRequest(async (req, res) => {

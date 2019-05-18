@@ -4,53 +4,52 @@ import actions from '../state/actions';
 import firebaseOps from '../../../shared/utils/firebaseOperations';
 
 const makeScan = async dispatch => {
-    // scan in progress
     const { status } = await Permissions.askAsync(
         Permissions.CAMERA,
         Permissions.CAMERA_ROLL
     ).catch(err => dispatch(actions.makeScanError(err)));
     if (status === 'granted') {
-        console.log('perm granted');
         ImagePicker.launchCameraAsync({
             quality: 1,
         })
             .then(result => {
-                console.log('res: ', result);
-
                 if (!result.cancelled) {
-                    console.log('not cancelled :D!', result);
                     dispatch(actions.makeScanSuccess(result.uri));
                 }
             })
             .catch(err => dispatch(actions.makeScanError(err)));
     }
 };
-const performScan = async (scanUri, dispatch) => {
-    console.log('performing scan :)');
+const performScan = async (scanObject, dispatch) => {
+    Api.useVisionApi(scanObject.scan_url)
+        .then(res => {
+            const sepArr = [];
+            res.data.data.map(item => {
+                const sepDescription = item.description.split(' ');
+                return sepDescription.forEach(el => sepArr.push(el));
+            });
+            dispatch(actions.performScanSuccess(sepArr));
+        })
+        .catch(error => dispatch(actions.performScanError(error)));
+};
+const analyzeScan = async (detections, scan, dispatch) => {
+    Api.analyzeScanDetections(detections, scan)
+        .then(res => {
+            dispatch(actions.analyzeScanSuccess(res.data));
+        })
+        .catch(error => dispatch(actions.analyzeScanError(error)));
+};
+
+const createScanObject = async (scanUri, dispatch) => {
     const scanObject = await firebaseOps
         .createScanObject(scanUri)
         .catch(err => dispatch(actions.performScanError(err)));
-    console.log('performing api: ', scanObject);
-    Api.useVisionApi(scanObject.scan_url)
-        .then(res => dispatch(actions.performScanSuccess(res.data.data)))
-        .catch(error => dispatch(actions.performScanError(error)));
+    dispatch(actions.createScanObjectSuccess(scanObject));
 };
-const analyzeScan = async (detections, dispatch) => {
-    Api.analyzeScanDetections(detections)
-        .then(res => {
-            console.log('substances found: ', res.data);
-        })
-        .catch(error => console.log(error));
-};
-
-// const handleScan = (scanUri, dispatch) => {
-//     console.log('handle scan :D!', scanUri);
-//     firebaseOps.createScanObject();
-// };
 
 export default {
     makeScan,
     performScan,
     analyzeScan,
-    // handleScan,
+    createScanObject,
 };

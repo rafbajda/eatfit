@@ -5,8 +5,11 @@ const useVisionApi = scanUrl =>
         scanUrl,
     });
 
-const analyzeScanDetections = detections =>
-    axios.put('https://us-central1-eat-fit7.cloudfunctions.net/Scans_analyzeScan', { detections });
+const analyzeScanDetections = (detections, scan) =>
+    axios.put('https://us-central1-eat-fit7.cloudfunctions.net/Scans_analyzeScan', {
+        detections,
+        scan,
+    });
 
 export default {
     useVisionApi,

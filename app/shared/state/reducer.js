@@ -17,8 +17,12 @@ const scansReducer = (state = initialScansState, action) => {
     switch (action.type) {
         case homeActionTypes.MAKE_SCAN:
             return { ...state, isLoading: true };
+        case homeActionTypes.CREATE_SCAN_OBJECT_SUCCESS:
+            return { ...state, latestScan: action.payload };
         case homeActionTypes.PERFORM_SCAN_SUCCESS:
             return { ...state, isLoading: false };
+        case homeActionTypes.ANALYZE_SCAN_SUCCESS:
+            return { ...state, latestScan: action.payload.data };
         default:
             return state;
     }

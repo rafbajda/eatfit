@@ -11,7 +11,6 @@ const getAuthCurrentUser = () => firebase.auth().currentUser;
 const reloadUserAuth = () => firebase.auth().currentUser.reload();
 
 const uploadScan = async (uri, scanId) => {
-    console.log('uploading scan');
     const { uid } = await getAuthCurrentUser();
     const blob = await new Promise((resolve, reject) => {
         const xhr = new XMLHttpRequest();
@@ -27,21 +26,17 @@ const uploadScan = async (uri, scanId) => {
         .ref(`users/${uid}/scans`)
         .child(scanId);
     const snapshot = await ref.put(blob);
-    console.log('snap', snapshot);
     blob.close();
     const downloadUrl = await snapshot.ref.getDownloadURL();
     return downloadUrl;
 };
 
 const createScanObject = async scanUri => {
-    console.log('creating scan obj!');
     const scanRef = firebase
         .firestore()
         .collection('scans')
         .doc();
-    console.log('scanRef: ', scanRef);
     const scanId = scanRef.id;
-    console.log('scanId: ', scanId);
     const scanUrl = await uploadScan(scanUri, scanId);
     const scanObject = {
         id: scanId,

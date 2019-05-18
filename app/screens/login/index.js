@@ -16,10 +16,12 @@ import LoginIcon from './components/LoginIcon';
 import firebaseOps from '../../shared/utils/firebaseOperations';
 import globalSelectors from '../../shared/state/selectors';
 import GlobalLoader from '../../shared/components/GlobalLoader';
+import NavigationService from '../../navigation/NavigationService';
 
 class LoginScreen extends React.Component {
     componentWillMount() {
         const { navigation, setUserState } = { ...this.props };
+        NavigationService.setNavigator(navigation);
         firebaseOps.checkUserNavigation(navigation, setUserState);
     }
 

@@ -3,6 +3,7 @@ import { Constants } from 'expo';
 import screens from './screens';
 import HomeScreen from '../screens/home';
 import ProfileScreen from '../screens/profile';
+import ScanDetails from '../screens/scanDetails';
 import { globalWhite, globalGreen } from '../shared/constants/colors';
 
 export default createStackNavigator(
@@ -12,6 +13,12 @@ export default createStackNavigator(
             screen: ProfileScreen,
             navigationOptions: {
                 title: 'My account',
+            },
+        },
+        [screens.ScanDetails]: {
+            screen: ScanDetails,
+            navigationOptions: {
+                title: 'Scan Details',
             },
         },
     },

@@ -1,14 +1,15 @@
 import * as _ from 'lodash';
 import { User, getUserInitialValue, UserInitialValues, createUserMap } from '../models/User';
 import { Detection, Shot, SubstanceInfo } from '../models/Scans';
+const StringSimilarity = require('string-similarity');
 
-const normalizeKeysToCamelCase = obj => {
-    return _.mapKeys(obj, (val, key) => _.camelCase(key));
-};
+const normalizeKeysToCamelCase = obj =>
+    _.mapKeys(obj, (val, key) => _.camelCase(key));
 
-const normalizeCamelCaseToSnakeCase = obj => {
-    return _.mapKeys(obj, (val, key) => key.replace(/([A-Z])/g, '_$1').toLowerCase());
-};
+
+const normalizeCamelCaseToSnakeCase = obj =>
+    _.mapKeys(obj, (val, key) => key.replace(/([A-Z])/g, '_$1').toLowerCase());
+
 
 const completeUserInstance = (user: User) => {
     const map = createUserMap(user);
@@ -21,12 +22,14 @@ const completeUserInstance = (user: User) => {
     })
 }
 
-const findSubstanceIds = (detections: Array<Detection>, shots: Array<Shot>): Array<String> => {
+const findSubstanceIds = (detections: Array<String>, shots: Array<Shot>): Array<String> => {
     const substanceIds = [];
-    console.log('in find subs', shots, detections);
+    const lowerDetections = detections.map(det => det.toLowerCase());
+    _.map(shots, shot => { shot.phrase = shot.phrase.toLowerCase() });
     _.map(shots, shot => {
-        _.map(detections, det => {
-            if (shot.phrase === det.description) substanceIds.push(shot.substanceId);
+        _.map(lowerDetections, det => {
+            const SimilarityLevel = StringSimilarity.compareTwoStrings(shot.phrase, det);
+            if (SimilarityLevel >= 0.9) substanceIds.push(shot.substanceId);
         })
     })
     return substanceIds;

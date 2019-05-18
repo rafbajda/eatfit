@@ -16,6 +16,7 @@ const initialState = {
     },
     scans: {
         isLoading: false,
+        latestScan: null,
     },
 };
 

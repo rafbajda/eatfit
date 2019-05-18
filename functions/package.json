@@ -19,7 +19,8 @@
     "dotenv": "^7.0.0",
     "firebase-admin": "~7.0.0",
     "firebase-functions": "^2.2.0",
-    "lodash": "^4.17.11"
+    "lodash": "^4.17.11",
+    "string-similarity": "^3.0.0"
   },
   "devDependencies": {
     "@types/lodash": "^4.14.123",
