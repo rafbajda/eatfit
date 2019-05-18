@@ -31,10 +31,10 @@ const uploadScan = async (uri, scanId) => {
     return downloadUrl;
 };
 
-const createScanObject = async scanUri => {
+const createScanObject = async (scanUri, user) => {
     const scanRef = firebase
         .firestore()
-        .collection('scans')
+        .collection(`/users/${user.uid}/scans`)
         .doc();
     const scanId = scanRef.id;
     const scanUrl = await uploadScan(scanUri, scanId);

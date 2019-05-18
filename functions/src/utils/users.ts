@@ -4,7 +4,7 @@ import hps from "./helpers";
 import { User } from "../models/User";
 
 const bucket = storage.bucket(BUCKET_NAME);
-const defaultImagePath = 'defaults/default-avatar.png';
+const defaultImagePath = 'defaults/default_avatar.png';
 
 export const onUserCreate = functions.firestore.document('users/{userId}').onCreate(async (snap, context) => {
     const batch = db.batch();

@@ -10,7 +10,8 @@ export const analyzeScan = functions.https.onRequest(async (req, res) => {
     const batch = db.batch();
     const detections = req.body.detections;
     const scan = req.body.scan;
-    const scanRef = db.doc(`scans/${scan.id}`);
+    const user = req.body.user;
+    const scanRef = db.doc(`users/${user.uid}/scans/${scan.id}`);
     const shotsRef = db.collection('/substance_shot');
     const substancesRef = db.collection('/substances');
     const shots = await shotsRef.get().then(snap => snap.docs.map(doc => doc.data()));
@@ -42,10 +43,10 @@ export const performScan = functions.https.onRequest(async (req, res) => {
     res.send({ data: detections })
 });
 
-export const onScanCreate = functions.firestore.document('scans/{scanId}').onCreate(async (snap, context) => {
+export const onScanCreate = functions.firestore.document('users/{userId}/scans/{scanId}').onCreate(async (snap, context) => {
     const batch = db.batch();
     const scanId = context.params.scanId;
-    const userId = await snap.data().user_id;
+    const userId = context.params.userId;
     console.log('snap info: ', snap.data(), userId);
     const userRef = db.doc(`users/${userId}`);
     await userRef.get().then(doc => {

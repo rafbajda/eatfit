@@ -32,17 +32,17 @@ const performScan = async (scanObject, dispatch) => {
         })
         .catch(error => dispatch(actions.performScanError(error)));
 };
-const analyzeScan = async (detections, scan, dispatch) => {
-    Api.analyzeScanDetections(detections, scan)
+const analyzeScan = async (detections, scan, user, dispatch) => {
+    Api.analyzeScanDetections(detections, scan, user)
         .then(res => {
             dispatch(actions.analyzeScanSuccess(res.data));
         })
         .catch(error => dispatch(actions.analyzeScanError(error)));
 };
 
-const createScanObject = async (scanUri, dispatch) => {
+const createScanObject = async (scanUri, user, dispatch) => {
     const scanObject = await firebaseOps
-        .createScanObject(scanUri)
+        .createScanObject(scanUri, user)
         .catch(err => dispatch(actions.performScanError(err)));
     dispatch(actions.createScanObjectSuccess(scanObject));
 };

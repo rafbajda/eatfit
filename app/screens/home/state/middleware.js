@@ -13,7 +13,7 @@ const homeMiddleware = store => next => action => {
             dispatch(actions.createScanObject(payload));
             break;
         case actionTypes.CREATE_SCAN_OBJECT:
-            ops.createScanObject(payload, dispatch);
+            ops.createScanObject(payload, store.getState().auth.user, dispatch);
             break;
         case actionTypes.CREATE_SCAN_OBJECT_SUCCESS:
             dispatch(actions.performScan(payload));
@@ -25,9 +25,15 @@ const homeMiddleware = store => next => action => {
             dispatch(actions.analyzeScan(payload));
             break;
         case actionTypes.ANALYZE_SCAN:
-            ops.analyzeScan(payload, store.getState().scans.latestScan, dispatch);
+            ops.analyzeScan(
+                payload,
+                store.getState().scans.latestScan,
+                store.getState().auth.user,
+                dispatch
+            );
             break;
         case actionTypes.ANALYZE_SCAN_SUCCESS:
+            console.log(JSON.stringify(payload));
             NavigationService.navigate(screens.ScanDetails);
             break;
         default:

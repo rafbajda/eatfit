@@ -1,11 +1,25 @@
 import * as _ from 'lodash';
+import moment from 'moment';
 
 const completeSideBarListWithActions = (items, actions) =>
     items.map(item => ({ ...item, action: actions[item.id] }));
 
 const getDateFromFirebaseTimestamp = timestamp => {
-    const { seconds, nanoseconds } = { ...timestamp };
-    return new Date(seconds * 1000 + nanoseconds * 0.000001);
+    const { seconds, nanoseconds, _seconds, _nanoseconds } = { ...timestamp };
+    if (seconds || nanoseconds) {
+        return new Date(seconds * 1000 + nanoseconds * 0.000001);
+    }
+    return new Date(_seconds * 1000 + _nanoseconds * 0.000001);
+};
+
+const getUserFriendlyDate = date => moment(date).format('MMMM Do YYYY, h:mm:ss a');
+
+const changeComaToBreak = str => str.split(', ').join(`\n`);
+
+const getScanDate = date => {
+    const scanProperDate = getDateFromFirebaseTimestamp(date);
+    const userFriendlyDate = getUserFriendlyDate(scanProperDate);
+    return changeComaToBreak(userFriendlyDate);
 };
 
 const normalizeKeysToCamelCase = obj => {
@@ -77,4 +91,5 @@ export default {
     getInitialsFromUser,
     normalizeCamelCaseToSnakeCase,
     completeSideBarListWithActions,
+    getScanDate,
 };

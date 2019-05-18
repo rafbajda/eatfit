@@ -3,7 +3,7 @@ import { Avatar } from 'react-native-elements';
 import { globalWhite } from '../../../shared/constants/colors';
 import hps from '../../../shared/utils/helpers';
 
-const defaultAvatar = require('../../../assets/images/default-avatar.png');
+const defaultAvatar = require('../../../assets/images/default_avatar.png');
 
 const ProfileImage = props => {
     const { changeAvatar, profile } = { ...props };
