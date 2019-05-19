@@ -18,7 +18,7 @@ const HomeScreen = props => {
         return <GlobalLoader />;
     }
     // development purpose
-    navigation.navigate(screens.ScanDetails);
+    navigation.navigate(screens.SubstanceDetails);
     return (
         <GlobalContainer>
             <GlobalHeader nav={navigation} avatar={user && user.photoUrl ? user.photoUrl : null} />

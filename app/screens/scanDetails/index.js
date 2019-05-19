@@ -1,14 +1,15 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Container, Grid, Col, Text } from 'native-base';
-import { Image } from 'react-native-elements';
+import { Container, Grid, Col, Text, Row, Content } from 'native-base';
+import { Image, ListItem } from 'react-native-elements';
 import {
     ImageContainer,
-    DateCreationLabel,
+    ScanInformationLabel,
     ScanInformationContainer,
 } from './styles/scanDetailsStyles';
-import { globalGreen } from '../../shared/constants/colors';
+import { globalGreen, lightGrey } from '../../shared/constants/colors';
 import hps from '../../shared/utils/helpers';
+import actions from './state/actions';
 
 const defaultSubstanceImage = require('../../assets/images/default_substance.png');
 
@@ -68,29 +69,51 @@ const mockedScan = {
 };
 
 const ScanDetailsScreen = props => {
+    const { goToSubstanceDetails } = { ...props };
     const scanCreationDate = hps.getScanDate(mockedScan.created_at);
+
+    const substanceList = mockedScan.substances.map(sub => {
+        const source = sub.image ? { uri: sub.image } : defaultSubstanceImage;
+        return (
+            <ListItem
+                containerStyle={{ borderWidth: 1, borderColor: lightGrey }}
+                onPress={() => goToSubstanceDetails(sub)}
+                key={sub.id}
+                leftAvatar={{ source }}
+                title={sub.name}
+                chevron
+            />
+        );
+    });
+
     return (
         <Container>
             <Grid>
-                <Col>
-                    <ImageContainer>
-                        <Image
-                            source={{ uri: mockedScan.scan_url }}
-                            style={{
-                                height: 150,
-                                borderWidth: 2,
-                                borderColor: globalGreen,
-                                borderSpacing: 2,
-                            }}
-                        />
-                    </ImageContainer>
-                </Col>
-                <Col>
-                    <ScanInformationContainer>
-                        <DateCreationLabel>Created at:</DateCreationLabel>
-                        <Text>{scanCreationDate}</Text>
-                    </ScanInformationContainer>
-                </Col>
+                <Row style={{ height: 200 }}>
+                    <Col>
+                        <ImageContainer>
+                            <Image
+                                source={{ uri: mockedScan.scan_url }}
+                                style={{
+                                    height: 150,
+                                    borderWidth: 2,
+                                    borderColor: globalGreen,
+                                }}
+                            />
+                        </ImageContainer>
+                    </Col>
+                    <Col>
+                        <ScanInformationContainer>
+                            <ScanInformationLabel>Created at:</ScanInformationLabel>
+                            <Text>{scanCreationDate}</Text>
+                            <ScanInformationLabel>Scan name:</ScanInformationLabel>
+                            <Text>{mockedScan.name}</Text>
+                        </ScanInformationContainer>
+                    </Col>
+                </Row>
+                <Row>
+                    <Content>{substanceList}</Content>
+                </Row>
             </Grid>
         </Container>
     );
@@ -98,7 +121,9 @@ const ScanDetailsScreen = props => {
 
 const mapStateToProps = state => ({});
 
-const mapDispatchToProps = dispatch => ({});
+const mapDispatchToProps = dispatch => ({
+    goToSubstanceDetails: substance => dispatch(actions.setSubstanceDetails(substance)),
+});
 
 export default connect(
     mapStateToProps,

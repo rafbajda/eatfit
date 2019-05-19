@@ -4,6 +4,7 @@ export default {
     Login: 'LoginScreen',
     SignUp: 'SignUpScreen',
     ScanDetails: 'ScanDetailsScreen',
+    SubstanceDetails: 'SubstanceDetailsScreen',
     Home: 'HomeScreen',
     NotVerified: 'NotVerifiedScreen',
     ForgotPassword: 'ForgotPasswordScreen',

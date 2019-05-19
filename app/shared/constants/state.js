@@ -18,6 +18,9 @@ const initialState = {
         isLoading: false,
         latestScan: null,
     },
+    substances: {
+        latestSubstance: null,
+    },
 };
 
 export default initialState;

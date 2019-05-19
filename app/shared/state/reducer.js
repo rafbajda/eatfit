@@ -6,12 +6,22 @@ import { actionTypes as verificationActionTypes } from '../../screens/notVerifie
 import forgotPasswordActions from '../../screens/forgotPassword/state/actions';
 import { actionTypes as profileActionTypes } from '../../screens/profile/state/actions';
 import { actionTypes as homeActionTypes } from '../../screens/home/state/actions';
-
+import { actionTypes as scanDetailsActionTypes } from '../../screens/scanDetails/state/actions';
 import hps from '../utils/helpers';
 
 const initialConfigState = initialState.config;
 const initialAuthState = initialState.auth;
 const initialScansState = initialState.scans;
+const initialSubstancesState = initialState.substances;
+
+const substancesReducer = (state = initialSubstancesState, action) => {
+    switch (action.type) {
+        case scanDetailsActionTypes.SET_SUBSTANCE_DETAILS:
+            return { ...state, latestSubstance: action.payload };
+        default:
+            return state;
+    }
+};
 
 const scansReducer = (state = initialScansState, action) => {
     switch (action.type) {
@@ -111,4 +121,5 @@ export default {
     configReducer,
     authReducer,
     scansReducer,
+    substancesReducer,
 };

@@ -5,6 +5,7 @@ import HomeScreen from '../screens/home';
 import ProfileScreen from '../screens/profile';
 import ScanDetails from '../screens/scanDetails';
 import { globalWhite, globalGreen } from '../shared/constants/colors';
+import substanceDetails from '../screens/substanceDetails';
 
 export default createStackNavigator(
     {
@@ -19,6 +20,12 @@ export default createStackNavigator(
             screen: ScanDetails,
             navigationOptions: {
                 title: 'Scan Details',
+            },
+        },
+        [screens.SubstanceDetails]: {
+            screen: substanceDetails,
+            navigationOptions: {
+                title: 'Substance Details',
             },
         },
     },

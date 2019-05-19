@@ -31,6 +31,7 @@ const combinedReducer = combineReducers({
     nav: navReducer,
     profile: profileReducer,
     scans: globalReducers.scansReducer,
+    substances: globalReducers.substancesReducer,
     firestore: firestoreReducer,
     firebase: firebaseReducer,
 });
