@@ -83,6 +83,17 @@ const checkBoxSetter = (props, fieldName) => {
     props.setFieldTouched(fieldName, true);
 };
 
+const normalizeScanToCamelCase = scan => {
+    const normalizedSubstances = scan.substances
+        ? scan.substances.map(sub => normalizeKeysToCamelCase(sub))
+        : [];
+    const normalizedScan = normalizeKeysToCamelCase(scan);
+    return {
+        ...normalizedScan,
+        substances: normalizedSubstances,
+    };
+};
+
 export default {
     getDateFromFirebaseTimestamp,
     normalizeKeysToCamelCase,
@@ -92,4 +103,5 @@ export default {
     normalizeCamelCaseToSnakeCase,
     completeSideBarListWithActions,
     getScanDate,
+    normalizeScanToCamelCase,
 };

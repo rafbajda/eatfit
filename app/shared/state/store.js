@@ -20,6 +20,7 @@ import loginMiddleware from '../../screens/login/state/middleware';
 import profileMiddleware from '../../screens/profile/state/middleware';
 import profileReducer from '../../screens/profile/state/reducer';
 import homeMiddleware from '../../screens/home/state/middleware';
+import substanceDetailsMiddleware from '../../screens/scanDetails/state/middleware';
 
 let store = null; // eslint-disable-line
 const navReducer = createNavigationReducer(RootNavigator);
@@ -52,6 +53,7 @@ if (__DEV__) {
                 forgotPasswordMiddleware,
                 loginMiddleware,
                 homeMiddleware,
+                substanceDetailsMiddleware,
                 thunk.withExtraArgument({ getFirebase, getFirestore })
             ),
             reactReduxFirebase(firebaseConfig),
@@ -73,6 +75,7 @@ if (__DEV__) {
                 forgotPasswordMiddleware,
                 loginMiddleware,
                 homeMiddleware,
+                substanceDetailsMiddleware,
                 thunk.withExtraArgument({ getFirebase, getFirestore })
             ),
             reduxFirestore(firebaseConfig),

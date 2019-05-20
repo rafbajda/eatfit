@@ -9,7 +9,6 @@ import { globalWhite } from '../../shared/constants/colors';
 import actions from './state/actions';
 import selectors from './state/selectors';
 import { ScanButton, ScanButtonText } from './styles/homeStyles';
-import screens from '../../navigation/screens';
 
 const HomeScreen = props => {
     const { navigation, user, isAuthLoading, isScanLoading, scan } = { ...props };
@@ -17,8 +16,7 @@ const HomeScreen = props => {
     if (isAuthLoading) {
         return <GlobalLoader />;
     }
-    // development purpose
-    navigation.navigate(screens.SubstanceDetails);
+
     return (
         <GlobalContainer>
             <GlobalHeader nav={navigation} avatar={user && user.photoUrl ? user.photoUrl : null} />

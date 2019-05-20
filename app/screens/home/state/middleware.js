@@ -33,7 +33,6 @@ const homeMiddleware = store => next => action => {
             );
             break;
         case actionTypes.ANALYZE_SCAN_SUCCESS:
-            console.log(JSON.stringify(payload));
             NavigationService.navigate(screens.ScanDetails);
             break;
         default:

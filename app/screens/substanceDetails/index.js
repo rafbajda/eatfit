@@ -8,17 +8,10 @@ import {
     SubstanceInformationLabel,
 } from './styles/substanceDetailsStyles';
 import { globalGreen } from '../../shared/constants/colors';
-
-const mockedSubstance = {
-    name: 'płatki owsiane',
-    description:
-        'Regularne jedzenie płatków owsianych wpływa korzystnie na nasz organizm. W 100 gramach płatków można znaleźć tylko 378 kcal i aż 12 g białka. Do tego płatki owsiane zwykłe w 100 gramach zawierają: 10 g błonnika, Witaminy z grupy B,  128 mg magnezu, 410 mg fosforu, 3,63 mg  manganu.',
-    image_url:
-        'https://firebasestorage.googleapis.com/v0/b/eat-fit7.appspot.com/o/substances%2F5SVNg8pfVJMSmx6FpPfL%2Fsubstance_image.jpg?alt=media&token=794ef162-d8de-4b1d-bca1-bed144c4c45a',
-    id: '5SVNg8pfVJMSmx6FpPfL',
-};
+import selectors from './state/selectors';
 
 const SubstanceDetailsScreen = props => {
+    const { substance } = { ...props };
     return (
         <Container>
             <Grid>
@@ -26,7 +19,7 @@ const SubstanceDetailsScreen = props => {
                     <Col>
                         <ImageContainer>
                             <Image
-                                source={{ uri: mockedSubstance.image_url }}
+                                source={{ uri: substance.imageUrl }}
                                 style={{
                                     height: 150,
                                     borderWidth: 2,
@@ -38,14 +31,14 @@ const SubstanceDetailsScreen = props => {
                     <Col>
                         <SubstanceInformationContainer>
                             <SubstanceInformationLabel>Name:</SubstanceInformationLabel>
-                            <Text>{mockedSubstance.name}</Text>
+                            <Text>{substance.name}</Text>
                         </SubstanceInformationContainer>
                     </Col>
                 </Row>
                 <Row>
                     <Content>
                         <SubstanceInformationLabel>Description:</SubstanceInformationLabel>
-                        <Text>{mockedSubstance.description}</Text>
+                        <Text>{substance.description}</Text>
                     </Content>
                 </Row>
             </Grid>
@@ -53,7 +46,9 @@ const SubstanceDetailsScreen = props => {
     );
 };
 
-const mapStateToProps = state => ({});
+const mapStateToProps = state => ({
+    substance: selectors.getLatestSubstance(state),
+});
 
 const mapDispatchToProps = dispatch => ({});
 
