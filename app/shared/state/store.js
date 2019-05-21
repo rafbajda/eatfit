@@ -21,6 +21,7 @@ import profileMiddleware from '../../screens/profile/state/middleware';
 import profileReducer from '../../screens/profile/state/reducer';
 import homeMiddleware from '../../screens/home/state/middleware';
 import substanceDetailsMiddleware from '../../screens/scanDetails/state/middleware';
+import scansReducer from '../../screens/home/state/reducer';
 
 let store = null; // eslint-disable-line
 const navReducer = createNavigationReducer(RootNavigator);
@@ -31,7 +32,7 @@ const combinedReducer = combineReducers({
     config: globalReducers.configReducer,
     nav: navReducer,
     profile: profileReducer,
-    scans: globalReducers.scansReducer,
+    scans: scansReducer,
     substances: globalReducers.substancesReducer,
     firestore: firestoreReducer,
     firebase: firebaseReducer,

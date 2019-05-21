@@ -21,7 +21,7 @@ class LoginScreen extends React.Component {
     componentWillMount() {
         const { navigation, setUserState } = { ...this.props };
         NavigationService.setNavigator(navigation);
-        firebaseOps.checkUserNavigation(navigation, setUserState);
+        firebaseOps.checkUserNavigation(setUserState);
     }
 
     componentDidMount() {

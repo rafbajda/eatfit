@@ -1,7 +1,7 @@
 import React from 'react';
-import { Text, Content, List, Left, Body } from 'native-base';
+import { Content } from 'native-base';
 import { connect } from 'react-redux';
-import { Icon, ListItem } from 'react-native-elements';
+import { ListItem } from 'react-native-elements';
 import { GlobalContainer } from '../styles/common';
 import actions from '../state/actions';
 import screens from '../../navigation/screens';

@@ -3,9 +3,7 @@ import firebase from '../modules/firebase';
 import screens from '../../navigation/screens';
 import { UserMismatchingToast } from '../constants/toasts';
 import ops from './helpers';
-
-// TODO: find better solution for this problem
-let navigation;
+import NavigationService from '../../navigation/NavigationService';
 
 const getAuthCurrentUser = () => firebase.auth().currentUser;
 const reloadUserAuth = () => firebase.auth().currentUser.reload();
@@ -115,9 +113,9 @@ const prepareUserToLogIn = (user, setUser) => {
                 const userObject = doc.data();
                 setUser(userObject);
                 if (userObject.email_verified || userObject.is_social) {
-                    navigation.navigate(screens.Home);
+                    NavigationService.navigate(screens.Home);
                 } else {
-                    navigation.navigate(screens.NotVerified);
+                    NavigationService.navigate(screens.NotVerified);
                 }
             }
         })
@@ -126,13 +124,12 @@ const prepareUserToLogIn = (user, setUser) => {
         });
 };
 
-const checkUserNavigation = (nav, setUser) => {
-    navigation = nav;
+const checkUserNavigation = setUser => {
     firebase.auth().onAuthStateChanged(user => {
         if (user) {
-            prepareUserToLogIn(user, setUser, nav);
+            prepareUserToLogIn(user, setUser);
         } else {
-            nav.navigate(screens.Login);
+            NavigationService.navigate(screens.Login);
         }
     });
 };
