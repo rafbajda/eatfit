@@ -13,7 +13,7 @@ import { CheckboxItem, CheckboxInformationText } from '../styles/singUpStyles';
 import { globalGreen, globalWhite } from '../../../shared/constants/colors';
 import validationSchemas from '../../../shared/utils/validationSchemas';
 import formInitialValues from '../../../shared/constants/formInitialValues';
-import hps from '../../../shared/utils/helpers';
+import hps from '../utils/helpers';
 
 const SignUpForm = props => {
     const { signUp, isAuthLoading, signUpInitialValues, signUpSchema } = {

@@ -1,6 +1,6 @@
 import { actionTypes } from './actions';
 import initialState from '../../../shared/constants/state';
-import hps from '../../../shared/utils/helpers';
+import hps from '../utils/helpers';
 
 const initialScansState = initialState.scans;
 

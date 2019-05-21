@@ -4,16 +4,17 @@ import {
     CHANGE_AVATAR_OPTIONS,
     CHANGE_AVATAR_BUTTON_INDEXES,
 } from '../../../shared/constants/actionSheets';
-import hps from '../../../shared/utils/helpers';
+import globalHps from '../../../shared/utils/helpers';
 import firebaseOps from '../../../shared/utils/firebaseOperations';
 import actions from '../state/actions';
 import globalActions from '../../../shared/state/actions';
+import hps from './helpers';
 
 const removeAvatar = dispatch => dispatch(actions.removeAvatar());
 
 const getProfileFromAuthUser = authUser => {
     const { firstName, lastName, photoUrl, birthday } = {
-        ...hps.normalizeKeysToCamelCase(authUser),
+        ...globalHps.normalizeKeysToCamelCase(authUser),
     };
     return { firstName, lastName, photoUrl, birthday };
 };

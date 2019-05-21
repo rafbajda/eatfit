@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text } from 'native-base';
-import hps from '../../../shared/utils/helpers';
+import hps from '../utils/helpers';
 import { ScanInformationContainer, ScanInformationLabel } from '../styles/scanDetailsStyles';
 
 const ScanInformations = props => {
