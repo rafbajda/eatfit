@@ -2,6 +2,8 @@ import styled from 'styled-components';
 import { Button, Text } from 'native-base';
 import { globalGreen } from '../../../shared/constants/colors';
 
+export const indicatorSize = 30;
+
 export const ScanButton = styled(Button)`
     height: 70;
     background-color: ${globalGreen};
@@ -17,4 +19,6 @@ export const ScanButtonText = styled(Text)`
 
 export default {
     ScanButton,
+    ScanButtonText,
+    indicatorSize,
 };

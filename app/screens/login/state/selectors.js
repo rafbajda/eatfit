@@ -1,4 +1,5 @@
 const pickedLanguageSelector = state => state.config.pickedLanguage;
+
 const keyboardOnScreenSelector = state => state.config.keyboardOnScreen;
 
 const languagesSelector = state => {

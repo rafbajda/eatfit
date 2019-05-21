@@ -2,7 +2,6 @@ import React from 'react';
 import { Icon } from 'native-base';
 import { connect } from 'react-redux';
 import styles from './styles/notVerifiedStyles';
-import loginSelectors from '../login/state/selectors';
 import globalActions from '../../shared/state/actions';
 import actions from './state/actions';
 import globalSelectors from '../../shared/state/selectors';

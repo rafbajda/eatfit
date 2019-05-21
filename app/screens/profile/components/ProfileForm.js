@@ -11,6 +11,7 @@ import {
 } from '../../../shared/styles/common';
 import { globalWhite, mediumGrey } from '../../../shared/constants/colors';
 import formInitialValues from '../../../shared/constants/formInitialValues';
+import { indicatorSize } from '../styles/profileFormStyles';
 
 const ProfileForm = props => {
     const { profileSchema, isAuthLoading, profile, updateProfile } = { ...props };
@@ -80,7 +81,7 @@ const ProfileForm = props => {
                             disabled={isAuthLoading}
                         >
                             {isAuthLoading ? (
-                                <UIActivityIndicator size={30} color={globalWhite} />
+                                <UIActivityIndicator size={indicatorSize} color={globalWhite} />
                             ) : (
                                 <Text>Save changes</Text>
                             )}

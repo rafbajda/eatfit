@@ -2,6 +2,7 @@ import React from 'react';
 import { Avatar } from 'react-native-elements';
 import { globalWhite } from '../../../shared/constants/colors';
 import hps from '../../../shared/utils/helpers';
+import { avatarContainerStyle, avatarSize } from '../styles/profileImageStyles';
 
 const defaultAvatar = require('../../../assets/images/default_avatar.png');
 
@@ -11,9 +12,9 @@ const ProfileImage = props => {
     return (
         <Avatar
             onEditPress={changeAvatar}
-            containerStyle={{ marginTop: 20 }}
+            containerStyle={avatarContainerStyle}
             title={initials}
-            size={130}
+            size={avatarSize}
             source={profile.photoUrl ? { uri: profile.photoUrl } : defaultAvatar}
             editButton={{
                 name: 'edit',

@@ -1,12 +1,11 @@
 import { actionTypes } from './actions';
-import NavigationService from '../../../navigation/NavigationService';
-import screens from '../../../navigation/screens';
+import ops from '../utils/operations';
 
 const substanceDetailsMiddleware = store => next => action => {
     const { payload, dispatch } = { ...store, ...action };
     switch (action.type) {
         case actionTypes.SET_SUBSTANCE_DETAILS:
-            NavigationService.navigate(screens.SubstanceDetails);
+            ops.goToSubstanceDetails();
             break;
         default:
             return next(action);

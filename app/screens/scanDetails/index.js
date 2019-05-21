@@ -1,64 +1,27 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Container, Grid, Col, Text, Row, Content } from 'native-base';
-import { Image, ListItem } from 'react-native-elements';
-import {
-    ImageContainer,
-    ScanInformationLabel,
-    ScanInformationContainer,
-} from './styles/scanDetailsStyles';
-import { globalGreen, lightGrey } from '../../shared/constants/colors';
-import hps from '../../shared/utils/helpers';
+import { Container, Grid, Row } from 'native-base';
 import actions from './state/actions';
 import selectors from './state/selectors';
-
-const defaultSubstanceImage = require('../../assets/images/default_substance.png');
+import ScanInformationsRow from './components/ScanInformationsRow';
+import SubstancesList from './components/SubstancesList';
 
 const ScanDetailsScreen = props => {
     const { goToSubstanceDetails, scan } = { ...props };
-    const scanCreationDate = hps.getScanDate(scan.createdAt);
-
-    const substanceList = scan.substances.map(sub => {
-        const source = sub.image ? { uri: sub.image } : defaultSubstanceImage;
-        return (
-            <ListItem
-                containerStyle={{ borderWidth: 1, borderColor: lightGrey }}
-                onPress={() => goToSubstanceDetails(sub)}
-                key={sub.id}
-                leftAvatar={{ source }}
-                title={sub.name}
-                chevron
-            />
-        );
-    });
 
     return (
         <Container>
             <Grid>
-                <Row style={{ height: 200 }}>
-                    <Col>
-                        <ImageContainer>
-                            <Image
-                                source={{ uri: scan.scanUrl }}
-                                style={{
-                                    height: 150,
-                                    borderWidth: 2,
-                                    borderColor: globalGreen,
-                                }}
-                            />
-                        </ImageContainer>
-                    </Col>
-                    <Col>
-                        <ScanInformationContainer>
-                            <ScanInformationLabel>Created at:</ScanInformationLabel>
-                            <Text>{scanCreationDate}</Text>
-                            <ScanInformationLabel>Scan name:</ScanInformationLabel>
-                            <Text>{scan.name}</Text>
-                        </ScanInformationContainer>
-                    </Col>
-                </Row>
+                <ScanInformationsRow
+                    scanUrl={scan.scanUrl}
+                    scanCreatedAt={scan.createdAt}
+                    scanName={scan.name}
+                />
                 <Row>
-                    <Content>{substanceList}</Content>
+                    <SubstancesList
+                        substances={scan.substances}
+                        goToSubstanceDetails={goToSubstanceDetails}
+                    />
                 </Row>
             </Grid>
         </Container>

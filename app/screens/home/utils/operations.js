@@ -20,6 +20,7 @@ const makeScan = async dispatch => {
             .catch(err => dispatch(actions.makeScanError(err)));
     }
 };
+
 const performScan = async (scanObject, dispatch) => {
     Api.useVisionApi(scanObject.scan_url)
         .then(res => {
@@ -32,6 +33,7 @@ const performScan = async (scanObject, dispatch) => {
         })
         .catch(error => dispatch(actions.performScanError(error)));
 };
+
 const analyzeScan = async (detections, scan, user, dispatch) => {
     Api.analyzeScanDetections(detections, scan, user)
         .then(res => {

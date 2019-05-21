@@ -1,7 +1,25 @@
+import { Keyboard } from 'react-native';
 import actions from '../state/actions';
 import globalActions from '../../../shared/state/actions';
 import firebaseOps from '../../../shared/utils/firebaseOperations';
 import socialService from '../../../shared/modules/socialService';
+
+let keyboardDidShowListener = null;
+let keyboardDidHideListener = null;
+
+const setUpKeyboardListeners = dispatch => {
+    keyboardDidShowListener = Keyboard.addListener('keyboardDidShow', () =>
+        dispatch(actions.keyboardShow())
+    );
+    keyboardDidHideListener = Keyboard.addListener('keyboardDidHide', () =>
+        dispatch(actions.keyboardHide())
+    );
+};
+
+const removeKeyboardListeners = () => {
+    keyboardDidShowListener.remove();
+    keyboardDidHideListener.remove();
+};
 
 const signInEmail = (data, dispatch) => {
     const { email, password, newsletter } = { ...data };
@@ -12,6 +30,7 @@ const signInEmail = (data, dispatch) => {
         })
         .catch(error => dispatch(actions.loginEmailError(error)));
 };
+
 const signInFacebook = dispatch => {
     socialService
         .loginWithFacebook()
@@ -55,6 +74,7 @@ const dispatchCreateUserObjectOnCondition = (data, dispatch) => {
         dispatch(globalActions.createUserObject(data));
     }
 };
+
 const dispatchCheckIfUserExists = (data, dispatch) => {
     dispatch(actions.checkUserObjectExistence(data));
 };
@@ -87,4 +107,6 @@ export default {
     dispatchCreateUserObjectOnCondition,
     dispatchCheckIfUserExists,
     checkUserObjectExistence,
+    setUpKeyboardListeners,
+    removeKeyboardListeners,
 };

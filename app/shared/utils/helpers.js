@@ -1,5 +1,25 @@
+import React from 'react';
 import * as _ from 'lodash';
 import moment from 'moment';
+import { ListItem } from 'react-native-elements';
+import { lightGrey } from '../constants/colors';
+
+const defaultSubstanceImage = require('../../assets/images/default_substance.png');
+
+const getSubstanceList = (substances, goToSubstanceDetails) =>
+    substances.map(sub => {
+        const source = sub.image ? { uri: sub.image } : defaultSubstanceImage;
+        return (
+            <ListItem
+                containerStyle={{ borderWidth: 1, borderColor: lightGrey }}
+                onPress={() => goToSubstanceDetails(sub)}
+                key={sub.id}
+                leftAvatar={{ source }}
+                title={sub.name}
+                chevron
+            />
+        );
+    });
 
 const completeSideBarListWithActions = (items, actions) =>
     items.map(item => ({ ...item, action: actions[item.id] }));
@@ -104,4 +124,5 @@ export default {
     completeSideBarListWithActions,
     getScanDate,
     normalizeScanToCamelCase,
+    getSubstanceList,
 };

@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { firestoreConnect } from 'react-redux-firebase';
-import { Keyboard } from 'react-native';
 import { GlobalContainer } from '../../shared/styles/common';
 import LanguagePicker from './components/LanguagePicker';
 import actions from './state/actions';
@@ -26,18 +25,13 @@ class LoginScreen extends React.Component {
     }
 
     componentDidMount() {
-        const { onShowKeyboard, onHideKeyboard } = { ...this.props };
-        this.keyboardDidShowListener = Keyboard.addListener('keyboardDidShow', () =>
-            onShowKeyboard()
-        );
-        this.keyboardDidHideListener = Keyboard.addListener('keyboardDidHide', () =>
-            onHideKeyboard()
-        );
+        const { setUpKeyboardListeners } = { ...this.props };
+        setUpKeyboardListeners();
     }
 
     componentWillUnmount() {
-        this.keyboardDidShowListener.remove();
-        this.keyboardDidHideListener.remove();
+        const { removeKeyboardListeners } = { ...this.props };
+        removeKeyboardListeners();
     }
 
     render() {
@@ -95,8 +89,8 @@ const mapDispatchToProps = dispatch => ({
     setUserState: user => dispatch(globalActions.setUser(user)),
     loginSocialFacebook: () => dispatch(actions.loginFacebook()),
     loginSocialGoogle: () => dispatch(actions.loginGoogle()),
-    onShowKeyboard: () => dispatch(actions.keyboardShow()),
-    onHideKeyboard: () => dispatch(actions.keyboardHide()),
+    setUpKeyboardListeners: () => dispatch(actions.setUpKeyboardListeners()),
+    removeKeyboardListeners: () => dispatch(actions.removeKeyboardListeners()),
 });
 
 export default compose(

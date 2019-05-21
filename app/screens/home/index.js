@@ -1,15 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { UIActivityIndicator } from 'react-native-indicators';
 import GlobalHeader from '../../shared/components/GlobalHeader';
-import { GlobalContainer, CenterContainer, CenterRow } from '../../shared/styles/common';
+import { GlobalContainer } from '../../shared/styles/common';
 import globalSelectors from '../../shared/state/selectors';
 import GlobalLoader from '../../shared/components/GlobalLoader';
-import { globalWhite } from '../../shared/constants/colors';
 import actions from './state/actions';
 import selectors from './state/selectors';
-import { ScanButton, ScanButtonText } from './styles/homeStyles';
+import ScanButtonElement from './components/ScanButton';
 
+// TODO: set scanloading to false when making scan is aborted
 const HomeScreen = props => {
     const { navigation, user, isAuthLoading, isScanLoading, scan } = { ...props };
 
@@ -20,17 +19,7 @@ const HomeScreen = props => {
     return (
         <GlobalContainer>
             <GlobalHeader nav={navigation} avatar={user && user.photoUrl ? user.photoUrl : null} />
-            <CenterContainer>
-                <CenterRow>
-                    <ScanButton onPress={() => scan()} disabled={isScanLoading}>
-                        {isScanLoading ? (
-                            <UIActivityIndicator size={30} color={globalWhite} />
-                        ) : (
-                            <ScanButtonText>Scan</ScanButtonText>
-                        )}
-                    </ScanButton>
-                </CenterRow>
-            </CenterContainer>
+            <ScanButtonElement isScanLoading={isScanLoading} scan={scan} />
         </GlobalContainer>
     );
 };

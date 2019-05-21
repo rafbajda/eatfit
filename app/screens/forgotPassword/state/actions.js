@@ -4,17 +4,16 @@ export const actionTypes = {
     SEND_RESET_PASSWORD_MAIL_ERROR: '[forgot password] send reset password mail error',
 };
 
+const sendResetPasswordMail = payload => ({
+    type: actionTypes.SEND_RESET_PASSWORD_MAIL,
+    payload,
+});
 const sendResetPasswordMailSuccess = payload => ({
     type: actionTypes.SEND_RESET_PASSWORD_MAIL_SUCCESS,
     payload,
 });
 const sendResetPasswordMailError = payload => ({
     type: actionTypes.SEND_RESET_PASSWORD_MAIL_ERROR,
-    payload,
-});
-
-const sendResetPasswordMail = payload => ({
-    type: actionTypes.SEND_RESET_PASSWORD_MAIL,
     payload,
 });
 

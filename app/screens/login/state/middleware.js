@@ -4,6 +4,12 @@ import ops from '../utils/operations';
 const loginMiddleware = store => next => action => {
     const { payload, dispatch } = { ...store, ...action };
     switch (action.type) {
+        case actionTypes.SET_UP_KEYBOARD_LISTENERS:
+            ops.setUpKeyboardListeners(dispatch);
+            break;
+        case actionTypes.REMOVE_KEYBOARD_LISTENERS:
+            ops.removeKeyboardListeners();
+            break;
         case actionTypes.LOGIN_EMAIL:
             ops.signInEmail(payload, dispatch);
             break;

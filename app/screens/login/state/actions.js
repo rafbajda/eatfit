@@ -11,18 +11,26 @@ export const actionTypes = {
     LOGIN_GOOGLE_ERROR: '[login] login google error',
     KEYBOARD_SHOW: '[login] show keyboard',
     KEYBOARD_HIDE: '[login] hide keyboard',
+    SET_UP_KEYBOARD_LISTENERS: '[login] set up keyboard listeners',
+    REMOVE_KEYBOARD_LISTENERS: '[login] remove keyboard listeners',
     CHECK_USER_OBJECT_EXISTENCE: '[login] check user existence',
     CHECK_USER_OBJECT_EXISTENCE_SUCCESS: '[login] check user existence success',
     CHECK_USER_OBJECT_EXISTENCE_ERROR: '[login] check user existence error',
 };
 
+const setUpKeyboardListeners = () => ({
+    type: actionTypes.SET_UP_KEYBOARD_LISTENERS,
+});
+const removeKeyboardListeners = () => ({
+    type: actionTypes.REMOVE_KEYBOARD_LISTENERS,
+});
+const keyboardShow = () => ({ type: actionTypes.KEYBOARD_SHOW });
+const keyboardHide = () => ({ type: actionTypes.KEYBOARD_HIDE });
+
 const setLanguage = payload => ({
     type: actionTypes.SET_LANGUAGE,
     payload,
 });
-
-const keyboardShow = () => ({ type: actionTypes.KEYBOARD_SHOW });
-const keyboardHide = () => ({ type: actionTypes.KEYBOARD_HIDE });
 
 const loginEmail = payload => ({
     type: actionTypes.LOGIN_EMAIL,
@@ -68,4 +76,6 @@ export default {
     checkUserObjectExistence,
     checkUserObjectExistenceSuccess,
     checkUserObjectExistenceError,
+    setUpKeyboardListeners,
+    removeKeyboardListeners,
 };
