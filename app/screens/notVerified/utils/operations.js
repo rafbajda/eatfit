@@ -1,11 +1,13 @@
 import { Toast } from 'native-base';
 import { CheckVerificationRefreshToast, emailSentToast } from '../../../shared/constants/toasts';
 import actions from '../state/actions';
-import firebaseOps from '../../../shared/utils/firebaseOperations';
+import firebaseOps from './firebaseOperations';
+import globalFirebaseOps from '../../../shared/utils/firebaseOperations';
 import screens from '../../../navigation/screens';
+import NavigationService from '../../../navigation/NavigationService';
 
 const updateUserVerification = (data, dispatch) => {
-    const { user, nav } = { ...data };
+    const { user } = { ...data };
     if (!user.emailVerified) {
         Toast.show(CheckVerificationRefreshToast);
         dispatch(actions.updateUserVerificationSuccess());
@@ -13,20 +15,19 @@ const updateUserVerification = (data, dispatch) => {
         firebaseOps
             .updateUserVerificationProperty(user.uid, user.emailVerified)
             .then(() => {
-                nav.navigate(screens.Home);
+                NavigationService.navigate(screens.Home);
                 dispatch(actions.updateUserVerificationSuccess());
             })
             .catch(error => dispatch(actions.updateUserVerificationError(error)));
     }
 };
 
-const checkVerificationStatus = (data, dispatch) => {
+const checkVerificationStatus = dispatch => {
     firebaseOps
         .reloadUserAuth()
         .then(() => {
-            const user = firebaseOps.getAuthCurrentUser();
-            const payload = { user, nav: data };
-            dispatch(actions.checkVerificationStatusSuccess(payload));
+            const user = globalFirebaseOps.getAuthCurrentUser();
+            dispatch(actions.checkVerificationStatusSuccess(user));
         })
         .catch(error => dispatch(actions.checkVerificationStatusError(error)));
 };
@@ -40,13 +41,9 @@ const sendVerificationMail = dispatch => {
 
 const showEmailToast = () => Toast.show(emailSentToast);
 
-const dispatchUpdateVerification = (data, dispatch) =>
-    dispatch(actions.updateUserVerification(data));
-
 export default {
     sendVerificationMail,
     updateUserVerification,
     checkVerificationStatus,
     showEmailToast,
-    dispatchUpdateVerification,
 };

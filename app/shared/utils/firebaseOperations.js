@@ -6,79 +6,6 @@ import ops from './helpers';
 import NavigationService from '../../navigation/NavigationService';
 
 const getAuthCurrentUser = () => firebase.auth().currentUser;
-const reloadUserAuth = () => firebase.auth().currentUser.reload();
-
-const uploadScan = async (uri, scanId) => {
-    const { uid } = await getAuthCurrentUser();
-    const blob = await new Promise((resolve, reject) => {
-        const xhr = new XMLHttpRequest();
-        xhr.onload = () => resolve(xhr.response);
-        xhr.onerror = () => reject(new TypeError('Network request failed'));
-        xhr.responseType = 'blob';
-        xhr.open('GET', uri, true);
-        xhr.send(null);
-    });
-
-    const ref = firebase
-        .storage()
-        .ref(`users/${uid}/scans`)
-        .child(scanId);
-    const snapshot = await ref.put(blob);
-    blob.close();
-    const downloadUrl = await snapshot.ref.getDownloadURL();
-    return downloadUrl;
-};
-
-const createScanObject = async (scanUri, user) => {
-    const scanRef = firebase
-        .firestore()
-        .collection(`/users/${user.uid}/scans`)
-        .doc();
-    const scanId = scanRef.id;
-    const scanUrl = await uploadScan(scanUri, scanId);
-    const scanObject = {
-        id: scanId,
-        name: `scan_${+new Date()}`,
-        scan_url: scanUrl,
-        created_at: new Date(),
-        user_id: getAuthCurrentUser().uid,
-    };
-    await scanRef.set(scanObject);
-    return scanObject;
-};
-
-const uploadAvatar = async (uri, userId) => {
-    const blob = await new Promise((resolve, reject) => {
-        const xhr = new XMLHttpRequest();
-        xhr.onload = () => resolve(xhr.response);
-        xhr.onerror = () => reject(new TypeError('Network request failed'));
-        xhr.responseType = 'blob';
-        xhr.open('GET', uri, true);
-        xhr.send(null);
-    });
-
-    const ref = firebase
-        .storage()
-        .ref(`users/${userId}/avatars`)
-        .child(`avatar_${+new Date()}`);
-    const snapshot = await ref.put(blob);
-
-    blob.close();
-    const downloadUrl = await snapshot.ref.getDownloadURL();
-
-    return downloadUrl;
-};
-
-const updateUser = (uid, data) =>
-    firebase
-        .firestore()
-        .doc(`/users/${uid}`)
-        .set(data);
-
-const signInEmail = (email, password) =>
-    firebase.auth().signInWithEmailAndPassword(email, password);
-
-const resetPassword = email => firebase.auth().sendPasswordResetEmail(email);
 
 const getUserById = id => {
     return firebase
@@ -86,20 +13,6 @@ const getUserById = id => {
         .collection('users')
         .doc(id)
         .get();
-};
-
-const reloadUser = (uid, setUser, updateUserSuccess) => {
-    getUserById(uid)
-        .then(doc => {
-            if (doc.exists) {
-                const userObject = doc.data();
-                setUser(userObject);
-                updateUserSuccess();
-            }
-        })
-        .catch(() => {
-            Toast.show(UserMismatchingToast);
-        });
 };
 
 const prepareUserToLogIn = (user, setUser) => {
@@ -124,33 +37,8 @@ const prepareUserToLogIn = (user, setUser) => {
         });
 };
 
-const checkUserNavigation = setUser => {
-    firebase.auth().onAuthStateChanged(user => {
-        if (user) {
-            prepareUserToLogIn(user, setUser);
-        } else {
-            NavigationService.navigate(screens.Login);
-        }
-    });
-};
-
-const updateUserVerificationProperty = (uid, emailVerified) => {
-    return firebase
-        .firestore()
-        .doc(`users/${uid}`)
-        .update({ emailVerified });
-};
-
 const signOut = () => {
     return firebase.auth().signOut();
-};
-
-const signUp = (email, password) => {
-    return firebase.auth().createUserWithEmailAndPassword(email, password);
-};
-
-const sendVerificationEmail = () => {
-    return firebase.auth().currentUser.sendEmailVerification();
 };
 
 const createUserInstance = data => {
@@ -179,20 +67,9 @@ const createUserInstance = data => {
 };
 
 export default {
-    checkUserNavigation,
     signOut,
-    signUp,
     createUserInstance,
     getUserById,
-    sendVerificationEmail,
-    updateUserVerificationProperty,
-    reloadUserAuth,
     getAuthCurrentUser,
-    resetPassword,
-    signInEmail,
     prepareUserToLogIn,
-    updateUser,
-    reloadUser,
-    uploadAvatar,
-    createScanObject,
 };

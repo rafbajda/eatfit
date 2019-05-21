@@ -1,24 +1,22 @@
 import { Toast } from 'native-base';
-import firebaseOps from '../../../shared/utils/firebaseOperations';
+import firebaseOps from './firebaseOperations';
 import actions from '../state/actions';
 import screens from '../../../navigation/screens';
 import { PasswordResetEmailSentToast } from '../../../shared/constants/toasts';
+import NavigationService from '../../../navigation/NavigationService';
 
 const resetPassword = (data, dispatch) => {
-    const { email, nav } = { ...data };
+    const { email } = { ...data };
     firebaseOps
         .resetPassword(email)
         .then(() => {
-            dispatch(actions.sendResetPasswordMailSuccess(nav));
+            dispatch(actions.sendResetPasswordMailSuccess());
         })
         .catch(error => dispatch(actions.sendResetPasswordMailError(error)));
 };
 
-const changeNavigation = data => {
-    const navigation = data;
-    if (navigation) {
-        navigation.navigate(screens.Login);
-    }
+const changeNavigation = () => {
+    NavigationService.navigate(screens.Login);
     Toast.show(PasswordResetEmailSentToast);
 };
 

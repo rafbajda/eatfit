@@ -6,16 +6,12 @@ import { CenterContainer } from '../../shared/styles/common';
 import actions from './state/actions';
 
 const ForgotPasswordScreen = props => {
-    const { isAuthLoading, resetPassword, navigation } = { ...props };
+    const { isAuthLoading, resetPassword } = { ...props };
     return (
         <CenterContainer>
             {/* TODO: add this component after managing logo */}
             {/* <ResetPasswordMessage /> */}
-            <ForgotPasswordForm
-                isAuthLoading={isAuthLoading}
-                resetPassword={resetPassword}
-                nav={navigation}
-            />
+            <ForgotPasswordForm isAuthLoading={isAuthLoading} resetPassword={resetPassword} />
         </CenterContainer>
     );
 };

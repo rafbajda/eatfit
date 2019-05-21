@@ -1,6 +1,5 @@
-import firebaseOps from '../../../shared/utils/firebaseOperations';
+import firebaseOps from './firebaseOperations';
 import actions from '../state/actions';
-import globalActions from '../../../shared/state/actions';
 import verificationActions from '../../notVerified/state/actions';
 
 const createAccount = (data, dispatch) => {
@@ -12,8 +11,6 @@ const createAccount = (data, dispatch) => {
         })
         .catch(error => dispatch(actions.createAccountError(error)));
 };
-
-const dispatchCreateUserObject = (data, dispatch) => dispatch(globalActions.createUserObject(data));
 
 const sendVerification = store => {
     let isSocial;
@@ -28,6 +25,5 @@ const sendVerification = store => {
 
 export default {
     createAccount,
-    dispatchCreateUserObject,
     sendVerification,
 };

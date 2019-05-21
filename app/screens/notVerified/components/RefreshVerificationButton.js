@@ -5,13 +5,13 @@ import { globalWhite } from '../../../shared/constants/colors';
 import styles, { RefreshRow, RefreshButton } from '../styles/refreshVerificationButtonStyles';
 
 const RefreshVerificationButton = props => {
-    const { nav, isAuthLoading, checkVerification, RefreshButtonTextStyle } = {
+    const { isAuthLoading, checkVerification, RefreshButtonTextStyle } = {
         ...props,
         ...styles,
     };
     return (
         <RefreshRow>
-            <RefreshButton onPress={() => checkVerification(nav)} disabled={isAuthLoading}>
+            <RefreshButton onPress={() => checkVerification()} disabled={isAuthLoading}>
                 {isAuthLoading ? (
                     <UIActivityIndicator size={30} color={globalWhite} />
                 ) : (

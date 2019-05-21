@@ -1,5 +1,4 @@
-import { actionTypes } from './actions';
-
+import actions, { actionTypes } from './actions';
 import ops from '../utils/operations';
 
 const verificationMiddleware = store => next => action => {
@@ -9,7 +8,7 @@ const verificationMiddleware = store => next => action => {
             ops.updateUserVerification(payload, dispatch);
             break;
         case actionTypes.CHECK_VERIFICATION_STATUS:
-            ops.checkVerificationStatus(payload, dispatch);
+            ops.checkVerificationStatus(dispatch);
             break;
         case actionTypes.SEND_VERIFICATION_MAIL:
             ops.sendVerificationMail(dispatch);
@@ -18,7 +17,7 @@ const verificationMiddleware = store => next => action => {
             ops.showEmailToast();
             break;
         case actionTypes.CHECK_VERIFICATION_STATUS_SUCCESS:
-            ops.dispatchUpdateVerification(payload, dispatch);
+            dispatch(actions.updateUserVerification(payload));
             break;
         default:
             return next(action);

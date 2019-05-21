@@ -1,4 +1,4 @@
-import { actionTypes } from './actions';
+import actions, { actionTypes } from './actions';
 import ops from '../utils/operations';
 import signUpOperations from '../../screens/signUp/utils/operations';
 
@@ -6,14 +6,14 @@ const configMiddleware = store => next => action => {
     const { dispatch } = { ...store };
     switch (action.type) {
         case actionTypes.LOAD_CONFIG:
-            ops.dispatchGetFonts(dispatch);
+            dispatch(actions.getFonts());
             break;
         case actionTypes.GET_FONTS:
             ops.getFonts(dispatch);
             break;
         case actionTypes.GET_FONTS_SUCCESS:
         case actionTypes.GET_FONTS_ERROR:
-            ops.dispatchDoneConfig(dispatch);
+            dispatch(actions.loadConfigDone());
             break;
         default:
             return next(action);

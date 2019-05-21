@@ -1,4 +1,5 @@
 import { actionTypes } from './actions';
+import globalActions from '../../../shared/state/actions';
 import ops from '../utils/operations';
 
 const signUpMiddleware = store => next => action => {
@@ -8,7 +9,7 @@ const signUpMiddleware = store => next => action => {
             ops.createAccount(payload, dispatch);
             break;
         case actionTypes.CREATE_ACCOUNT_SUCCESS:
-            ops.dispatchCreateUserObject(payload, dispatch);
+            dispatch(globalActions.createUserObject(payload));
             break;
         default:
             return next(action);

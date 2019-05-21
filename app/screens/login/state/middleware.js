@@ -1,4 +1,5 @@
-import { actionTypes } from './actions';
+import actions, { actionTypes } from './actions';
+import globalActions from '../../../shared/state/actions';
 import ops from '../utils/operations';
 
 const loginMiddleware = store => next => action => {
@@ -22,12 +23,13 @@ const loginMiddleware = store => next => action => {
         case actionTypes.LOGIN_FACEBOOK_SUCCESS:
         case actionTypes.LOGIN_GOOGLE_SUCCESS:
             ops.dispatchCheckIfUserExists(payload, dispatch);
+            dispatch(actions.checkUserObjectExistence(payload));
             break;
         case actionTypes.CHECK_USER_OBJECT_EXISTENCE:
             ops.checkUserObjectExistence(payload, dispatch);
             break;
         case actionTypes.CHECK_USER_OBJECT_EXISTENCE_SUCCESS:
-            ops.dispatchCreateUserObjectOnCondition(payload, dispatch);
+            dispatch(globalActions.createUserObject(payload));
             break;
         default:
             return next(action);

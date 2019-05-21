@@ -8,9 +8,8 @@ const sendResetPasswordMail = payload => ({
     type: actionTypes.SEND_RESET_PASSWORD_MAIL,
     payload,
 });
-const sendResetPasswordMailSuccess = payload => ({
+const sendResetPasswordMailSuccess = () => ({
     type: actionTypes.SEND_RESET_PASSWORD_MAIL_SUCCESS,
-    payload,
 });
 const sendResetPasswordMailError = payload => ({
     type: actionTypes.SEND_RESET_PASSWORD_MAIL_ERROR,

@@ -13,13 +13,7 @@ import { globalWhite } from '../../../shared/constants/colors';
 import validationSchemas from '../../../shared/utils/validationSchemas';
 
 const ForgotPasswordForm = props => {
-    const {
-        resetPassword,
-        isAuthLoading,
-        nav,
-        forgotPasswordInitialValues,
-        forgotPasswordSchema,
-    } = {
+    const { resetPassword, isAuthLoading, forgotPasswordInitialValues, forgotPasswordSchema } = {
         ...props,
         ...initialFormValues,
         ...validationSchemas,
@@ -27,7 +21,7 @@ const ForgotPasswordForm = props => {
     return (
         <Formik
             initialValues={forgotPasswordInitialValues}
-            onSubmit={values => resetPassword({ ...values, nav })}
+            onSubmit={values => resetPassword(values)}
             validationSchema={forgotPasswordSchema}
         >
             {formikProps => (

@@ -1,7 +1,7 @@
 import { Keyboard } from 'react-native';
 import actions from '../state/actions';
-import globalActions from '../../../shared/state/actions';
-import firebaseOps from '../../../shared/utils/firebaseOperations';
+import firebaseOps from './firebaseOperations';
+import globalFirebaseOps from '../../../shared/utils/firebaseOperations';
 import socialService from '../../../shared/modules/socialService';
 
 let keyboardDidShowListener = null;
@@ -69,19 +69,9 @@ const signInGoogle = dispatch => {
         .catch(error => dispatch(actions.loginGoogleError(error)));
 };
 
-const dispatchCreateUserObjectOnCondition = (data, dispatch) => {
-    if (!data.userObjectExists) {
-        dispatch(globalActions.createUserObject(data));
-    }
-};
-
-const dispatchCheckIfUserExists = (data, dispatch) => {
-    dispatch(actions.checkUserObjectExistence(data));
-};
-
 const checkUserObjectExistence = async (data, dispatch) => {
     const { user } = { ...data };
-    await firebaseOps
+    await globalFirebaseOps
         .getUserById(user.uid)
         .then(doc => {
             if (doc.exists) {
@@ -104,8 +94,6 @@ export default {
     signInEmail,
     signInFacebook,
     signInGoogle,
-    dispatchCreateUserObjectOnCondition,
-    dispatchCheckIfUserExists,
     checkUserObjectExistence,
     setUpKeyboardListeners,
     removeKeyboardListeners,

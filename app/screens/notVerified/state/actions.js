@@ -10,9 +10,8 @@ export const actionTypes = {
     CHECK_VERIFICATION_STATUS_ERROR: '[verification] check verification status error',
 };
 
-const checkVerificationStatus = payload => ({
+const checkVerificationStatus = () => ({
     type: actionTypes.CHECK_VERIFICATION_STATUS,
-    payload,
 });
 const checkVerificationStatusSuccess = payload => ({
     type: actionTypes.CHECK_VERIFICATION_STATUS_SUCCESS,

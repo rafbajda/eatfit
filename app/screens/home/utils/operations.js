@@ -1,7 +1,7 @@
 import { Permissions, ImagePicker } from 'expo';
 import Api from '../../../shared/utils/api';
 import actions from '../state/actions';
-import firebaseOps from '../../../shared/utils/firebaseOperations';
+import firebaseOps from './firebaseOperations';
 
 const makeScan = async dispatch => {
     const { status } = await Permissions.askAsync(

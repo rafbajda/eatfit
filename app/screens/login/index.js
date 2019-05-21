@@ -12,7 +12,7 @@ import LoginDivider from './components/LoginDivider';
 import SocialLogin from './components/SocialLogin';
 import SignUp from './components/SignUp';
 import LoginIcon from './components/LoginIcon';
-import firebaseOps from '../../shared/utils/firebaseOperations';
+import firebaseOps from './utils/firebaseOperations';
 import globalSelectors from '../../shared/state/selectors';
 import GlobalLoader from '../../shared/components/GlobalLoader';
 import NavigationService from '../../navigation/NavigationService';
