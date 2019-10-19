@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="67b918fd-ce01-470b-83af-d4f08040e0ba" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.expo/packager-info.json" beforeDir="false" afterPath="$PROJECT_DIR$/.expo/packager-info.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/app.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />

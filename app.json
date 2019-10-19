@@ -5,7 +5,7 @@
     "name": "eatfit",
     "slug": "eatfit",
     "privacy": "public",
-    "sdkVersion": "33.0.0",
+    "sdkVersion": "35.0.0",
     "primaryColor": "#1db954",
     "platforms": [
       "ios",
