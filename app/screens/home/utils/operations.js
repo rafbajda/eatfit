@@ -1,4 +1,5 @@
-import { Permissions, ImagePicker } from 'expo';
+import * as Permissions from 'expo-permissions'
+import * as ImagePicker from 'expo-image-picker'
 import Api from '../../../shared/utils/api';
 import actions from '../state/actions';
 import firebaseOps from './firebaseOperations';

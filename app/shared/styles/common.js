@@ -1,19 +1,19 @@
 import styled from 'styled-components';
 import { Content, Row, Form, Text, Button, Container } from 'native-base';
-import { Constants } from 'expo';
+import * as Constants from 'expo-constants';
 import { globalGreen } from '../constants/colors';
 
 export const GlobalSpinnerContainer = styled(Content).attrs({
     contentContainerStyle: {
         justifyContent: 'center',
-        flex: 1,
-    },
+        flex: 1
+    }
 })``;
 
 export const GlobalContainer = styled(Content).attrs({
     contentContainerStyle: {
-        paddingTop: Constants.statusBarHeight,
-    },
+        paddingTop: Constants.statusBarHeight
+    }
 })``;
 
 export const CenterRow = styled(Row)`
@@ -64,5 +64,5 @@ export default {
     ErrorText,
     ErrorTextPaddingLeft,
     SubmitFormButton,
-    CenterContainer,
+    CenterContainer
 };

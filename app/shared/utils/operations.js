@@ -1,4 +1,4 @@
-import { Font } from 'expo';
+import * as Font from 'expo-font';
 import actions from '../state/actions';
 import firebaseOps from './firebaseOperations';
 

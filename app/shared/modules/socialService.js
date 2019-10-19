@@ -1,4 +1,5 @@
-import { Facebook, Google } from 'expo';
+import * as Google from 'expo-google-sign-in';
+import * as Facebook from 'expo-facebook'
 import { FACEBOOK_APP_ID, GOOGLE_CLIENT_ID } from 'react-native-dotenv';
 import { Toast } from 'native-base';
 import firebase from './firebase';
