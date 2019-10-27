@@ -14,9 +14,16 @@ import LogoutButton from './components/LogoutButton';
 import { CenterContainer } from '../../shared/styles/common';
 
 const NotVerifiedScreen = props => {
-    const { user, signOut, sendEmail, checkVerification, isAuthLoading, mailIconStyle } = {
+    const {
+        user,
+        signOut,
+        sendEmail,
+        checkVerification,
+        isAuthLoading,
+        mailIconStyle
+    } = {
         ...props,
-        ...styles,
+        ...styles
     };
     return (
         <CenterContainer>
@@ -36,13 +43,13 @@ const NotVerifiedScreen = props => {
 
 const mapStateToProps = state => ({
     user: globalSelectors.userSelector(state),
-    isAuthLoading: globalSelectors.authLoadingSelector(state),
+    isAuthLoading: globalSelectors.authLoadingSelector(state)
 });
 
 const mapDispatchToProps = dispatch => ({
     sendEmail: () => dispatch(actions.sendVerificationEmail()),
     signOut: () => dispatch(globalActions.logout()),
-    checkVerification: () => dispatch(actions.checkVerificationStatus()),
+    checkVerification: () => dispatch(actions.checkVerificationStatus())
 });
 
 export default connect(

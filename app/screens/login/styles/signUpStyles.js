@@ -22,5 +22,5 @@ export const SignUpText = styled(Text)`
 export default {
     SignUpContainer,
     InformationText,
-    SignUpText,
+    SignUpText
 };

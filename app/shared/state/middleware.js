@@ -42,5 +42,5 @@ const authMiddleware = store => next => action => {
 
 export default {
     configMiddleware,
-    authMiddleware,
+    authMiddleware
 };

@@ -10,11 +10,11 @@ const SignUpScreen = props => {
 };
 
 const mapStateToProps = state => ({
-    isAuthLoading: globalSelectors.authLoadingSelector(state),
+    isAuthLoading: globalSelectors.authLoadingSelector(state)
 });
 
 const mapDispatchToProps = dispatch => ({
-    signUp: user => dispatch(actions.createAccount(user)),
+    signUp: user => dispatch(actions.createAccount(user))
 });
 
 export default connect(

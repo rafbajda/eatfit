@@ -7,15 +7,19 @@ import {
     CenterFormContainerPaddingTop,
     ErrorText,
     SubmitFormButton,
-    CenterRowPaddingTop,
+    CenterRowPaddingTop
 } from '../../../shared/styles/common';
 import { globalWhite, mediumGrey } from '../../../shared/constants/colors';
 import formInitialValues from '../../../shared/constants/formInitialValues';
 import { indicatorSize } from '../styles/profileFormStyles';
 
 const ProfileForm = props => {
-    const { profileSchema, isAuthLoading, profile, updateProfile } = { ...props };
-    const profileInitialValues = formInitialValues.getProfileInitialValues(profile);
+    const { profileSchema, isAuthLoading, profile, updateProfile } = {
+        ...props
+    };
+    const profileInitialValues = formInitialValues.getProfileInitialValues(
+        profile
+    );
     return (
         <Formik
             initialValues={profileInitialValues}
@@ -32,13 +36,16 @@ const ProfileForm = props => {
                                     value={formikProps.values.firstName}
                                     placeholder="Your name"
                                     placeholderTextColor={mediumGrey}
-                                    onChangeText={formikProps.handleChange('firstName')}
+                                    onChangeText={formikProps.handleChange(
+                                        'firstName'
+                                    )}
                                     onBlur={formikProps.handleBlur('firstName')}
                                     disabled={isAuthLoading}
                                 />
                             </Item>
                             <ErrorText>
-                                {formikProps.touched.firstName && formikProps.errors.firstName}
+                                {formikProps.touched.firstName &&
+                                    formikProps.errors.firstName}
                             </ErrorText>
                             <Item regular>
                                 <Icon active name="person" />
@@ -46,18 +53,23 @@ const ProfileForm = props => {
                                     value={formikProps.values.lastName}
                                     placeholder="Your last name"
                                     placeholderTextColor={mediumGrey}
-                                    onChangeText={formikProps.handleChange('lastName')}
+                                    onChangeText={formikProps.handleChange(
+                                        'lastName'
+                                    )}
                                     onBlur={formikProps.handleBlur('lastName')}
                                     disabled={isAuthLoading}
                                 />
                             </Item>
                             <ErrorText>
-                                {formikProps.touched.lastName && formikProps.errors.lastName}
+                                {formikProps.touched.lastName &&
+                                    formikProps.errors.lastName}
                             </ErrorText>
                             <Item regular>
                                 <Icon active name="calendar" />
                                 <DatePicker
-                                    defaultDate={new Date(formikProps.values.birthday)}
+                                    defaultDate={
+                                        new Date(formikProps.values.birthday)
+                                    }
                                     maximumDate={new Date()}
                                     locale="en"
                                     timeZoneOffsetInMinutes={undefined}
@@ -65,10 +77,14 @@ const ProfileForm = props => {
                                     animationType="slide"
                                     androidMode="spinner"
                                     placeHolderText={
-                                        formikProps.values.birthday ? null : 'Your Birthday date'
+                                        formikProps.values.birthday
+                                            ? null
+                                            : 'Your Birthday date'
                                     }
                                     placeHolderTextStyle={{ color: mediumGrey }}
-                                    onDateChange={formikProps.handleChange('birthday')}
+                                    onDateChange={formikProps.handleChange(
+                                        'birthday'
+                                    )}
                                     onBlur={formikProps.handleBlur('birthday')}
                                     disabled={isAuthLoading}
                                 />
@@ -81,7 +97,10 @@ const ProfileForm = props => {
                             disabled={isAuthLoading}
                         >
                             {isAuthLoading ? (
-                                <UIActivityIndicator size={indicatorSize} color={globalWhite} />
+                                <UIActivityIndicator
+                                    size={indicatorSize}
+                                    color={globalWhite}
+                                />
                             ) : (
                                 <Text>Save changes</Text>
                             )}

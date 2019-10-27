@@ -10,19 +10,19 @@ const profileReducer = (state = profileInitialState, action) => {
         case globalActionTypes.SET_USER:
             return {
                 ...state,
-                ...ops.getProfileFromAuthUser(action.payload),
+                ...ops.getProfileFromAuthUser(action.payload)
             };
         case globalActionTypes.LOGOUT_SUCCESS:
             return profileInitialState;
         case actionTypes.CHANGE_AVATAR_SUCCESS:
             return {
                 ...state,
-                photoUrl: action.payload,
+                photoUrl: action.payload
             };
         case actionTypes.REMOVE_AVATAR:
             return {
                 ...state,
-                photoUrl: null,
+                photoUrl: null
             };
         default:
             return state;

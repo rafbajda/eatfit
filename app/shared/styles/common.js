@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Content, Row, Form, Text, Button, Container } from 'native-base';
-import * as Constants from 'expo-constants';
+import Constants from 'expo-constants';
 import { globalGreen } from '../constants/colors';
 
 export const GlobalSpinnerContainer = styled(Content).attrs({
@@ -13,6 +13,14 @@ export const GlobalSpinnerContainer = styled(Content).attrs({
 export const GlobalContainer = styled(Content).attrs({
     contentContainerStyle: {
         paddingTop: Constants.statusBarHeight
+    }
+})`
+    height: 100%;
+`;
+
+export const LoggedInGlobalContainer = styled(Content).attrs({
+    contentContainerStyle: {
+        backgroundColor: globalGreen
     }
 })``;
 

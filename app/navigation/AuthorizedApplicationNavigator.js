@@ -7,8 +7,8 @@ export default createDrawerNavigator(
     {
         [screens.Home]: {
             screen: HomeNavigator,
-            drawerLabel: 'Home',
-        },
+            drawerLabel: 'Home'
+        }
     },
     { drawerPosition: 'left', contentComponent: SideBar }
 );

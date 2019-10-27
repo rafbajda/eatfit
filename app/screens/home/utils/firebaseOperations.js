@@ -18,8 +18,7 @@ const uploadScan = async (uri, scanId) => {
         .child(scanId);
     const snapshot = await ref.put(blob);
     blob.close();
-    const downloadUrl = await snapshot.ref.getDownloadURL();
-    return downloadUrl;
+    return await snapshot.ref.getDownloadURL();
 };
 
 const createScanObject = async (scanUri, user) => {
@@ -34,12 +33,12 @@ const createScanObject = async (scanUri, user) => {
         name: `scan_${+new Date()}`,
         scan_url: scanUrl,
         created_at: new Date(),
-        user_id: globalFirebaseOps.getAuthCurrentUser().uid,
+        user_id: globalFirebaseOps.getAuthCurrentUser().uid
     };
     await scanRef.set(scanObject);
     return scanObject;
 };
 
 export default {
-    createScanObject,
+    createScanObject
 };

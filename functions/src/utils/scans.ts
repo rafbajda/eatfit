@@ -19,6 +19,7 @@ export const analyzeScan = functions.https.onRequest(async (req, res) => {
     const normalizedShots: Array<Shot> = shots.map(shot => hps.normalizeKeysToCamelCase(shot)) as Shot[];
     const substanceIds = hps.findSubstanceIds(detections, normalizedShots);
     const matchedSubstances = substances.filter(sub => _.includes(substanceIds, sub.id));
+    console.log('detections from analyzing here =>>>>: ', detections)
     await scanRef.get().then(doc => {
         if (doc.exists) {
             const scanObject = doc.data();
@@ -37,9 +38,9 @@ export const analyzeScan = functions.https.onRequest(async (req, res) => {
 export const performScan = functions.https.onRequest(async (req, res) => {
     console.log('performScan !!!, ', req.body)
     const scanUrl = req.body.scanUrl;
+    console.log('HERE CLIENT =>>>>', client);
     const [result] = await client.textDetection(scanUrl);
     const detections = result.textAnnotations;
-    console.log('detections: ', detections)
     res.send({ data: detections })
 });
 

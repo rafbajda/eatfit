@@ -3,7 +3,7 @@ import { Thumbnail } from 'native-base';
 import { CenterRow } from '../../../shared/styles/common';
 import styles from '../styles/loginIconStyles';
 
-const logoImage = require('../../../assets/images/logo2.png');
+const logoImage = require('../../../assets/images/eatfit_full.png');
 
 const LoginIcon = props => {
     const { hidden, iconStyle } = { ...props, ...styles };

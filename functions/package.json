@@ -1,5 +1,8 @@
 {
   "name": "functions",
+  "engines": {
+    "node": "8"
+  },
   "scripts": {
     "lint": "tslint --project tsconfig.json",
     "build": "tsc",
@@ -11,7 +14,7 @@
   },
   "main": "lib/index.js",
   "dependencies": {
-    "@google-cloud/vision": "^0.25.0",
+    "@google-cloud/vision": "^1.5.0",
     "@types/babel__core": "^7.1.0",
     "@types/babel__template": "^7.0.2",
     "axios": "^0.18.0",

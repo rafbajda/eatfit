@@ -13,15 +13,18 @@ const homeMiddleware = store => next => action => {
             dispatch(actions.createScanObject(payload));
             break;
         case actionTypes.CREATE_SCAN_OBJECT:
+            dispatch(actions.updateScanStatusMessage('creating scan object'));
             ops.createScanObject(payload, store.getState().auth.user, dispatch);
             break;
         case actionTypes.CREATE_SCAN_OBJECT_SUCCESS:
             dispatch(actions.performScan(payload));
             break;
         case actionTypes.PERFORM_SCAN:
+            dispatch(actions.updateScanStatusMessage('Analyzing image'));
             ops.performScan(payload, dispatch);
             break;
         case actionTypes.PERFORM_SCAN_SUCCESS:
+            dispatch(actions.updateScanStatusMessage('Matching substances'));
             dispatch(actions.analyzeScan(payload));
             break;
         case actionTypes.ANALYZE_SCAN:

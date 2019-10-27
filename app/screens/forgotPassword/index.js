@@ -11,17 +11,20 @@ const ForgotPasswordScreen = props => {
         <CenterContainer>
             {/* TODO: add this component after managing logo */}
             {/* <ResetPasswordMessage /> */}
-            <ForgotPasswordForm isAuthLoading={isAuthLoading} resetPassword={resetPassword} />
+            <ForgotPasswordForm
+                isAuthLoading={isAuthLoading}
+                resetPassword={resetPassword}
+            />
         </CenterContainer>
     );
 };
 
 const mapStateToProps = state => ({
-    isAuthLoading: globalSelectors.authLoadingSelector(state),
+    isAuthLoading: globalSelectors.authLoadingSelector(state)
 });
 
 const mapDispatchToProps = dispatch => ({
-    resetPassword: email => dispatch(actions.sendResetPasswordMail(email)),
+    resetPassword: email => dispatch(actions.sendResetPasswordMail(email))
 });
 
 export default connect(

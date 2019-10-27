@@ -45,9 +45,9 @@ class LoginScreen extends React.Component {
             loginSocialGoogle,
             setCurrentLanguage,
             currentLanguage,
-            login,
+            login
         } = {
-            ...this.props,
+            ...this.props
         };
         if (!isNoUserLoggedIn) {
             return <GlobalLoader />;
@@ -68,7 +68,10 @@ class LoginScreen extends React.Component {
                     isKeyboardVisible={isKeyboardVisible}
                 />
                 <LoginDivider />
-                <SocialLogin loginFacebook={loginSocialFacebook} loginGoogle={loginSocialGoogle} />
+                <SocialLogin
+                    loginFacebook={loginSocialFacebook}
+                    loginGoogle={loginSocialGoogle}
+                />
                 <SignUp nav={navigation} />
             </GlobalContainer>
         );
@@ -80,7 +83,7 @@ const mapStateToProps = state => ({
     isKeyboardVisible: loginSelectors.keyboardOnScreenSelector(state),
     isAuthLoading: globalSelectors.authLoadingSelector(state),
     isNoUserLoggedIn: globalSelectors.isNoUserLoggedInSelector(state),
-    currentLanguage: loginSelectors.pickedLanguageSelector(state),
+    currentLanguage: loginSelectors.pickedLanguageSelector(state)
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -90,7 +93,7 @@ const mapDispatchToProps = dispatch => ({
     loginSocialFacebook: () => dispatch(actions.loginFacebook()),
     loginSocialGoogle: () => dispatch(actions.loginGoogle()),
     setUpKeyboardListeners: () => dispatch(actions.setUpKeyboardListeners()),
-    removeKeyboardListeners: () => dispatch(actions.removeKeyboardListeners()),
+    removeKeyboardListeners: () => dispatch(actions.removeKeyboardListeners())
 });
 
 export default compose(

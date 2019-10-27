@@ -1,5 +1,5 @@
 import { createStackNavigator } from 'react-navigation';
-import * as Constants from 'expo-constants';
+import Constants from 'expo-constants';
 import screens from './screens';
 import HomeScreen from '../screens/home';
 import ProfileScreen from '../screens/profile';

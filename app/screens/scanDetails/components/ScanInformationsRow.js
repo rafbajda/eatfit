@@ -12,7 +12,10 @@ const ScanInformationsRow = props => {
                 <ScanImage scanUrl={scanUrl} />
             </Col>
             <Col>
-                <ScanInformations scanCreatedAt={scanCreatedAt} scanName={scanName} />
+                <ScanInformations
+                    scanCreatedAt={scanCreatedAt}
+                    scanName={scanName}
+                />
             </Col>
         </Row>
     );

@@ -9,11 +9,22 @@ const scansReducer = (state = initialScansState, action) => {
         case actionTypes.MAKE_SCAN:
             return { ...state, isLoading: true };
         case actionTypes.CREATE_SCAN_OBJECT_SUCCESS:
-            return { ...state, latestScan: hps.normalizeScanToCamelCase(action.payload) };
+            return {
+                ...state,
+                latestScan: hps.normalizeScanToCamelCase(action.payload)
+            };
         case actionTypes.PERFORM_SCAN_SUCCESS:
             return { ...state, isLoading: false };
         case actionTypes.ANALYZE_SCAN_SUCCESS:
-            return { ...state, latestScan: hps.normalizeScanToCamelCase(action.payload.data) };
+            return {
+                ...state,
+                latestScan: hps.normalizeScanToCamelCase(action.payload.data)
+            };
+        case actionTypes.UPDATE_SCAN_STATUS_MESSAGE:
+            return {
+                ...state,
+                scanStatusMessage: action.payload
+            };
         default:
             return state;
     }

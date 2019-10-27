@@ -9,9 +9,15 @@ import ProfileImage from './components/ProfileImage';
 import ProfileForm from './components/ProfileForm';
 
 const ProfileScreen = props => {
-    const { isAuthLoading, profile, profileSchema, changeAvatar, updateProfile } = {
+    const {
+        isAuthLoading,
+        profile,
+        profileSchema,
+        changeAvatar,
+        updateProfile
+    } = {
         ...props,
-        ...validationSchemas,
+        ...validationSchemas
     };
 
     return (
@@ -29,12 +35,12 @@ const ProfileScreen = props => {
 
 const mapDispatchToProps = dispatch => ({
     changeAvatar: () => dispatch(actions.changeAvatar()),
-    updateProfile: profile => dispatch(actions.updateUser(profile)),
+    updateProfile: profile => dispatch(actions.updateUser(profile))
 });
 
 const mapStateToProps = state => ({
     profile: selectors.profileSelector(state),
-    isAuthLoading: globalSelectors.authLoadingSelector(state),
+    isAuthLoading: globalSelectors.authLoadingSelector(state)
 });
 
 export default connect(

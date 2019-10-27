@@ -26,27 +26,27 @@ const configReducer = (state = initialConfigState, action) => {
         case globalActionTypes.LOAD_CONFIG:
             return {
                 ...state,
-                isDataLoading: true,
+                isDataLoading: true
             };
         case globalActionTypes.LOAD_CONFIG_DONE:
             return {
                 ...state,
-                isDataLoading: false,
+                isDataLoading: false
             };
         case loginActionTypes.SET_LANGUAGE:
             return {
                 ...state,
-                pickedLanguage: action.payload,
+                pickedLanguage: action.payload
             };
         case loginActionTypes.KEYBOARD_SHOW:
             return {
                 ...state,
-                keyboardOnScreen: true,
+                keyboardOnScreen: true
             };
         case loginActionTypes.KEYBOARD_HIDE:
             return {
                 ...state,
-                keyboardOnScreen: false,
+                keyboardOnScreen: false
             };
         default:
             return state;
@@ -63,7 +63,7 @@ const authReducer = (state = initialAuthState, action) => {
         case profileActionTypes.UPDATE_USER:
             return {
                 ...state,
-                isLoading: true,
+                isLoading: true
             };
         case forgotPasswordActions.SEND_RESET_PASSWORD_MAIL_ERROR:
         case forgotPasswordActions.SEND_RESET_PASSWORD_MAIL_SUCCESS:
@@ -80,20 +80,20 @@ const authReducer = (state = initialAuthState, action) => {
         case profileActionTypes.UPDATE_USER_ERROR:
             return {
                 ...state,
-                isLoading: false,
+                isLoading: false
             };
         case globalActionTypes.SET_USER:
             return {
                 ...state,
                 isLoading: false,
-                user: hps.normalizeKeysToCamelCase(action.payload),
+                user: hps.normalizeKeysToCamelCase(action.payload)
             };
 
         case globalActionTypes.LOGOUT_SUCCESS:
             return {
                 ...state,
                 isLoading: false,
-                user: null,
+                user: null
             };
         default:
             return state;
@@ -103,5 +103,5 @@ const authReducer = (state = initialAuthState, action) => {
 export default {
     configReducer,
     authReducer,
-    substancesReducer,
+    substancesReducer
 };

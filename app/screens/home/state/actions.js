@@ -11,26 +11,56 @@ export const actionTypes = {
     ANALYZE_SCAN: '[home] analyze scan',
     ANALYZE_SCAN_SUCCESS: '[home] analyze scan success',
     ANALYZE_SCAN_ERROR: '[home] analyze scan error',
+    UPDATE_SCAN_STATUS_MESSAGE: '[home] update scan status message'
 };
 
 const makeScan = payload => ({ type: actionTypes.MAKE_SCAN, payload });
-const makeScanSuccess = payload => ({ type: actionTypes.MAKE_SCAN_SUCCESS, payload });
-const makeScanError = payload => ({ type: actionTypes.MAKE_SCAN_ERROR, payload });
+const makeScanSuccess = payload => ({
+    type: actionTypes.MAKE_SCAN_SUCCESS,
+    payload
+});
+const makeScanError = payload => ({
+    type: actionTypes.MAKE_SCAN_ERROR,
+    payload
+});
 
-const createScanObject = payload => ({ type: actionTypes.CREATE_SCAN_OBJECT, payload });
+const createScanObject = payload => ({
+    type: actionTypes.CREATE_SCAN_OBJECT,
+    payload
+});
 const createScanObjectSuccess = payload => ({
     type: actionTypes.CREATE_SCAN_OBJECT_SUCCESS,
-    payload,
+    payload
 });
-const createScanObjectError = payload => ({ type: actionTypes.CREATE_SCAN_OBJECT_ERROR, payload });
+const createScanObjectError = payload => ({
+    type: actionTypes.CREATE_SCAN_OBJECT_ERROR,
+    payload
+});
 
 const performScan = payload => ({ type: actionTypes.PERFORM_SCAN, payload });
-const performScanSuccess = payload => ({ type: actionTypes.PERFORM_SCAN_SUCCESS, payload });
-const performScanError = payload => ({ type: actionTypes.PERFORM_SCAN_ERROR, payload });
+const performScanSuccess = payload => ({
+    type: actionTypes.PERFORM_SCAN_SUCCESS,
+    payload
+});
+const performScanError = payload => ({
+    type: actionTypes.PERFORM_SCAN_ERROR,
+    payload
+});
 
 const analyzeScan = payload => ({ type: actionTypes.ANALYZE_SCAN, payload });
-const analyzeScanSuccess = payload => ({ type: actionTypes.ANALYZE_SCAN_SUCCESS, payload });
-const analyzeScanError = payload => ({ type: actionTypes.ANALYZE_SCAN_ERROR, payload });
+const analyzeScanSuccess = payload => ({
+    type: actionTypes.ANALYZE_SCAN_SUCCESS,
+    payload
+});
+const analyzeScanError = payload => ({
+    type: actionTypes.ANALYZE_SCAN_ERROR,
+    payload
+});
+
+const updateScanStatusMessage = payload => ({
+    type: actionTypes.UPDATE_SCAN_STATUS_MESSAGE,
+    payload
+});
 
 export default {
     makeScan,
@@ -45,4 +75,5 @@ export default {
     analyzeScan,
     analyzeScanSuccess,
     analyzeScanError,
+    updateScanStatusMessage
 };

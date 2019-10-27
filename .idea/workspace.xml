@@ -2,9 +2,66 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="67b918fd-ce01-470b-83af-d4f08040e0ba" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/assets/images/eatfit_full.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/images/eatfit_without_icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/screens/home/components/Legend.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/screens/home/styles/legendStyles.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/shared/constants/emojis.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.expo/packager-info.json" beforeDir="false" afterPath="$PROJECT_DIR$/.expo/packager-info.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/app.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/__tests__/App-test.js" beforeDir="false" afterPath="$PROJECT_DIR$/__tests__/App-test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/images/logo2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/navigation/AuthorizedApplicationNavigator.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/navigation/AuthorizedApplicationNavigator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/navigation/HomeNavigator.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/navigation/HomeNavigator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/navigation/RootNavigator.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/navigation/RootNavigator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/navigation/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/navigation/reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/forgotPassword/components/ForgotPasswordForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/forgotPassword/components/ForgotPasswordForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/forgotPassword/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/forgotPassword/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/home/components/ScanButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/home/components/ScanButton.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/home/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/home/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/home/state/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/home/state/actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/home/state/middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/home/state/middleware.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/home/state/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/home/state/reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/home/state/selectors.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/home/state/selectors.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/home/styles/scanButtonStyles.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/home/styles/scanButtonStyles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/home/utils/firebaseOperations.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/home/utils/firebaseOperations.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/home/utils/helpers.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/home/utils/helpers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/home/utils/operations.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/home/utils/operations.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/login/components/LanguagePicker.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/login/components/LanguagePicker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/login/components/LoginForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/login/components/LoginForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/login/components/LoginIcon.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/login/components/LoginIcon.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/login/components/SignUp.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/login/components/SignUp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/login/components/SocialLogin.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/login/components/SocialLogin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/login/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/login/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/login/styles/loginFormStyles.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/login/styles/loginFormStyles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/login/styles/loginIconStyles.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/login/styles/loginIconStyles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/login/styles/signUpStyles.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/login/styles/signUpStyles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/login/styles/socialLoginStyles.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/login/styles/socialLoginStyles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/notVerified/components/VerificationMessage.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/notVerified/components/VerificationMessage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/notVerified/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/notVerified/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/profile/components/ProfileForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/profile/components/ProfileForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/profile/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/profile/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/profile/state/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/profile/state/reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/scanDetails/components/ScanInformations.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/scanDetails/components/ScanInformations.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/scanDetails/components/ScanInformationsRow.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/scanDetails/components/ScanInformationsRow.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/scanDetails/components/SubstancesList.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/scanDetails/components/SubstancesList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/scanDetails/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/scanDetails/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/scanDetails/utils/helpers.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/scanDetails/utils/helpers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/signUp/components/SignUpForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/signUp/components/SignUpForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/signUp/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/signUp/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/shared/components/GlobalHeader.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/shared/components/GlobalHeader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/shared/components/Sidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/shared/components/Sidebar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/shared/constants/state.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/shared/constants/state.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/shared/state/middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/shared/state/middleware.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/shared/state/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/shared/state/reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/shared/state/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/shared/state/store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/shared/styles/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/shared/styles/common.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/shared/utils/operations.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/shared/utils/operations.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/functions/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/src/utils/scans.ts" beforeDir="false" afterPath="$PROJECT_DIR$/functions/src/utils/scans.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/eatfit.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/ios/eatfit.xcodeproj/project.pbxproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,9 +85,19 @@
     <option name="width" value="1400" />
     <option name="height" value="1000" />
   </component>
+  <component name="ProjectId" id="1SWYyCzhBtS160waMUp0iYm2Pka" />
   <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="android.sdk.path" value="$PROJECT_DIR$/../Android/Sdk" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/android" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/assets/images" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/functions/node_modules/typescript/lib" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/assets/images" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -54,6 +121,17 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1553118662916</updated>
+      <workItem from="1571681075271" duration="235000" />
+      <workItem from="1572110321252" duration="4969000" />
+      <workItem from="1572115879811" duration="6103000" />
+      <workItem from="1572163292964" duration="35000" />
+      <workItem from="1572186411857" duration="3160000" />
+      <workItem from="1572189744052" duration="2824000" />
+      <workItem from="1572194011884" duration="4872000" />
+      <workItem from="1572199274529" duration="1193000" />
+      <workItem from="1572200486022" duration="4758000" />
+      <workItem from="1572206839824" duration="6395000" />
+      <workItem from="1572213726664" duration="2372000" />
     </task>
     <servers />
   </component>
@@ -66,12 +144,27 @@
       <is-autoscroll-to-source value="true" />
     </todo-panel>
   </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

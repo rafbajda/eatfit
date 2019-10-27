@@ -5,8 +5,12 @@ import UnauthorizedApplicationNavigator from './UnauthorizedApplicationNavigator
 
 const RootNavigator = createSwitchNavigator(
     {
-        [screens.AuthorizedApplication]: { screen: AuthorizedApplicationNavigator },
-        [screens.UnauthorizedApplication]: { screen: UnauthorizedApplicationNavigator },
+        [screens.AuthorizedApplication]: {
+            screen: AuthorizedApplicationNavigator
+        },
+        [screens.UnauthorizedApplication]: {
+            screen: UnauthorizedApplicationNavigator
+        }
     },
     { initialRouteName: screens.UnauthorizedApplication }
 );

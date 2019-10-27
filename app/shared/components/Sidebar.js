@@ -11,12 +11,20 @@ import lists from '../constants/lists';
 const SideBar = props => {
     const { signOut, navigation } = { ...props };
 
-    const sideBarActions = [() => navigation.navigate(screens.Profile), signOut];
-    const items = hps.completeSideBarListWithActions(lists.SIDE_BAR_LIST, sideBarActions);
+    const sideBarActions = [
+        () => navigation.navigate(screens.Profile),
+        signOut
+    ];
+    const items = hps.completeSideBarListWithActions(
+        lists.SIDE_BAR_LIST,
+        sideBarActions
+    );
 
     const sideBarItems = items.map(item => {
         const { id, icon, action, label } = { ...item };
-        return <ListItem key={id} leftIcon={icon} onPress={action} title={label} />;
+        return (
+            <ListItem key={id} leftIcon={icon} onPress={action} title={label} />
+        );
     });
 
     return (
@@ -27,7 +35,7 @@ const SideBar = props => {
 };
 
 export const mapDispatchToProps = dispatch => ({
-    signOut: () => dispatch(actions.logout()),
+    signOut: () => dispatch(actions.logout())
 });
 
 export default connect(

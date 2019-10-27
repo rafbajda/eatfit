@@ -1,17 +1,19 @@
-import * as Permissions from 'expo-permissions'
-import * as ImagePicker from 'expo-image-picker'
+import * as Permissions from 'expo-permissions';
+import * as ImagePicker from 'expo-image-picker';
 import Api from '../../../shared/utils/api';
 import actions from '../state/actions';
 import firebaseOps from './firebaseOperations';
 
 const makeScan = async dispatch => {
+    dispatch(actions.updateScanStatusMessage('asking for permissions'));
     const { status } = await Permissions.askAsync(
         Permissions.CAMERA,
         Permissions.CAMERA_ROLL
     ).catch(err => dispatch(actions.makeScanError(err)));
     if (status === 'granted') {
+        dispatch(actions.updateScanStatusMessage('opening camera'));
         ImagePicker.launchCameraAsync({
-            quality: 1,
+            quality: 0.6
         })
             .then(result => {
                 if (!result.cancelled) {
@@ -54,5 +56,5 @@ export default {
     makeScan,
     performScan,
     analyzeScan,
-    createScanObject,
+    createScanObject
 };

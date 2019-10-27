@@ -2,11 +2,11 @@ import * as Font from 'expo-font';
 import actions from '../state/actions';
 import firebaseOps from './firebaseOperations';
 
-const Roboto = require('../../assets/fonts/Roboto.ttf');
-const RobotoMedium = require('../../assets/fonts/Roboto_medium.ttf');
-
 const getFonts = dispatch => {
-    Font.loadAsync({ Roboto, Roboto_medium: RobotoMedium })
+    Font.loadAsync({
+        Roboto: require('../../assets/fonts/Roboto.ttf'),
+        Roboto_medium: require('../../assets/fonts/Roboto_medium.ttf')
+    })
         .then(() => dispatch(actions.getFontsSuccess()))
         .catch(error => dispatch(actions.getFontsError(error)));
 };
@@ -36,5 +36,5 @@ export default {
     getFonts,
     logout,
     createUserObject,
-    refreshUser,
+    refreshUser
 };

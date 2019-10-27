@@ -7,8 +7,15 @@ const normalizeScanToCamelCase = scan => {
     const normalizedScan = globalHps.normalizeKeysToCamelCase(scan);
     return {
         ...normalizedScan,
-        substances: normalizedSubstances,
+        substances: normalizedSubstances
     };
 };
 
-export default { normalizeScanToCamelCase };
+const convertUnicode = input => {
+    return input.replace(/\\u(\w\w\w\w)/g, (a, b) => {
+        const code = parseInt(b, 16);
+        return String.fromCharCode(code);
+    });
+};
+
+export default { normalizeScanToCamelCase, convertUnicode };

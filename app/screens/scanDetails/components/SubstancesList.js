@@ -4,7 +4,10 @@ import hps from '../utils/helpers';
 
 const SubstancesList = props => {
     const { substances, goToSubstanceDetails } = { ...props };
-    const substanceList = hps.getSubstanceList(substances, goToSubstanceDetails);
+    const substanceList = hps.getSubstanceList(
+        substances,
+        goToSubstanceDetails
+    );
     return <Content>{substanceList}</Content>;
 };
 

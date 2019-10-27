@@ -15,7 +15,6 @@ class Application extends React.Component {
         const { getConfig } = { ...this.props };
         getConfig();
     }
-
     render() {
         const { loading, firebase } = { ...this.props };
 
@@ -27,11 +26,11 @@ class Application extends React.Component {
 }
 
 const mapStateToProps = state => ({
-    loading: globalSelectors.loadingSelector(state),
+    loading: globalSelectors.loadingSelector(state)
 });
 
 const mapDispatchToProps = dispatch => ({
-    getConfig: () => dispatch(globalActions.loadConfig()),
+    getConfig: () => dispatch(globalActions.loadConfig())
 });
 
 export default compose(

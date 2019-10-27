@@ -1,8 +1,28 @@
 import styled from 'styled-components';
 import { Button, Text } from 'native-base';
 import { globalGreen } from '../../../shared/constants/colors';
+import { CenterRow } from '../../../shared/styles/common';
+import { Content } from 'native-base';
+export const indicatorSize = 35;
 
-export const indicatorSize = 30;
+export const LoadingIndicator = styled(Content).attrs({
+    contentContainerStyle: {
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center'
+    }
+})``;
+
+export const LoadingIndicatorText = styled(Text)`
+    font-size: 20;
+    color: white;
+    padding-left: 20;
+`;
+
+export const ButtonRow = styled(CenterRow)`
+    height: 100;
+`;
 
 export const ScanButton = styled(Button)`
     height: 70;
@@ -20,5 +40,5 @@ export const ScanButtonText = styled(Text)`
 export default {
     ScanButton,
     ScanButtonText,
-    indicatorSize,
+    indicatorSize
 };

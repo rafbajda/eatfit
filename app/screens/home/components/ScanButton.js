@@ -1,24 +1,36 @@
 import React from 'react';
 import { UIActivityIndicator } from 'react-native-indicators';
-import { CenterContainer, CenterRow } from '../../../shared/styles/common';
 import { globalWhite } from '../../../shared/constants/colors';
-import { ScanButton, ScanButtonText, indicatorSize } from '../styles/scanButtonStyles';
+import {
+    ScanButton,
+    ScanButtonText,
+    indicatorSize,
+    ButtonRow,
+    LoadingIndicator,
+    LoadingIndicatorText
+} from '../styles/scanButtonStyles';
 
 const ScanButtonElement = props => {
-    const { isScanLoading, scan } = { ...props };
+    const { isScanLoading, scan, scanStatusMessage } = { ...props };
 
     return (
-        <CenterContainer>
-            <CenterRow>
-                <ScanButton onPress={() => scan()} disabled={isScanLoading}>
-                    {isScanLoading ? (
-                        <UIActivityIndicator size={indicatorSize} color={globalWhite} />
-                    ) : (
-                        <ScanButtonText>Scan</ScanButtonText>
-                    )}
-                </ScanButton>
-            </CenterRow>
-        </CenterContainer>
+        <ButtonRow>
+            <ScanButton onPress={() => scan()} disabled={isScanLoading}>
+                {isScanLoading ? (
+                    <LoadingIndicator>
+                        <LoadingIndicatorText>
+                            {scanStatusMessage}
+                        </LoadingIndicatorText>
+                        <UIActivityIndicator
+                            size={indicatorSize}
+                            color={globalWhite}
+                        />
+                    </LoadingIndicator>
+                ) : (
+                    <ScanButtonText>Scan</ScanButtonText>
+                )}
+            </ScanButton>
+        </ButtonRow>
     );
 };
 

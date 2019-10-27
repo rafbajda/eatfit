@@ -1,12 +1,20 @@
 /* global __DEV__ */
 import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
-import { getFirestore, reduxFirestore, firestoreReducer } from 'redux-firestore';
-import { getFirebase, reactReduxFirebase, firebaseReducer } from 'react-redux-firebase';
+import {
+    getFirestore,
+    reduxFirestore,
+    firestoreReducer
+} from 'redux-firestore';
+import {
+    getFirebase,
+    reactReduxFirebase,
+    firebaseReducer
+} from 'react-redux-firebase';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import {
     createReactNavigationReduxMiddleware,
-    createNavigationReducer,
+    createNavigationReducer
 } from 'react-navigation-redux-helpers';
 import globalReducers from './reducer';
 import firebaseConfig from '../modules/firebase';
@@ -35,11 +43,11 @@ const combinedReducer = combineReducers({
     scans: scansReducer,
     substances: globalReducers.substancesReducer,
     firestore: firestoreReducer,
-    firebase: firebaseReducer,
+    firebase: firebaseReducer
 });
 
 if (__DEV__) {
-  const devToolsEnhancer = require('remote-redux-devtools'); // eslint-disable-line
+    const devToolsEnhancer = require('remote-redux-devtools'); // eslint-disable-line
     store = createStore(
         combinedReducer,
         initialState,

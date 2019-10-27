@@ -29,11 +29,12 @@ const ScanDetailsScreen = props => {
 };
 
 const mapStateToProps = state => ({
-    scan: selectors.latestScanSelector(state),
+    scan: selectors.latestScanSelector(state)
 });
 
 const mapDispatchToProps = dispatch => ({
-    goToSubstanceDetails: substance => dispatch(actions.setSubstanceDetails(substance)),
+    goToSubstanceDetails: substance =>
+        dispatch(actions.setSubstanceDetails(substance))
 });
 
 export default connect(

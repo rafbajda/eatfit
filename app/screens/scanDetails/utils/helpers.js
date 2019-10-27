@@ -8,7 +8,9 @@ const defaultSubstanceImage = require('../../../assets/images/default_substance.
 
 const getSubstanceList = (substances, goToSubstanceDetails) =>
     substances.map(sub => {
-        const source = sub.image ? { uri: sub.image } : defaultSubstanceImage;
+        const source = sub.imageUrl
+            ? { uri: sub.imageUrl }
+            : defaultSubstanceImage;
         return (
             <ListItem
                 containerStyle={{ borderWidth: 1, borderColor: lightGrey }}
@@ -21,7 +23,8 @@ const getSubstanceList = (substances, goToSubstanceDetails) =>
         );
     });
 
-const getUserFriendlyDate = date => moment(date).format('MMMM Do YYYY, h:mm:ss a');
+const getUserFriendlyDate = date =>
+    moment(date).format('MMMM Do YYYY, h:mm:ss a');
 
 const changeComaToBreak = str => str.split(', ').join(`\n`);
 
@@ -33,5 +36,5 @@ const getScanDate = date => {
 
 export default {
     getSubstanceList,
-    getScanDate,
+    getScanDate
 };

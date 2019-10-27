@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Text, Button } from 'native-base';
-import { deepBlue } from '../../../shared/constants/colors';
+import { deepBlue, globalGreen } from '../../../shared/constants/colors';
 
 export const ForgotPasswordText = styled(Text)`
     font-size: 13;
@@ -10,19 +10,21 @@ export const ForgotPasswordText = styled(Text)`
 `;
 
 export const LoginButton = styled(Button)`
-    background-color: ${deepBlue};
+    background-color: ${globalGreen};
+    height: 60;
     width: 70%;
     justify-content: center;
-    margin-top: 10;
+    margin-top: 25;
+    margin-bottom: 15;
     font-weight: bold;
 `;
 
 const additionalTopPadding = {
-    paddingTop: 15,
+    paddingTop: 15
 };
 
 export default {
     additionalTopPadding,
     LoginButton,
-    ForgotPasswordText,
+    ForgotPasswordText
 };

@@ -8,7 +8,12 @@ const SocialLogin = props => {
     return (
         <SocialContainer>
             <Col>
-                <SocialIcon type="facebook" title="Facebook" onPress={loginFacebook} button />
+                <SocialIcon
+                    type="facebook"
+                    title="Facebook"
+                    onPress={loginFacebook}
+                    button
+                />
             </Col>
             <Col>
                 <SocialIcon
