@@ -11,7 +11,7 @@ const makeScan = async dispatch => {
         Permissions.CAMERA_ROLL
     ).catch(err => dispatch(actions.makeScanError(err)));
     if (status === 'granted') {
-        dispatch(actions.updateScanStatusMessage('opening camera'));
+        dispatch(actions.updateScanStatusMessage('processing camera'));
         ImagePicker.launchCameraAsync({
             quality: 0.6
         })
@@ -24,8 +24,10 @@ const makeScan = async dispatch => {
     }
 };
 
-const performScan = async (scanObject, dispatch) => {
-    Api.useVisionApi(scanObject.scan_url)
+const performScan = async (scanObjectData, dispatch) => {
+    console.log('scanobjjjjj>', scanObject);
+    const { scanObject, localizationUrl } = scanObjectData;
+    Api.useVisionApi(localizationUrl)
         .then(res => {
             const sepArr = [];
             res.data.data.map(item => {
@@ -46,10 +48,10 @@ const analyzeScan = async (detections, scan, user, dispatch) => {
 };
 
 const createScanObject = async (scanUri, user, dispatch) => {
-    const scanObject = await firebaseOps
+    const scanObjectData = await firebaseOps
         .createScanObject(scanUri, user)
         .catch(err => dispatch(actions.performScanError(err)));
-    dispatch(actions.createScanObjectSuccess(scanObject));
+    dispatch(actions.createScanObjectSuccess(scanObjectData));
 };
 
 export default {

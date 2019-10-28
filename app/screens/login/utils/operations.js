@@ -42,7 +42,7 @@ const signInFacebook = dispatch => {
                 dispatch(
                     actions.loginFacebookSuccess({
                         user,
-                        additionalUserInfo,
+                        additionalUserInfo
                     })
                 );
             }
@@ -61,7 +61,7 @@ const signInGoogle = dispatch => {
                 dispatch(
                     actions.loginGoogleSuccess({
                         user,
-                        additionalUserInfo,
+                        additionalUserInfo
                     })
                 );
             }
@@ -76,13 +76,16 @@ const checkUserObjectExistence = async (data, dispatch) => {
         .then(doc => {
             if (doc.exists) {
                 dispatch(
-                    actions.checkUserObjectExistenceSuccess({ ...data, userObjectExists: true })
+                    actions.checkUserObjectExistenceSuccess({
+                        ...data,
+                        userObjectExists: true
+                    })
                 );
             } else {
                 dispatch(
                     actions.checkUserObjectExistenceSuccess({
                         ...data,
-                        userObjectExists: false,
+                        userObjectExists: false
                     })
                 );
             }
@@ -96,5 +99,5 @@ export default {
     signInGoogle,
     checkUserObjectExistence,
     setUpKeyboardListeners,
-    removeKeyboardListeners,
+    removeKeyboardListeners
 };

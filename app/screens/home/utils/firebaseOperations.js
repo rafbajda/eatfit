@@ -17,8 +17,16 @@ const uploadScan = async (uri, scanId) => {
         .ref(`users/${uid}/scans`)
         .child(scanId);
     const snapshot = await ref.put(blob);
+    console.log('S N A P:', snapshot);
     blob.close();
-    return await snapshot.ref.getDownloadURL();
+    const location = snapshot.ref.location;
+    const { bucket, path } = location;
+    const localizationUrl = `gs://${bucket}/${path}`;
+    const downloadUrl = await snapshot.ref.getDownloadURL();
+    return {
+        localizationUrl,
+        downloadUrl
+    };
 };
 
 const createScanObject = async (scanUri, user) => {
@@ -27,16 +35,16 @@ const createScanObject = async (scanUri, user) => {
         .collection(`/users/${user.uid}/scans`)
         .doc();
     const scanId = scanRef.id;
-    const scanUrl = await uploadScan(scanUri, scanId);
+    const { localizationUrl, downloadUrl } = await uploadScan(scanUri, scanId);
     const scanObject = {
         id: scanId,
         name: `scan_${+new Date()}`,
-        scan_url: scanUrl,
+        scan_url: downloadUrl,
         created_at: new Date(),
         user_id: globalFirebaseOps.getAuthCurrentUser().uid
     };
     await scanRef.set(scanObject);
-    return scanObject;
+    return { scanObject, localizationUrl };
 };
 
 export default {

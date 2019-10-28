@@ -40,7 +40,9 @@ export const performScan = functions.https.onRequest(async (req, res) => {
     const scanUrl = req.body.scanUrl;
     console.log('HERE CLIENT =>>>>', client);
     const [result] = await client.textDetection(scanUrl);
+    console.log('resp: ', [result])
     const detections = result.textAnnotations;
+    console.log('DDDET: ', detections);
     res.send({ data: detections })
 });
 
