@@ -3,15 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="67b918fd-ce01-470b-83af-d4f08040e0ba" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.expo/packager-info.json" beforeDir="false" afterPath="$PROJECT_DIR$/.expo/packager-info.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.expo/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/.expo/settings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/home/state/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/home/state/reducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/home/utils/firebaseOperations.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/home/utils/firebaseOperations.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/home/utils/operations.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/home/utils/operations.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/login/state/middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/login/state/middleware.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/screens/login/utils/operations.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/login/utils/operations.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/shared/modules/socialService.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/shared/modules/socialService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/functions/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/src/utils/scans.ts" beforeDir="false" afterPath="$PROJECT_DIR$/functions/src/utils/scans.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,7 +34,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="android.sdk.path" value="$PROJECT_DIR$/../Android/Sdk" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/assets/images" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/functions/node_modules/typescript/lib" />
@@ -82,7 +78,9 @@
       <workItem from="1572206839824" duration="6395000" />
       <workItem from="1572213726664" duration="2592000" />
       <workItem from="1572294060544" duration="4356000" />
-      <workItem from="1572299204660" duration="3781000" />
+      <workItem from="1572299204660" duration="4200000" />
+      <workItem from="1579085521928" duration="1134000" />
+      <workItem from="1579167474511" duration="2734000" />
     </task>
     <task id="LOCAL-00001" summary="status messaging works">
       <created>1572216147756</created>
