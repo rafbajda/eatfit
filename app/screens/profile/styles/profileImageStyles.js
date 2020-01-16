@@ -3,5 +3,5 @@ export const avatarSize = 150;
 
 export default {
     avatarContainerStyle,
-    avatarSize,
+    avatarSize
 };

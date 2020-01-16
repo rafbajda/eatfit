@@ -13,9 +13,9 @@ export const SubstanceInformationContainer = styled(Content).attrs({
     contentContainerStyle: {
         display: 'flex',
         flexDirection: 'column',
-        alignItems:'center',
+        alignItems: 'center',
         justifyContent: 'center',
-        paddingTop: '10%',
+        paddingTop: '10%'
     }
 })``;
 
@@ -24,10 +24,8 @@ export const SubstanceInformationLabel = styled(Text)`
     padding-top: 3%;
 `;
 
-
-
 export default {
     ImageContainer,
     SubstanceInformationLabel,
-    SubstanceInformationContainer,
+    SubstanceInformationContainer
 };

@@ -36,6 +36,7 @@ const signInFacebook = dispatch => {
         .loginWithFacebook()
         .then(login => {
             if (login && login.error) {
+                console.log('error from resolved', login);
                 dispatch(actions.loginFacebookError(login.error));
             } else {
                 console.log('login: ', login);
@@ -48,7 +49,10 @@ const signInFacebook = dispatch => {
                 );
             }
         })
-        .catch(error => dispatch(actions.loginFacebookError(error)));
+        .catch(error => {
+            console.log('error from this catch: ', error);
+            dispatch(actions.loginFacebookError(error));
+        });
 };
 
 const signInGoogle = dispatch => {

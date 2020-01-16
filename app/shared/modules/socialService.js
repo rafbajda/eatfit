@@ -13,25 +13,31 @@ const socialConfig = {
 export default class socialService {
     static async loginWithFacebook() {
         try {
-            const {
-                type,
-                token
-            } = await Facebook.logInWithReadPermissionsAsync(
+            return Facebook.initializeAsync(
                 socialConfig.facebookAppId,
-                {
-                    permissions: ['public_profile']
-                }
-            );
-
-            if (type === 'success' && token) {
-                const credential = firebase.auth.FacebookAuthProvider.credential(
+                'eatfit'
+            ).then(async () => {
+                const {
+                    type,
                     token
+                } = await Facebook.logInWithReadPermissionsAsync(
+                    socialConfig.facebookAppId,
+                    {
+                        permissions: ['public_profile']
+                    }
                 );
-                console.log(type, token, credential);
-                return firebase.auth().signInWithCredential(credential);
-            }
-            return new Promise(resolve => resolve({ cancelled: true }));
+
+                if (type === 'success' && token) {
+                    const credential = firebase.auth.FacebookAuthProvider.credential(
+                        token
+                    );
+                    console.log(type, token, credential);
+                    return firebase.auth().signInWithCredential(credential);
+                }
+                return new Promise(resolve => resolve({ cancelled: true }));
+            });
         } catch ({ message }) {
+            console.log('error in catch toast', message);
             Toast.show(WarningToastMessage(message));
         }
         return new Promise(resolve => resolve({ error: true }));
@@ -49,9 +55,7 @@ export default class socialService {
                     idToken,
                     accessToken
                 );
-                return firebase
-                    .auth()
-                    .signInAndRetrieveDataWithCredential(credential);
+                return firebase.auth().signInWithCredential(credential);
             }
             return new Promise(resolve => resolve({ cancelled: true }));
         } catch ({ message }) {

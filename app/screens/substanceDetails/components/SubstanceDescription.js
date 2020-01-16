@@ -1,6 +1,9 @@
 import React from 'react';
 import { Text } from 'native-base';
-import {DescriptionContainer, SubstanceInformationLabel} from '../styles/substanceDetailsStyles';
+import {
+    DescriptionContainer,
+    SubstanceInformationLabel
+} from '../styles/substanceDetailsStyles';
 
 const SubstanceDescription = props => {
     const { substanceDescription } = { ...props };
