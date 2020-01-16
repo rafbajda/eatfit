@@ -3,11 +3,13 @@
     "login": "zaloguj",
     "facebook": "Facebook",
     "google": "Google",
-    "resetPassword": "Resetuj hasło"
+    "resetPassword": "Resetuj hasło",
+    "create": "Stwórz"
   },
   "placeholders": {
     "email": "Email",
-    "password": "Hasło"
+    "password": "Hasło",
+    "confirmPassword": "Potwierdź hasło"
   },
   "dividers": {
     "or": "LUB"
@@ -17,6 +19,10 @@
     "signUp": "Załóż konto"
   },
   "info": {
-    "dontHaveAccount": "Nie masz konta?"
+    "dontHaveAccount": "Nie masz konta?",
+    "resetPassword": "Zresetuj swoje hasło",
+    "resetPasswordDetails": "Na email przyjdzie link, który umożliwi zmianę hasła",
+    "termsCheckbox": "Przeczytałem i akceptuję warunki korzystania z aplikacji",
+    "newsletterCheckbox": "(opcjonalne) Akceptuję otrzymywanie wiadomości komercyjne w sposób elektroniczny"
   }
 }

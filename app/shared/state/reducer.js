@@ -40,12 +40,12 @@ const configReducer = (state = initialConfigState, action) => {
                 ...state,
                 pickedLanguage: action.payload
             };
-        case loginActionTypes.KEYBOARD_SHOW:
+        case globalActionTypes.KEYBOARD_SHOW:
             return {
                 ...state,
                 keyboardOnScreen: true
             };
-        case loginActionTypes.KEYBOARD_HIDE:
+        case globalActionTypes.KEYBOARD_HIDE:
             return {
                 ...state,
                 keyboardOnScreen: false

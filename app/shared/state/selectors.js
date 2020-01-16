@@ -1,6 +1,7 @@
 import { createSelector } from 'reselect';
 
-const firestoreRequestSelector = state => state.firestore.status.requesting.config;
+const firestoreRequestSelector = state =>
+    state.firestore.status.requesting.config;
 
 const configLoadingSelector = state => state.config.isDataLoading;
 const authLoadingSelector = state => state.auth.isLoading;
@@ -9,6 +10,8 @@ const isAuthLoadedSelector = state => state.firebase.auth.isLoaded;
 const isAuthEmptySelector = state => state.firebase.auth.isEmpty;
 
 const userSelector = state => state.auth.user;
+
+const keyboardOnScreenSelector = state => state.config.keyboardOnScreen;
 
 const isNoUserLoggedInSelector = createSelector(
     isAuthLoadedSelector,
@@ -30,5 +33,6 @@ export default {
     isAuthEmptySelector,
     isNoUserLoggedInSelector,
     loadingSelector,
-    userSelector,
+    keyboardOnScreenSelector,
+    userSelector
 };

@@ -80,7 +80,7 @@ class LoginScreen extends React.Component {
 
 const mapStateToProps = state => ({
     languages: loginSelectors.languagesSelector(state),
-    isKeyboardVisible: loginSelectors.keyboardOnScreenSelector(state),
+    isKeyboardVisible: globalSelectors.keyboardOnScreenSelector(state),
     isAuthLoading: globalSelectors.authLoadingSelector(state),
     isNoUserLoggedIn: globalSelectors.isNoUserLoggedInSelector(state),
     currentLanguage: loginSelectors.pickedLanguageSelector(state)
@@ -92,8 +92,10 @@ const mapDispatchToProps = dispatch => ({
     setUserState: user => dispatch(globalActions.setUser(user)),
     loginSocialFacebook: () => dispatch(actions.loginFacebook()),
     loginSocialGoogle: () => dispatch(actions.loginGoogle()),
-    setUpKeyboardListeners: () => dispatch(actions.setUpKeyboardListeners()),
-    removeKeyboardListeners: () => dispatch(actions.removeKeyboardListeners())
+    setUpKeyboardListeners: () =>
+        dispatch(globalActions.setUpKeyboardListeners()),
+    removeKeyboardListeners: () =>
+        dispatch(globalActions.removeKeyboardListeners())
 });
 
 export default compose(

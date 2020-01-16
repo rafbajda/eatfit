@@ -8,12 +8,6 @@ const loginMiddleware = store => next => action => {
         case actionTypes.SET_LANGUAGE:
             ops.updateLocalLanguage(action.payload);
             break;
-        case actionTypes.SET_UP_KEYBOARD_LISTENERS:
-            ops.setUpKeyboardListeners(dispatch);
-            break;
-        case actionTypes.REMOVE_KEYBOARD_LISTENERS:
-            ops.removeKeyboardListeners();
-            break;
         case actionTypes.LOGIN_EMAIL:
             ops.signInEmail(payload, dispatch);
             break;

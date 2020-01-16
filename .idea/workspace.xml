@@ -2,29 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="67b918fd-ce01-470b-83af-d4f08040e0ba" name="Default Changelist" comment="social media login fixed">
-      <change afterPath="$PROJECT_DIR$/app/assets/i18n/translations/en.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/i18n/translations/pl.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/shared/modules/i18n.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.expo/packager-info.json" beforeDir="false" afterPath="$PROJECT_DIR$/.expo/packager-info.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/images/reset_password.jpeg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.expo/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/.expo/settings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/forgotPassword/components/ForgotPasswordForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/forgotPassword/components/ForgotPasswordForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/i18n/translations/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/i18n/translations/en.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/i18n/translations/pl.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/i18n/translations/pl.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/forgotPassword/components/ResetPasswordMessage.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/forgotPassword/components/ResetPasswordMessage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/screens/forgotPassword/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/forgotPassword/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/login/components/LanguagePicker.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/login/components/LanguagePicker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/login/components/LoginDivider.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/login/components/LoginDivider.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/login/components/LoginForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/login/components/LoginForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/login/components/SignUp.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/login/components/SignUp.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/login/components/SocialLogin.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/login/components/SocialLogin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/forgotPassword/styles/forgotPasswordStyles.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/forgotPassword/styles/forgotPasswordStyles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/login/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/login/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/login/state/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/login/state/actions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/screens/login/state/middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/login/state/middleware.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/login/styles/loginStyles.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/login/styles/loginStyles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/login/state/selectors.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/login/state/selectors.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/screens/login/utils/operations.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/login/utils/operations.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/shared/constants/state.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/shared/constants/state.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/signUp/components/SignUpForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/signUp/components/SignUpForm.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/shared/state/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/shared/state/actions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/shared/state/middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/shared/state/middleware.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/shared/state/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/shared/state/reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/shared/state/selectors.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/shared/state/selectors.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/shared/utils/operations.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/shared/utils/operations.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -95,6 +91,7 @@
       <workItem from="1579167474511" duration="5524000" />
       <workItem from="1579173852655" duration="2990000" />
       <workItem from="1579186973160" duration="10058000" />
+      <workItem from="1579202906750" duration="7017000" />
     </task>
     <task id="LOCAL-00001" summary="status messaging works">
       <created>1572216147756</created>

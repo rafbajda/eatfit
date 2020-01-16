@@ -1,21 +1,27 @@
 import React from 'react';
-import { Content } from 'native-base';
+import { Thumbnail } from 'native-base';
 import {
     RestPasswordMainMessageText,
-    ResetPasswordInfoMessageText
+    ResetPasswordInfoMessageText,
+    iconStyle,
+    ResetPasswordMessageContainer
 } from '../styles/forgotPasswordStyles';
+const logoImage = require('../../../assets/images/reset_password.jpeg');
+import I18n from 'i18n-js';
 
 const ResetPasswordMessage = () => {
+    const { t } = I18n;
     return (
-        <Content>
+        <ResetPasswordMessageContainer>
+            <Thumbnail square source={logoImage} style={iconStyle} />
+
             <RestPasswordMainMessageText>
-                Reset your password
+                {t('info.resetPassword')}
             </RestPasswordMainMessageText>
             <ResetPasswordInfoMessageText>
-                You will receive link that will allow you to reset your
-                password.
+                {t('info.resetPasswordDetails')}
             </ResetPasswordInfoMessageText>
-        </Content>
+        </ResetPasswordMessageContainer>
     );
 };
 

@@ -3,11 +3,13 @@
     "login": "login",
     "facebook": "Facebook",
     "google": "Google",
-    "resetPassword": "Reset Password"
+    "resetPassword": "Reset Password",
+    "create": "Create"
   },
   "placeholders": {
     "email": "Email",
-    "password": "Password"
+    "password": "Password",
+    "confirmPassword": "Confirm Password"
   },
   "dividers": {
     "or": "OR"
@@ -17,6 +19,10 @@
     "signUp": "Sign up"
   },
   "info": {
-    "dontHaveAccount": "Don't have an account?"
+    "dontHaveAccount": "Don't have an account?",
+    "resetPassword": "Reset your password",
+    "resetPasswordDetails": "You will receive link that will allow you to reset your password.",
+    "termsCheckbox": "I have read and accept the Terms and Conditions.",
+    "newsletterCheckbox": "(optional) I agree to receive commercial information(for example newsletter) by electronic communication"
   }
 }

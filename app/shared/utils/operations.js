@@ -4,6 +4,10 @@ import actions from '../state/actions';
 import firebaseOps from './firebaseOperations';
 import firebase from '../modules/firebase';
 import hps from './helpers';
+import { Keyboard } from 'react-native';
+
+let keyboardDidShowListener = null;
+let keyboardDidHideListener = null;
 
 const getCurrentLanguage = dispatch => {
     const { locale } = Localization;
@@ -58,11 +62,27 @@ const getAllSubstances = dispatch => {
         .catch(err => dispatch(actions.getAllSubstancesError(err)));
 };
 
+const setUpKeyboardListeners = dispatch => {
+    keyboardDidShowListener = Keyboard.addListener('keyboardDidShow', () =>
+        dispatch(actions.keyboardShow())
+    );
+    keyboardDidHideListener = Keyboard.addListener('keyboardDidHide', () =>
+        dispatch(actions.keyboardHide())
+    );
+};
+
+const removeKeyboardListeners = () => {
+    keyboardDidShowListener.remove();
+    keyboardDidHideListener.remove();
+};
+
 export default {
     getFonts,
     logout,
     createUserObject,
     refreshUser,
     getAllSubstances,
-    getCurrentLanguage
+    getCurrentLanguage,
+    setUpKeyboardListeners,
+    removeKeyboardListeners
 };

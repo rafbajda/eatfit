@@ -16,8 +16,22 @@ export const actionTypes = {
     GET_ALL_SUBSTANCES_ERROR: '[config] get all substances error',
     GET_CURRENT_LANGUAGE: '[config] get current language',
     GET_CURRENT_LANGUAGE_SUCCESS: '[config] get current language success',
-    GET_CURRENT_LANGUAGE_ERROR: '[config] get current language error'
+    GET_CURRENT_LANGUAGE_ERROR: '[config] get current language error',
+    KEYBOARD_SHOW: '[config] show keyboard',
+    KEYBOARD_HIDE: '[config] hide keyboard',
+    SET_UP_KEYBOARD_LISTENERS: '[config] set up keyboard listeners',
+    REMOVE_KEYBOARD_LISTENERS: '[config] remove keyboard listeners'
 };
+
+const setUpKeyboardListeners = () => ({
+    type: actionTypes.SET_UP_KEYBOARD_LISTENERS
+});
+const removeKeyboardListeners = () => ({
+    type: actionTypes.REMOVE_KEYBOARD_LISTENERS
+});
+const keyboardShow = () => ({ type: actionTypes.KEYBOARD_SHOW });
+const keyboardHide = () => ({ type: actionTypes.KEYBOARD_HIDE });
+
 const setUser = payload => ({ type: actionTypes.SET_USER, payload });
 
 const createUserObject = payload => ({
@@ -107,5 +121,9 @@ export default {
     getAllSubstancesError,
     getCurrentLanguage,
     getCurrentLanguageSuccess,
-    getCurrentLanguageError
+    getCurrentLanguageError,
+    keyboardShow,
+    keyboardHide,
+    setUpKeyboardListeners,
+    removeKeyboardListeners
 };

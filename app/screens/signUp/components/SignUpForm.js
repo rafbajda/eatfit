@@ -14,6 +14,7 @@ import { globalGreen, globalWhite } from '../../../shared/constants/colors';
 import validationSchemas from '../../../shared/utils/validationSchemas';
 import formInitialValues from '../../../shared/constants/formInitialValues';
 import hps from '../utils/helpers';
+import I18n from 'i18n-js';
 
 const SignUpForm = props => {
     const { signUp, isAuthLoading, signUpInitialValues, signUpSchema } = {
@@ -21,6 +22,8 @@ const SignUpForm = props => {
         ...formInitialValues,
         ...validationSchemas
     };
+    const { t } = I18n;
+
     return (
         <Formik
             initialValues={signUpInitialValues}
@@ -34,7 +37,7 @@ const SignUpForm = props => {
                             <Item regular>
                                 <Input
                                     keyboardType="email-address"
-                                    placeholder="Email"
+                                    placeholder={t('placeholders.email')}
                                     onChangeText={formikProps.handleChange(
                                         'email'
                                     )}
@@ -48,7 +51,7 @@ const SignUpForm = props => {
                             </ErrorText>
                             <Item regular>
                                 <Input
-                                    placeholder="Password"
+                                    placeholder={t('placeholders.password')}
                                     onChangeText={formikProps.handleChange(
                                         'password'
                                     )}
@@ -63,7 +66,9 @@ const SignUpForm = props => {
                             </ErrorText>
                             <Item regular>
                                 <Input
-                                    placeholder="Confirm Password"
+                                    placeholder={t(
+                                        'placeholders.confirmPassword'
+                                    )}
                                     onChangeText={formikProps.handleChange(
                                         'confirmPassword'
                                     )}
@@ -89,8 +94,7 @@ const SignUpForm = props => {
                                 />
                                 <Body>
                                     <CheckboxInformationText>
-                                        I have read and accept the Terms and
-                                        Conditions.
+                                        {t('info.termsCheckbox')}
                                     </CheckboxInformationText>
                                 </Body>
                             </CheckboxItem>
@@ -112,10 +116,7 @@ const SignUpForm = props => {
                                 />
                                 <Body>
                                     <CheckboxInformationText>
-                                        (optional) I agree to receive from
-                                        Badjex Sp. z o. o. and their partners
-                                        commercial information(for example
-                                        newsletter) by electronic communication
+                                        {t('info.newsletterCheckbox')}
                                     </CheckboxInformationText>
                                 </Body>
                             </CheckboxItem>
@@ -136,7 +137,7 @@ const SignUpForm = props => {
                                     color={globalWhite}
                                 />
                             ) : (
-                                <Text>Create</Text>
+                                <Text>{t('buttons.create')}</Text>
                             )}
                         </SubmitFormButton>
                     </CenterRow>

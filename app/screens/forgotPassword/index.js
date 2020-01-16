@@ -4,13 +4,13 @@ import globalSelectors from '../../shared/state/selectors';
 import ForgotPasswordForm from './components/ForgotPasswordForm';
 import { CenterContainer } from '../../shared/styles/common';
 import actions from './state/actions';
-
+import ResetPasswordMessage from './components/ResetPasswordMessage';
 const ForgotPasswordScreen = props => {
-    const { isAuthLoading, resetPassword } = { ...props };
+    const { isAuthLoading, resetPassword, isKeyboardVisible } = { ...props };
+    const message = <ResetPasswordMessage />;
     return (
         <CenterContainer>
-            {/* TODO: add this component after managing logo */}
-            {/*<ResetPasswordMessage />*/}
+            {isKeyboardVisible ? null : message}
             <ForgotPasswordForm
                 isAuthLoading={isAuthLoading}
                 resetPassword={resetPassword}
@@ -20,7 +20,8 @@ const ForgotPasswordScreen = props => {
 };
 
 const mapStateToProps = state => ({
-    isAuthLoading: globalSelectors.authLoadingSelector(state)
+    isAuthLoading: globalSelectors.authLoadingSelector(state),
+    isKeyboardVisible: globalSelectors.keyboardOnScreenSelector(state)
 });
 
 const mapDispatchToProps = dispatch => ({
