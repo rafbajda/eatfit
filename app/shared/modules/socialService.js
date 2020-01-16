@@ -13,30 +13,25 @@ const socialConfig = {
 export default class socialService {
     static async loginWithFacebook() {
         try {
-            Facebook.initializeAsync(socialConfig.facebookAppId).then(
-                async () => {
-                    const {
-                        type,
-                        token
-                    } = await Facebook.logInWithReadPermissionsAsync(
-                        socialConfig.facebookAppId,
-                        {
-                            permissions: ['public_profile']
-                        }
-                    );
-
-                    if (type === 'success' && token) {
-                        const credential = firebase.auth.FacebookAuthProvider.credential(
-                            token
-                        );
-                        console.log('facebook check', type, token);
-                        return firebase.auth().signInWithCredential(credential);
-                    }
-                    return new Promise(resolve => resolve({ cancelled: true }));
+            const {
+                type,
+                token
+            } = await Facebook.logInWithReadPermissionsAsync(
+                socialConfig.facebookAppId,
+                {
+                    permissions: ['public_profile']
                 }
             );
+
+            if (type === 'success' && token) {
+                const credential = firebase.auth.FacebookAuthProvider.credential(
+                    token
+                );
+                console.log(type, token, credential);
+                return firebase.auth().signInWithCredential(credential);
+            }
+            return new Promise(resolve => resolve({ cancelled: true }));
         } catch ({ message }) {
-            console.log('err message:', message);
             Toast.show(WarningToastMessage(message));
         }
         return new Promise(resolve => resolve({ error: true }));
@@ -47,14 +42,16 @@ export default class socialService {
             const { type, accessToken, idToken } = await Google.logInAsync({
                 clientId: socialConfig.googleClientId
             });
+            console.log('1', type, accessToken, idToken);
 
             if (type === 'success' && accessToken && idToken) {
                 const credential = firebase.auth.GoogleAuthProvider.credential(
                     idToken,
                     accessToken
                 );
-                console.log('siema');
-                return firebase.auth().signInWithCredential(credential);
+                return firebase
+                    .auth()
+                    .signInAndRetrieveDataWithCredential(credential);
             }
             return new Promise(resolve => resolve({ cancelled: true }));
         } catch ({ message }) {

@@ -1,5 +1,5 @@
 import * as functions from "firebase-functions";
-import { db, storage, BUCKET_NAME } from '../firebase'
+import { db } from '../firebase'
 const vision = require('@google-cloud/vision');
 const client = new vision.ImageAnnotatorClient();
 import hps from './helpers';
@@ -19,13 +19,16 @@ export const analyzeScan = functions.https.onRequest(async (req, res) => {
     const normalizedShots: Array<Shot> = shots.map(shot => hps.normalizeKeysToCamelCase(shot)) as Shot[];
     const substanceIds = hps.findSubstanceIds(detections, normalizedShots);
     const matchedSubstances = substances.filter(sub => _.includes(substanceIds, sub.id));
-    console.log('detections from analyzing here =>>>>: ', detections)
+    const score = hps.getScanScore(matchedSubstances);
+    console.log('final score here >>>', score);
+    console.log('detections from analyzing here =>>>>: ', detections);
     await scanRef.get().then(doc => {
         if (doc.exists) {
             const scanObject = doc.data();
             const updatedObject = {
                 ...scanObject,
-                substances: matchedSubstances
+                substances: matchedSubstances,
+                score
             }
             console.log('final scan: ', updatedObject);
             batch.update(scanRef, updatedObject);

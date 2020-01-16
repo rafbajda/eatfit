@@ -38,6 +38,7 @@ const signInFacebook = dispatch => {
             if (login && login.error) {
                 dispatch(actions.loginFacebookError(login.error));
             } else {
+                console.log('login: ', login);
                 const { user, additionalUserInfo } = { ...login };
                 dispatch(
                     actions.loginFacebookSuccess({
@@ -54,9 +55,7 @@ const signInGoogle = dispatch => {
     socialService
         .loginWithGoogle()
         .then(login => {
-            console.log('look at this: ', login);
             if (login && login.error) {
-                console.log('dispatching error in this resolve');
                 dispatch(actions.loginGoogleError(login.error));
             } else {
                 const { user, additionalUserInfo } = { ...login };
@@ -68,10 +67,7 @@ const signInGoogle = dispatch => {
                 );
             }
         })
-        .catch(error => {
-            console.log('dispatching error in catch', error);
-            dispatch(actions.loginGoogleError(error));
-        });
+        .catch(error => dispatch(actions.loginGoogleError(error)));
 };
 
 const checkUserObjectExistence = async (data, dispatch) => {

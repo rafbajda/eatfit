@@ -49,5 +49,5 @@ const reloadUser = (uid, setUser, updateUserSuccess) => {
 export default {
     uploadAvatar,
     updateUser,
-    reloadUser,
+    reloadUser
 };

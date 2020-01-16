@@ -1,14 +1,14 @@
 import React from 'react';
-import { Text, Content } from 'native-base';
-import { SubstanceInformationLabel } from '../styles/substanceDetailsStyles';
+import { Text } from 'native-base';
+import {DescriptionContainer, SubstanceInformationLabel} from '../styles/substanceDetailsStyles';
 
 const SubstanceDescription = props => {
     const { substanceDescription } = { ...props };
     return (
-        <Content>
+        <DescriptionContainer>
             <SubstanceInformationLabel>Description:</SubstanceInformationLabel>
             <Text>{substanceDescription}</Text>
-        </Content>
+        </DescriptionContainer>
     );
 };
 

@@ -3,7 +3,7 @@ import * as ImagePicker from 'expo-image-picker';
 import { ActionSheet } from 'native-base';
 import {
     CHANGE_AVATAR_OPTIONS,
-    CHANGE_AVATAR_BUTTON_INDEXES,
+    CHANGE_AVATAR_BUTTON_INDEXES
 } from '../../../shared/constants/actionSheets';
 import globalHps from '../../../shared/utils/helpers';
 import firebaseOps from './firebaseOperations';
@@ -15,7 +15,7 @@ const removeAvatar = dispatch => dispatch(actions.removeAvatar());
 
 const getProfileFromAuthUser = authUser => {
     const { firstName, lastName, photoUrl, birthday } = {
-        ...globalHps.normalizeKeysToCamelCase(authUser),
+        ...globalHps.normalizeKeysToCamelCase(authUser)
     };
     return { firstName, lastName, photoUrl, birthday };
 };
@@ -24,7 +24,7 @@ const openImagePicker = async dispatch => {
     const result = await ImagePicker.launchImageLibraryAsync({
         mediaTypes: 'Images',
         allowsEditing: true,
-        aspect: [4, 3],
+        aspect: [4, 3]
     });
 
     if (!result.cancelled) {
@@ -33,12 +33,15 @@ const openImagePicker = async dispatch => {
 };
 
 const openCamera = async dispatch => {
-    const { status } = await Permissions.askAsync(Permissions.CAMERA, Permissions.CAMERA_ROLL);
+    const { status } = await Permissions.askAsync(
+        Permissions.CAMERA,
+        Permissions.CAMERA_ROLL
+    );
     if (status === 'granted') {
         const result = await ImagePicker.launchCameraAsync({
             allowsEditing: true,
             aspect: [4, 3],
-            quality: 1,
+            quality: 1
         });
 
         if (!result.cancelled) {
@@ -70,7 +73,7 @@ const updateUserProfile = async (data, dispatch) => {
         ...data.authUser,
         ...profileData,
         ...profileFormValues,
-        birthday: new Date(profileFormValues.birthday),
+        birthday: new Date(profileFormValues.birthday)
     };
     if (dataToUpdate.photoUrl) {
         dataToUpdate.photoUrl = await firebaseOps
@@ -82,9 +85,14 @@ const updateUserProfile = async (data, dispatch) => {
     firebaseOps
         .updateUser(data.authUser.uid, normalizedData)
         .then(async () => {
-            const updateUserSuccess = () => dispatch(actions.updateUserSuccess());
+            const updateUserSuccess = () =>
+                dispatch(actions.updateUserSuccess());
             const setUser = user => dispatch(globalActions.setUser(user));
-            await firebaseOps.reloadUser(data.authUser.uid, setUser, updateUserSuccess);
+            await firebaseOps.reloadUser(
+                data.authUser.uid,
+                setUser,
+                updateUserSuccess
+            );
         })
         .catch(error => dispatch(actions.updateUserError(error)));
 };
@@ -93,5 +101,5 @@ export default {
     getProfileFromAuthUser,
     openChangeAvatarActions,
     openImagePicker,
-    updateUserProfile,
+    updateUserProfile
 };

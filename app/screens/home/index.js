@@ -61,7 +61,4 @@ const mapDispatchToProps = dispatch => ({
     scan: () => dispatch(actions.makeScan())
 });
 
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(HomeScreen);
+export default connect(mapStateToProps, mapDispatchToProps)(HomeScreen);

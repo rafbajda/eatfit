@@ -9,4 +9,6 @@ export default {
     NotVerified: 'NotVerifiedScreen',
     ForgotPassword: 'ForgotPasswordScreen',
     Profile: 'ProfileScreen',
+    ScansHistory: 'ScansHistoryScreen',
+    AllSubstances: 'AllSubstancesScreen'
 };

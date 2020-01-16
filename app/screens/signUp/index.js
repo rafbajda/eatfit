@@ -17,7 +17,4 @@ const mapDispatchToProps = dispatch => ({
     signUp: user => dispatch(actions.createAccount(user))
 });
 
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(SignUpScreen);
+export default connect(mapStateToProps, mapDispatchToProps)(SignUpScreen);

@@ -11,24 +11,24 @@ export default createStackNavigator(
         [screens.Login]: {
             screen: LoginScreen,
             navigationOptions: {
-                header: null,
-            },
+                header: null
+            }
         },
         [screens.SignUp]: {
-            screen: SignUpScreen,
+            screen: SignUpScreen
         },
         [screens.ForgotPassword]: {
             screen: ForgotPasswordScreen,
             navigationOptions: {
-                title: 'Forgot password',
-            },
+                title: 'Forgot password'
+            }
         },
         [screens.NotVerified]: {
             screen: NotVerifiedScreen,
             navigationOptions: {
-                header: null,
-            },
-        },
+                header: null
+            }
+        }
     },
     {
         initialRouteName: screens.Login,
@@ -36,8 +36,8 @@ export default createStackNavigator(
             title: 'Create an Account',
             headerTintColor: globalWhite,
             headerStyle: {
-                backgroundColor: globalGreen,
-            },
-        },
+                backgroundColor: globalGreen
+            }
+        }
     }
 );

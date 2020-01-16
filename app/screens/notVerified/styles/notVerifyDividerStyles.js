@@ -8,5 +8,5 @@ export const NotVerifyDividerText = styled(Text)`
 `;
 
 export default {
-    NotVerifyDividerText,
+    NotVerifyDividerText
 };

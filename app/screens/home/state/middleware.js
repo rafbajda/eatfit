@@ -37,6 +37,10 @@ const homeMiddleware = store => next => action => {
             break;
         case actionTypes.ANALYZE_SCAN_SUCCESS:
             NavigationService.navigate(screens.ScanDetails);
+            dispatch(actions.getAllScans(store.getState().auth.user));
+            break;
+        case actionTypes.GET_ALL_SCANS:
+            ops.getAllScans(action.payload, dispatch);
             break;
         default:
             return next(action);

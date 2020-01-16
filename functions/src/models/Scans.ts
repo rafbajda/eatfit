@@ -28,13 +28,13 @@ export const SubstanceInfoInitialValues: SubstanceInfo = {
     id: null,
     name: null,
     description: null,
-}
+};
 
 export const ShotInitialValues: Shot = {
     id: null,
     phrase: null,
     substanceId: null,
-}
+};
 
 export const DetectionInitialValues: Detection = {
     locations: [],
@@ -46,4 +46,9 @@ export const DetectionInitialValues: Detection = {
     confidence: null,
     topicality: null,
     boundingPoly: null,
+};
+
+export interface Score {
+    value: number;
+    weight: number;
 }

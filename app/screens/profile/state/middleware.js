@@ -12,7 +12,7 @@ const profileMiddleware = store => next => action => {
                 {
                     profileFormValues: payload,
                     profileData: store.getState().profile,
-                    authUser: store.getState().auth.user,
+                    authUser: store.getState().auth.user
                 },
                 dispatch
             );

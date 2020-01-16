@@ -22,5 +22,5 @@ const changeNavigation = () => {
 
 export default {
     resetPassword,
-    changeNavigation,
+    changeNavigation
 };

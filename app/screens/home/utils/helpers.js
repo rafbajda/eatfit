@@ -1,6 +1,7 @@
 import globalHps from '../../../shared/utils/helpers';
 
 const normalizeScanToCamelCase = scan => {
+    console.log('SCAN SCAN', scan);
     const normalizedSubstances = scan.substances
         ? scan.substances.map(sub => globalHps.normalizeKeysToCamelCase(sub))
         : [];

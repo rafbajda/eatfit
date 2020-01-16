@@ -14,5 +14,5 @@ export const VerificationInfoMessageText = styled(Text)`
 
 export default {
     VerificationMainMessageText,
-    VerificationInfoMessageText,
+    VerificationInfoMessageText
 };

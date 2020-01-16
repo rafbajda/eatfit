@@ -13,6 +13,8 @@ const SideBar = props => {
 
     const sideBarActions = [
         () => navigation.navigate(screens.Profile),
+        () => navigation.navigate(screens.AllSubstances),
+        () => navigation.navigate(screens.ScansHistory),
         signOut
     ];
     const items = hps.completeSideBarListWithActions(
@@ -38,7 +40,4 @@ export const mapDispatchToProps = dispatch => ({
     signOut: () => dispatch(actions.logout())
 });
 
-export default connect(
-    null,
-    mapDispatchToProps
-)(SideBar);
+export default connect(null, mapDispatchToProps)(SideBar);

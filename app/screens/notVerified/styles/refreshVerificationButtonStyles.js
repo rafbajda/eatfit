@@ -19,5 +19,5 @@ export const RefreshButton = styled(Button)`
 const RefreshButtonTextStyle = { fontSize: 17 };
 
 export default {
-    RefreshButtonTextStyle,
+    RefreshButtonTextStyle
 };

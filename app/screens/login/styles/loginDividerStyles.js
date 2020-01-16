@@ -14,5 +14,5 @@ export const DividerText = styled(Text)`
 
 export default {
     DividerContainer,
-    DividerText,
+    DividerText
 };

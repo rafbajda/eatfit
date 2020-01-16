@@ -18,5 +18,5 @@ const checkUserNavigation = setUser => {
 
 export default {
     signInEmail,
-    checkUserNavigation,
+    checkUserNavigation
 };

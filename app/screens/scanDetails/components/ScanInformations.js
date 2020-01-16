@@ -1,20 +1,30 @@
 import React from 'react';
-import { Text } from 'native-base';
 import hps from '../utils/helpers';
 import {
     ScanInformationContainer,
-    ScanInformationLabel
+    ScanInformationDescription,
+    ScanInformationInfo,
+    ScanInformationLabel,
+    ScanRate,
+    ScanRatingIcon
 } from '../styles/scanDetailsStyles';
 
 const ScanInformations = props => {
-    const { scanCreatedAt, scanName } = { ...props };
-    const scanCreationDate = hps.getScanDate(scanCreatedAt);
+    const { score } = props;
+    const roundedScore = Math.round(score * 100) / 100;
+    const emoji = hps.getEmoji(score);
+    const color = hps.getColor(score);
+    const description = hps.getDescription(score);
     return (
         <ScanInformationContainer>
-            <ScanInformationLabel>Created at:</ScanInformationLabel>
-            <Text>{scanCreationDate}</Text>
-            <ScanInformationLabel>Scan name:</ScanInformationLabel>
-            <Text>{scanName}</Text>
+            <ScanInformationLabel>Rating:</ScanInformationLabel>
+            <ScanInformationInfo>
+                <ScanRate color={color}>{roundedScore}</ScanRate>
+                <ScanRatingIcon>{emoji}</ScanRatingIcon>
+            </ScanInformationInfo>
+            <ScanInformationDescription color={color}>
+                {description}
+            </ScanInformationDescription>
         </ScanInformationContainer>
     );
 };

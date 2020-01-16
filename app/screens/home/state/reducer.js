@@ -1,4 +1,5 @@
 import { actionTypes } from './actions';
+import { actionTypes as scanHistoryActionTypes } from '../../scansHistory/state/actions';
 import initialState from '../../../shared/constants/state';
 import hps from '../utils/helpers';
 
@@ -26,6 +27,16 @@ const scansReducer = (state = initialScansState, action) => {
             return {
                 ...state,
                 scanStatusMessage: action.payload
+            };
+        case actionTypes.GET_ALL_SCANS_SUCCESS:
+            return {
+                ...state,
+                allScans: action.payload
+            };
+        case scanHistoryActionTypes.OPEN_PAST_SCAN:
+            return {
+                ...state,
+                latestScan: hps.normalizeScanToCamelCase(action.payload)
             };
         default:
             return state;

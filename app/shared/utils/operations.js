@@ -1,6 +1,8 @@
 import * as Font from 'expo-font';
 import actions from '../state/actions';
 import firebaseOps from './firebaseOperations';
+import firebase from '../modules/firebase';
+import hps from './helpers';
 
 const getFonts = dispatch => {
     Font.loadAsync({
@@ -32,9 +34,25 @@ const refreshUser = (data, dispatch) => {
     firebaseOps.prepareUserToLogIn(data, setUser);
 };
 
+const getAllSubstances = dispatch => {
+    firebase
+        .firestore()
+        .collection(`/substances`)
+        .orderBy('name', 'asc')
+        .get()
+        .then(querySnap => {
+            const substances = querySnap.docs.map(doc =>
+                hps.normalizeKeysToCamelCase(doc.data())
+            );
+            dispatch(actions.getAllSubstancesSuccess(substances));
+        })
+        .catch(err => dispatch(actions.getAllSubstancesError(err)));
+};
+
 export default {
     getFonts,
     logout,
     createUserObject,
-    refreshUser
+    refreshUser,
+    getAllSubstances
 };

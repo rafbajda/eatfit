@@ -16,5 +16,5 @@ export const CheckboxItem = styled(Item)`
 
 export default {
     CheckboxInformationText,
-    CheckboxItem,
+    CheckboxItem
 };

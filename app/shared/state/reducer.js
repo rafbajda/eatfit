@@ -16,6 +16,8 @@ const substancesReducer = (state = initialSubstancesState, action) => {
     switch (action.type) {
         case scanDetailsActionTypes.SET_SUBSTANCE_DETAILS:
             return { ...state, latestSubstance: action.payload };
+        case globalActionTypes.GET_ALL_SUBSTANCES_SUCCESS:
+            return { ...state, allSubstances: action.payload };
         default:
             return state;
     }

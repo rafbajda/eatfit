@@ -52,7 +52,4 @@ const mapDispatchToProps = dispatch => ({
     checkVerification: () => dispatch(actions.checkVerificationStatus())
 });
 
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(NotVerifiedScreen);
+export default connect(mapStateToProps, mapDispatchToProps)(NotVerifiedScreen);

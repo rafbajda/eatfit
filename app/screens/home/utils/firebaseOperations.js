@@ -47,6 +47,16 @@ const createScanObject = async (scanUri, user) => {
     return { scanObject, localizationUrl };
 };
 
+const getUserScans = async user => {
+    console.log('scans from user: ', user);
+    return firebase
+        .firestore()
+        .collection(`/users/${user.uid}/scans`)
+        .orderBy('created_at', 'desc')
+        .get();
+};
+
 export default {
-    createScanObject
+    createScanObject,
+    getUserScans
 };

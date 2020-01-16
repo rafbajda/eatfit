@@ -21,7 +21,7 @@ const prepareUserToLogIn = (user, setUser) => {
             if (doc.exists) {
                 doc.ref.update({
                     ...doc.data(),
-                    last_login_at: new Date(),
+                    last_login_at: new Date()
                 });
                 const userObject = doc.data();
                 setUser(userObject);
@@ -62,7 +62,7 @@ const createUserInstance = data => {
             photo_url: user.photoUrl || null,
             login_provider: user.loginProvider || null,
             is_social: user.isSocial || false,
-            newsletter: user.newsletter || false,
+            newsletter: user.newsletter || false
         });
 };
 
@@ -71,5 +71,5 @@ export default {
     createUserInstance,
     getUserById,
     getAuthCurrentUser,
-    prepareUserToLogIn,
+    prepareUserToLogIn
 };

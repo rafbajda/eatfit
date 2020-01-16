@@ -5,9 +5,9 @@ const globalInfoToastStyle = {
     marginTop: getStatusBarHeight(),
     backgroundColor: globalGreen,
     borderBottomColor: globalWhite,
-    borderBottomWidth: 1,
+    borderBottomWidth: 1
 };
 
 export default {
-    globalInfoToastStyle,
+    globalInfoToastStyle
 };

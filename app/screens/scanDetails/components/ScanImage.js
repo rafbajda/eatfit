@@ -13,7 +13,7 @@ const ScanImage = props => {
                 style={{
                     height: 150,
                     borderWidth: 2,
-                    borderColor: globalGreen,
+                    borderColor: globalGreen
                 }}
             />
         </ImageContainer>

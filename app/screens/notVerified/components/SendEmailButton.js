@@ -3,7 +3,10 @@ import { Row, Text } from 'native-base';
 import styles, { OtherActionButton } from '../styles/notVerifiedStyles';
 
 const SendEmailButton = props => {
-    const { sendEmail, OtherActionTextStyle, OtherActionRowStyle } = { ...props, ...styles };
+    const { sendEmail, OtherActionTextStyle, OtherActionRowStyle } = {
+        ...props,
+        ...styles
+    };
     return (
         <Row style={OtherActionRowStyle}>
             <OtherActionButton onPress={() => sendEmail()} rounded>

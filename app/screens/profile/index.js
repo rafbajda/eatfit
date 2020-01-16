@@ -43,7 +43,4 @@ const mapStateToProps = state => ({
     isAuthLoading: globalSelectors.authLoadingSelector(state)
 });
 
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(ProfileScreen);
+export default connect(mapStateToProps, mapDispatchToProps)(ProfileScreen);

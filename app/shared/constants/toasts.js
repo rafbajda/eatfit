@@ -10,9 +10,9 @@ export const UserMismatchingToast = {
     style: globalInfoToastStyle,
     textStyle: {
         fontWeight: 'bold',
-        color: globalWhite,
+        color: globalWhite
     },
-    duration: 3000,
+    duration: 3000
 };
 
 export const emailSentToast = {
@@ -22,8 +22,8 @@ export const emailSentToast = {
     position: 'top',
     style: globalInfoToastStyle,
     textStyle: {
-        color: globalWhite,
-    },
+        color: globalWhite
+    }
 };
 
 export const CheckVerificationRefreshToast = {
@@ -33,8 +33,8 @@ export const CheckVerificationRefreshToast = {
     position: 'top',
     style: globalInfoToastStyle,
     textStyle: {
-        color: globalWhite,
-    },
+        color: globalWhite
+    }
 };
 
 export const PasswordResetEmailSentToast = {
@@ -44,8 +44,8 @@ export const PasswordResetEmailSentToast = {
     position: 'top',
     style: globalInfoToastStyle,
     textStyle: {
-        color: globalWhite,
-    },
+        color: globalWhite
+    }
 };
 
 export const WarningToastMessage = message => ({
@@ -55,8 +55,8 @@ export const WarningToastMessage = message => ({
     position: 'top',
     style: globalInfoToastStyle,
     textStyle: {
-        color: globalWhite,
-    },
+        color: globalWhite
+    }
 });
 
 export default {
@@ -64,5 +64,5 @@ export default {
     PasswordResetEmailSentToast,
     CheckVerificationRefreshToast,
     emailSentToast,
-    UserMismatchingToast,
+    UserMismatchingToast
 };

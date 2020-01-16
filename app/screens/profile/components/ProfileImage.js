@@ -15,10 +15,12 @@ const ProfileImage = props => {
             containerStyle={avatarContainerStyle}
             title={initials}
             size={avatarSize}
-            source={profile.photoUrl ? { uri: profile.photoUrl } : defaultAvatar}
+            source={
+                profile.photoUrl ? { uri: profile.photoUrl } : defaultAvatar
+            }
             editButton={{
                 name: 'edit',
-                color: globalWhite,
+                color: globalWhite
             }}
             rounded
             showEditButton

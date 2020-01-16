@@ -14,8 +14,7 @@ const ScanDetailsScreen = props => {
             <Grid>
                 <ScanInformationsRow
                     scanUrl={scan.scanUrl}
-                    scanCreatedAt={scan.createdAt}
-                    scanName={scan.name}
+                    scanScore={scan.score}
                 />
                 <Row>
                     <SubstancesList
@@ -37,7 +36,4 @@ const mapDispatchToProps = dispatch => ({
         dispatch(actions.setSubstanceDetails(substance))
 });
 
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(ScanDetailsScreen);
+export default connect(mapStateToProps, mapDispatchToProps)(ScanDetailsScreen);

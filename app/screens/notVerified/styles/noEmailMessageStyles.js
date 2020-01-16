@@ -9,5 +9,5 @@ export const NoEmailText = styled(Text)`
 `;
 
 export default {
-    NoEmailText,
+    NoEmailText
 };

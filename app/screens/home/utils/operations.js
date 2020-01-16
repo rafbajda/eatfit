@@ -3,6 +3,7 @@ import * as ImagePicker from 'expo-image-picker';
 import Api from '../../../shared/utils/api';
 import actions from '../state/actions';
 import firebaseOps from './firebaseOperations';
+import globalHps from '../../../shared/utils/helpers';
 
 const makeScan = async dispatch => {
     dispatch(actions.updateScanStatusMessage('asking for permissions'));
@@ -54,9 +55,20 @@ const createScanObject = async (scanUri, user, dispatch) => {
     dispatch(actions.createScanObjectSuccess(scanObjectData));
 };
 
+const getAllScans = async (user, dispatch) => {
+    firebaseOps
+        .getUserScans(user)
+        .then(scansSnapshot => {
+            const scans = scansSnapshot.docs.map(doc => doc.data());
+            dispatch(actions.getAllScansSuccess(scans));
+        })
+        .catch(err => dispatch(actions.getAllScansError(err)));
+};
+
 export default {
     makeScan,
     performScan,
     analyzeScan,
-    createScanObject
+    createScanObject,
+    getAllScans
 };

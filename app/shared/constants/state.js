@@ -17,10 +17,12 @@ const initialState = {
     scans: {
         isLoading: false,
         scanStatusMessage: '',
-        latestScan: null
+        latestScan: null,
+        allScans: null
     },
     substances: {
-        latestSubstance: null
+        latestSubstance: null,
+        allSubstances: null
     }
 };
 

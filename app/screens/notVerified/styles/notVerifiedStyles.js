@@ -15,7 +15,7 @@ const OtherActionRowStyle = {
     justifyContent: 'center',
     height: 'auto',
     paddingBottom: 12,
-    paddingTop: 12,
+    paddingTop: 12
 };
 
 const OtherActionTextStyle = { fontSize: 16 };
@@ -25,5 +25,5 @@ const mailIconStyle = { color: globalGreen, fontSize: 200 };
 export default {
     OtherActionTextStyle,
     mailIconStyle,
-    OtherActionRowStyle,
+    OtherActionRowStyle
 };

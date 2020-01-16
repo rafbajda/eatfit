@@ -11,7 +11,10 @@ export const actionTypes = {
     ANALYZE_SCAN: '[home] analyze scan',
     ANALYZE_SCAN_SUCCESS: '[home] analyze scan success',
     ANALYZE_SCAN_ERROR: '[home] analyze scan error',
-    UPDATE_SCAN_STATUS_MESSAGE: '[home] update scan status message'
+    UPDATE_SCAN_STATUS_MESSAGE: '[home] update scan status message',
+    GET_ALL_SCANS: '[home] get all scans',
+    GET_ALL_SCANS_SUCCESS: '[home] get all scans success',
+    GET_ALL_SCANS_ERROR: '[home] get all scans error'
 };
 
 const makeScan = payload => ({ type: actionTypes.MAKE_SCAN, payload });
@@ -62,6 +65,16 @@ const updateScanStatusMessage = payload => ({
     payload
 });
 
+const getAllScans = payload => ({ type: actionTypes.GET_ALL_SCANS, payload });
+const getAllScansSuccess = payload => ({
+    type: actionTypes.GET_ALL_SCANS_SUCCESS,
+    payload
+});
+const getAllScansError = payload => ({
+    type: actionTypes.GET_ALL_SCANS_ERROR,
+    payload
+});
+
 export default {
     makeScan,
     makeScanSuccess,
@@ -75,5 +88,8 @@ export default {
     analyzeScan,
     analyzeScanSuccess,
     analyzeScanError,
-    updateScanStatusMessage
+    updateScanStatusMessage,
+    getAllScans,
+    getAllScansSuccess,
+    getAllScansError
 };
