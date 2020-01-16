@@ -2,13 +2,21 @@ import actions, { actionTypes } from './actions';
 import ops from '../utils/operations';
 import signUpOperations from '../../screens/signUp/utils/operations';
 import homeActions from '../../screens/home/state/actions';
+import loginActions from '../../screens/login/state/actions';
 
 const configMiddleware = store => next => action => {
     const { dispatch } = { ...store };
     switch (action.type) {
         case actionTypes.LOAD_CONFIG:
             dispatch(actions.getFonts());
+            // dispatch(actions.getCurrentLanguage());
             dispatch(actions.getAllSubstances());
+            break;
+        case actionTypes.GET_CURRENT_LANGUAGE:
+            ops.getCurrentLanguage(dispatch);
+            break;
+        case actionTypes.GET_CURRENT_LANGUAGE_SUCCESS:
+            dispatch(loginActions.setLanguage(action.payload));
             break;
         case actionTypes.GET_ALL_SUBSTANCES:
             ops.getAllSubstances(dispatch);

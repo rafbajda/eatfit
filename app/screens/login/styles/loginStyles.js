@@ -9,7 +9,7 @@ export const LanguageRow = styled(Row)`
 
 export const PickerColumn = styled(Col)`
     height: 50;
-    width: 15;
+    width: 140;
     border-radius: 30;
     border-width: 1;
     padding-left: 15;

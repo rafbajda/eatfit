@@ -15,6 +15,7 @@ import { globalGreen, globalWhite } from '../../../shared/constants/colors';
 import screens from '../../../navigation/screens';
 import validationSchemas from '../../../shared/utils/validationSchemas';
 import formInitialValues from '../../../shared/constants/formInitialValues';
+import I18n from 'i18n-js';
 
 const LoginForm = props => {
     const {
@@ -31,6 +32,8 @@ const LoginForm = props => {
         ...formInitialValues,
         ...validationSchemas
     };
+
+    const { t } = I18n;
 
     return (
         <Formik
@@ -52,7 +55,7 @@ const LoginForm = props => {
                             <Item regular>
                                 <Input
                                     keyboardType="email-address"
-                                    placeholder="Email"
+                                    placeholder={t('placeholders.email')}
                                     onChangeText={formikProps.handleChange(
                                         'email'
                                     )}
@@ -66,7 +69,7 @@ const LoginForm = props => {
                             </ErrorText>
                             <Item regular>
                                 <Input
-                                    placeholder="Password"
+                                    placeholder={t('placeholders.password')}
                                     onChangeText={formikProps.handleChange(
                                         'password'
                                     )}
@@ -84,7 +87,7 @@ const LoginForm = props => {
                                     nav.navigate(screens.ForgotPassword)
                                 }
                             >
-                                Forgot password?
+                                {t('actions.forgotPassword')}
                             </ForgotPasswordText>
                         </CenterFormContainer>
                     </CenterRow>
@@ -99,7 +102,7 @@ const LoginForm = props => {
                                     color={globalWhite}
                                 />
                             ) : (
-                                <Text>Login</Text>
+                                <Text>{t('buttons.login')}</Text>
                             )}
                         </LoginButton>
                     </CenterRow>

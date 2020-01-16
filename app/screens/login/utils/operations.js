@@ -3,9 +3,12 @@ import actions from '../state/actions';
 import firebaseOps from './firebaseOperations';
 import globalFirebaseOps from '../../../shared/utils/firebaseOperations';
 import socialService from '../../../shared/modules/socialService';
+import I18n from 'i18n-js';
 
 let keyboardDidShowListener = null;
 let keyboardDidHideListener = null;
+
+const updateLocalLanguage = newLocale => (I18n.locale = newLocale);
 
 const setUpKeyboardListeners = dispatch => {
     keyboardDidShowListener = Keyboard.addListener('keyboardDidShow', () =>
@@ -104,5 +107,6 @@ export default {
     signInGoogle,
     checkUserObjectExistence,
     setUpKeyboardListeners,
-    removeKeyboardListeners
+    removeKeyboardListeners,
+    updateLocalLanguage
 };

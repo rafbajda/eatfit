@@ -1,0 +1,22 @@
+{
+  "buttons": {
+    "login": "zaloguj",
+    "facebook": "Facebook",
+    "google": "Google",
+    "resetPassword": "Resetuj hasło"
+  },
+  "placeholders": {
+    "email": "Email",
+    "password": "Hasło"
+  },
+  "dividers": {
+    "or": "LUB"
+  },
+  "actions": {
+    "forgotPassword": "Zapomniałeś hasła?",
+    "signUp": "Załóż konto"
+  },
+  "info": {
+    "dontHaveAccount": "Nie masz konta?"
+  }
+}

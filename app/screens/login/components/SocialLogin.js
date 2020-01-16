@@ -2,15 +2,18 @@ import React from 'react';
 import { SocialIcon } from 'react-native-elements';
 import { Col } from 'native-base';
 import { SocialContainer } from '../styles/socialLoginStyles';
+import I18n from 'i18n-js';
 
 const SocialLogin = props => {
     const { loginFacebook, loginGoogle } = { ...props };
+    const { t } = I18n;
+
     return (
         <SocialContainer>
             <Col>
                 <SocialIcon
                     type="facebook"
-                    title="Facebook"
+                    title={t('buttons.facebook')}
                     onPress={loginFacebook}
                     button
                 />
@@ -18,7 +21,7 @@ const SocialLogin = props => {
             <Col>
                 <SocialIcon
                     type="google-plus-official"
-                    title="Google"
+                    title={t('buttons.google')}
                     onPress={loginGoogle}
                     button
                 />

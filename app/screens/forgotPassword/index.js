@@ -10,7 +10,7 @@ const ForgotPasswordScreen = props => {
     return (
         <CenterContainer>
             {/* TODO: add this component after managing logo */}
-            {/* <ResetPasswordMessage /> */}
+            {/*<ResetPasswordMessage />*/}
             <ForgotPasswordForm
                 isAuthLoading={isAuthLoading}
                 resetPassword={resetPassword}

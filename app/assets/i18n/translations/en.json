@@ -1,0 +1,22 @@
+{
+  "buttons": {
+    "login": "login",
+    "facebook": "Facebook",
+    "google": "Google",
+    "resetPassword": "Reset Password"
+  },
+  "placeholders": {
+    "email": "Email",
+    "password": "Password"
+  },
+  "dividers": {
+    "or": "OR"
+  },
+  "actions": {
+    "forgotPassword": "Forgot password?",
+    "signUp": "Sign up"
+  },
+  "info": {
+    "dontHaveAccount": "Don't have an account?"
+  }
+}

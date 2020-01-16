@@ -5,6 +5,9 @@ import ops from '../utils/operations';
 const loginMiddleware = store => next => action => {
     const { payload, dispatch } = { ...store, ...action };
     switch (action.type) {
+        case actionTypes.SET_LANGUAGE:
+            ops.updateLocalLanguage(action.payload);
+            break;
         case actionTypes.SET_UP_KEYBOARD_LISTENERS:
             ops.setUpKeyboardListeners(dispatch);
             break;

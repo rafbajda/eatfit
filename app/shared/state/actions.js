@@ -13,7 +13,10 @@ export const actionTypes = {
     CREATE_USER_OBJECT_ERROR: '[sign up] create user object error',
     GET_ALL_SUBSTANCES: '[config] get all substances',
     GET_ALL_SUBSTANCES_SUCCESS: '[config] get all substances success',
-    GET_ALL_SUBSTANCES_ERROR: '[config] get all substances error'
+    GET_ALL_SUBSTANCES_ERROR: '[config] get all substances error',
+    GET_CURRENT_LANGUAGE: '[config] get current language',
+    GET_CURRENT_LANGUAGE_SUCCESS: '[config] get current language success',
+    GET_CURRENT_LANGUAGE_ERROR: '[config] get current language error'
 };
 const setUser = payload => ({ type: actionTypes.SET_USER, payload });
 
@@ -72,6 +75,20 @@ const getAllSubstances = () => ({
     type: actionTypes.GET_ALL_SUBSTANCES
 });
 
+const getCurrentLanguageSuccess = payload => ({
+    type: actionTypes.GET_CURRENT_LANGUAGE_SUCCESS,
+    payload
+});
+
+const getCurrentLanguageError = payload => ({
+    type: actionTypes.GET_CURRENT_LANGUAGE_ERROR,
+    payload
+});
+
+const getCurrentLanguage = () => ({
+    type: actionTypes.GET_CURRENT_LANGUAGE
+});
+
 export default {
     setUser,
     logout,
@@ -87,5 +104,8 @@ export default {
     createUserObjectError,
     getAllSubstances,
     getAllSubstancesSuccess,
-    getAllSubstancesError
+    getAllSubstancesError,
+    getCurrentLanguage,
+    getCurrentLanguageSuccess,
+    getCurrentLanguageError
 };

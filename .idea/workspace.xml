@@ -1,16 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="67b918fd-ce01-470b-83af-d4f08040e0ba" name="Default Changelist" comment="">
+    <list default="true" id="67b918fd-ce01-470b-83af-d4f08040e0ba" name="Default Changelist" comment="social media login fixed">
+      <change afterPath="$PROJECT_DIR$/app/assets/i18n/translations/en.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/i18n/translations/pl.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/shared/modules/i18n.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.expo/packager-info.json" beforeDir="false" afterPath="$PROJECT_DIR$/.expo/packager-info.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.expo/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/.expo/settings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/app.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/forgotPassword/components/ForgotPasswordForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/forgotPassword/components/ForgotPasswordForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/forgotPassword/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/forgotPassword/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/login/components/LanguagePicker.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/login/components/LanguagePicker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/login/components/LoginDivider.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/login/components/LoginDivider.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/login/components/LoginForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/login/components/LoginForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/login/components/SignUp.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/login/components/SignUp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/login/components/SocialLogin.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/login/components/SocialLogin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/login/state/middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/login/state/middleware.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/login/styles/loginStyles.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/login/styles/loginStyles.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/screens/login/utils/operations.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/login/utils/operations.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/profile/styles/profileImageStyles.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/profile/styles/profileImageStyles.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/substanceDetails/components/SubstanceDescription.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/substanceDetails/components/SubstanceDescription.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/substanceDetails/styles/substanceDetailsStyles.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/substanceDetails/styles/substanceDetailsStyles.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/shared/modules/socialService.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/shared/modules/socialService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/shared/constants/state.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/shared/constants/state.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/shared/state/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/shared/state/actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/shared/state/middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/shared/state/middleware.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/shared/utils/operations.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/shared/utils/operations.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,12 +40,6 @@
     <exe-path />
     <other-services-enabled>true</other-services-enabled>
     <auto-save>true</auto-save>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="460" />
-    <option name="y" value="88" />
-    <option name="width" value="1400" />
-    <option name="height" value="1000" />
   </component>
   <component name="ProjectId" id="1SWYyCzhBtS160waMUp0iYm2Pka" />
   <component name="PropertiesComponent">
@@ -86,7 +93,8 @@
       <workItem from="1572299204660" duration="4200000" />
       <workItem from="1579085521928" duration="1134000" />
       <workItem from="1579167474511" duration="5524000" />
-      <workItem from="1579173852655" duration="2330000" />
+      <workItem from="1579173852655" duration="2990000" />
+      <workItem from="1579186973160" duration="10058000" />
     </task>
     <task id="LOCAL-00001" summary="status messaging works">
       <created>1572216147756</created>
@@ -102,7 +110,14 @@
       <option name="project" value="LOCAL" />
       <updated>1579175142274</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="social media login fixed">
+      <created>1579176308712</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1579176308712</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TodoView">
@@ -143,6 +158,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="status messaging works" />
     <MESSAGE value="merged all" />
-    <option name="LAST_COMMIT_MESSAGE" value="merged all" />
+    <MESSAGE value="social media login fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="social media login fixed" />
   </component>
 </project>

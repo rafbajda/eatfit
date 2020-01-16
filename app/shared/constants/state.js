@@ -1,7 +1,7 @@
 const initialState = {
     config: {
         isDataLoading: true,
-        pickedLanguage: 'Pol', // TODO: make setting default language based on GPS
+        pickedLanguage: 'en',
         keyboardOnScreen: false
     },
     auth: {

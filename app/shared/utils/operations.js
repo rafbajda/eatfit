@@ -1,8 +1,17 @@
 import * as Font from 'expo-font';
+import * as Localization from 'expo-localization';
 import actions from '../state/actions';
 import firebaseOps from './firebaseOperations';
 import firebase from '../modules/firebase';
 import hps from './helpers';
+
+const getCurrentLanguage = dispatch => {
+    const { locale } = Localization;
+    const actionToDispatch = locale
+        ? actions.getCurrentLanguageSuccess(locale)
+        : actions.getCurrentLanguageError('no locale found');
+    dispatch(actionToDispatch);
+};
 
 const getFonts = dispatch => {
     Font.loadAsync({
@@ -54,5 +63,6 @@ export default {
     logout,
     createUserObject,
     refreshUser,
-    getAllSubstances
+    getAllSubstances,
+    getCurrentLanguage
 };

@@ -11,6 +11,7 @@ import {
 import initialFormValues from '../../../shared/constants/formInitialValues';
 import { globalWhite } from '../../../shared/constants/colors';
 import validationSchemas from '../../../shared/utils/validationSchemas';
+import I18n from 'i18n-js';
 
 const ForgotPasswordForm = props => {
     const {
@@ -23,6 +24,7 @@ const ForgotPasswordForm = props => {
         ...initialFormValues,
         ...validationSchemas
     };
+    const { t } = I18n;
     return (
         <Formik
             initialValues={forgotPasswordInitialValues}
@@ -36,7 +38,7 @@ const ForgotPasswordForm = props => {
                             <Item regular>
                                 <Input
                                     keyboardType="email-address"
-                                    placeholder="Email"
+                                    placeholder={t('placeholders.email')}
                                     onChangeText={formikProps.handleChange(
                                         'email'
                                     )}
@@ -61,7 +63,7 @@ const ForgotPasswordForm = props => {
                                     color={globalWhite}
                                 />
                             ) : (
-                                <Text>Reset Password</Text>
+                                <Text>{t('buttons.resetPassword')}</Text>
                             )}
                         </SubmitFormButton>
                     </CenterRow>

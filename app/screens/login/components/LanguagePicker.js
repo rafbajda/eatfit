@@ -17,12 +17,12 @@ const LanguagePicker = props => {
     };
     const PickerItems = languages.map(language => (
         <Picker.Item
-            label={language.id}
+            label={language.label}
             value={language.id}
             key={language.id}
         />
     ));
-    console.log(languages);
+    console.log(languages, props);
 
     if (hidden) {
         return null;
