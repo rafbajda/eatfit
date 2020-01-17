@@ -8,7 +8,8 @@
     "logIntoAnotherAccount": "Zaloguj się na inne konto",
     "refreshVerificationStatus": "Odśwież stan weryfikacji",
     "sendAnotherEmail": "Wyślij kolejnego maila",
-    "saveChanges": "Zapisz zmiany"
+    "saveChanges": "Zapisz zmiany",
+    "scan": "Skanuj"
   },
   "placeholders": {
     "email": "Email",

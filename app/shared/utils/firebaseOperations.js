@@ -15,7 +15,7 @@ const getUserById = id => {
         .get();
 };
 
-const prepareUserToLogIn = (user, setUser) => {
+const prepareUserToLogIn = (user, setUser, setLanguage) => {
     getUserById(user.uid)
         .then(doc => {
             if (doc.exists) {
@@ -24,7 +24,9 @@ const prepareUserToLogIn = (user, setUser) => {
                     last_login_at: new Date()
                 });
                 const userObject = doc.data();
+                const { language } = userObject;
                 setUser(userObject);
+                setLanguage(language);
                 if (userObject.email_verified || userObject.is_social) {
                     NavigationService.navigate(screens.Home);
                 } else {
@@ -48,7 +50,8 @@ const createUserInstance = data => {
         provider = data.additionalUserInfo.providerId;
     }
     user = ops.createUserObjectByProvider(provider, data);
-
+    console.log('data TO CREATE: ', data);
+    console.log('USER TO CREATE: ', user);
     return firebase
         .firestore()
         .collection('users')
@@ -62,7 +65,8 @@ const createUserInstance = data => {
             photo_url: user.photoUrl || null,
             login_provider: user.loginProvider || null,
             is_social: user.isSocial || false,
-            newsletter: user.newsletter || false
+            newsletter: user.newsletter || false,
+            language: user.language || null
         });
 };
 

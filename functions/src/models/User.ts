@@ -13,6 +13,7 @@ export interface User {
     login_provider: string | null;
     first_name: string | null;
     last_name: string | null;
+    language: string | null;
 }
 
 export const UserInitialValues: User = {
@@ -28,6 +29,7 @@ export const UserInitialValues: User = {
     login_provider: null,
     first_name: null,
     last_name: null,
+    language: null
 }
 
 const userInitialMap: Map<String, String | null> = new Map(_.toPairs(UserInitialValues));

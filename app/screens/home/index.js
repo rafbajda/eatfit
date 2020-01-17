@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import GlobalHeader from '../../shared/components/GlobalHeader';
 import {
     CenterContainer,
-    CenterRow,
     LoggedInGlobalContainer
 } from '../../shared/styles/common';
 import globalSelectors from '../../shared/state/selectors';
@@ -11,10 +10,7 @@ import GlobalLoader from '../../shared/components/GlobalLoader';
 import actions from './state/actions';
 import selectors from './state/selectors';
 import ScanButtonElement from './components/ScanButton';
-import { Text } from 'react-native-elements';
 import Legend from './components/Legend';
-
-// TODO: set scanloading to false when making scan is aborted
 
 const HomeScreen = props => {
     const {

@@ -19,9 +19,11 @@ import NavigationService from '../../navigation/NavigationService';
 
 class LoginScreen extends React.Component {
     componentWillMount() {
-        const { navigation, setUserState } = { ...this.props };
+        const { navigation, setUserState, setCurrentLanguage } = {
+            ...this.props
+        };
         NavigationService.setNavigator(navigation);
-        firebaseOps.checkUserNavigation(setUserState);
+        firebaseOps.checkUserNavigation(setUserState, setCurrentLanguage);
     }
 
     componentDidMount() {

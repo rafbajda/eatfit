@@ -6,10 +6,10 @@ import NavigationService from '../../../navigation/NavigationService';
 const signInEmail = (email, password) =>
     firebase.auth().signInWithEmailAndPassword(email, password);
 
-const checkUserNavigation = setUser => {
+const checkUserNavigation = (setUser, setLanguage) => {
     firebase.auth().onAuthStateChanged(user => {
         if (user) {
-            globalFirebaseOps.prepareUserToLogIn(user, setUser);
+            globalFirebaseOps.prepareUserToLogIn(user, setUser, setLanguage);
         } else {
             NavigationService.navigate(screens.Login);
         }

@@ -21,7 +21,8 @@ const createUserObjectEmail = data => ({
     emailVerified: data.emailVerified || false,
     newsletter: data.newsletter || false,
     loginProvider: 'email',
-    isSocial: false,
+    language: data.language || null,
+    isSocial: false
 });
 
 const createUserObjectFacebook = data => ({
@@ -32,7 +33,8 @@ const createUserObjectFacebook = data => ({
     emailVerified: data.user.emailVerified || false,
     photoUrl: data.user.photoURL || null,
     loginProvider: data.additionalUserInfo.providerId || null,
-    isSocial: true,
+    language: data.additionalUserInfo.profile.locale || null,
+    isSocial: true
 });
 
 const createUserObjectGoogle = data => ({
@@ -43,7 +45,8 @@ const createUserObjectGoogle = data => ({
     emailVerified: data.user.emailVerified || false,
     photoUrl: data.user.photoURL || null,
     loginProvider: data.additionalUserInfo.providerId || null,
-    isSocial: true,
+    language: data.additionalUserInfo.profile.locale || null,
+    isSocial: true
 });
 
 const createUserObjectByProvider = (provider, data) => {
@@ -61,5 +64,5 @@ export default {
     getDateFromFirebaseTimestamp,
     normalizeKeysToCamelCase,
     createUserObjectByProvider,
-    completeSideBarListWithActions,
+    completeSideBarListWithActions
 };

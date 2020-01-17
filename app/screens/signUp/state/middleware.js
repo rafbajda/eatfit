@@ -6,7 +6,13 @@ const signUpMiddleware = store => next => action => {
     const { payload, dispatch } = { ...store, ...action };
     switch (action.type) {
         case actionTypes.CREATE_ACCOUNT:
-            ops.createAccount(payload, dispatch);
+            ops.createAccount(
+                {
+                    ...payload,
+                    language: store.getState().config.pickedLanguage
+                },
+                dispatch
+            );
             break;
         case actionTypes.CREATE_ACCOUNT_SUCCESS:
             dispatch(globalActions.createUserObject(payload));
