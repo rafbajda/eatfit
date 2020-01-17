@@ -1,7 +1,7 @@
 const initialState = {
     config: {
         isDataLoading: true,
-        pickedLanguage: 'en',
+        pickedLanguage: 'en-US',
         keyboardOnScreen: false
     },
     auth: {

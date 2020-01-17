@@ -1,0 +1,52 @@
+{
+  "buttons": {
+    "login": "login",
+    "facebook": "Facebook",
+    "google": "Google",
+    "resetPassword": "Reset Password",
+    "create": "Create",
+    "logIntoAnotherAccount": "Log in to another account",
+    "refreshVerificationStatus": "Refresh verification status",
+    "sendAnotherEmail": "Send another email",
+    "saveChanges": "Save changes",
+    "scan": "Scan"
+  },
+  "placeholders": {
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "yourName": "Your name",
+    "yourLastName": "Your last name",
+    "yourBirthdayDate": "Your birthday date"
+  },
+  "dividers": {
+    "or": "OR"
+  },
+  "actions": {
+    "forgotPassword": "Forgot password?",
+    "signUp": "Sign up"
+  },
+  "info": {
+    "dontHaveAccount": "Don't have an account?",
+    "resetPassword": "Reset your password",
+    "resetPasswordDetails": "You will receive link that will allow you to reset your password.",
+    "termsCheckbox": "I have read and accept the Terms and Conditions.",
+    "newsletterCheckbox": "(optional) I agree to receive commercial information(for example newsletter) by electronic communication",
+    "didNotReceiveEmail": "did not receive any email?",
+    "accountIsNotVerified": "Account is not verified!",
+    "check": "Check",
+    "andClickOnVerificationLink": "and click on verification link",
+    "veryGoodImpact": "Very good impact on health",
+    "prettyGoodImpact": "Pretty good impact on health",
+    "ratherNeutralImpact": "Rather neutral impact on health",
+    "prettyBadImpact": "Pretty bad impact on health",
+    "veryBadImpact": "Very bad impact on health",
+    "instructionDetails": "Each substance has its own score, which describes the effect of this substance on health. The product rating is calculated on the basis of the weighted average of each substance that the product contains. List of available results:"
+  },
+  "labels": {
+    "rating": "Rating:",
+    "description": "Description:",
+    "name": "Name:",
+    "instruction": "Instruction"
+  }
+}

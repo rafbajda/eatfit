@@ -16,7 +16,7 @@ export const RefreshButton = styled(Button)`
     justify-content: center;
 `;
 
-const RefreshButtonTextStyle = { fontSize: 17 };
+const RefreshButtonTextStyle = { fontSize: 17, textAlign: 'center' };
 
 export default {
     RefreshButtonTextStyle

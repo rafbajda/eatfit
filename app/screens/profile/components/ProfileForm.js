@@ -12,14 +12,17 @@ import {
 import { globalWhite, mediumGrey } from '../../../shared/constants/colors';
 import formInitialValues from '../../../shared/constants/formInitialValues';
 import { indicatorSize } from '../styles/profileFormStyles';
+import I18n from 'i18n-js';
 
 const ProfileForm = props => {
-    const { profileSchema, isAuthLoading, profile, updateProfile } = {
-        ...props
+    const { profileSchema, isAuthLoading, profile, updateProfile, t } = {
+        ...props,
+        ...I18n
     };
     const profileInitialValues = formInitialValues.getProfileInitialValues(
         profile
     );
+    console.log('check out props: ', profileInitialValues);
     return (
         <Formik
             initialValues={profileInitialValues}
@@ -34,7 +37,7 @@ const ProfileForm = props => {
                                 <Icon active name="person" />
                                 <Input
                                     value={formikProps.values.firstName}
-                                    placeholder="Your name"
+                                    placeholder={t('placeholders.yourName')}
                                     placeholderTextColor={mediumGrey}
                                     onChangeText={formikProps.handleChange(
                                         'firstName'
@@ -51,7 +54,7 @@ const ProfileForm = props => {
                                 <Icon active name="person" />
                                 <Input
                                     value={formikProps.values.lastName}
-                                    placeholder="Your last name"
+                                    placeholder={t('placeholders.yourLastName')}
                                     placeholderTextColor={mediumGrey}
                                     onChangeText={formikProps.handleChange(
                                         'lastName'
@@ -71,7 +74,7 @@ const ProfileForm = props => {
                                         new Date(formikProps.values.birthday)
                                     }
                                     maximumDate={new Date()}
-                                    locale="en"
+                                    locale="en-US"
                                     timeZoneOffsetInMinutes={undefined}
                                     modalTransparent={false}
                                     animationType="slide"
@@ -79,7 +82,7 @@ const ProfileForm = props => {
                                     placeHolderText={
                                         formikProps.values.birthday
                                             ? null
-                                            : 'Your Birthday date'
+                                            : t('placeholders.yourBirthdayDate')
                                     }
                                     placeHolderTextStyle={{ color: mediumGrey }}
                                     onDateChange={formikProps.handleChange(
@@ -102,7 +105,7 @@ const ProfileForm = props => {
                                     color={globalWhite}
                                 />
                             ) : (
-                                <Text>Save changes</Text>
+                                <Text>{t('buttons.saveChanges')}</Text>
                             )}
                         </SubmitFormButton>
                     </CenterRowPaddingTop>

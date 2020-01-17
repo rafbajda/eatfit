@@ -4,17 +4,19 @@ import {
     VerificationInfoMessageText
 } from '../styles/verificationMessageStyles';
 import { CenterContainer } from '../../../shared/styles/common';
+import I18n from 'i18n-js';
 
 const VerificationMessage = props => {
     const { user } = { ...props };
+    const { t } = I18n;
     return (
         <CenterContainer>
             <VerificationMainMessageText>
-                Account is not verified!
+                {t('info.accountIsNotVerified')}
             </VerificationMainMessageText>
             <VerificationInfoMessageText>
-                Check {user && user.email ? user.email : 'email'} and click on
-                verification link.
+                {t('info.check')} {user && user.email ? user.email : 'email'}{' '}
+                {t('info.andClickOnVerificationLink')}
             </VerificationInfoMessageText>
         </CenterContainer>
     );

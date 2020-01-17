@@ -9,9 +9,10 @@ import {
     LoadingIndicator,
     LoadingIndicatorText
 } from '../styles/scanButtonStyles';
+import I18n from 'i18n-js';
 
 const ScanButtonElement = props => {
-    const { isScanLoading, scan, scanStatusMessage } = { ...props };
+    const { isScanLoading, scan, scanStatusMessage, t } = { ...props, ...I18n };
 
     return (
         <ButtonRow>
@@ -27,7 +28,7 @@ const ScanButtonElement = props => {
                         />
                     </LoadingIndicator>
                 ) : (
-                    <ScanButtonText>Scan</ScanButtonText>
+                    <ScanButtonText>{t('buttons.scan')}</ScanButtonText>
                 )}
             </ScanButton>
         </ButtonRow>

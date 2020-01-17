@@ -1,7 +1,7 @@
 import hps from '../utils/helpers';
 
 const forgotPasswordInitialValues = {
-    email: '',
+    email: ''
 };
 
 const loginInitialValues = { email: '', password: '' };
@@ -11,12 +11,14 @@ const signUpInitialValues = {
     password: '',
     confirmPassword: '',
     terms: false,
-    newsletter: false,
+    newsletter: false
 };
 
 const getProfileInitialValues = user => {
     const { firstName, lastName } = { ...user };
-    const birthday = hps.getDateFromFirebaseTimestamp(user.birthday);
+    const birthday = user.birthday
+        ? hps.getDateFromFirebaseTimestamp(user.birthday)
+        : null;
     return { firstName, lastName, birthday };
 };
 
@@ -24,5 +26,5 @@ export default {
     signUpInitialValues,
     loginInitialValues,
     forgotPasswordInitialValues,
-    getProfileInitialValues,
+    getProfileInitialValues
 };

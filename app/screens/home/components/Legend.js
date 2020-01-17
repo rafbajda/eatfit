@@ -8,6 +8,7 @@ import {
     LegendListElement,
     LegendRow
 } from '../styles/legendStyles';
+import I18n from 'i18n-js';
 
 const Legend = () => {
     const {
@@ -15,13 +16,17 @@ const Legend = () => {
         badImpact,
         neutralImpact,
         goodImpact,
-        veryGoodImpact
-    } = emojis;
+        veryGoodImpact,
+        t
+    } = {
+        ...emojis,
+        ...I18n
+    };
     const list = [
         {
             rightElement: (
                 <LegendIconDescriptionHeader>
-                    Very good impact on health
+                    {t('info.veryGoodImpact')}
                 </LegendIconDescriptionHeader>
             ),
             leftElement: <LegendIcon>{veryGoodImpact}</LegendIcon>
@@ -29,7 +34,7 @@ const Legend = () => {
         {
             rightElement: (
                 <LegendIconDescriptionHeader>
-                    Pretty good impact on health
+                    {t('info.prettyGoodImpact')}
                 </LegendIconDescriptionHeader>
             ),
             leftElement: <LegendIcon>{goodImpact}</LegendIcon>
@@ -38,7 +43,7 @@ const Legend = () => {
         {
             rightElement: (
                 <LegendIconDescriptionHeader>
-                    Rather neutral impact on health
+                    {t('info.ratherNeutralImpact')}
                 </LegendIconDescriptionHeader>
             ),
             leftElement: <LegendIcon>{neutralImpact}</LegendIcon>
@@ -46,7 +51,7 @@ const Legend = () => {
         {
             rightElement: (
                 <LegendIconDescriptionHeader>
-                    Pretty bad impact on health
+                    {t('info.prettyBadImpact')}
                 </LegendIconDescriptionHeader>
             ),
             leftElement: <LegendIcon>{badImpact}</LegendIcon>
@@ -54,7 +59,7 @@ const Legend = () => {
         {
             rightElement: (
                 <LegendIconDescriptionHeader>
-                    Very bad impact on health
+                    {t('info.veryBadImpact')}
                 </LegendIconDescriptionHeader>
             ),
             leftElement: <LegendIcon>{veryBadImpact}</LegendIcon>
@@ -62,12 +67,9 @@ const Legend = () => {
     ];
     return (
         <LegendRow>
-            <LegendHeader>Instruction</LegendHeader>
+            <LegendHeader>{t('labels.instruction')}</LegendHeader>
             <LegendDescription>
-                Each substance has its own score, which describes the effect of
-                this substance on health. The product rating is calculated on
-                the basis of the weighted average of each substance that the
-                product contains. List of available results:
+                {t('info.instructionDetails')}
             </LegendDescription>
             {list.map((l, i) => (
                 <LegendListElement

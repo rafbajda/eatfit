@@ -5,23 +5,25 @@ import {
     SubstanceInformationLabel
 } from '../styles/substanceDetailsStyles';
 import {
-    ScanInformationContainer,
     ScanInformationDescription,
     ScanInformationInfo,
     ScanRate,
     ScanRatingIcon
 } from '../../scanDetails/styles/scanDetailsStyles';
 import hps from '../../scanDetails/utils/helpers';
+import I18n from 'i18n-js';
 
 const SubstanceInformation = props => {
-    const { substanceName, score } = props;
+    const { substanceName, score, t } = { ...props, ...I18n };
     const roundedScore = Math.round(score * 100) / 100;
     const emoji = hps.getEmoji(score);
     const color = hps.getColor(score);
     const description = hps.getDescription(score);
     return (
         <SubstanceInformationContainer>
-            <SubstanceInformationLabel>Name:</SubstanceInformationLabel>
+            <SubstanceInformationLabel>
+                {t('labels.name')}
+            </SubstanceInformationLabel>
             <Text>{substanceName}</Text>
             <ScanInformationInfo>
                 <ScanRate color={color}>{roundedScore}</ScanRate>

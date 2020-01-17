@@ -1,16 +1,20 @@
 import React from 'react';
 import { Row, Text } from 'native-base';
 import styles, { OtherActionButton } from '../styles/notVerifiedStyles';
+import I18n from 'i18n-js';
 
 const SendEmailButton = props => {
-    const { sendEmail, OtherActionTextStyle, OtherActionRowStyle } = {
+    const { sendEmail, OtherActionTextStyle, OtherActionRowStyle, t } = {
         ...props,
-        ...styles
+        ...styles,
+        ...I18n
     };
     return (
         <Row style={OtherActionRowStyle}>
             <OtherActionButton onPress={() => sendEmail()} rounded>
-                <Text style={OtherActionTextStyle}>Send another email</Text>
+                <Text style={OtherActionTextStyle}>
+                    {t('buttons.sendAnotherEmail')}
+                </Text>
             </OtherActionButton>
         </Row>
     );

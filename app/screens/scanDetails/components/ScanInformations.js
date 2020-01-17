@@ -8,16 +8,17 @@ import {
     ScanRate,
     ScanRatingIcon
 } from '../styles/scanDetailsStyles';
+import I18n from 'i18n-js';
 
 const ScanInformations = props => {
-    const { score } = props;
+    const { score, t } = { ...props, ...I18n };
     const roundedScore = Math.round(score * 100) / 100;
     const emoji = hps.getEmoji(score);
     const color = hps.getColor(score);
     const description = hps.getDescription(score);
     return (
         <ScanInformationContainer>
-            <ScanInformationLabel>Rating:</ScanInformationLabel>
+            <ScanInformationLabel>{t('labels.rating')}</ScanInformationLabel>
             <ScanInformationInfo>
                 <ScanRate color={color}>{roundedScore}</ScanRate>
                 <ScanRatingIcon>{emoji}</ScanRatingIcon>

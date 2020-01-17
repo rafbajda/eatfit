@@ -4,12 +4,19 @@
     "facebook": "Facebook",
     "google": "Google",
     "resetPassword": "Resetuj hasło",
-    "create": "Stwórz"
+    "create": "Stwórz",
+    "logIntoAnotherAccount": "Zaloguj się na inne konto",
+    "refreshVerificationStatus": "Odśwież stan weryfikacji",
+    "sendAnotherEmail": "Wyślij kolejnego maila",
+    "saveChanges": "Zapisz zmiany"
   },
   "placeholders": {
     "email": "Email",
     "password": "Hasło",
-    "confirmPassword": "Potwierdź hasło"
+    "confirmPassword": "Potwierdź hasło",
+    "yourName": "Twoje imię",
+    "yourLastName": "Twoje nazwisko",
+    "yourBirthdayDate": "Twoja data urodzenia"
   },
   "dividers": {
     "or": "LUB"
@@ -23,6 +30,22 @@
     "resetPassword": "Zresetuj swoje hasło",
     "resetPasswordDetails": "Na email przyjdzie link, który umożliwi zmianę hasła",
     "termsCheckbox": "Przeczytałem i akceptuję warunki korzystania z aplikacji",
-    "newsletterCheckbox": "(opcjonalne) Akceptuję otrzymywanie wiadomości komercyjne w sposób elektroniczny"
+    "newsletterCheckbox": "(opcjonalne) Akceptuję otrzymywanie wiadomości komercyjne w sposób elektroniczny",
+    "didNotReceiveEmail": "Nie otrzymałeś maila?",
+    "accountIsNotVerified": "Konto nie jest zweryfikowane!",
+    "check": "Sprawdź",
+    "andClickOnVerificationLink": "i kliknij na link weryfikacyjny",
+    "veryGoodImpact": "Bardzo dobry wpływ na zdrowie",
+    "prettyGoodImpact": "Dobry wpływ na zdrowie",
+    "ratherNeutralImpact": "Neutralny wpływ na zdrowie",
+    "prettyBadImpact": "Zły wpływ na zdrowie",
+    "veryBadImpact": "Bardzo zły wpływ na zdrowie",
+    "instructionDetails": "Każda substancja posiada swoją własną ocenę, która odzwierciedla wpływ danej substancji na zdrowie. Ocena całego produktu opiera się na średniej ważonej substancji, które produkt zawiera. Lista możliwych rezultatów:"
+  },
+  "labels": {
+    "rating": "Ocena:",
+    "description": "Opis:",
+    "name": "Nazwa:",
+    "instruction": "Instrukcja"
   }
 }

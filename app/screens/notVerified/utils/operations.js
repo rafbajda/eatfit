@@ -10,7 +10,7 @@ import screens from '../../../navigation/screens';
 import NavigationService from '../../../navigation/NavigationService';
 
 const updateUserVerification = (data, dispatch) => {
-    const { user } = { ...data };
+    const user = data;
     if (!user.emailVerified) {
         Toast.show(CheckVerificationRefreshToast);
         dispatch(actions.updateUserVerificationSuccess());

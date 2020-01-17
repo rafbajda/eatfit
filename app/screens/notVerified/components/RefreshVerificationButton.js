@@ -6,11 +6,13 @@ import styles, {
     RefreshRow,
     RefreshButton
 } from '../styles/refreshVerificationButtonStyles';
+import I18n from 'i18n-js';
 
 const RefreshVerificationButton = props => {
-    const { isAuthLoading, checkVerification, RefreshButtonTextStyle } = {
+    const { isAuthLoading, checkVerification, RefreshButtonTextStyle, t } = {
         ...props,
-        ...styles
+        ...styles,
+        ...I18n
     };
     return (
         <RefreshRow>
@@ -22,7 +24,7 @@ const RefreshVerificationButton = props => {
                     <UIActivityIndicator size={30} color={globalWhite} />
                 ) : (
                     <Text style={RefreshButtonTextStyle}>
-                        Refresh verification status
+                        {t('buttons.refreshVerificationStatus')}
                     </Text>
                 )}
             </RefreshButton>

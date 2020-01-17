@@ -18,9 +18,9 @@ const OtherActionRowStyle = {
     paddingTop: 12
 };
 
-const OtherActionTextStyle = { fontSize: 16 };
+const OtherActionTextStyle = { fontSize: 16, textAlign: 'center' };
 
-const mailIconStyle = { color: globalGreen, fontSize: 200 };
+const mailIconStyle = { color: globalGreen, fontSize: 200, marginTop: 70 };
 
 export default {
     OtherActionTextStyle,
