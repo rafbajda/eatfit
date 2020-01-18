@@ -2,6 +2,8 @@ import { Toast } from 'native-base';
 import firebase from '../../../shared/modules/firebase';
 import globalFirebaseOps from '../../../shared/utils/firebaseOperations';
 import { UserMismatchingToast } from '../../../shared/constants/toasts';
+import actions from '../state/actions';
+import I18n from 'i18n-js';
 
 const uploadAvatar = async (uri, userId) => {
     const blob = await new Promise((resolve, reject) => {
@@ -42,12 +44,31 @@ const reloadUser = (uid, setUser, updateUserSuccess) => {
             }
         })
         .catch(() => {
-            Toast.show(UserMismatchingToast);
+            const { t } = I18n;
+            const toastMessage = t('toasts.userAccountObjectError');
+            Toast.show(UserMismatchingToast(toastMessage));
         });
+};
+
+const updateUserLanguage = (uid, language, dispatch) => {
+    globalFirebaseOps
+        .getUserById(uid)
+        .then(doc => {
+            if (doc.exists) {
+                const newData = {
+                    ...doc.data(),
+                    language
+                };
+                doc.ref.update(newData);
+                dispatch(actions.setUserLanguageSuccess(newData));
+            }
+        })
+        .catch(err => dispatch(actions.updateUserError(err)));
 };
 
 export default {
     uploadAvatar,
     updateUser,
-    reloadUser
+    reloadUser,
+    updateUserLanguage
 };

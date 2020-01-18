@@ -5,9 +5,12 @@ import firebaseOps from './firebaseOperations';
 import firebase from '../modules/firebase';
 import hps from './helpers';
 import { Keyboard } from 'react-native';
+import I18n from 'i18n-js';
 
 let keyboardDidShowListener = null;
 let keyboardDidHideListener = null;
+
+const updateLocalLanguage = newLocale => (I18n.locale = newLocale);
 
 const getCurrentLanguage = dispatch => {
     const { locale } = Localization;
@@ -84,5 +87,6 @@ export default {
     getAllSubstances,
     getCurrentLanguage,
     setUpKeyboardListeners,
-    removeKeyboardListeners
+    removeKeyboardListeners,
+    updateLocalLanguage
 };

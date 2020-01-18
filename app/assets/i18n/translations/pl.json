@@ -48,5 +48,29 @@
     "description": "Opis:",
     "name": "Nazwa:",
     "instruction": "Instrukcja"
+  },
+  "toasts": {
+    "userAccountObjectError": "Błąd ze stworzeniem instancji użytkownika",
+    "languageUpdated": "Język aplikacji został zaktualizowany",
+    "emailSent": "Email został wysłany",
+    "verificationRefreshed": "Weryfikacja została odświeżona",
+    "passwordResetSent": "Email z resetowaniem hasła został wysłany",
+    "message": "Wiadomość: "
+  },
+  "navigation": {
+    "myAccount": "Moje konto",
+    "scanDetails": "Szczegóły skanu",
+    "substanceDetails": "Szczegóły substancji",
+    "scansHistory": "Historia skanów",
+    "allSubstances": "Wszystkie substancje",
+    "forgotPassword": "Zapomniałem hasła",
+    "createAccount": "Stwórz konto"
+  },
+  "actionSheets": {
+    "avatarTitle": "Zmień swój awatar",
+    "choosePhoto": "Wybierz zdjęcie z galerii",
+    "takePhoto": "Zrób zdjęcie",
+    "deleteAvatar": "Usuń awatar",
+    "cancel": "Anuluj"
   }
 }

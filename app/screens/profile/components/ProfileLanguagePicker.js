@@ -1,13 +1,17 @@
 import React from 'react';
 import { deepBlue } from '../../../shared/constants/colors';
-import { Picker, Icon } from 'native-base';
-import styles from '../styles/profileLanguagePickerStyles';
+import { Picker, Icon, Grid, Col } from 'native-base';
+import styles, {
+    ProfileLanguageRow,
+    ProfilePickerColumn
+} from '../styles/profileLanguagePickerStyles';
 
 const ProfileLanguagePicker = props => {
-    const { languages, placeholderStyle } = {
+    const { languages, placeholderStyle, userLanguage, setUserLanguage } = {
         ...props,
         ...styles
     };
+    console.log('props: ', props);
     const PickerItems = languages.map(language => (
         <Picker.Item
             label={language.label}
@@ -15,22 +19,26 @@ const ProfileLanguagePicker = props => {
             key={language.id}
         />
     ));
-    console.log(languages, props);
 
-    if (hidden) {
-        return null;
-    }
     return (
-        <Picker
-            mode="dropdown"
-            iosIcon={<Icon name="arrow-down" />}
-            placeholderStyle={placeholderStyle}
-            placeholderIconColor={deepBlue}
-            selectedValue={currentLanguage}
-            onValueChange={language => setCurrentLanguage(language)}
-        >
-            {PickerItems}
-        </Picker>
+        <Grid>
+            <ProfileLanguageRow>
+                <Col />
+                <Col />
+                <ProfilePickerColumn>
+                    <Picker
+                        mode="dropdown"
+                        iosIcon={<Icon name="arrow-down" />}
+                        placeholderStyle={placeholderStyle}
+                        placeholderIconColor={deepBlue}
+                        selectedValue={userLanguage}
+                        onValueChange={language => setUserLanguage(language)}
+                    >
+                        {PickerItems}
+                    </Picker>
+                </ProfilePickerColumn>
+            </ProfileLanguageRow>
+        </Grid>
     );
 };
 

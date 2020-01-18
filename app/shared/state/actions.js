@@ -1,5 +1,6 @@
 export const actionTypes = {
     SET_USER: '[login] set user',
+    SET_LANGUAGE: '[login] set language',
     LOAD_CONFIG: '[config] load config',
     LOAD_CONFIG_DONE: '[config] load config done',
     GET_FONTS: '[config] get fonts',
@@ -22,6 +23,11 @@ export const actionTypes = {
     SET_UP_KEYBOARD_LISTENERS: '[config] set up keyboard listeners',
     REMOVE_KEYBOARD_LISTENERS: '[config] remove keyboard listeners'
 };
+
+const setLanguage = payload => ({
+    type: actionTypes.SET_LANGUAGE,
+    payload
+});
 
 const setUpKeyboardListeners = () => ({
     type: actionTypes.SET_UP_KEYBOARD_LISTENERS
@@ -104,6 +110,7 @@ const getCurrentLanguage = () => ({
 });
 
 export default {
+    setLanguage,
     setUser,
     logout,
     logoutSuccess,

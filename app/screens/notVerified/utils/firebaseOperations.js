@@ -1,7 +1,5 @@
 import firebase from '../../../shared/modules/firebase';
 
-const reloadUserAuth = () => firebase.auth().currentUser.reload();
-
 const updateUserVerificationProperty = (uid, emailVerified) => {
     return firebase
         .firestore()
@@ -14,7 +12,6 @@ const sendVerificationEmail = () => {
 };
 
 export default {
-    reloadUserAuth,
     updateUserVerificationProperty,
-    sendVerificationEmail,
+    sendVerificationEmail
 };

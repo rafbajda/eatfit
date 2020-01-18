@@ -6,7 +6,6 @@ import { GlobalContainer } from '../../shared/styles/common';
 import LanguagePicker from './components/LanguagePicker';
 import actions from './state/actions';
 import globalActions from '../../shared/state/actions';
-import loginSelectors from './state/selectors';
 import LoginForm from './components/LoginForm';
 import LoginDivider from './components/LoginDivider';
 import SocialLogin from './components/SocialLogin';
@@ -81,16 +80,17 @@ class LoginScreen extends React.Component {
 }
 
 const mapStateToProps = state => ({
-    languages: loginSelectors.languagesSelector(state),
+    languages: globalSelectors.languagesSelector(state),
     isKeyboardVisible: globalSelectors.keyboardOnScreenSelector(state),
     isAuthLoading: globalSelectors.authLoadingSelector(state),
     isNoUserLoggedIn: globalSelectors.isNoUserLoggedInSelector(state),
-    currentLanguage: loginSelectors.pickedLanguageSelector(state)
+    currentLanguage: globalSelectors.pickedLanguageSelector(state)
 });
 
 const mapDispatchToProps = dispatch => ({
     login: payload => dispatch(actions.loginEmail(payload)),
-    setCurrentLanguage: language => dispatch(actions.setLanguage(language)),
+    setCurrentLanguage: language =>
+        dispatch(globalActions.setLanguage(language)),
     setUserState: user => dispatch(globalActions.setUser(user)),
     loginSocialFacebook: () => dispatch(actions.loginFacebook()),
     loginSocialGoogle: () => dispatch(actions.loginGoogle()),

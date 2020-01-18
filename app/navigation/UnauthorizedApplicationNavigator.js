@@ -5,6 +5,7 @@ import SignUpScreen from '../screens/signUp';
 import { globalGreen, globalWhite } from '../shared/constants/colors';
 import NotVerifiedScreen from '../screens/notVerified';
 import ForgotPasswordScreen from '../screens/forgotPassword';
+import I18n from 'i18n-js';
 
 export default createStackNavigator(
     {
@@ -19,9 +20,9 @@ export default createStackNavigator(
         },
         [screens.ForgotPassword]: {
             screen: ForgotPasswordScreen,
-            navigationOptions: {
-                title: 'Forgot password'
-            }
+            navigationOptions: ({ navigation, navigationOptions }) => ({
+                title: I18n.t('navigation.forgotPassword')
+            })
         },
         [screens.NotVerified]: {
             screen: NotVerifiedScreen,
@@ -32,12 +33,12 @@ export default createStackNavigator(
     },
     {
         initialRouteName: screens.Login,
-        defaultNavigationOptions: {
-            title: 'Create an Account',
+        defaultNavigationOptions: ({ navigation, navigationOptions }) => ({
+            title: I18n.t('navigation.createAccount'),
             headerTintColor: globalWhite,
             headerStyle: {
                 backgroundColor: globalGreen
             }
-        }
+        })
     }
 );

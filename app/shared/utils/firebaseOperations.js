@@ -4,6 +4,7 @@ import screens from '../../navigation/screens';
 import { UserMismatchingToast } from '../constants/toasts';
 import ops from './helpers';
 import NavigationService from '../../navigation/NavigationService';
+import I18n from 'i18n-js';
 
 const getAuthCurrentUser = () => firebase.auth().currentUser;
 
@@ -25,6 +26,8 @@ const prepareUserToLogIn = (user, setUser, setLanguage) => {
                 });
                 const userObject = doc.data();
                 const { language } = userObject;
+                console.log('user user: ', userObject, language);
+
                 setUser(userObject);
                 setLanguage(language);
                 if (userObject.email_verified || userObject.is_social) {
@@ -35,13 +38,17 @@ const prepareUserToLogIn = (user, setUser, setLanguage) => {
             }
         })
         .catch(() => {
-            Toast.show(UserMismatchingToast);
+            const { t } = I18n;
+            const toastMessage = t('toasts.userAccountObjectError');
+            Toast.show(UserMismatchingToast(toastMessage));
         });
 };
 
 const signOut = () => {
     return firebase.auth().signOut();
 };
+
+const reloadUserAuth = () => firebase.auth().currentUser.reload();
 
 const createUserInstance = data => {
     let user = null;
@@ -50,8 +57,6 @@ const createUserInstance = data => {
         provider = data.additionalUserInfo.providerId;
     }
     user = ops.createUserObjectByProvider(provider, data);
-    console.log('data TO CREATE: ', data);
-    console.log('USER TO CREATE: ', user);
     return firebase
         .firestore()
         .collection('users')
@@ -75,5 +80,6 @@ export default {
     createUserInstance,
     getUserById,
     getAuthCurrentUser,
-    prepareUserToLogIn
+    prepareUserToLogIn,
+    reloadUserAuth
 };

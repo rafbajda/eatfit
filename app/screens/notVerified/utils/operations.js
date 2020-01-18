@@ -8,11 +8,14 @@ import firebaseOps from './firebaseOperations';
 import globalFirebaseOps from '../../../shared/utils/firebaseOperations';
 import screens from '../../../navigation/screens';
 import NavigationService from '../../../navigation/NavigationService';
+import I18n from 'i18n-js';
 
 const updateUserVerification = (data, dispatch) => {
     const user = data;
     if (!user.emailVerified) {
-        Toast.show(CheckVerificationRefreshToast);
+        const { t } = I18n;
+        const toastMessage = t('toasts.verificationRefreshed');
+        Toast.show(CheckVerificationRefreshToast(toastMessage));
         dispatch(actions.updateUserVerificationSuccess());
     } else {
         firebaseOps
@@ -28,7 +31,7 @@ const updateUserVerification = (data, dispatch) => {
 };
 
 const checkVerificationStatus = dispatch => {
-    firebaseOps
+    globalFirebaseOps
         .reloadUserAuth()
         .then(() => {
             const user = globalFirebaseOps.getAuthCurrentUser();
@@ -44,7 +47,11 @@ const sendVerificationMail = dispatch => {
         .catch(error => dispatch(actions.sendVerificationEmailError(error)));
 };
 
-const showEmailToast = () => Toast.show(emailSentToast);
+const showEmailToast = () => {
+    const { t } = I18n;
+    const toastMessage = t('toasts.emailSent');
+    Toast.show(emailSentToast(toastMessage));
+};
 
 export default {
     sendVerificationMail,

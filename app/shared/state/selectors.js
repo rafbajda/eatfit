@@ -3,6 +3,14 @@ import { createSelector } from 'reselect';
 const firestoreRequestSelector = state =>
     state.firestore.status.requesting.config;
 
+const languagesSelector = state => {
+    if (state.firestore.data.config) {
+        return state.firestore.data.config.language.availableLanguages;
+    }
+    return state.firestore.data;
+};
+
+const pickedLanguageSelector = state => state.config.pickedLanguage;
 const configLoadingSelector = state => state.config.isDataLoading;
 const authLoadingSelector = state => state.auth.isLoading;
 
@@ -33,6 +41,8 @@ export default {
     isAuthEmptySelector,
     isNoUserLoggedInSelector,
     loadingSelector,
+    languagesSelector,
+    pickedLanguageSelector,
     keyboardOnScreenSelector,
     userSelector
 };

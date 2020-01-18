@@ -35,7 +35,7 @@ const configReducer = (state = initialConfigState, action) => {
                 ...state,
                 isDataLoading: false
             };
-        case loginActionTypes.SET_LANGUAGE:
+        case globalActionTypes.SET_LANGUAGE:
             return {
                 ...state,
                 pickedLanguage: action.payload

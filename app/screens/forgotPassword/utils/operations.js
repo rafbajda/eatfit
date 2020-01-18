@@ -4,6 +4,7 @@ import actions from '../state/actions';
 import screens from '../../../navigation/screens';
 import { PasswordResetEmailSentToast } from '../../../shared/constants/toasts';
 import NavigationService from '../../../navigation/NavigationService';
+import I18n from 'i18n-js';
 
 const resetPassword = (data, dispatch) => {
     const { email } = { ...data };
@@ -17,7 +18,9 @@ const resetPassword = (data, dispatch) => {
 
 const changeNavigation = () => {
     NavigationService.navigate(screens.Login);
-    Toast.show(PasswordResetEmailSentToast);
+    const { t } = I18n;
+    const toastMessage = t('toasts.passwordResetSent');
+    Toast.show(PasswordResetEmailSentToast(toastMessage));
 };
 
 export default {

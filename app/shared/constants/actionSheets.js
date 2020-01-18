@@ -1,14 +1,22 @@
 import { globalGreen } from './colors';
 
-const CHANGE_AVATAR_BUTTONS = [
+const getChangeAvatarButtons = t => [
     {
-        text: 'Choose photo from gallery',
+        text: t('actionSheets.choosePhoto'),
         icon: 'images',
         iconColor: globalGreen
     },
-    { text: 'Take a photo', icon: 'camera', iconColor: globalGreen },
-    { text: 'Delete Avatar', icon: 'trash', iconColor: globalGreen },
-    { text: 'Cancel', icon: 'close', iconColor: globalGreen }
+    {
+        text: t('actionSheets.takePhoto'),
+        icon: 'camera',
+        iconColor: globalGreen
+    },
+    {
+        text: t('actionSheets.deleteAvatar'),
+        icon: 'trash',
+        iconColor: globalGreen
+    },
+    { text: t('actionSheets.cancel'), icon: 'close', iconColor: globalGreen }
 ];
 
 export const CHANGE_AVATAR_BUTTON_INDEXES = {
@@ -18,13 +26,9 @@ export const CHANGE_AVATAR_BUTTON_INDEXES = {
     CANCEL: 3
 };
 
-export const CHANGE_AVATAR_OPTIONS = {
-    options: CHANGE_AVATAR_BUTTONS,
+export const getChangeAvatarOptions = t => ({
+    options: getChangeAvatarButtons(t),
     cancelButtonIndex: CHANGE_AVATAR_BUTTON_INDEXES.CANCEL,
     destructiveButtonIndex: CHANGE_AVATAR_BUTTON_INDEXES.REMOVE_AVATAR,
-    title: 'Change your avatar'
-};
-
-export default {
-    CHANGE_AVATAR_OPTIONS
-};
+    title: t('actionSheets.avatarTitle')
+});

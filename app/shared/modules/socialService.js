@@ -4,6 +4,7 @@ import { FACEBOOK_APP_ID, GOOGLE_CLIENT_ID } from 'react-native-dotenv';
 import { Toast } from 'native-base';
 import firebase from './firebase';
 import { WarningToastMessage } from '../constants/toasts';
+import I18n from 'i18n-js';
 
 const socialConfig = {
     googleClientId: GOOGLE_CLIENT_ID,
@@ -37,8 +38,9 @@ export default class socialService {
                 return new Promise(resolve => resolve({ cancelled: true }));
             });
         } catch ({ message }) {
-            console.log('error in catch toast', message);
-            Toast.show(WarningToastMessage(message));
+            const { t } = I18n;
+            const toastMessage = `${t('toasts.message')}${message}`;
+            Toast.show(WarningToastMessage(toastMessage));
         }
         return new Promise(resolve => resolve({ error: true }));
     }
@@ -48,7 +50,6 @@ export default class socialService {
             const { type, accessToken, idToken } = await Google.logInAsync({
                 clientId: socialConfig.googleClientId
             });
-            console.log('1', type, accessToken, idToken);
 
             if (type === 'success' && accessToken && idToken) {
                 const credential = firebase.auth.GoogleAuthProvider.credential(
@@ -59,7 +60,9 @@ export default class socialService {
             }
             return new Promise(resolve => resolve({ cancelled: true }));
         } catch ({ message }) {
-            Toast.show(WarningToastMessage(message));
+            const { t } = I18n;
+            const toastMessage = `${t('toasts.message')}${message}`;
+            Toast.show(WarningToastMessage(toastMessage));
         }
         return new Promise(resolve => resolve({ error: true }));
     }

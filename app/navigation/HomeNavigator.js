@@ -8,6 +8,7 @@ import { globalWhite, globalGreen } from '../shared/constants/colors';
 import substanceDetails from '../screens/substanceDetails';
 import scansHistory from '../screens/scansHistory';
 import allSubstances from '../screens/allSubstances';
+import I18n from 'i18n-js';
 
 export default createStackNavigator(
     {
@@ -17,33 +18,33 @@ export default createStackNavigator(
         },
         [screens.Profile]: {
             screen: ProfileScreen,
-            navigationOptions: {
-                title: 'My account'
-            }
+            navigationOptions: ({ navigation, navigationOptions }) => ({
+                title: I18n.t('navigation.myAccount')
+            })
         },
         [screens.ScanDetails]: {
             screen: ScanDetails,
-            navigationOptions: {
-                title: 'Scan Details'
-            }
+            navigationOptions: ({ navigation, navigationOptions }) => ({
+                title: I18n.t('navigation.scanDetails')
+            })
         },
         [screens.SubstanceDetails]: {
             screen: substanceDetails,
-            navigationOptions: {
-                title: 'Substance Details'
-            }
+            navigationOptions: ({ navigation, navigationOptions }) => ({
+                title: I18n.t('navigation.substanceDetails')
+            })
         },
         [screens.ScansHistory]: {
             screen: scansHistory,
-            navigationOptions: {
-                title: 'Scans History'
-            }
+            navigationOptions: ({ navigation, navigationOptions }) => ({
+                title: I18n.t('navigation.scansHistory')
+            })
         },
         [screens.AllSubstances]: {
             screen: allSubstances,
-            navigationOptions: {
-                title: 'All Substances'
-            }
+            navigationOptions: ({ navigation, navigationOptions }) => ({
+                title: I18n.t('navigation.allSubstances')
+            })
         }
     },
     {

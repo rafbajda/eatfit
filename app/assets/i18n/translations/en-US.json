@@ -48,5 +48,29 @@
     "description": "Description:",
     "name": "Name:",
     "instruction": "Instruction"
+  },
+  "toasts": {
+    "userAccountObjectError": "User account object error occurred!",
+    "languageUpdated": "Language has been successfully updated",
+    "emailSent": "Email has been sent",
+    "verificationRefreshed": "Verification refreshed",
+    "passwordResetSent": "Reset password email has been sent",
+    "message": "Message: "
+  },
+  "navigation": {
+    "myAccount": "My account",
+    "scanDetails": "Scan details",
+    "substanceDetails": "Substance Details",
+    "scansHistory": "Scans History",
+    "allSubstances": "All Substances",
+    "forgotPassword": "Forgot password",
+    "createAccount": "Create an Account"
+  },
+  "actionSheets": {
+    "avatarTitle": "Change your avatar",
+    "choosePhoto": "Choose photo from gallery",
+    "takePhoto": "Take a photo",
+    "deleteAvatar": "Delete avatar",
+    "cancel": "Cancel"
   }
 }

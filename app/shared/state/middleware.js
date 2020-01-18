@@ -7,6 +7,9 @@ import loginActions from '../../screens/login/state/actions';
 const configMiddleware = store => next => action => {
     const { dispatch } = { ...store };
     switch (action.type) {
+        case actionTypes.SET_LANGUAGE:
+            ops.updateLocalLanguage(action.payload);
+            break;
         case actionTypes.SET_UP_KEYBOARD_LISTENERS:
             ops.setUpKeyboardListeners(dispatch);
             break;
@@ -22,7 +25,7 @@ const configMiddleware = store => next => action => {
             ops.getCurrentLanguage(dispatch);
             break;
         case actionTypes.GET_CURRENT_LANGUAGE_SUCCESS:
-            dispatch(loginActions.setLanguage(action.payload));
+            dispatch(actions.setLanguage(action.payload));
             break;
         case actionTypes.GET_ALL_SUBSTANCES:
             ops.getAllSubstances(dispatch);
@@ -36,6 +39,7 @@ const configMiddleware = store => next => action => {
             break;
         case actionTypes.SET_USER:
             dispatch(homeActions.getAllScans(action.payload));
+            dispatch(actions.setLanguage(action.payload.language));
             break;
         default:
             return next(action);

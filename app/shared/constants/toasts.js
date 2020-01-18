@@ -3,56 +3,62 @@ import toastStyles from '../styles/toasts';
 
 const { globalInfoToastStyle } = { ...toastStyles };
 
-export const UserMismatchingToast = {
-    text: 'User account object error occurred!',
+export const UserMismatchingToast = text => ({
+    text,
     type: 'warning',
-    position: 'top',
     style: globalInfoToastStyle,
     textStyle: {
         fontWeight: 'bold',
         color: globalWhite
     },
     duration: 3000
-};
+});
 
-export const emailSentToast = {
-    text: 'Email has been sent',
+export const UserLanguageUpdateToast = text => ({
+    text,
+    type: 'warning',
+    style: globalInfoToastStyle,
+    textStyle: {
+        fontWeight: 'bold',
+        color: globalWhite
+    },
+    duration: 3000
+});
+
+export const emailSentToast = text => ({
+    text,
     type: 'warning',
     duration: 1500,
-    position: 'top',
     style: globalInfoToastStyle,
     textStyle: {
         color: globalWhite
     }
-};
+});
 
-export const CheckVerificationRefreshToast = {
-    text: 'Verification refreshed',
+export const CheckVerificationRefreshToast = text => ({
+    text,
     type: 'warning',
     duration: 500,
-    position: 'top',
     style: globalInfoToastStyle,
     textStyle: {
         color: globalWhite
     }
-};
+});
 
-export const PasswordResetEmailSentToast = {
-    text: 'Reset password email has been sent',
+export const PasswordResetEmailSentToast = text => ({
+    text,
     type: 'warning',
     duration: 2000,
-    position: 'top',
     style: globalInfoToastStyle,
     textStyle: {
         color: globalWhite
     }
-};
+});
 
 export const WarningToastMessage = message => ({
     text: message,
     type: 'warning',
     duration: 2000,
-    position: 'top',
     style: globalInfoToastStyle,
     textStyle: {
         color: globalWhite
@@ -64,5 +70,6 @@ export default {
     PasswordResetEmailSentToast,
     CheckVerificationRefreshToast,
     emailSentToast,
-    UserMismatchingToast
+    UserMismatchingToast,
+    UserLanguageUpdateToast
 };

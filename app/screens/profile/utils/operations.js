@@ -2,7 +2,7 @@ import * as Permissions from 'expo-permissions';
 import * as ImagePicker from 'expo-image-picker';
 import { ActionSheet } from 'native-base';
 import {
-    CHANGE_AVATAR_OPTIONS,
+    getChangeAvatarOptions,
     CHANGE_AVATAR_BUTTON_INDEXES
 } from '../../../shared/constants/actionSheets';
 import globalHps from '../../../shared/utils/helpers';
@@ -10,6 +10,9 @@ import firebaseOps from './firebaseOperations';
 import actions from '../state/actions';
 import globalActions from '../../../shared/state/actions';
 import hps from './helpers';
+import { Toast } from 'native-base';
+import { UserLanguageUpdateToast } from '../../../shared/constants/toasts';
+import I18n from 'i18n-js';
 
 const removeAvatar = dispatch => dispatch(actions.removeAvatar());
 
@@ -50,8 +53,9 @@ const openCamera = async dispatch => {
     }
 };
 
-const openChangeAvatarActions = async dispatch =>
-    ActionSheet.show(CHANGE_AVATAR_OPTIONS, buttonIndex => {
+const openChangeAvatarActions = async dispatch => {
+    const { t } = I18n;
+    ActionSheet.show(getChangeAvatarOptions(t), buttonIndex => {
         switch (buttonIndex) {
             case CHANGE_AVATAR_BUTTON_INDEXES.IMAGE_LIBRARY:
                 openImagePicker(dispatch);
@@ -66,6 +70,7 @@ const openChangeAvatarActions = async dispatch =>
                 break;
         }
     });
+};
 
 const updateUserProfile = async (data, dispatch) => {
     const { profileData, profileFormValues } = { ...data };
@@ -97,9 +102,16 @@ const updateUserProfile = async (data, dispatch) => {
         .catch(error => dispatch(actions.updateUserError(error)));
 };
 
+const showUpdateLanguageSuccessToast = () => {
+    const { t } = I18n;
+    const toastMessage = t('toasts.languageUpdated');
+    Toast.show(UserLanguageUpdateToast(toastMessage));
+};
+
 export default {
     getProfileFromAuthUser,
     openChangeAvatarActions,
     openImagePicker,
-    updateUserProfile
+    updateUserProfile,
+    showUpdateLanguageSuccessToast
 };

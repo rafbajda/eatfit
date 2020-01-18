@@ -2,21 +2,37 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="67b918fd-ce01-470b-83af-d4f08040e0ba" name="Default Changelist" comment="social media login fixed">
-      <change afterPath="$PROJECT_DIR$/app/screens/profile/components/ProfileLanguagePicker.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/screens/profile/styles/profileLanguagePickerStyles.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.expo/packager-info.json" beforeDir="false" afterPath="$PROJECT_DIR$/.expo/packager-info.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.expo/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/.expo/settings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/i18n/translations/en-US.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/i18n/translations/en-US.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/assets/i18n/translations/pl.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/i18n/translations/pl.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/home/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/home/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/navigation/HomeNavigator.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/navigation/HomeNavigator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/navigation/UnauthorizedApplicationNavigator.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/navigation/UnauthorizedApplicationNavigator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/forgotPassword/utils/operations.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/forgotPassword/utils/operations.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/screens/login/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/login/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/login/utils/firebaseOperations.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/login/utils/firebaseOperations.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/notVerified/styles/verificationMessageStyles.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/notVerified/styles/verificationMessageStyles.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/signUp/state/middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/signUp/state/middleware.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/signUp/utils/operations.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/signUp/utils/operations.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/login/state/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/login/state/actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/login/state/selectors.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/login/utils/operations.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/login/utils/operations.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/notVerified/utils/firebaseOperations.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/notVerified/utils/firebaseOperations.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/notVerified/utils/operations.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/notVerified/utils/operations.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/profile/components/ProfileLanguagePicker.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/profile/components/ProfileLanguagePicker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/profile/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/profile/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/profile/state/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/profile/state/actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/profile/state/middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/profile/state/middleware.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/profile/styles/profileImageStyles.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/profile/styles/profileImageStyles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/profile/styles/profileLanguagePickerStyles.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/profile/styles/profileLanguagePickerStyles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/profile/utils/firebaseOperations.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/profile/utils/firebaseOperations.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/profile/utils/operations.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/profile/utils/operations.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/shared/constants/actionSheets.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/shared/constants/actionSheets.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/shared/constants/toasts.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/shared/constants/toasts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/shared/modules/socialService.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/shared/modules/socialService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/shared/state/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/shared/state/actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/shared/state/middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/shared/state/middleware.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/shared/state/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/shared/state/reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/shared/state/selectors.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/shared/state/selectors.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/shared/styles/toasts.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/shared/styles/toasts.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/shared/utils/firebaseOperations.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/shared/utils/firebaseOperations.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/shared/utils/helpers.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/shared/utils/helpers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/src/models/User.ts" beforeDir="false" afterPath="$PROJECT_DIR$/functions/src/models/User.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/shared/utils/operations.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/shared/utils/operations.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -90,6 +106,7 @@
       <workItem from="1579202906750" duration="7017000" />
       <workItem from="1579253963243" duration="7319000" />
       <workItem from="1579266434326" duration="5769000" />
+      <workItem from="1579341656244" duration="11492000" />
     </task>
     <task id="LOCAL-00001" summary="status messaging works">
       <created>1572216147756</created>

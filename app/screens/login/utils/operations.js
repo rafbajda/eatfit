@@ -4,8 +4,6 @@ import globalFirebaseOps from '../../../shared/utils/firebaseOperations';
 import socialService from '../../../shared/modules/socialService';
 import I18n from 'i18n-js';
 
-const updateLocalLanguage = newLocale => (I18n.locale = newLocale);
-
 const signInEmail = (data, dispatch) => {
     const { email, password, newsletter } = { ...data };
     firebaseOps
@@ -87,6 +85,5 @@ export default {
     signInEmail,
     signInFacebook,
     signInGoogle,
-    checkUserObjectExistence,
-    updateLocalLanguage
+    checkUserObjectExistence
 };
