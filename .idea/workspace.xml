@@ -1,38 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="67b918fd-ce01-470b-83af-d4f08040e0ba" name="Default Changelist" comment="social media login fixed">
-      <change beforePath="$PROJECT_DIR$/.expo/packager-info.json" beforeDir="false" afterPath="$PROJECT_DIR$/.expo/packager-info.json" afterDir="false" />
+    <list default="true" id="67b918fd-ce01-470b-83af-d4f08040e0ba" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/__tests__/Legend.test.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/i18n/translations/en-US.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/i18n/translations/en-US.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/i18n/translations/pl.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/i18n/translations/pl.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/navigation/HomeNavigator.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/navigation/HomeNavigator.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/navigation/UnauthorizedApplicationNavigator.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/navigation/UnauthorizedApplicationNavigator.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/forgotPassword/utils/operations.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/forgotPassword/utils/operations.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/login/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/login/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/login/state/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/login/state/actions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/login/state/selectors.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/login/utils/operations.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/login/utils/operations.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/notVerified/utils/firebaseOperations.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/notVerified/utils/firebaseOperations.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/notVerified/utils/operations.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/notVerified/utils/operations.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/profile/components/ProfileLanguagePicker.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/profile/components/ProfileLanguagePicker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/profile/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/profile/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/profile/state/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/profile/state/actions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/profile/state/middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/profile/state/middleware.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/profile/styles/profileImageStyles.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/profile/styles/profileImageStyles.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/profile/styles/profileLanguagePickerStyles.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/profile/styles/profileLanguagePickerStyles.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/profile/utils/firebaseOperations.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/profile/utils/firebaseOperations.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/profile/utils/operations.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/profile/utils/operations.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/shared/constants/actionSheets.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/shared/constants/actionSheets.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/shared/constants/toasts.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/shared/constants/toasts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/shared/modules/socialService.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/shared/modules/socialService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/shared/state/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/shared/state/actions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/shared/state/middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/shared/state/middleware.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/shared/state/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/shared/state/reducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/shared/state/selectors.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/shared/state/selectors.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/shared/styles/toasts.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/shared/styles/toasts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/shared/utils/firebaseOperations.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/shared/utils/firebaseOperations.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/shared/utils/operations.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/shared/utils/operations.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/__tests__/App-test.js" beforeDir="false" afterPath="$PROJECT_DIR$/__tests__/App.test.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -49,10 +21,16 @@
     <other-services-enabled>true</other-services-enabled>
     <auto-save>true</auto-save>
   </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="460" />
+    <option name="y" value="88" />
+    <option name="width" value="1400" />
+    <option name="height" value="1000" />
+  </component>
   <component name="ProjectId" id="1SWYyCzhBtS160waMUp0iYm2Pka" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="android.sdk.path" value="$PROJECT_DIR$/../Android/Sdk" />
+    <property name="android.sdk.path" value="$USER_HOME$/Android/Sdk" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
@@ -106,7 +84,7 @@
       <workItem from="1579202906750" duration="7017000" />
       <workItem from="1579253963243" duration="7319000" />
       <workItem from="1579266434326" duration="5769000" />
-      <workItem from="1579341656244" duration="11492000" />
+      <workItem from="1579341656244" duration="14643000" />
     </task>
     <task id="LOCAL-00001" summary="status messaging works">
       <created>1572216147756</created>
@@ -129,7 +107,14 @@
       <option name="project" value="LOCAL" />
       <updated>1579176308712</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="translations work">
+      <created>1579353287390</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1579353287391</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TodoView">
@@ -171,6 +156,7 @@
     <MESSAGE value="status messaging works" />
     <MESSAGE value="merged all" />
     <MESSAGE value="social media login fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="social media login fixed" />
+    <MESSAGE value="translations work" />
+    <option name="LAST_COMMIT_MESSAGE" value="translations work" />
   </component>
 </project>

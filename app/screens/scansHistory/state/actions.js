@@ -7,5 +7,5 @@ const openPastScan = payload => ({
     payload
 });
 export default {
-    openPastScan,
+    openPastScan
 };
