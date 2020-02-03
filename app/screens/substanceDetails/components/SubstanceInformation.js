@@ -18,7 +18,7 @@ const SubstanceInformation = props => {
     const roundedScore = Math.round(score * 100) / 100;
     const emoji = hps.getEmoji(score);
     const color = hps.getColor(score);
-    const description = hps.getDescription(score);
+    const description = hps.getDescription(score, t);
     return (
         <SubstanceInformationContainer>
             <SubstanceInformationLabel>

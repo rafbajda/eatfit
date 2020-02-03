@@ -1,10 +1,10 @@
 {
-  "expoServerPort": null,
+  "expoServerPort": 19000,
   "webpackServerPort": null,
-  "expoServerNgrokUrl": null,
-  "packagerNgrokUrl": null,
-  "ngrokPid": null,
+  "expoServerNgrokUrl": "https://5t-t94.raf-baj1997.eatfit.exp.direct",
+  "packagerNgrokUrl": "https://packager.5t-t94.raf-baj1997.eatfit.exp.direct",
+  "ngrokPid": 10545,
   "devToolsPort": 19002,
-  "packagerPort": null,
-  "packagerPid": null
+  "packagerPort": 19001,
+  "packagerPid": 10461
 }

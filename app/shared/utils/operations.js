@@ -54,7 +54,6 @@ const getAllSubstances = dispatch => {
     firebase
         .firestore()
         .collection(`/substances`)
-        .orderBy('name', 'asc')
         .get()
         .then(querySnap => {
             const substances = querySnap.docs.map(doc =>

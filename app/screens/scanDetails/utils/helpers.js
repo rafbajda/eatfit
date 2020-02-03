@@ -22,18 +22,22 @@ import {
 
 const defaultSubstanceImage = require('../../../assets/images/default_substance.png');
 
-const getSubstanceList = (substances, goToSubstanceDetails) =>
+const getSubstanceList = (substances, goToSubstanceDetails, locale) =>
     substances.map(sub => {
         const source = sub.imageUrl
             ? { uri: sub.imageUrl }
             : defaultSubstanceImage;
+
+        console.log('locale: ', locale);
+        const { name } = globalHps.getNameDescriptionByLocale(sub, locale);
+        console.log('name: ', name);
         return (
             <ListItem
                 containerStyle={{ borderWidth: 1, borderColor: lightGrey }}
                 onPress={() => goToSubstanceDetails(sub)}
                 key={sub.id}
                 leftAvatar={{ source }}
-                title={sub.name}
+                title={name}
                 chevron
             />
         );
@@ -88,18 +92,18 @@ const getColor = score => {
     }
 };
 
-const getDescription = score => {
+const getDescription = (score, t) => {
     switch (true) {
         case score <= 2:
-            return veryBadImpactDescription;
+            return t(veryBadImpactDescription);
         case score > 2 && score <= 4:
-            return badImpactDescription;
+            return t(badImpactDescription);
         case score > 4 && score <= 6:
-            return neutralImpactDescription;
+            return t(neutralImpactDescription);
         case score > 6 && score <= 8:
-            return goodImpactDescription;
+            return t(goodImpactDescription);
         default:
-            return veryGoodImpactDescription;
+            return t(veryGoodImpactDescription);
     }
 };
 

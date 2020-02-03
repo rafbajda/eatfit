@@ -72,5 +72,12 @@
     "takePhoto": "Take a photo",
     "deleteAvatar": "Delete avatar",
     "cancel": "Cancel"
+  },
+  "healthImpactLabels": {
+    "veryBad": "Very Unhealthy",
+    "bad": "Unhealthy",
+    "neutral": "Neutral",
+    "good": "Healthy",
+    "veryGood": "Very Healthy"
   }
 }

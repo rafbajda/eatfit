@@ -2,7 +2,6 @@ import actions, { actionTypes } from './actions';
 import ops from '../utils/operations';
 import signUpOperations from '../../screens/signUp/utils/operations';
 import homeActions from '../../screens/home/state/actions';
-import loginActions from '../../screens/login/state/actions';
 
 const configMiddleware = store => next => action => {
     const { dispatch } = { ...store };

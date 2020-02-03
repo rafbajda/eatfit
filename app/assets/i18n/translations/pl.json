@@ -72,5 +72,12 @@
     "takePhoto": "Zrób zdjęcie",
     "deleteAvatar": "Usuń awatar",
     "cancel": "Anuluj"
+  },
+  "healthImpactLabels": {
+    "veryBad": "Bardzo niezdrowy",
+    "bad": "Niezdrowy",
+    "neutral": "Neutralny",
+    "good": "Zdrowy",
+    "veryGood": "Bardzo zdrowy"
   }
 }

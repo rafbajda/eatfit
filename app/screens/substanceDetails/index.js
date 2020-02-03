@@ -4,21 +4,25 @@ import { Container, Grid, Row } from 'native-base';
 import selectors from './state/selectors';
 import SubstanceInformationsRow from './components/SubstanceInformationsRow';
 import SubstanceDescription from './components/SubstanceDescription';
+import globalHps from '../../shared/utils/helpers';
+import * as Localization from 'expo-localization';
 
 const SubstanceDetailsScreen = props => {
-    const { substance } = props;
+    const { substance, locale } = { ...props, ...Localization };
+    const { name, description } = globalHps.getNameDescriptionByLocale(
+        substance,
+        locale
+    );
     return (
         <Container>
             <Grid>
                 <SubstanceInformationsRow
                     imageUrl={substance.imageUrl}
-                    substanceName={substance.name}
+                    substanceName={name}
                     score={substance.score}
                 />
                 <Row>
-                    <SubstanceDescription
-                        substanceDescription={substance.description}
-                    />
+                    <SubstanceDescription substanceDescription={description} />
                 </Row>
             </Grid>
         </Container>

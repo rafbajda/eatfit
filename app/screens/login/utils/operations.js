@@ -2,7 +2,6 @@ import actions from '../state/actions';
 import firebaseOps from './firebaseOperations';
 import globalFirebaseOps from '../../../shared/utils/firebaseOperations';
 import socialService from '../../../shared/modules/socialService';
-import I18n from 'i18n-js';
 
 const signInEmail = (data, dispatch) => {
     const { email, password, newsletter } = { ...data };
@@ -19,10 +18,8 @@ const signInFacebook = dispatch => {
         .loginWithFacebook()
         .then(login => {
             if (login && login.error) {
-                console.log('error from resolved', login);
                 dispatch(actions.loginFacebookError(login.error));
             } else {
-                console.log('login: ', login);
                 const { user, additionalUserInfo } = { ...login };
                 dispatch(
                     actions.loginFacebookSuccess({
@@ -33,7 +30,6 @@ const signInFacebook = dispatch => {
             }
         })
         .catch(error => {
-            console.log('error from this catch: ', error);
             dispatch(actions.loginFacebookError(error));
         });
 };

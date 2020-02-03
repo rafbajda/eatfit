@@ -2,9 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="67b918fd-ce01-470b-83af-d4f08040e0ba" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/__tests__/Legend.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.expo/packager-info.json" beforeDir="false" afterPath="$PROJECT_DIR$/.expo/packager-info.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.expo/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/.expo/settings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/__tests__/App-test.js" beforeDir="false" afterPath="$PROJECT_DIR$/__tests__/App.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/i18n/translations/en-US.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/i18n/translations/en-US.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/i18n/translations/pl.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/i18n/translations/pl.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/allSubstances/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/allSubstances/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/login/utils/operations.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/login/utils/operations.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/scanDetails/components/ScanInformations.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/scanDetails/components/ScanInformations.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/scanDetails/components/SubstancesList.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/scanDetails/components/SubstancesList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/scanDetails/utils/helpers.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/scanDetails/utils/helpers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/substanceDetails/components/SubstanceInformation.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/substanceDetails/components/SubstanceInformation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/substanceDetails/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/substanceDetails/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/shared/constants/information.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/shared/constants/information.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/shared/state/middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/shared/state/middleware.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/shared/utils/helpers.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/shared/utils/helpers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/shared/utils/operations.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/shared/utils/operations.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,17 +34,17 @@
     <other-services-enabled>true</other-services-enabled>
     <auto-save>true</auto-save>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="460" />
-    <option name="y" value="88" />
-    <option name="width" value="1400" />
-    <option name="height" value="1000" />
-  </component>
   <component name="ProjectId" id="1SWYyCzhBtS160waMUp0iYm2Pka" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="android.sdk.path" value="$USER_HOME$/Android/Sdk" />
+    <property name="android.sdk.path" value="$PROJECT_DIR$/../Android/Sdk" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -85,6 +98,15 @@
       <workItem from="1579253963243" duration="7319000" />
       <workItem from="1579266434326" duration="5769000" />
       <workItem from="1579341656244" duration="14643000" />
+      <workItem from="1579688043760" duration="3006000" />
+      <workItem from="1579778648863" duration="2092000" />
+      <workItem from="1579884731912" duration="7368000" />
+      <workItem from="1580051077263" duration="3300000" />
+      <workItem from="1580143567812" duration="5436000" />
+      <workItem from="1580242551451" duration="1023000" />
+      <workItem from="1580466681006" duration="2740000" />
+      <workItem from="1580656806931" duration="717000" />
+      <workItem from="1580672788941" duration="3619000" />
     </task>
     <task id="LOCAL-00001" summary="status messaging works">
       <created>1572216147756</created>

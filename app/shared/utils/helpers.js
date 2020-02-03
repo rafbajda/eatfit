@@ -60,9 +60,17 @@ const createUserObjectByProvider = (provider, data) => {
     }
 };
 
+const getNameDescriptionByLocale = (substance, locale) => {
+    const language = _.camelCase(locale);
+    const { name, description } = substance[language];
+
+    return { name, description };
+};
+
 export default {
     getDateFromFirebaseTimestamp,
     normalizeKeysToCamelCase,
     createUserObjectByProvider,
-    completeSideBarListWithActions
+    completeSideBarListWithActions,
+    getNameDescriptionByLocale
 };
