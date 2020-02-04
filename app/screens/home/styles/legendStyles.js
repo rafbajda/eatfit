@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import { Text } from 'native-base';
+import { ListItem } from 'react-native-elements';
 import { CenterRow } from '../../../shared/styles/common';
 import { mediumGrey } from '../../../shared/constants/colors';
-import { ListItem } from 'react-native-elements';
 
 export const LegendRow = styled(CenterRow)`
     display: flex;

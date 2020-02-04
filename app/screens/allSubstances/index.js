@@ -5,13 +5,9 @@ import actions from '../scanDetails/state/actions';
 import selectors from './state/selectors';
 
 const AllSubstancesScreen = props => {
+    // eslint-disable-next-line react/prop-types
     const { substances, goToSubstanceDetails } = props;
-    return (
-        <SubstancesList
-            substances={substances}
-            goToSubstanceDetails={goToSubstanceDetails}
-        ></SubstancesList>
-    );
+    return <SubstancesList substances={substances} goToSubstanceDetails={goToSubstanceDetails} />;
 };
 
 const mapStateToProps = state => ({
@@ -19,11 +15,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-    goToSubstanceDetails: substance =>
-        dispatch(actions.setSubstanceDetails(substance))
+    goToSubstanceDetails: substance => dispatch(actions.setSubstanceDetails(substance))
 });
 
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(AllSubstancesScreen);
+export default connect(mapStateToProps, mapDispatchToProps)(AllSubstancesScreen);

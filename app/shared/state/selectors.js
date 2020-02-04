@@ -1,7 +1,6 @@
 import { createSelector } from 'reselect';
 
-const firestoreRequestSelector = state =>
-    state.firestore.status.requesting.config;
+const firestoreRequestSelector = state => state.firestore.status.requesting.config;
 
 const languagesSelector = state => {
     if (state.firestore.data.config) {

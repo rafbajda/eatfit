@@ -2,6 +2,7 @@ import React from 'react';
 import { Text, Content, Item, Input, DatePicker, Icon } from 'native-base';
 import { Formik } from 'formik';
 import { UIActivityIndicator } from 'react-native-indicators';
+import I18n from 'i18n-js';
 import {
     CenterRow,
     CenterFormContainerPaddingTop,
@@ -12,16 +13,13 @@ import {
 import { globalWhite, mediumGrey } from '../../../shared/constants/colors';
 import formInitialValues from '../../../shared/constants/formInitialValues';
 import { indicatorSize } from '../styles/profileFormStyles';
-import I18n from 'i18n-js';
 
 const ProfileForm = props => {
     const { profileSchema, isAuthLoading, profile, updateProfile, t } = {
         ...props,
         ...I18n
     };
-    const profileInitialValues = formInitialValues.getProfileInitialValues(
-        profile
-    );
+    const profileInitialValues = formInitialValues.getProfileInitialValues(profile);
     return (
         <Formik
             initialValues={profileInitialValues}
@@ -38,16 +36,13 @@ const ProfileForm = props => {
                                     value={formikProps.values.firstName}
                                     placeholder={t('placeholders.yourName')}
                                     placeholderTextColor={mediumGrey}
-                                    onChangeText={formikProps.handleChange(
-                                        'firstName'
-                                    )}
+                                    onChangeText={formikProps.handleChange('firstName')}
                                     onBlur={formikProps.handleBlur('firstName')}
                                     disabled={isAuthLoading}
                                 />
                             </Item>
                             <ErrorText>
-                                {formikProps.touched.firstName &&
-                                    formikProps.errors.firstName}
+                                {formikProps.touched.firstName && formikProps.errors.firstName}
                             </ErrorText>
                             <Item regular>
                                 <Icon active name="person" />
@@ -55,23 +50,18 @@ const ProfileForm = props => {
                                     value={formikProps.values.lastName}
                                     placeholder={t('placeholders.yourLastName')}
                                     placeholderTextColor={mediumGrey}
-                                    onChangeText={formikProps.handleChange(
-                                        'lastName'
-                                    )}
+                                    onChangeText={formikProps.handleChange('lastName')}
                                     onBlur={formikProps.handleBlur('lastName')}
                                     disabled={isAuthLoading}
                                 />
                             </Item>
                             <ErrorText>
-                                {formikProps.touched.lastName &&
-                                    formikProps.errors.lastName}
+                                {formikProps.touched.lastName && formikProps.errors.lastName}
                             </ErrorText>
                             <Item regular>
                                 <Icon active name="calendar" />
                                 <DatePicker
-                                    defaultDate={
-                                        new Date(formikProps.values.birthday)
-                                    }
+                                    defaultDate={new Date(formikProps.values.birthday)}
                                     maximumDate={new Date(Date.UTC(2020, 2, 1))}
                                     locale="en-US"
                                     timeZoneOffsetInMinutes={undefined}
@@ -84,9 +74,7 @@ const ProfileForm = props => {
                                             : t('placeholders.yourBirthdayDate')
                                     }
                                     placeHolderTextStyle={{ color: mediumGrey }}
-                                    onDateChange={formikProps.handleChange(
-                                        'birthday'
-                                    )}
+                                    onDateChange={formikProps.handleChange('birthday')}
                                     onBlur={formikProps.handleBlur('birthday')}
                                     disabled={isAuthLoading}
                                 />
@@ -99,10 +87,7 @@ const ProfileForm = props => {
                             disabled={isAuthLoading}
                         >
                             {isAuthLoading ? (
-                                <UIActivityIndicator
-                                    size={indicatorSize}
-                                    color={globalWhite}
-                                />
+                                <UIActivityIndicator size={indicatorSize} color={globalWhite} />
                             ) : (
                                 <Text>{t('buttons.saveChanges')}</Text>
                             )}

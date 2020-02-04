@@ -1,6 +1,7 @@
 import React from 'react';
 import moment from 'moment';
 import { ListItem } from 'react-native-elements';
+import { isArray } from 'lodash';
 import {
     badImpactColor,
     goodImpactColor,
@@ -19,33 +20,32 @@ import {
     veryBadImpactDescription,
     veryGoodImpactDescription
 } from '../../../shared/constants/information';
-import {isArray} from 'lodash';
 
 const defaultSubstanceImage = require('../../../assets/images/default_substance.png');
 
-const getSubstanceList = (substances, goToSubstanceDetails, locale) => isArray(substances) ?
-    substances.map(sub => {
-        const source = sub.imageUrl
-            ? { uri: sub.imageUrl }
-            : defaultSubstanceImage;
+const getSubstanceList = (substances, goToSubstanceDetails, locale) =>
+    isArray(substances)
+        ? substances.map(sub => {
+              const source = sub.imageUrl ? { uri: sub.imageUrl } : defaultSubstanceImage;
 
-        console.log('locale: ', locale);
-        const { name } = globalHps.getNameDescriptionByLocale(sub, locale);
-        console.log('name: ', name);
-        return (
-            <ListItem
-                containerStyle={{ borderWidth: 1, borderColor: lightGrey }}
-                onPress={() => goToSubstanceDetails(sub)}
-                key={sub.id}
-                leftAvatar={{ source }}
-                title={name}
-                chevron
-            />
-        );
-    }) : [];
+              const { name } = globalHps.getNameDescriptionByLocale(sub, locale);
+              return (
+                  <ListItem
+                      containerStyle={{
+                          borderWidth: 1,
+                          borderColor: lightGrey
+                      }}
+                      onPress={() => goToSubstanceDetails(sub)}
+                      key={sub.id}
+                      leftAvatar={{ source }}
+                      title={name}
+                      chevron
+                  />
+              );
+          })
+        : [];
 
-const getUserFriendlyDate = date =>
-    moment(date).format('MMMM Do YYYY, h:mm:ss a');
+const getUserFriendlyDate = date => moment(date).format('MMMM Do YYYY, h:mm:ss a');
 
 const changeComaToBreak = str => str.split(', ').join(`\n`);
 
@@ -56,13 +56,7 @@ const getScanDate = date => {
 };
 
 const getEmoji = score => {
-    const {
-        veryBadImpact,
-        badImpact,
-        neutralImpact,
-        goodImpact,
-        veryGoodImpact
-    } = emojis;
+    const { veryBadImpact, badImpact, neutralImpact, goodImpact, veryGoodImpact } = emojis;
 
     switch (true) {
         case score <= 2:

@@ -1,15 +1,16 @@
 import * as Font from 'expo-font';
 import * as Localization from 'expo-localization';
+import { Keyboard } from 'react-native';
+import I18n from 'i18n-js';
 import actions from '../state/actions';
 import firebaseOps from './firebaseOperations';
 import firebase from '../modules/firebase';
 import hps from './helpers';
-import { Keyboard } from 'react-native';
-import I18n from 'i18n-js';
 
 let keyboardDidShowListener = null;
 let keyboardDidHideListener = null;
 
+// eslint-disable-next-line no-return-assign
 const updateLocalLanguage = newLocale => (I18n.locale = newLocale);
 
 const getCurrentLanguage = dispatch => {
@@ -22,7 +23,9 @@ const getCurrentLanguage = dispatch => {
 
 const getFonts = dispatch => {
     Font.loadAsync({
+        // eslint-disable-next-line global-require
         Roboto: require('../../assets/fonts/Roboto.ttf'),
+        // eslint-disable-next-line global-require
         Roboto_medium: require('../../assets/fonts/Roboto_medium.ttf')
     })
         .then(() => dispatch(actions.getFontsSuccess()))
@@ -56,9 +59,7 @@ const getAllSubstances = dispatch => {
         .collection(`/substances`)
         .get()
         .then(querySnap => {
-            const substances = querySnap.docs.map(doc =>
-                hps.normalizeKeysToCamelCase(doc.data())
-            );
+            const substances = querySnap.docs.map(doc => hps.normalizeKeysToCamelCase(doc.data()));
             dispatch(actions.getAllSubstancesSuccess(substances));
         })
         .catch(err => dispatch(actions.getAllSubstancesError(err)));

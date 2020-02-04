@@ -1,11 +1,11 @@
 import { createStackNavigator } from 'react-navigation';
+import I18n from 'i18n-js';
 import screens from './screens';
 import LoginScreen from '../screens/login';
 import SignUpScreen from '../screens/signUp';
 import { globalGreen, globalWhite } from '../shared/constants/colors';
 import NotVerifiedScreen from '../screens/notVerified';
 import ForgotPasswordScreen from '../screens/forgotPassword';
-import I18n from 'i18n-js';
 
 export default createStackNavigator(
     {
@@ -20,7 +20,7 @@ export default createStackNavigator(
         },
         [screens.ForgotPassword]: {
             screen: ForgotPasswordScreen,
-            navigationOptions: ({ navigation, navigationOptions }) => ({
+            navigationOptions: () => ({
                 title: I18n.t('navigation.forgotPassword')
             })
         },
@@ -33,7 +33,7 @@ export default createStackNavigator(
     },
     {
         initialRouteName: screens.Login,
-        defaultNavigationOptions: ({ navigation, navigationOptions }) => ({
+        defaultNavigationOptions: () => ({
             title: I18n.t('navigation.createAccount'),
             headerTintColor: globalWhite,
             headerStyle: {

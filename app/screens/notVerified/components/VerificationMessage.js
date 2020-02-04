@@ -1,10 +1,10 @@
 import React from 'react';
+import I18n from 'i18n-js';
 import {
     VerificationMainMessageText,
     VerificationInfoMessageText
 } from '../styles/verificationMessageStyles';
 import { CenterContainer } from '../../../shared/styles/common';
-import I18n from 'i18n-js';
 
 const VerificationMessage = props => {
     const { user } = { ...props };

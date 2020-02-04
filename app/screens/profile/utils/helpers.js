@@ -12,5 +12,5 @@ const getInitialsFromUser = user => {
 
 export default {
     normalizeCamelCaseToSnakeCase,
-    getInitialsFromUser,
+    getInitialsFromUser
 };

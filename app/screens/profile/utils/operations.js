@@ -1,6 +1,7 @@
 import * as Permissions from 'expo-permissions';
 import * as ImagePicker from 'expo-image-picker';
-import { ActionSheet } from 'native-base';
+import { ActionSheet, Toast } from 'native-base';
+import I18n from 'i18n-js';
 import {
     getChangeAvatarOptions,
     CHANGE_AVATAR_BUTTON_INDEXES
@@ -10,9 +11,8 @@ import firebaseOps from './firebaseOperations';
 import actions from '../state/actions';
 import globalActions from '../../../shared/state/actions';
 import hps from './helpers';
-import { Toast } from 'native-base';
+
 import { UserLanguageUpdateToast } from '../../../shared/constants/toasts';
-import I18n from 'i18n-js';
 
 const removeAvatar = dispatch => dispatch(actions.removeAvatar());
 
@@ -36,10 +36,7 @@ const openImagePicker = async dispatch => {
 };
 
 const openCamera = async dispatch => {
-    const { status } = await Permissions.askAsync(
-        Permissions.CAMERA,
-        Permissions.CAMERA_ROLL
-    );
+    const { status } = await Permissions.askAsync(Permissions.CAMERA, Permissions.CAMERA_ROLL);
     if (status === 'granted') {
         const result = await ImagePicker.launchCameraAsync({
             allowsEditing: true,
@@ -90,14 +87,9 @@ const updateUserProfile = async (data, dispatch) => {
     firebaseOps
         .updateUser(data.authUser.uid, normalizedData)
         .then(async () => {
-            const updateUserSuccess = () =>
-                dispatch(actions.updateUserSuccess());
+            const updateUserSuccess = () => dispatch(actions.updateUserSuccess());
             const setUser = user => dispatch(globalActions.setUser(user));
-            await firebaseOps.reloadUser(
-                data.authUser.uid,
-                setUser,
-                updateUserSuccess
-            );
+            await firebaseOps.reloadUser(data.authUser.uid, setUser, updateUserSuccess);
         })
         .catch(error => dispatch(actions.updateUserError(error)));
 };

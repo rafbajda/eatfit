@@ -2,6 +2,7 @@ import React from 'react';
 import { Formik } from 'formik';
 import { Content, Item, Input, CheckBox, Body, Text } from 'native-base';
 import { UIActivityIndicator } from 'react-native-indicators';
+import I18n from 'i18n-js';
 import {
     CenterRow,
     CenterFormContainerPaddingTop,
@@ -14,7 +15,6 @@ import { globalGreen, globalWhite } from '../../../shared/constants/colors';
 import validationSchemas from '../../../shared/utils/validationSchemas';
 import formInitialValues from '../../../shared/constants/formInitialValues';
 import hps from '../utils/helpers';
-import I18n from 'i18n-js';
 
 const SignUpForm = props => {
     const { signUp, isAuthLoading, signUpInitialValues, signUpSchema } = {
@@ -38,43 +38,31 @@ const SignUpForm = props => {
                                 <Input
                                     keyboardType="email-address"
                                     placeholder={t('placeholders.email')}
-                                    onChangeText={formikProps.handleChange(
-                                        'email'
-                                    )}
+                                    onChangeText={formikProps.handleChange('email')}
                                     onBlur={formikProps.handleBlur('email')}
                                     disabled={isAuthLoading}
                                 />
                             </Item>
                             <ErrorText>
-                                {formikProps.touched.email &&
-                                    formikProps.errors.email}
+                                {formikProps.touched.email && formikProps.errors.email}
                             </ErrorText>
                             <Item regular>
                                 <Input
                                     placeholder={t('placeholders.password')}
-                                    onChangeText={formikProps.handleChange(
-                                        'password'
-                                    )}
+                                    onChangeText={formikProps.handleChange('password')}
                                     onBlur={formikProps.handleBlur('password')}
                                     secureTextEntry
                                     disabled={isAuthLoading}
                                 />
                             </Item>
                             <ErrorText>
-                                {formikProps.touched.password &&
-                                    formikProps.errors.password}
+                                {formikProps.touched.password && formikProps.errors.password}
                             </ErrorText>
                             <Item regular>
                                 <Input
-                                    placeholder={t(
-                                        'placeholders.confirmPassword'
-                                    )}
-                                    onChangeText={formikProps.handleChange(
-                                        'confirmPassword'
-                                    )}
-                                    onBlur={formikProps.handleBlur(
-                                        'confirmPassword'
-                                    )}
+                                    placeholder={t('placeholders.confirmPassword')}
+                                    onChangeText={formikProps.handleChange('confirmPassword')}
+                                    onBlur={formikProps.handleBlur('confirmPassword')}
                                     secureTextEntry
                                     disabled={isAuthLoading}
                                 />
@@ -83,15 +71,8 @@ const SignUpForm = props => {
                                 {formikProps.touched.confirmPassword &&
                                     formikProps.errors.confirmPassword}
                             </ErrorText>
-                            <CheckboxItem
-                                onPress={() =>
-                                    hps.checkBoxSetter(formikProps, 'terms')
-                                }
-                            >
-                                <CheckBox
-                                    checked={formikProps.values.terms}
-                                    color={globalGreen}
-                                />
+                            <CheckboxItem onPress={() => hps.checkBoxSetter(formikProps, 'terms')}>
+                                <CheckBox checked={formikProps.values.terms} color={globalGreen} />
                                 <Body>
                                     <CheckboxInformationText>
                                         {t('info.termsCheckbox')}
@@ -99,16 +80,10 @@ const SignUpForm = props => {
                                 </Body>
                             </CheckboxItem>
                             <ErrorTextPaddingLeft>
-                                {formikProps.touched.terms &&
-                                    formikProps.errors.terms}
+                                {formikProps.touched.terms && formikProps.errors.terms}
                             </ErrorTextPaddingLeft>
                             <CheckboxItem
-                                onPress={() =>
-                                    hps.checkBoxSetter(
-                                        formikProps,
-                                        'newsletter'
-                                    )
-                                }
+                                onPress={() => hps.checkBoxSetter(formikProps, 'newsletter')}
                             >
                                 <CheckBox
                                     color={globalGreen}
@@ -121,8 +96,7 @@ const SignUpForm = props => {
                                 </Body>
                             </CheckboxItem>
                             <ErrorText>
-                                {formikProps.touched.newsletter &&
-                                    formikProps.errors.newsletter}
+                                {formikProps.touched.newsletter && formikProps.errors.newsletter}
                             </ErrorText>
                         </CenterFormContainerPaddingTop>
                     </CenterRow>
@@ -132,10 +106,7 @@ const SignUpForm = props => {
                             disabled={isAuthLoading}
                         >
                             {isAuthLoading ? (
-                                <UIActivityIndicator
-                                    size={30}
-                                    color={globalWhite}
-                                />
+                                <UIActivityIndicator size={30} color={globalWhite} />
                             ) : (
                                 <Text>{t('buttons.create')}</Text>
                             )}

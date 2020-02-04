@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import { Button, Text } from 'native-base';
+import { Button, Text, Content } from 'native-base';
 import { globalGreen } from '../../../shared/constants/colors';
 import { CenterRow } from '../../../shared/styles/common';
-import { Content } from 'native-base';
+
 export const indicatorSize = 35;
 
 export const LoadingIndicator = styled(Content).attrs({

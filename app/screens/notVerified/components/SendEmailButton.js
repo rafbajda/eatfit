@@ -1,7 +1,7 @@
 import React from 'react';
 import { Row, Text } from 'native-base';
-import styles, { OtherActionButton } from '../styles/notVerifiedStyles';
 import I18n from 'i18n-js';
+import styles, { OtherActionButton } from '../styles/notVerifiedStyles';
 
 const SendEmailButton = props => {
     const { sendEmail, OtherActionTextStyle, OtherActionRowStyle, t } = {
@@ -12,9 +12,7 @@ const SendEmailButton = props => {
     return (
         <Row style={OtherActionRowStyle}>
             <OtherActionButton onPress={() => sendEmail()} rounded>
-                <Text style={OtherActionTextStyle}>
-                    {t('buttons.sendAnotherEmail')}
-                </Text>
+                <Text style={OtherActionTextStyle}>{t('buttons.sendAnotherEmail')}</Text>
             </OtherActionButton>
         </Row>
     );

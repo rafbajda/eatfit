@@ -2,9 +2,9 @@ import * as Google from 'expo-google-app-auth';
 import * as Facebook from 'expo-facebook';
 import { FACEBOOK_APP_ID, GOOGLE_CLIENT_ID } from 'react-native-dotenv';
 import { Toast } from 'native-base';
+import I18n from 'i18n-js';
 import firebase from './firebase';
 import { WarningToastMessage } from '../constants/toasts';
-import I18n from 'i18n-js';
 
 const socialConfig = {
     googleClientId: GOOGLE_CLIENT_ID,
@@ -14,14 +14,8 @@ const socialConfig = {
 export default class socialService {
     static async loginWithFacebook() {
         try {
-            return Facebook.initializeAsync(
-                socialConfig.facebookAppId,
-                'eatfit'
-            ).then(async () => {
-                const {
-                    type,
-                    token
-                } = await Facebook.logInWithReadPermissionsAsync(
+            return Facebook.initializeAsync(socialConfig.facebookAppId, 'eatfit').then(async () => {
+                const { type, token } = await Facebook.logInWithReadPermissionsAsync(
                     socialConfig.facebookAppId,
                     {
                         permissions: ['public_profile']
@@ -29,10 +23,7 @@ export default class socialService {
                 );
 
                 if (type === 'success' && token) {
-                    const credential = firebase.auth.FacebookAuthProvider.credential(
-                        token
-                    );
-                    console.log(type, token, credential);
+                    const credential = firebase.auth.FacebookAuthProvider.credential(token);
                     return firebase.auth().signInWithCredential(credential);
                 }
                 return new Promise(resolve => resolve({ cancelled: true }));

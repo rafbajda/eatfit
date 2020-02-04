@@ -10,5 +10,5 @@ const navigate = route => {
 
 export default {
     navigate,
-    setNavigator,
+    setNavigator
 };

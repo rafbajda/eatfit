@@ -3,7 +3,7 @@ import * as _ from 'lodash';
 const DEFAULT_DESCRIPTION_LOCALE = {
     name: null,
     description: null
-}
+};
 
 const completeSideBarListWithActions = (items, actions) =>
     items.map(item => ({ ...item, action: actions[item.id] }));

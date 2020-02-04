@@ -1,4 +1,5 @@
 import React from 'react';
+import I18n from 'i18n-js';
 import hps from '../utils/helpers';
 import {
     ScanInformationContainer,
@@ -8,7 +9,6 @@ import {
     ScanRate,
     ScanRatingIcon
 } from '../styles/scanDetailsStyles';
-import I18n from 'i18n-js';
 
 const ScanInformations = props => {
     const { score, t } = { ...props, ...I18n };
@@ -23,9 +23,7 @@ const ScanInformations = props => {
                 <ScanRate color={color}>{roundedScore}</ScanRate>
                 <ScanRatingIcon>{emoji}</ScanRatingIcon>
             </ScanInformationInfo>
-            <ScanInformationDescription color={color}>
-                {description}
-            </ScanInformationDescription>
+            <ScanInformationDescription color={color}>{description}</ScanInformationDescription>
         </ScanInformationContainer>
     );
 };

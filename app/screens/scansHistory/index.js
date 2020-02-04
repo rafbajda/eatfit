@@ -6,10 +6,11 @@ import ScanList from './components/ScanList';
 import actions from './state/actions';
 
 const ScansHistoryScreen = props => {
+    // eslint-disable-next-line react/prop-types
     const { scans, goToScanDetails } = props;
     return (
         <Container>
-            <ScanList scans={scans} action={goToScanDetails}></ScanList>
+            <ScanList scans={scans} action={goToScanDetails} />
         </Container>
     );
 };

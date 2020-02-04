@@ -1,11 +1,11 @@
 import React from 'react';
-import { deepBlue } from '../../../shared/constants/colors';
 import { Picker, Icon, Grid, Col } from 'native-base';
+import { isArray } from 'lodash';
+import { deepBlue } from '../../../shared/constants/colors';
 import styles, {
     ProfileLanguageRow,
     ProfilePickerColumn
 } from '../styles/profileLanguagePickerStyles';
-import {isArray} from 'lodash';
 
 const ProfileLanguagePicker = props => {
     const { languages, placeholderStyle, userLanguage, setUserLanguage } = {
@@ -15,11 +15,7 @@ const ProfileLanguagePicker = props => {
     const finalLanguages = isArray(languages) ? languages : [];
 
     const PickerItems = finalLanguages.map(language => (
-        <Picker.Item
-            label={language.label}
-            value={language.id}
-            key={language.id}
-        />
+        <Picker.Item label={language.label} value={language.id} key={language.id} />
     ));
 
     return (

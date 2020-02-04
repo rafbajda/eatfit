@@ -2,7 +2,7 @@ import 'react-native';
 import React from 'react';
 import renderer from 'react-test-renderer';
 import NavigationTestUtils from 'react-navigation/NavigationTestUtils';
-import LoginIcon from "../../app/screens/login/components/LoginIcon";
+import LoginIcon from '../../app/screens/login/components/LoginIcon';
 
 describe('LoginIcon snapshot', () => {
     jest.useFakeTimers();

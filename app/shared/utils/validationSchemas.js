@@ -5,16 +5,16 @@ import {
     checkboxRequiredValidator,
     checkboxValidator,
     confirmPasswordValidator,
-    noNumbersValidator,
+    noNumbersValidator
 } from './validators';
 
 const forgotPasswordSchema = yup.object().shape({
-    email: emailValidator,
+    email: emailValidator
 });
 
 const loginSchema = yup.object().shape({
     email: emailValidator,
-    password: passwordValidator,
+    password: passwordValidator
 });
 
 const signUpSchema = yup.object().shape({
@@ -22,17 +22,17 @@ const signUpSchema = yup.object().shape({
     password: passwordValidator,
     confirmPassword: confirmPasswordValidator('password'),
     terms: checkboxRequiredValidator,
-    newsletter: checkboxValidator,
+    newsletter: checkboxValidator
 });
 
 const profileSchema = yup.object().shape({
     firstName: noNumbersValidator,
-    lastName: noNumbersValidator,
+    lastName: noNumbersValidator
 });
 
 export default {
     signUpSchema,
     loginSchema,
     forgotPasswordSchema,
-    profileSchema,
+    profileSchema
 };

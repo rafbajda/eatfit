@@ -2,7 +2,7 @@ import 'react-native';
 import React from 'react';
 import renderer from 'react-test-renderer';
 import NavigationTestUtils from 'react-navigation/NavigationTestUtils';
-import NoEmailMessage from "../../app/screens/notVerified/components/NoEmailMessage";
+import NoEmailMessage from '../../app/screens/notVerified/components/NoEmailMessage';
 
 describe('NoEmailMessage snapshot', () => {
     jest.useFakeTimers();

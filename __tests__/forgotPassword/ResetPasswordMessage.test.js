@@ -2,7 +2,7 @@ import 'react-native';
 import React from 'react';
 import renderer from 'react-test-renderer';
 import NavigationTestUtils from 'react-navigation/NavigationTestUtils';
-import ResetPasswordMessage from "../../app/screens/forgotPassword/components/ResetPasswordMessage";
+import ResetPasswordMessage from '../../app/screens/forgotPassword/components/ResetPasswordMessage';
 
 describe('ResetPasswordMessage snapshot', () => {
     jest.useFakeTimers();

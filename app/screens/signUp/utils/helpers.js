@@ -4,5 +4,5 @@ const checkBoxSetter = (props, fieldName) => {
 };
 
 export default {
-    checkBoxSetter,
+    checkBoxSetter
 };

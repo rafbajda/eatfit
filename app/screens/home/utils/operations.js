@@ -3,7 +3,6 @@ import * as ImagePicker from 'expo-image-picker';
 import Api from '../../../shared/utils/api';
 import actions from '../state/actions';
 import firebaseOps from './firebaseOperations';
-import globalHps from '../../../shared/utils/helpers';
 
 const makeScan = async dispatch => {
     dispatch(actions.updateScanStatusMessage('asking for permissions'));
@@ -26,8 +25,7 @@ const makeScan = async dispatch => {
 };
 
 const performScan = async (scanObjectData, dispatch) => {
-    console.log('scanobjjjjj>', scanObject);
-    const { scanObject, localizationUrl } = scanObjectData;
+    const { localizationUrl } = scanObjectData;
     Api.useVisionApi(localizationUrl)
         .then(res => {
             const sepArr = [];

@@ -6,7 +6,7 @@ import {
     FIREBASE_DATABASE_URL,
     FIREBASE_PROJECT_ID,
     FIREBASE_STORAGE_BUCKET,
-    FIREBASE_MESSENGER_SENDER_ID,
+    FIREBASE_MESSENGER_SENDER_ID
 } from 'react-native-dotenv';
 
 import 'firebase/firestore';
@@ -19,7 +19,7 @@ const config = {
     databaseURL: FIREBASE_DATABASE_URL,
     projectId: FIREBASE_PROJECT_ID,
     storageBucket: FIREBASE_STORAGE_BUCKET,
-    messagingSenderId: FIREBASE_MESSENGER_SENDER_ID,
+    messagingSenderId: FIREBASE_MESSENGER_SENDER_ID
 };
 
 firebase.initializeApp(config);

@@ -7,43 +7,43 @@ export const actionTypes = {
     UPDATE_USER_VERIFICATION_ERROR: '[verification] update user verification error',
     CHECK_VERIFICATION_STATUS: '[verification] check verification status',
     CHECK_VERIFICATION_STATUS_SUCCESS: '[verification] check verification status success',
-    CHECK_VERIFICATION_STATUS_ERROR: '[verification] check verification status error',
+    CHECK_VERIFICATION_STATUS_ERROR: '[verification] check verification status error'
 };
 
 const checkVerificationStatus = () => ({
-    type: actionTypes.CHECK_VERIFICATION_STATUS,
+    type: actionTypes.CHECK_VERIFICATION_STATUS
 });
 const checkVerificationStatusSuccess = payload => ({
     type: actionTypes.CHECK_VERIFICATION_STATUS_SUCCESS,
-    payload,
+    payload
 });
 const checkVerificationStatusError = payload => ({
     type: actionTypes.CHECK_VERIFICATION_STATUS_SUCCESS,
-    payload,
+    payload
 });
 
 const sendVerificationEmail = () => ({
-    type: actionTypes.SEND_VERIFICATION_MAIL,
+    type: actionTypes.SEND_VERIFICATION_MAIL
 });
 const sendVerificationEmailSuccess = payload => ({
     type: actionTypes.SEND_VERIFICATION_MAIL_SUCCESS,
-    payload,
+    payload
 });
 const sendVerificationEmailError = payload => ({
     type: actionTypes.SEND_VERIFICATION_MAIL_ERROR,
-    payload,
+    payload
 });
 
 const updateUserVerification = payload => ({
     type: actionTypes.UPDATE_USER_VERIFICATION,
-    payload,
+    payload
 });
 const updateUserVerificationSuccess = () => ({
-    type: actionTypes.UPDATE_USER_VERIFICATION_SUCCESS,
+    type: actionTypes.UPDATE_USER_VERIFICATION_SUCCESS
 });
 const updateUserVerificationError = payload => ({
     type: actionTypes.UPDATE_USER_VERIFICATION_ERROR,
-    payload,
+    payload
 });
 
 export default {
@@ -55,5 +55,5 @@ export default {
     sendVerificationEmailSuccess,
     checkVerificationStatus,
     checkVerificationStatusError,
-    checkVerificationStatusSuccess,
+    checkVerificationStatusSuccess
 };

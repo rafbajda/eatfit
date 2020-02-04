@@ -2,7 +2,7 @@ import 'react-native';
 import React from 'react';
 import renderer from 'react-test-renderer';
 import NavigationTestUtils from 'react-navigation/NavigationTestUtils';
-import ScanInformationsRow from "../../app/screens/scanDetails/components/ScanInformationsRow";
+import ScanInformationsRow from '../../app/screens/scanDetails/components/ScanInformationsRow';
 
 describe('ScanInformationsRow snapshot', () => {
     jest.useFakeTimers();

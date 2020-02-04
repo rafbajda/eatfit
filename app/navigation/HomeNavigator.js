@@ -1,5 +1,6 @@
 import { createStackNavigator } from 'react-navigation';
 import Constants from 'expo-constants';
+import I18n from 'i18n-js';
 import screens from './screens';
 import HomeScreen from '../screens/home';
 import ProfileScreen from '../screens/profile';
@@ -8,7 +9,6 @@ import { globalWhite, globalGreen } from '../shared/constants/colors';
 import substanceDetails from '../screens/substanceDetails';
 import scansHistory from '../screens/scansHistory';
 import allSubstances from '../screens/allSubstances';
-import I18n from 'i18n-js';
 
 export default createStackNavigator(
     {
@@ -18,31 +18,31 @@ export default createStackNavigator(
         },
         [screens.Profile]: {
             screen: ProfileScreen,
-            navigationOptions: ({ navigation, navigationOptions }) => ({
+            navigationOptions: () => ({
                 title: I18n.t('navigation.myAccount')
             })
         },
         [screens.ScanDetails]: {
             screen: ScanDetails,
-            navigationOptions: ({ navigation, navigationOptions }) => ({
+            navigationOptions: () => ({
                 title: I18n.t('navigation.scanDetails')
             })
         },
         [screens.SubstanceDetails]: {
             screen: substanceDetails,
-            navigationOptions: ({ navigation, navigationOptions }) => ({
+            navigationOptions: () => ({
                 title: I18n.t('navigation.substanceDetails')
             })
         },
         [screens.ScansHistory]: {
             screen: scansHistory,
-            navigationOptions: ({ navigation, navigationOptions }) => ({
+            navigationOptions: () => ({
                 title: I18n.t('navigation.scansHistory')
             })
         },
         [screens.AllSubstances]: {
             screen: allSubstances,
-            navigationOptions: ({ navigation, navigationOptions }) => ({
+            navigationOptions: () => ({
                 title: I18n.t('navigation.allSubstances')
             })
         }

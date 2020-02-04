@@ -1,14 +1,11 @@
 import { Toast } from 'native-base';
-import {
-    CheckVerificationRefreshToast,
-    emailSentToast
-} from '../../../shared/constants/toasts';
+import I18n from 'i18n-js';
+import { CheckVerificationRefreshToast, emailSentToast } from '../../../shared/constants/toasts';
 import actions from '../state/actions';
 import firebaseOps from './firebaseOperations';
 import globalFirebaseOps from '../../../shared/utils/firebaseOperations';
 import screens from '../../../navigation/screens';
 import NavigationService from '../../../navigation/NavigationService';
-import I18n from 'i18n-js';
 
 const updateUserVerification = (data, dispatch) => {
     const user = data;
@@ -24,9 +21,7 @@ const updateUserVerification = (data, dispatch) => {
                 NavigationService.navigate(screens.Home);
                 dispatch(actions.updateUserVerificationSuccess());
             })
-            .catch(error =>
-                dispatch(actions.updateUserVerificationError(error))
-            );
+            .catch(error => dispatch(actions.updateUserVerificationError(error)));
     }
 };
 

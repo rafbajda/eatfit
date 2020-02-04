@@ -4,16 +4,13 @@ import ScanImage from './ScanImage';
 import ScanInformations from './ScanInformations';
 
 const ScanInformationsRow = props => {
+    // eslint-disable-next-line react/prop-types
     const { scanUrl, scanScore } = props;
 
     return (
         <Row style={{ height: 200 }}>
-            <Col>
-                {scanUrl ? <ScanImage scanUrl={scanUrl} /> : null}
-            </Col>
-            <Col>
-                {scanScore ? <ScanInformations score={scanScore} /> : null}
-            </Col>
+            <Col>{scanUrl ? <ScanImage scanUrl={scanUrl} /> : null}</Col>
+            <Col>{scanScore ? <ScanInformations score={scanScore} /> : null}</Col>
         </Row>
     );
 };

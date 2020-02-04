@@ -1,17 +1,10 @@
 import React from 'react';
-import {
-    Header,
-    Left,
-    Button,
-    Icon,
-    Body,
-    Right,
-    Thumbnail
-} from 'native-base';
-import { globalGreen } from '../constants/colors';
-import screens from '../../navigation/screens';
+import { Header, Left, Button, Icon, Body, Right, Thumbnail } from 'native-base';
 import { Image } from 'react-native-elements';
 import Constants from 'expo-constants';
+import { globalGreen } from '../constants/colors';
+import screens from '../../navigation/screens';
+
 const logoImage = require('../../assets/images/eatfit_without_icon.png');
 
 const GlobalHeader = props => {
@@ -36,10 +29,7 @@ const GlobalHeader = props => {
                 />
             </Body>
             <Right style={{ flex: 1 }}>
-                <Button
-                    onPress={() => nav.navigate(screens.Profile)}
-                    transparent
-                >
+                <Button onPress={() => nav.navigate(screens.Profile)} transparent>
                     <Thumbnail
                         small
                         source={{

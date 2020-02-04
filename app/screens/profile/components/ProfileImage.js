@@ -15,9 +15,7 @@ const ProfileImage = props => {
             containerStyle={avatarContainerStyle}
             title={initials}
             size={avatarSize}
-            source={
-                profile && profile.photoUrl ? { uri: profile.photoUrl } : defaultAvatar
-            }
+            source={profile && profile.photoUrl ? { uri: profile.photoUrl } : defaultAvatar}
             editButton={{
                 name: 'edit',
                 color: globalWhite

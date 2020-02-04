@@ -1,9 +1,9 @@
 import { Toast } from 'native-base';
+import I18n from 'i18n-js';
 import firebase from '../../../shared/modules/firebase';
 import globalFirebaseOps from '../../../shared/utils/firebaseOperations';
 import { UserMismatchingToast } from '../../../shared/constants/toasts';
 import actions from '../state/actions';
-import I18n from 'i18n-js';
 
 const uploadAvatar = async (uri, userId) => {
     const blob = await new Promise((resolve, reject) => {

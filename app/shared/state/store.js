@@ -1,16 +1,8 @@
 /* global __DEV__ */
 import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
-import {
-    getFirestore,
-    reduxFirestore,
-    firestoreReducer
-} from 'redux-firestore';
-import {
-    getFirebase,
-    reactReduxFirebase,
-    firebaseReducer
-} from 'react-redux-firebase';
+import { getFirestore, reduxFirestore, firestoreReducer } from 'redux-firestore';
+import { getFirebase, reactReduxFirebase, firebaseReducer } from 'react-redux-firebase';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import {
     createReactNavigationReduxMiddleware,

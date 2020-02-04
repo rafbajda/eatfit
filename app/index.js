@@ -15,6 +15,7 @@ class Application extends React.Component {
         const { getConfig } = { ...this.props };
         getConfig();
     }
+
     render() {
         const { loading, firebase } = { ...this.props };
 

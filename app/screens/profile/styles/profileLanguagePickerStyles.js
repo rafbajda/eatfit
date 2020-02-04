@@ -1,6 +1,6 @@
-import { lightGrey } from '../../../shared/constants/colors';
 import styled from 'styled-components';
 import { Col, Row } from 'native-base';
+import { lightGrey } from '../../../shared/constants/colors';
 
 const placeholderStyle = { color: lightGrey };
 

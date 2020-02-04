@@ -2,7 +2,7 @@ import 'react-native';
 import React from 'react';
 import renderer from 'react-test-renderer';
 import NavigationTestUtils from 'react-navigation/NavigationTestUtils';
-import SocialLogin from "../../app/screens/login/components/SocialLogin";
+import SocialLogin from '../../app/screens/login/components/SocialLogin';
 
 describe('SocialLogin snapshot', () => {
     jest.useFakeTimers();

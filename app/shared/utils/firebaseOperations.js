@@ -1,10 +1,10 @@
 import { Toast } from 'native-base';
+import I18n from 'i18n-js';
 import firebase from '../modules/firebase';
 import screens from '../../navigation/screens';
 import { UserMismatchingToast } from '../constants/toasts';
 import ops from './helpers';
 import NavigationService from '../../navigation/NavigationService';
-import I18n from 'i18n-js';
 
 const getAuthCurrentUser = () => firebase.auth().currentUser;
 
@@ -26,7 +26,6 @@ const prepareUserToLogIn = (user, setUser, setLanguage) => {
                 });
                 const userObject = doc.data();
                 const { language } = userObject;
-                console.log('user user: ', userObject, language);
 
                 setUser(userObject);
                 setLanguage(language);

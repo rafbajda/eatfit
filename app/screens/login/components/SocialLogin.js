@@ -1,8 +1,8 @@
 import React from 'react';
 import { SocialIcon } from 'react-native-elements';
 import { Col } from 'native-base';
-import { SocialContainer } from '../styles/socialLoginStyles';
 import I18n from 'i18n-js';
+import { SocialContainer } from '../styles/socialLoginStyles';
 
 const SocialLogin = props => {
     const { loginFacebook, loginGoogle } = { ...props };

@@ -1,30 +1,19 @@
 import React from 'react';
 import { Grid, Col, Item, Picker, Icon } from 'native-base';
+import { isArray } from 'lodash';
 import { LanguageRow, PickerColumn } from '../styles/loginStyles';
 import styles from '../styles/languagePickerStyles';
 import { deepBlue } from '../../../shared/constants/colors';
-import {isArray} from 'lodash';
 
 const LanguagePicker = props => {
-    const {
-        languages,
-        setCurrentLanguage,
-        currentLanguage,
-        hidden,
-        placeholderStyle
-    } = {
+    const { languages, setCurrentLanguage, currentLanguage, hidden, placeholderStyle } = {
         ...props,
         ...styles
     };
     const finalLanguages = isArray(languages) ? languages : [];
     const PickerItems = finalLanguages.map(language => (
-        <Picker.Item
-            label={language.label}
-            value={language.id}
-            key={language.id}
-        />
+        <Picker.Item label={language.label} value={language.id} key={language.id} />
     ));
-    console.log(languages, props);
 
     if (hidden) {
         return null;
@@ -42,9 +31,7 @@ const LanguagePicker = props => {
                             placeholderStyle={placeholderStyle}
                             placeholderIconColor={deepBlue}
                             selectedValue={currentLanguage}
-                            onValueChange={language =>
-                                setCurrentLanguage(language)
-                            }
+                            onValueChange={language => setCurrentLanguage(language)}
                         >
                             {PickerItems}
                         </Picker>

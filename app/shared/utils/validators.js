@@ -32,5 +32,5 @@ export const noNumbersValidator = yup
     .nullable()
     .matches(/[a-zA-Z]+/, {
         message: 'Only letters are available',
-        excludeEmptyString: true,
+        excludeEmptyString: true
     });

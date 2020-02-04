@@ -4,7 +4,6 @@ import verificationActions from '../../notVerified/state/actions';
 
 const createAccount = (data, dispatch) => {
     const { email, password, newsletter, language } = { ...data };
-    console.log('found language: ', language);
     firebaseOps
         .signUp(email, password)
         .then(userInfo => {

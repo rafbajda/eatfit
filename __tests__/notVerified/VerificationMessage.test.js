@@ -2,7 +2,7 @@ import 'react-native';
 import React from 'react';
 import renderer from 'react-test-renderer';
 import NavigationTestUtils from 'react-navigation/NavigationTestUtils';
-import VerificationMessage from "../../app/screens/notVerified/components/VerificationMessage";
+import VerificationMessage from '../../app/screens/notVerified/components/VerificationMessage';
 
 describe('VerificationMessage snapshot', () => {
     jest.useFakeTimers();

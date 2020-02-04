@@ -5,5 +5,5 @@ const signUp = (email, password) => {
 };
 
 export default {
-    signUp,
+    signUp
 };

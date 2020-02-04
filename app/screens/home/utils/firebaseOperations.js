@@ -17,9 +17,8 @@ const uploadScan = async (uri, scanId) => {
         .ref(`users/${uid}/scans`)
         .child(scanId);
     const snapshot = await ref.put(blob);
-    console.log('S N A P:', snapshot);
     blob.close();
-    const location = snapshot.ref.location;
+    const { location } = snapshot.ref;
     const { bucket, path } = location;
     const localizationUrl = `gs://${bucket}/${path}`;
     const downloadUrl = await snapshot.ref.getDownloadURL();
@@ -47,14 +46,12 @@ const createScanObject = async (scanUri, user) => {
     return { scanObject, localizationUrl };
 };
 
-const getUserScans = async user => {
-    console.log('scans from user: ', user);
-    return firebase
+const getUserScans = async user =>
+    firebase
         .firestore()
         .collection(`/users/${user.uid}/scans`)
         .orderBy('created_at', 'desc')
         .get();
-};
 
 export default {
     createScanObject,

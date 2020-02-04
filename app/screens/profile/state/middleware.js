@@ -7,11 +7,7 @@ const profileMiddleware = store => next => action => {
     const { payload, dispatch } = { ...store, ...action };
     switch (action.type) {
         case actionTypes.SET_USER_LANGUAGE:
-            firebaseOps.updateUserLanguage(
-                store.getState().auth.user.uid,
-                payload,
-                dispatch
-            );
+            firebaseOps.updateUserLanguage(store.getState().auth.user.uid, payload, dispatch);
             break;
         case actionTypes.SET_USER_LANGUAGE_SUCCESS:
             dispatch(globalActions.setUser(payload));

@@ -2,7 +2,7 @@ import 'react-native';
 import React from 'react';
 import renderer from 'react-test-renderer';
 import NavigationTestUtils from 'react-navigation/NavigationTestUtils';
-import GlobalHeader from "../../app/shared/components/GlobalHeader";
+import GlobalHeader from '../../app/shared/components/GlobalHeader';
 
 describe('GlobalHeader snapshot', () => {
     jest.useFakeTimers();

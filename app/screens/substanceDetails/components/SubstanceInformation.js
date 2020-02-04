@@ -1,5 +1,6 @@
 import React from 'react';
 import { Text } from 'native-base';
+import I18n from 'i18n-js';
 import {
     SubstanceInformationContainer,
     SubstanceInformationLabel
@@ -11,7 +12,6 @@ import {
     ScanRatingIcon
 } from '../../scanDetails/styles/scanDetailsStyles';
 import hps from '../../scanDetails/utils/helpers';
-import I18n from 'i18n-js';
 
 const SubstanceInformation = props => {
     const { substanceName, score, t } = { ...props, ...I18n };
@@ -21,17 +21,13 @@ const SubstanceInformation = props => {
     const description = hps.getDescription(score, t);
     return (
         <SubstanceInformationContainer>
-            <SubstanceInformationLabel>
-                {t('labels.name')}
-            </SubstanceInformationLabel>
+            <SubstanceInformationLabel>{t('labels.name')}</SubstanceInformationLabel>
             <Text>{substanceName}</Text>
             <ScanInformationInfo>
                 <ScanRate color={color}>{roundedScore}</ScanRate>
                 <ScanRatingIcon>{emoji}</ScanRatingIcon>
             </ScanInformationInfo>
-            <ScanInformationDescription color={color}>
-                {description}
-            </ScanInformationDescription>
+            <ScanInformationDescription color={color}>{description}</ScanInformationDescription>
         </SubstanceInformationContainer>
     );
 };

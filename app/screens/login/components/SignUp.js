@@ -1,11 +1,7 @@
 import React from 'react';
-import {
-    SignUpContainer,
-    InformationText,
-    SignUpText
-} from '../styles/signUpStyles';
-import screens from '../../../navigation/screens';
 import I18n from 'i18n-js';
+import { SignUpContainer, InformationText, SignUpText } from '../styles/signUpStyles';
+import screens from '../../../navigation/screens';
 
 const SignUp = props => {
     const { nav } = { ...props };
@@ -15,7 +11,7 @@ const SignUp = props => {
             <InformationText>
                 {t('info.dontHaveAccount')}
                 <SignUpText onPress={() => nav.navigate(screens.SignUp)}>
-                    {' ' + t('actions.signUp')}
+                    {` ${t('actions.signUp')}`}
                 </SignUpText>
             </InformationText>
         </SignUpContainer>
