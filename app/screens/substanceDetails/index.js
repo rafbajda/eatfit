@@ -16,11 +16,11 @@ const SubstanceDetailsScreen = props => {
     return (
         <Container>
             <Grid>
-                <SubstanceInformationsRow
+                {substance ? <SubstanceInformationsRow
                     imageUrl={substance.imageUrl}
                     substanceName={name}
                     score={substance.score}
-                />
+                /> : null}
                 <Row>
                     <SubstanceDescription substanceDescription={description} />
                 </Row>

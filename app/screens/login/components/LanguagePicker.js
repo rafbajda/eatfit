@@ -3,6 +3,7 @@ import { Grid, Col, Item, Picker, Icon } from 'native-base';
 import { LanguageRow, PickerColumn } from '../styles/loginStyles';
 import styles from '../styles/languagePickerStyles';
 import { deepBlue } from '../../../shared/constants/colors';
+import {isArray} from 'lodash';
 
 const LanguagePicker = props => {
     const {
@@ -15,7 +16,8 @@ const LanguagePicker = props => {
         ...props,
         ...styles
     };
-    const PickerItems = languages.map(language => (
+    const finalLanguages = isArray(languages) ? languages : [];
+    const PickerItems = finalLanguages.map(language => (
         <Picker.Item
             label={language.label}
             value={language.id}

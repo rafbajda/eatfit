@@ -16,7 +16,7 @@ const ProfileImage = props => {
             title={initials}
             size={avatarSize}
             source={
-                profile.photoUrl ? { uri: profile.photoUrl } : defaultAvatar
+                profile && profile.photoUrl ? { uri: profile.photoUrl } : defaultAvatar
             }
             editButton={{
                 name: 'edit',

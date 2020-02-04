@@ -19,10 +19,11 @@ import {
     veryBadImpactDescription,
     veryGoodImpactDescription
 } from '../../../shared/constants/information';
+import {isArray} from 'lodash';
 
 const defaultSubstanceImage = require('../../../assets/images/default_substance.png');
 
-const getSubstanceList = (substances, goToSubstanceDetails, locale) =>
+const getSubstanceList = (substances, goToSubstanceDetails, locale) => isArray(substances) ?
     substances.map(sub => {
         const source = sub.imageUrl
             ? { uri: sub.imageUrl }
@@ -41,7 +42,7 @@ const getSubstanceList = (substances, goToSubstanceDetails, locale) =>
                 chevron
             />
         );
-    });
+    }) : [];
 
 const getUserFriendlyDate = date =>
     moment(date).format('MMMM Do YYYY, h:mm:ss a');

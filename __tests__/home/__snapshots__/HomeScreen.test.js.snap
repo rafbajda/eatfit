@@ -1,0 +1,989 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HomeScreen snapshot renders component 1`] = `
+<RCTScrollView
+  automaticallyAdjustContentInsets={false}
+  className="sc-htpNat KtFsv"
+  contentContainerStyle={
+    Array [
+      Object {
+        "padding": undefined,
+      },
+      Object {
+        "backgroundColor": "#1db954",
+      },
+    ]
+  }
+  contentInset={
+    Object {
+      "bottom": 0,
+    }
+  }
+  enableAutomaticScroll={true}
+  enableOnAndroid={false}
+  enableResetScrollToCoords={true}
+  extraHeight={75}
+  extraScrollHeight={0}
+  getScrollResponder={[Function]}
+  handleOnScroll={[Function]}
+  keyboardDismissMode="interactive"
+  keyboardOpeningTime={250}
+  keyboardShouldPersistTaps="handled"
+  keyboardSpace={0}
+  onScroll={[Function]}
+  resetKeyboardSpace={[Function]}
+  resetScrollToCoords={
+    Object {
+      "x": 0,
+      "y": 0,
+    }
+  }
+  scrollEventThrottle={1}
+  scrollForExtraHeightOnAndroid={[Function]}
+  scrollIntoView={[Function]}
+  scrollToEnd={[Function]}
+  scrollToFocusedInput={[Function]}
+  scrollToPosition={[Function]}
+  showsVerticalScrollIndicator={true}
+  style={
+    Object {
+      "backgroundColor": "transparent",
+      "flex": 1,
+    }
+  }
+  update={[Function]}
+  viewIsInsideTabBar={false}
+>
+  <View>
+    <View
+      onLayout={[Function]}
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "backgroundColor": "#F8F8F8",
+              "borderBottomColor": "#a7a6ab",
+              "borderBottomWidth": 0.5,
+              "elevation": 3,
+              "flexDirection": "row",
+              "height": 64,
+              "justifyContent": "center",
+              "left": 0,
+              "paddingLeft": 6,
+              "paddingRight": 10,
+              "paddingTop": 18,
+              "right": 0,
+              "shadowColor": undefined,
+              "shadowOffset": undefined,
+              "shadowOpacity": undefined,
+              "shadowRadius": undefined,
+              "top": 0,
+            },
+            Object {
+              "backgroundColor": "#1db954",
+              "marginTop": 44,
+            },
+          ]
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "alignItems": "flex-start",
+                "alignSelf": "center",
+                "flex": 1,
+              },
+              Object {
+                "flex": 1,
+              },
+            ]
+          }
+        >
+          <View
+            accessible={true}
+            focusable={true}
+            isTVSelectable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "alignSelf": null,
+                "backgroundColor": "transparent",
+                "borderBottomWidth": null,
+                "borderColor": null,
+                "borderLeftWidth": null,
+                "borderRadius": 5,
+                "borderRightWidth": null,
+                "borderTopWidth": null,
+                "borderWidth": undefined,
+                "elevation": 0,
+                "flexDirection": "row",
+                "height": 45,
+                "justifyContent": "space-between",
+                "marginLeft": -3,
+                "opacity": 1,
+                "paddingBottom": 6,
+                "paddingLeft": 4,
+                "paddingRight": 6,
+                "paddingTop": 6,
+                "shadowColor": null,
+                "shadowOffset": null,
+                "shadowOpacity": null,
+                "shadowRadius": null,
+              }
+            }
+          >
+            <Text />
+          </View>
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "alignSelf": "center",
+                "flex": 1,
+              },
+              Object {
+                "flex": 1,
+              },
+            ]
+          }
+        >
+          <View
+            accessibilityIgnoresInvertColors={true}
+            style={
+              Object {
+                "backgroundColor": "transparent",
+                "position": "relative",
+              }
+            }
+          >
+            <Image
+              onLoad={[Function]}
+              source={1}
+              style={
+                Array [
+                  Object {
+                    "bottom": 0,
+                    "left": 0,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  },
+                  Object {
+                    "height": 25,
+                    "width": 120,
+                  },
+                ]
+              }
+              testID="RNE__Image"
+              theme={
+                Object {
+                  "colors": Object {
+                    "disabled": "hsl(208, 8%, 90%)",
+                    "divider": "#bcbbc1",
+                    "error": "#ff190c",
+                    "grey0": "#393e42",
+                    "grey1": "#43484d",
+                    "grey2": "#5e6977",
+                    "grey3": "#86939e",
+                    "grey4": "#bdc6cf",
+                    "grey5": "#e1e8ee",
+                    "greyOutline": "#bbb",
+                    "platform": Object {
+                      "android": Object {
+                        "error": "#f44336",
+                        "primary": "#2196f3",
+                        "secondary": "#9C27B0",
+                        "success": "#4caf50",
+                        "warning": "#ffeb3b",
+                      },
+                      "ios": Object {
+                        "error": "#ff3b30",
+                        "primary": "#007aff",
+                        "secondary": "#5856d6",
+                        "success": "#4cd964",
+                        "warning": "#ffcc00",
+                      },
+                    },
+                    "primary": "#2089dc",
+                    "searchBg": "#303337",
+                    "secondary": "#8F0CE8",
+                    "success": "#52c41a",
+                    "warning": "#faad14",
+                  },
+                }
+              }
+            />
+            <View
+              accessibilityElementsHidden={true}
+              importantForAccessibility="no-hide-descendants"
+              pointerEvents="none"
+              style={
+                Object {
+                  "bottom": 0,
+                  "left": 0,
+                  "opacity": 1,
+                  "position": "absolute",
+                  "right": 0,
+                  "top": 0,
+                }
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "#1db954",
+                    "height": 25,
+                    "justifyContent": "center",
+                    "width": 120,
+                  }
+                }
+                testID="RNE__Image__placeholder"
+              />
+            </View>
+            <View
+              style={
+                Object {
+                  "height": 25,
+                  "width": 120,
+                }
+              }
+            />
+          </View>
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "alignItems": "flex-end",
+                "alignSelf": "center",
+                "flex": 1,
+                "flexDirection": "row",
+                "justifyContent": "flex-end",
+              },
+              Object {
+                "flex": 1,
+              },
+            ]
+          }
+        >
+          <View
+            accessible={true}
+            focusable={true}
+            isTVSelectable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "alignSelf": null,
+                "backgroundColor": "transparent",
+                "borderBottomWidth": null,
+                "borderColor": null,
+                "borderLeftWidth": null,
+                "borderRadius": 50,
+                "borderRightWidth": null,
+                "borderTopWidth": null,
+                "borderWidth": undefined,
+                "elevation": 0,
+                "flexDirection": "row",
+                "height": 45,
+                "justifyContent": "space-between",
+                "marginRight": -9,
+                "opacity": 1,
+                "paddingBottom": 6,
+                "paddingLeft": 15,
+                "paddingRight": 15,
+                "paddingTop": 6,
+                "shadowColor": null,
+                "shadowOffset": null,
+                "shadowOpacity": null,
+                "shadowRadius": null,
+              }
+            }
+          >
+            <Image
+              small={true}
+              source={
+                Object {
+                  "uri": null,
+                }
+              }
+              style={
+                Object {
+                  "borderRadius": 18,
+                  "height": 36,
+                  "width": 36,
+                }
+              }
+            />
+          </View>
+        </View>
+      </View>
+    </View>
+    <View
+      className="sc-iwsKbI lbPFWK"
+      style={
+        Object {
+          "backgroundColor": "#fff",
+          "flex": 1,
+          "height": 1334,
+        }
+      }
+    >
+      <View
+        className="sc-bxivhb sc-VigVT gggsb"
+        style={
+          Object {
+            "flex": 1,
+            "flexDirection": "row",
+          }
+        }
+      >
+        <View
+          accessible={true}
+          focusable={true}
+          isTVSelectable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#007aff",
+              "borderBottomWidth": null,
+              "borderColor": "#007aff",
+              "borderLeftWidth": null,
+              "borderRadius": 5,
+              "borderRightWidth": null,
+              "borderTopWidth": null,
+              "borderWidth": undefined,
+              "elevation": 2,
+              "flexDirection": "row",
+              "height": 45,
+              "justifyContent": "space-between",
+              "opacity": 1,
+              "paddingBottom": 6,
+              "paddingTop": 6,
+              "shadowColor": undefined,
+              "shadowOffset": undefined,
+              "shadowOpacity": undefined,
+              "shadowRadius": undefined,
+            }
+          }
+        >
+          <Text
+            className="sc-fjdhpX jEoUFb"
+            style={
+              Object {
+                "backgroundColor": "transparent",
+                "color": "#fff",
+                "fontFamily": "System",
+                "fontSize": 16.5,
+                "marginLeft": 0,
+                "marginRight": 0,
+                "paddingLeft": 16,
+                "paddingRight": 16,
+              }
+            }
+            uppercase={false}
+          >
+            [missing "en.buttons.scan" translation]
+          </Text>
+        </View>
+      </View>
+      <View
+        className="sc-bxivhb sc-jzJRlG iLakCn"
+        style={
+          Object {
+            "flex": 1,
+            "flexDirection": "row",
+          }
+        }
+      >
+        <Text
+          className="sc-cSHVUG cKrpqA"
+          style={
+            Object {
+              "color": "#000",
+              "fontFamily": "System",
+              "fontSize": 16,
+            }
+          }
+          uppercase={false}
+        >
+          [missing "en.labels.instruction" translation]
+        </Text>
+        <Text
+          className="sc-kAzzGY ijqxdY"
+          style={
+            Object {
+              "color": "#000",
+              "fontFamily": "System",
+              "fontSize": 16,
+            }
+          }
+          uppercase={false}
+        >
+          [missing "en.info.instructionDetails" translation]
+        </Text>
+        <View
+          className="sc-kGXeez hmMRXN"
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "white",
+                "borderBottomWidth": 0.5,
+                "borderColor": "#bcbbc1",
+                "borderTopWidth": 0.5,
+                "flexDirection": "row",
+                "padding": 14,
+              }
+            }
+          >
+            <Text
+              className="sc-chPdSV kIBorW"
+              style={
+                Object {
+                  "color": "#000",
+                  "fontFamily": "System",
+                  "fontSize": 16,
+                }
+              }
+              uppercase={false}
+            >
+              😁
+            </Text>
+            <View
+              width={16}
+            />
+            <View
+              style={
+                Object {
+                  "flex": 1,
+                  "justifyContent": "center",
+                }
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "backgroundColor": "transparent",
+                    "fontSize": 17,
+                  }
+                }
+                testID="listItemTitle"
+                theme={
+                  Object {
+                    "colors": Object {
+                      "disabled": "hsl(208, 8%, 90%)",
+                      "divider": "#bcbbc1",
+                      "error": "#ff190c",
+                      "grey0": "#393e42",
+                      "grey1": "#43484d",
+                      "grey2": "#5e6977",
+                      "grey3": "#86939e",
+                      "grey4": "#bdc6cf",
+                      "grey5": "#e1e8ee",
+                      "greyOutline": "#bbb",
+                      "platform": Object {
+                        "android": Object {
+                          "error": "#f44336",
+                          "primary": "#2196f3",
+                          "secondary": "#9C27B0",
+                          "success": "#4caf50",
+                          "warning": "#ffeb3b",
+                        },
+                        "ios": Object {
+                          "error": "#ff3b30",
+                          "primary": "#007aff",
+                          "secondary": "#5856d6",
+                          "success": "#4cd964",
+                          "warning": "#ffcc00",
+                        },
+                      },
+                      "primary": "#2089dc",
+                      "searchBg": "#303337",
+                      "secondary": "#8F0CE8",
+                      "success": "#52c41a",
+                      "warning": "#faad14",
+                    },
+                  }
+                }
+              >
+                
+              </Text>
+            </View>
+            <View
+              width={16}
+            />
+            <Text
+              className="sc-kgoBCf hHEGGu"
+              style={
+                Object {
+                  "color": "#000",
+                  "fontFamily": "System",
+                  "fontSize": 16,
+                }
+              }
+              uppercase={false}
+            >
+              [missing "en.info.veryGoodImpact" translation]
+            </Text>
+          </View>
+        </View>
+        <View
+          className="sc-kGXeez hmMRXN"
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "white",
+                "borderBottomWidth": 0.5,
+                "borderColor": "#bcbbc1",
+                "borderTopWidth": 0.5,
+                "flexDirection": "row",
+                "padding": 14,
+              }
+            }
+          >
+            <Text
+              className="sc-chPdSV kIBorW"
+              style={
+                Object {
+                  "color": "#000",
+                  "fontFamily": "System",
+                  "fontSize": 16,
+                }
+              }
+              uppercase={false}
+            >
+              😊
+            </Text>
+            <View
+              width={16}
+            />
+            <View
+              style={
+                Object {
+                  "flex": 1,
+                  "justifyContent": "center",
+                }
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "backgroundColor": "transparent",
+                    "fontSize": 17,
+                  }
+                }
+                testID="listItemTitle"
+                theme={
+                  Object {
+                    "colors": Object {
+                      "disabled": "hsl(208, 8%, 90%)",
+                      "divider": "#bcbbc1",
+                      "error": "#ff190c",
+                      "grey0": "#393e42",
+                      "grey1": "#43484d",
+                      "grey2": "#5e6977",
+                      "grey3": "#86939e",
+                      "grey4": "#bdc6cf",
+                      "grey5": "#e1e8ee",
+                      "greyOutline": "#bbb",
+                      "platform": Object {
+                        "android": Object {
+                          "error": "#f44336",
+                          "primary": "#2196f3",
+                          "secondary": "#9C27B0",
+                          "success": "#4caf50",
+                          "warning": "#ffeb3b",
+                        },
+                        "ios": Object {
+                          "error": "#ff3b30",
+                          "primary": "#007aff",
+                          "secondary": "#5856d6",
+                          "success": "#4cd964",
+                          "warning": "#ffcc00",
+                        },
+                      },
+                      "primary": "#2089dc",
+                      "searchBg": "#303337",
+                      "secondary": "#8F0CE8",
+                      "success": "#52c41a",
+                      "warning": "#faad14",
+                    },
+                  }
+                }
+              >
+                
+              </Text>
+            </View>
+            <View
+              width={16}
+            />
+            <Text
+              className="sc-kgoBCf hHEGGu"
+              style={
+                Object {
+                  "color": "#000",
+                  "fontFamily": "System",
+                  "fontSize": 16,
+                }
+              }
+              uppercase={false}
+            >
+              [missing "en.info.prettyGoodImpact" translation]
+            </Text>
+          </View>
+        </View>
+        <View
+          className="sc-kGXeez hmMRXN"
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "white",
+                "borderBottomWidth": 0.5,
+                "borderColor": "#bcbbc1",
+                "borderTopWidth": 0.5,
+                "flexDirection": "row",
+                "padding": 14,
+              }
+            }
+          >
+            <Text
+              className="sc-chPdSV kIBorW"
+              style={
+                Object {
+                  "color": "#000",
+                  "fontFamily": "System",
+                  "fontSize": 16,
+                }
+              }
+              uppercase={false}
+            >
+              😐
+            </Text>
+            <View
+              width={16}
+            />
+            <View
+              style={
+                Object {
+                  "flex": 1,
+                  "justifyContent": "center",
+                }
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "backgroundColor": "transparent",
+                    "fontSize": 17,
+                  }
+                }
+                testID="listItemTitle"
+                theme={
+                  Object {
+                    "colors": Object {
+                      "disabled": "hsl(208, 8%, 90%)",
+                      "divider": "#bcbbc1",
+                      "error": "#ff190c",
+                      "grey0": "#393e42",
+                      "grey1": "#43484d",
+                      "grey2": "#5e6977",
+                      "grey3": "#86939e",
+                      "grey4": "#bdc6cf",
+                      "grey5": "#e1e8ee",
+                      "greyOutline": "#bbb",
+                      "platform": Object {
+                        "android": Object {
+                          "error": "#f44336",
+                          "primary": "#2196f3",
+                          "secondary": "#9C27B0",
+                          "success": "#4caf50",
+                          "warning": "#ffeb3b",
+                        },
+                        "ios": Object {
+                          "error": "#ff3b30",
+                          "primary": "#007aff",
+                          "secondary": "#5856d6",
+                          "success": "#4cd964",
+                          "warning": "#ffcc00",
+                        },
+                      },
+                      "primary": "#2089dc",
+                      "searchBg": "#303337",
+                      "secondary": "#8F0CE8",
+                      "success": "#52c41a",
+                      "warning": "#faad14",
+                    },
+                  }
+                }
+              >
+                
+              </Text>
+            </View>
+            <View
+              width={16}
+            />
+            <Text
+              className="sc-kgoBCf hHEGGu"
+              style={
+                Object {
+                  "color": "#000",
+                  "fontFamily": "System",
+                  "fontSize": 16,
+                }
+              }
+              uppercase={false}
+            >
+              [missing "en.info.ratherNeutralImpact" translation]
+            </Text>
+          </View>
+        </View>
+        <View
+          className="sc-kGXeez hmMRXN"
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "white",
+                "borderBottomWidth": 0.5,
+                "borderColor": "#bcbbc1",
+                "borderTopWidth": 0.5,
+                "flexDirection": "row",
+                "padding": 14,
+              }
+            }
+          >
+            <Text
+              className="sc-chPdSV kIBorW"
+              style={
+                Object {
+                  "color": "#000",
+                  "fontFamily": "System",
+                  "fontSize": 16,
+                }
+              }
+              uppercase={false}
+            >
+              😨
+            </Text>
+            <View
+              width={16}
+            />
+            <View
+              style={
+                Object {
+                  "flex": 1,
+                  "justifyContent": "center",
+                }
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "backgroundColor": "transparent",
+                    "fontSize": 17,
+                  }
+                }
+                testID="listItemTitle"
+                theme={
+                  Object {
+                    "colors": Object {
+                      "disabled": "hsl(208, 8%, 90%)",
+                      "divider": "#bcbbc1",
+                      "error": "#ff190c",
+                      "grey0": "#393e42",
+                      "grey1": "#43484d",
+                      "grey2": "#5e6977",
+                      "grey3": "#86939e",
+                      "grey4": "#bdc6cf",
+                      "grey5": "#e1e8ee",
+                      "greyOutline": "#bbb",
+                      "platform": Object {
+                        "android": Object {
+                          "error": "#f44336",
+                          "primary": "#2196f3",
+                          "secondary": "#9C27B0",
+                          "success": "#4caf50",
+                          "warning": "#ffeb3b",
+                        },
+                        "ios": Object {
+                          "error": "#ff3b30",
+                          "primary": "#007aff",
+                          "secondary": "#5856d6",
+                          "success": "#4cd964",
+                          "warning": "#ffcc00",
+                        },
+                      },
+                      "primary": "#2089dc",
+                      "searchBg": "#303337",
+                      "secondary": "#8F0CE8",
+                      "success": "#52c41a",
+                      "warning": "#faad14",
+                    },
+                  }
+                }
+              >
+                
+              </Text>
+            </View>
+            <View
+              width={16}
+            />
+            <Text
+              className="sc-kgoBCf hHEGGu"
+              style={
+                Object {
+                  "color": "#000",
+                  "fontFamily": "System",
+                  "fontSize": 16,
+                }
+              }
+              uppercase={false}
+            >
+              [missing "en.info.prettyBadImpact" translation]
+            </Text>
+          </View>
+        </View>
+        <View
+          className="sc-kGXeez hmMRXN"
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "white",
+                "borderBottomWidth": 0.5,
+                "borderColor": "#bcbbc1",
+                "borderTopWidth": 0.5,
+                "flexDirection": "row",
+                "padding": 14,
+              }
+            }
+          >
+            <Text
+              className="sc-chPdSV kIBorW"
+              style={
+                Object {
+                  "color": "#000",
+                  "fontFamily": "System",
+                  "fontSize": 16,
+                }
+              }
+              uppercase={false}
+            >
+              😱
+            </Text>
+            <View
+              width={16}
+            />
+            <View
+              style={
+                Object {
+                  "flex": 1,
+                  "justifyContent": "center",
+                }
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "backgroundColor": "transparent",
+                    "fontSize": 17,
+                  }
+                }
+                testID="listItemTitle"
+                theme={
+                  Object {
+                    "colors": Object {
+                      "disabled": "hsl(208, 8%, 90%)",
+                      "divider": "#bcbbc1",
+                      "error": "#ff190c",
+                      "grey0": "#393e42",
+                      "grey1": "#43484d",
+                      "grey2": "#5e6977",
+                      "grey3": "#86939e",
+                      "grey4": "#bdc6cf",
+                      "grey5": "#e1e8ee",
+                      "greyOutline": "#bbb",
+                      "platform": Object {
+                        "android": Object {
+                          "error": "#f44336",
+                          "primary": "#2196f3",
+                          "secondary": "#9C27B0",
+                          "success": "#4caf50",
+                          "warning": "#ffeb3b",
+                        },
+                        "ios": Object {
+                          "error": "#ff3b30",
+                          "primary": "#007aff",
+                          "secondary": "#5856d6",
+                          "success": "#4cd964",
+                          "warning": "#ffcc00",
+                        },
+                      },
+                      "primary": "#2089dc",
+                      "searchBg": "#303337",
+                      "secondary": "#8F0CE8",
+                      "success": "#52c41a",
+                      "warning": "#faad14",
+                    },
+                  }
+                }
+              >
+                
+              </Text>
+            </View>
+            <View
+              width={16}
+            />
+            <Text
+              className="sc-kgoBCf hHEGGu"
+              style={
+                Object {
+                  "color": "#000",
+                  "fontFamily": "System",
+                  "fontSize": 16,
+                }
+              }
+              uppercase={false}
+            >
+              [missing "en.info.veryBadImpact" translation]
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</RCTScrollView>
+`;

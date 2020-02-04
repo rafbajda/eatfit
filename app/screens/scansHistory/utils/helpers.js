@@ -5,11 +5,12 @@ import globalHps from '../../../shared/utils/helpers';
 import moment from 'moment';
 import screens from '../../../navigation/screens';
 import NavigationService from '../../../navigation/NavigationService';
+import {isArray} from 'lodash';
 
 const getUserFriendlyDate = date =>
     moment(date).format('MMMM Do YYYY, h:mm:ss a');
 
-const getScansList = (scans, action) =>
+const getScansList = (scans, action) => isArray(scans) ?
     scans.map(scan => {
         const source = { uri: scan.scan_url };
         const scanDate = getUserFriendlyDate(
@@ -28,7 +29,7 @@ const getScansList = (scans, action) =>
                 chevron
             />
         );
-    });
+    }) : [];
 
 export default {
     getScansList

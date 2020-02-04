@@ -1,5 +1,10 @@
 import * as _ from 'lodash';
 
+const DEFAULT_DESCRIPTION_LOCALE = {
+    name: null,
+    description: null
+}
+
 const completeSideBarListWithActions = (items, actions) =>
     items.map(item => ({ ...item, action: actions[item.id] }));
 
@@ -62,7 +67,7 @@ const createUserObjectByProvider = (provider, data) => {
 
 const getNameDescriptionByLocale = (substance, locale) => {
     const language = _.camelCase(locale);
-    const { name, description } = substance[language];
+    const { name, description } = substance ? substance[language] : DEFAULT_DESCRIPTION_LOCALE;
 
     return { name, description };
 };

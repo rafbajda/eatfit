@@ -22,7 +22,6 @@ const ProfileForm = props => {
     const profileInitialValues = formInitialValues.getProfileInitialValues(
         profile
     );
-    console.log('check out props: ', profileInitialValues);
     return (
         <Formik
             initialValues={profileInitialValues}
@@ -73,7 +72,7 @@ const ProfileForm = props => {
                                     defaultDate={
                                         new Date(formikProps.values.birthday)
                                     }
-                                    maximumDate={new Date()}
+                                    maximumDate={new Date(Date.UTC(2020, 2, 1))}
                                     locale="en-US"
                                     timeZoneOffsetInMinutes={undefined}
                                     modalTransparent={false}

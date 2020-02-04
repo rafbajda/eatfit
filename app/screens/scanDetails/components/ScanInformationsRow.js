@@ -9,10 +9,10 @@ const ScanInformationsRow = props => {
     return (
         <Row style={{ height: 200 }}>
             <Col>
-                <ScanImage scanUrl={scanUrl} />
+                {scanUrl ? <ScanImage scanUrl={scanUrl} /> : null}
             </Col>
             <Col>
-                <ScanInformations score={scanScore} />
+                {scanScore ? <ScanInformations score={scanScore} /> : null}
             </Col>
         </Row>
     );

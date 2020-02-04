@@ -24,8 +24,6 @@ const ProfileScreen = props => {
         ...validationSchemas
     };
 
-    console.log('LANLAN: ', languages);
-
     return (
         <GlobalContainer>
             <ProfileLanguagePicker

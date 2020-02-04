@@ -12,15 +12,15 @@ const ScanDetailsScreen = props => {
     return (
         <Container>
             <Grid>
-                <ScanInformationsRow
+                {scan ? <ScanInformationsRow
                     scanUrl={scan.scanUrl}
                     scanScore={scan.score}
-                />
+                /> : null}
                 <Row>
-                    <SubstancesList
+                    {scan ? <SubstancesList
                         substances={scan.substances}
                         goToSubstanceDetails={goToSubstanceDetails}
-                    />
+                    /> : null}
                 </Row>
             </Grid>
         </Container>

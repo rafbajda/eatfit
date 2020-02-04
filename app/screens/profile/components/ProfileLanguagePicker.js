@@ -5,14 +5,16 @@ import styles, {
     ProfileLanguageRow,
     ProfilePickerColumn
 } from '../styles/profileLanguagePickerStyles';
+import {isArray} from 'lodash';
 
 const ProfileLanguagePicker = props => {
     const { languages, placeholderStyle, userLanguage, setUserLanguage } = {
         ...props,
         ...styles
     };
-    console.log('props: ', props);
-    const PickerItems = languages.map(language => (
+    const finalLanguages = isArray(languages) ? languages : [];
+
+    const PickerItems = finalLanguages.map(language => (
         <Picker.Item
             label={language.label}
             value={language.id}

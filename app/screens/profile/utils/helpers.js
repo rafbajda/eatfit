@@ -5,8 +5,8 @@ const normalizeCamelCaseToSnakeCase = obj => {
 };
 
 const getInitialsFromUser = user => {
-    const firstLetter = user.firstName ? user.firstName[0] : '';
-    const secondLetter = user.lastName ? user.lastName[0] : '';
+    const firstLetter = user && user.firstName ? user.firstName[0] : '';
+    const secondLetter = user && user.lastName ? user.lastName[0] : '';
     return (firstLetter + secondLetter).toUpperCase();
 };
 

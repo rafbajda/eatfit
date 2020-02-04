@@ -6,7 +6,6 @@ import selectors from './state/selectors';
 
 const AllSubstancesScreen = props => {
     const { substances, goToSubstanceDetails } = props;
-    console.log('subs', substances);
     return (
         <SubstancesList
             substances={substances}
