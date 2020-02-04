@@ -2,16 +2,16 @@ import 'react-native';
 import React from 'react';
 import renderer from 'react-test-renderer';
 import NavigationTestUtils from 'react-navigation/NavigationTestUtils';
-import Legend from '../app/screens/home/components/Legend';
+import LanguagePicker from "../../app/screens/login/components/LanguagePicker";
 
-describe('Legend snapshot', () => {
+describe('LanguagePicker snapshot', () => {
     jest.useFakeTimers();
     beforeEach(() => {
         NavigationTestUtils.resetInternalState();
     });
 
     it('renders component', async () => {
-        const tree = renderer.create(<Legend />).toJSON();
+        const tree = renderer.create(<LanguagePicker />).toJSON();
         expect(tree).toMatchSnapshot();
     });
 });

@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NoEmailMessage snapshot renders component 1`] = `
+<Text
+  className="sc-bdVaJa gHOKXO"
+  style={
+    Object {
+      "color": "#000",
+      "fontFamily": "System",
+      "fontSize": 16,
+    }
+  }
+  uppercase={false}
+>
+  [missing "en.info.didNotReceiveEmail" translation]
+</Text>
+`;

@@ -1,25 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="67b918fd-ce01-470b-83af-d4f08040e0ba" name="Default Changelist" comment="">
+    <list default="true" id="67b918fd-ce01-470b-83af-d4f08040e0ba" name="Default Changelist" comment="translations work">
+      <change afterPath="$PROJECT_DIR$/__tests__/Application.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/__tests__/allSubstances/AllSubstancesScreen.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/__tests__/forgotPassword/ForgotPasswordForm.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/__tests__/forgotPassword/ForgotPasswordScreen.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/__tests__/forgotPassword/ResetPasswordMessage.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/__tests__/home/HomeScreen.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/__tests__/home/ScanButton.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/__tests__/login/LanguagePicker.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/__tests__/login/LoginDivider.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/__tests__/login/LoginForm.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/__tests__/login/LoginIcon.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/__tests__/login/LoginScreen.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/__tests__/login/SignUp.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/__tests__/login/SocialLogin.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/__tests__/notVerified/LogoutButton.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/__tests__/notVerified/NoEmailMessage.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/__tests__/notVerified/NotVerifiedScreen.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/__tests__/notVerified/NotVerifyDivider.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/__tests__/notVerified/RefreshVerificationButton.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/__tests__/notVerified/SendEmailButton.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/__tests__/notVerified/VerificationMessage.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/__tests__/profile/ProfileForm.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/__tests__/profile/ProfileImage.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/__tests__/profile/ProfileLanguagePicker.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/__tests__/profile/ProfileScreen.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/__tests__/scanDetails/ScanDetailsScreen.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/__tests__/scanDetails/ScanImage.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/__tests__/scanDetails/ScanInformations.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/__tests__/scanDetails/ScanInformationsRow.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/__tests__/scanDetails/SubstancesList.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/__tests__/scansHistory/ScanList.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/__tests__/scansHistory/ScansHistoryScreen.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/__tests__/shared/GlobalHeader.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/__tests__/shared/GlobalLoader.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/__tests__/shared/Sidebar.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/__tests__/signUp/SignUpForm.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/__tests__/signUp/SignUpScreen.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/__tests__/substanceDetails/SubstanceDescription.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/__tests__/substanceDetails/SubstanceDetailsScreen.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/__tests__/substanceDetails/SubstanceImage.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/__tests__/substanceDetails/SubstanceInformation.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/__tests__/substanceDetails/SubstanceInformationsRow.test.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.expo/packager-info.json" beforeDir="false" afterPath="$PROJECT_DIR$/.expo/packager-info.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.expo/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/.expo/settings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/i18n/translations/en-US.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/i18n/translations/en-US.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/i18n/translations/pl.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/i18n/translations/pl.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/allSubstances/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/allSubstances/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/login/utils/operations.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/login/utils/operations.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/scanDetails/components/ScanInformations.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/scanDetails/components/ScanInformations.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/scanDetails/components/SubstancesList.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/scanDetails/components/SubstancesList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/scanDetails/utils/helpers.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/scanDetails/utils/helpers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/substanceDetails/components/SubstanceInformation.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/substanceDetails/components/SubstanceInformation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/substanceDetails/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/substanceDetails/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/shared/constants/information.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/shared/constants/information.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/shared/state/middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/shared/state/middleware.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/shared/utils/helpers.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/shared/utils/helpers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/shared/utils/operations.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/shared/utils/operations.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/__tests__/Legend.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/__tests__/home/Legend.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/__tests__/__snapshots__/Legend.test.js.snap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/profile/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/profile/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,7 +66,16 @@
     <auto-save>true</auto-save>
   </component>
   <component name="ProjectId" id="1SWYyCzhBtS160waMUp0iYm2Pka" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="android.sdk.path" value="$PROJECT_DIR$/../Android/Sdk" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -47,25 +87,16 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
-    <property name="ts.external.directory.path" value="$PROJECT_DIR$/functions/node_modules/typescript/lib" />
+    <property name="settings.editor.selected.configurable" value="watcher.settings" />
+    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/__tests__/home-components" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/assets/images" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -107,6 +138,10 @@
       <workItem from="1580466681006" duration="2740000" />
       <workItem from="1580656806931" duration="717000" />
       <workItem from="1580672788941" duration="3619000" />
+      <workItem from="1580751716940" duration="741000" />
+      <workItem from="1580757099537" duration="1462000" />
+      <workItem from="1580820093822" duration="6752000" />
+      <workItem from="1580828678901" duration="2415000" />
     </task>
     <task id="LOCAL-00001" summary="status messaging works">
       <created>1572216147756</created>
@@ -180,5 +215,35 @@
     <MESSAGE value="social media login fixed" />
     <MESSAGE value="translations work" />
     <option name="LAST_COMMIT_MESSAGE" value="translations work" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="360" y="193" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1580825379851">
+      <screen x="0" y="23" width="1792" height="1017" />
+    </state>
+    <state x="360" y="193" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1792.1017@0.23.1792.1017" timestamp="1580825379851" />
+    <state x="555" y="331" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1580828523795">
+      <screen x="0" y="23" width="1792" height="1017" />
+    </state>
+    <state x="555" y="331" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1792.1017@0.23.1792.1017" timestamp="1580828523795" />
+    <state x="477" y="46" key="CommitChangelistDialog2" timestamp="1580829013829">
+      <screen x="0" y="23" width="1792" height="1017" />
+    </state>
+    <state x="477" y="46" key="CommitChangelistDialog2/0.23.1792.1017@0.23.1792.1017" timestamp="1580829013829" />
+    <state x="397" y="170" key="SettingsEditor" timestamp="1580831628733">
+      <screen x="0" y="23" width="1792" height="1017" />
+    </state>
+    <state x="397" y="170" key="SettingsEditor/0.23.1792.1017@0.23.1792.1017" timestamp="1580831628733" />
+    <state x="678" y="450" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1580828200363">
+      <screen x="0" y="23" width="1792" height="1017" />
+    </state>
+    <state x="678" y="450" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1792.1017@0.23.1792.1017" timestamp="1580828200363" />
+    <state x="544" y="143" width="703" height="777" key="find.popup" timestamp="1580830575440">
+      <screen x="0" y="23" width="1792" height="1017" />
+    </state>
+    <state x="544" y="143" width="703" height="777" key="find.popup/0.23.1792.1017@0.23.1792.1017" timestamp="1580830575440" />
+    <state x="561" y="248" width="670" height="676" key="search.everywhere.popup" timestamp="1580831573424">
+      <screen x="0" y="23" width="1792" height="1017" />
+    </state>
+    <state x="561" y="248" width="670" height="676" key="search.everywhere.popup/0.23.1792.1017@0.23.1792.1017" timestamp="1580831573424" />
   </component>
 </project>

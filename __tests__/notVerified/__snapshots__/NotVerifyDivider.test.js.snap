@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NotVerifyDivider snapshot renders component 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "flexDirection": "row",
+      "height": 24,
+      "marginVertical": 6,
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "borderBottomWidth": 1,
+          "height": 24,
+          "transform": Array [
+            Object {
+              "translateY": -12,
+            },
+          ],
+        },
+        Object {
+          "borderColor": "#dfe3ee",
+        },
+        false,
+        Object {
+          "flex": 1,
+        },
+      ]
+    }
+  />
+  <Text
+    style={
+      Array [
+        Object {
+          "fontSize": 16,
+          "fontWeight": "500",
+          "paddingHorizontal": 24,
+        },
+        Object {
+          "color": "rgba(0,0,0,.85)",
+        },
+      ]
+    }
+  >
+    <Text
+      className="sc-bdVaJa fuEkbi"
+      style={
+        Object {
+          "color": "#000",
+          "fontFamily": "System",
+          "fontSize": 16,
+        }
+      }
+      uppercase={false}
+    >
+      [missing "en.dividers.or" translation]
+    </Text>
+  </Text>
+  <View
+    style={
+      Array [
+        Object {
+          "borderBottomWidth": 1,
+          "height": 24,
+          "transform": Array [
+            Object {
+              "translateY": -12,
+            },
+          ],
+        },
+        Object {
+          "borderColor": "#dfe3ee",
+        },
+        false,
+        Object {
+          "flex": 1,
+        },
+      ]
+    }
+  />
+</View>
+`;

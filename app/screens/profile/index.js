@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { CenterContainer, GlobalContainer } from '../../shared/styles/common';
+import { GlobalContainer } from '../../shared/styles/common';
 import validationSchemas from '../../shared/utils/validationSchemas';
 import actions from './state/actions';
 import selectors from './state/selectors';
@@ -23,6 +23,8 @@ const ProfileScreen = props => {
         ...props,
         ...validationSchemas
     };
+
+    console.log('LANLAN: ', languages);
 
     return (
         <GlobalContainer>

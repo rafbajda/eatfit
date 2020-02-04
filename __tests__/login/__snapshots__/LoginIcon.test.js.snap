@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoginIcon snapshot renders component 1`] = `
+<View
+  className="sc-bxivhb dulVTN"
+  style={
+    Object {
+      "flex": 1,
+      "flexDirection": "row",
+    }
+  }
+>
+  <Image
+    source={1}
+    square={true}
+    style={
+      Array [
+        Object {
+          "borderRadius": 0,
+          "height": 56,
+          "width": 56,
+        },
+        Object {
+          "height": 180,
+          "marginBottom": 25,
+          "width": 180,
+        },
+      ]
+    }
+  />
+</View>
+`;

@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`VerificationMessage snapshot renders component 1`] = `
+<View
+  className="sc-gqjmRU hVdkzq"
+  style={
+    Object {
+      "backgroundColor": "#fff",
+      "flex": 1,
+      "height": 1334,
+    }
+  }
+>
+  <Text
+    className="sc-bdVaJa bAkMmE"
+    style={
+      Object {
+        "color": "#000",
+        "fontFamily": "System",
+        "fontSize": 16,
+      }
+    }
+    uppercase={false}
+  >
+    [missing "en.info.accountIsNotVerified" translation]
+  </Text>
+  <Text
+    className="sc-bwzfXH jrEKTs"
+    style={
+      Object {
+        "color": "#000",
+        "fontFamily": "System",
+        "fontSize": 16,
+      }
+    }
+    uppercase={false}
+  >
+    [missing "en.info.check" translation]
+     
+    email
+     
+    [missing "en.info.andClickOnVerificationLink" translation]
+  </Text>
+</View>
+`;

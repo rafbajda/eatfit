@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SignUp snapshot renders component 1`] = `
+<View
+  className="sc-bxivhb sc-gZMcBi fJlXDV"
+  style={
+    Object {
+      "flex": 1,
+      "flexDirection": "row",
+    }
+  }
+>
+  <Text
+    className="sc-gqjmRU bPMnPF"
+    style={
+      Object {
+        "color": "#000",
+        "fontFamily": "System",
+        "fontSize": 16,
+      }
+    }
+    uppercase={false}
+  >
+    [missing "en.info.dontHaveAccount" translation]
+    <Text
+      className="sc-VigVT cRRkLs"
+      onPress={[Function]}
+      style={
+        Object {
+          "color": "#000",
+          "fontFamily": "System",
+          "fontSize": 16,
+        }
+      }
+      uppercase={false}
+    >
+       [missing "en.actions.signUp" translation]
+    </Text>
+  </Text>
+</View>
+`;

@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LogoutButton snapshot renders component 1`] = `
+<View
+  style={
+    Object {
+      "flex": 0,
+      "flexDirection": "row",
+      "height": "auto",
+      "justifyContent": "center",
+      "paddingBottom": 12,
+      "paddingTop": 12,
+    }
+  }
+>
+  <View
+    accessible={true}
+    focusable={true}
+    isTVSelectable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#007aff",
+        "borderBottomWidth": null,
+        "borderColor": "#007aff",
+        "borderLeftWidth": null,
+        "borderRadius": 57,
+        "borderRightWidth": null,
+        "borderTopWidth": null,
+        "borderWidth": undefined,
+        "elevation": 2,
+        "flexDirection": "row",
+        "height": 45,
+        "justifyContent": "space-between",
+        "opacity": 1,
+        "paddingBottom": 6,
+        "paddingTop": 6,
+        "shadowColor": undefined,
+        "shadowOffset": undefined,
+        "shadowOpacity": undefined,
+        "shadowRadius": undefined,
+      }
+    }
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "color": "#fff",
+            "fontFamily": "System",
+            "fontSize": 16.5,
+            "marginLeft": 0,
+            "marginRight": 0,
+            "paddingLeft": 16,
+            "paddingRight": 16,
+          },
+          Object {
+            "fontSize": 16,
+            "textAlign": "center",
+          },
+        ]
+      }
+      uppercase={false}
+    >
+      [missing "en.buttons.logIntoAnotherAccount" translation]
+    </Text>
+  </View>
+</View>
+`;

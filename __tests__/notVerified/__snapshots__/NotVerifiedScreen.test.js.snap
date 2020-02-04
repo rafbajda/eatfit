@@ -1,0 +1,369 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NotVerifiedScreen snapshot renders component 1`] = `
+<View
+  className="sc-VigVT dRbEdH"
+  style={
+    Object {
+      "backgroundColor": "#fff",
+      "flex": 1,
+      "height": 1334,
+    }
+  }
+>
+  <Text />
+  <View
+    className="sc-VigVT dRbEdH"
+    style={
+      Object {
+        "backgroundColor": "#fff",
+        "flex": 1,
+        "height": 1334,
+      }
+    }
+  >
+    <Text
+      className="sc-bwzfXH jLzAds"
+      style={
+        Object {
+          "color": "#000",
+          "fontFamily": "System",
+          "fontSize": 16,
+        }
+      }
+      uppercase={false}
+    >
+      [missing "en.info.accountIsNotVerified" translation]
+    </Text>
+    <Text
+      className="sc-htpNat wbGNP"
+      style={
+        Object {
+          "color": "#000",
+          "fontFamily": "System",
+          "fontSize": 16,
+        }
+      }
+      uppercase={false}
+    >
+      [missing "en.info.check" translation]
+       
+      email
+       
+      [missing "en.info.andClickOnVerificationLink" translation]
+    </Text>
+  </View>
+  <View
+    className="sc-jTzLTM fjgQGV"
+    style={
+      Object {
+        "flex": 1,
+        "flexDirection": "row",
+      }
+    }
+  >
+    <View
+      accessible={true}
+      focusable={true}
+      isTVSelectable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#007aff",
+          "borderBottomWidth": null,
+          "borderColor": "#007aff",
+          "borderLeftWidth": null,
+          "borderRadius": 5,
+          "borderRightWidth": null,
+          "borderTopWidth": null,
+          "borderWidth": undefined,
+          "elevation": 2,
+          "flexDirection": "row",
+          "height": 45,
+          "justifyContent": "space-between",
+          "opacity": 1,
+          "paddingBottom": 6,
+          "paddingTop": 6,
+          "shadowColor": undefined,
+          "shadowOffset": undefined,
+          "shadowOpacity": undefined,
+          "shadowRadius": undefined,
+        }
+      }
+    >
+      <Text
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+              "color": "#fff",
+              "fontFamily": "System",
+              "fontSize": 16.5,
+              "marginLeft": 0,
+              "marginRight": 0,
+              "paddingLeft": 16,
+              "paddingRight": 16,
+            },
+            Object {
+              "fontSize": 17,
+              "textAlign": "center",
+            },
+          ]
+        }
+        uppercase={false}
+      >
+        [missing "en.buttons.refreshVerificationStatus" translation]
+      </Text>
+    </View>
+  </View>
+  <Text
+    className="sc-jzJRlG jWfZVy"
+    style={
+      Object {
+        "color": "#000",
+        "fontFamily": "System",
+        "fontSize": 16,
+      }
+    }
+    uppercase={false}
+  >
+    [missing "en.info.didNotReceiveEmail" translation]
+  </Text>
+  <View
+    style={
+      Object {
+        "flex": 0,
+        "flexDirection": "row",
+        "height": "auto",
+        "justifyContent": "center",
+        "paddingBottom": 12,
+        "paddingTop": 12,
+      }
+    }
+  >
+    <View
+      accessible={true}
+      focusable={true}
+      isTVSelectable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#007aff",
+          "borderBottomWidth": null,
+          "borderColor": "#007aff",
+          "borderLeftWidth": null,
+          "borderRadius": 57,
+          "borderRightWidth": null,
+          "borderTopWidth": null,
+          "borderWidth": undefined,
+          "elevation": 2,
+          "flexDirection": "row",
+          "height": 45,
+          "justifyContent": "space-between",
+          "opacity": 1,
+          "paddingBottom": 6,
+          "paddingTop": 6,
+          "shadowColor": undefined,
+          "shadowOffset": undefined,
+          "shadowOpacity": undefined,
+          "shadowRadius": undefined,
+        }
+      }
+    >
+      <Text
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+              "color": "#fff",
+              "fontFamily": "System",
+              "fontSize": 16.5,
+              "marginLeft": 0,
+              "marginRight": 0,
+              "paddingLeft": 16,
+              "paddingRight": 16,
+            },
+            Object {
+              "fontSize": 16,
+              "textAlign": "center",
+            },
+          ]
+        }
+        uppercase={false}
+      >
+        [missing "en.buttons.sendAnotherEmail" translation]
+      </Text>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "height": 24,
+        "marginVertical": 6,
+      }
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "borderBottomWidth": 1,
+            "height": 24,
+            "transform": Array [
+              Object {
+                "translateY": -12,
+              },
+            ],
+          },
+          Object {
+            "borderColor": "#dfe3ee",
+          },
+          false,
+          Object {
+            "flex": 1,
+          },
+        ]
+      }
+    />
+    <Text
+      style={
+        Array [
+          Object {
+            "fontSize": 16,
+            "fontWeight": "500",
+            "paddingHorizontal": 24,
+          },
+          Object {
+            "color": "rgba(0,0,0,.85)",
+          },
+        ]
+      }
+    >
+      <Text
+        className="sc-cSHVUG ksCTtB"
+        style={
+          Object {
+            "color": "#000",
+            "fontFamily": "System",
+            "fontSize": 16,
+          }
+        }
+        uppercase={false}
+      >
+        [missing "en.dividers.or" translation]
+      </Text>
+    </Text>
+    <View
+      style={
+        Array [
+          Object {
+            "borderBottomWidth": 1,
+            "height": 24,
+            "transform": Array [
+              Object {
+                "translateY": -12,
+              },
+            ],
+          },
+          Object {
+            "borderColor": "#dfe3ee",
+          },
+          false,
+          Object {
+            "flex": 1,
+          },
+        ]
+      }
+    />
+  </View>
+  <View
+    style={
+      Object {
+        "flex": 0,
+        "flexDirection": "row",
+        "height": "auto",
+        "justifyContent": "center",
+        "paddingBottom": 12,
+        "paddingTop": 12,
+      }
+    }
+  >
+    <View
+      accessible={true}
+      focusable={true}
+      isTVSelectable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#007aff",
+          "borderBottomWidth": null,
+          "borderColor": "#007aff",
+          "borderLeftWidth": null,
+          "borderRadius": 57,
+          "borderRightWidth": null,
+          "borderTopWidth": null,
+          "borderWidth": undefined,
+          "elevation": 2,
+          "flexDirection": "row",
+          "height": 45,
+          "justifyContent": "space-between",
+          "opacity": 1,
+          "paddingBottom": 6,
+          "paddingTop": 6,
+          "shadowColor": undefined,
+          "shadowOffset": undefined,
+          "shadowOpacity": undefined,
+          "shadowRadius": undefined,
+        }
+      }
+    >
+      <Text
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+              "color": "#fff",
+              "fontFamily": "System",
+              "fontSize": 16.5,
+              "marginLeft": 0,
+              "marginRight": 0,
+              "paddingLeft": 16,
+              "paddingRight": 16,
+            },
+            Object {
+              "fontSize": 16,
+              "textAlign": "center",
+            },
+          ]
+        }
+        uppercase={false}
+      >
+        [missing "en.buttons.logIntoAnotherAccount" translation]
+      </Text>
+    </View>
+  </View>
+</View>
+`;
