@@ -14,8 +14,14 @@ const socialConfig = {
 export default class socialService {
     static async loginWithFacebook() {
         try {
-            return Facebook.initializeAsync(socialConfig.facebookAppId, 'eatfit').then(async () => {
-                const { type, token } = await Facebook.logInWithReadPermissionsAsync(
+            return Facebook.initializeAsync(
+                socialConfig.facebookAppId,
+                'eatfit'
+            ).then(async () => {
+                const {
+                    type,
+                    token
+                } = await Facebook.logInWithReadPermissionsAsync(
                     socialConfig.facebookAppId,
                     {
                         permissions: ['public_profile']
@@ -23,7 +29,9 @@ export default class socialService {
                 );
 
                 if (type === 'success' && token) {
-                    const credential = firebase.auth.FacebookAuthProvider.credential(token);
+                    const credential = firebase.auth.FacebookAuthProvider.credential(
+                        token
+                    );
                     return firebase.auth().signInWithCredential(credential);
                 }
                 return new Promise(resolve => resolve({ cancelled: true }));

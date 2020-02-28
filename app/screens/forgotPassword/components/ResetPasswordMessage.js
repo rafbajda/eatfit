@@ -16,7 +16,9 @@ const ResetPasswordMessage = () => {
         <ResetPasswordMessageContainer>
             <Thumbnail square source={logoImage} style={iconStyle} />
 
-            <RestPasswordMainMessageText>{t('info.resetPassword')}</RestPasswordMainMessageText>
+            <RestPasswordMainMessageText>
+                {t('info.resetPassword')}
+            </RestPasswordMainMessageText>
             <ResetPasswordInfoMessageText>
                 {t('info.resetPasswordDetails')}
             </ResetPasswordInfoMessageText>

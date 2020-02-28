@@ -1,6 +1,10 @@
 import React from 'react';
 import I18n from 'i18n-js';
-import { SignUpContainer, InformationText, SignUpText } from '../styles/signUpStyles';
+import {
+    SignUpContainer,
+    InformationText,
+    SignUpText
+} from '../styles/signUpStyles';
 import screens from '../../../navigation/screens';
 
 const SignUp = props => {

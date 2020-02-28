@@ -19,8 +19,13 @@ const ScanButtonElement = props => {
             <ScanButton onPress={() => scan()} disabled={isScanLoading}>
                 {isScanLoading ? (
                     <LoadingIndicator>
-                        <LoadingIndicatorText>{scanStatusMessage}</LoadingIndicatorText>
-                        <UIActivityIndicator size={indicatorSize} color={globalWhite} />
+                        <LoadingIndicatorText>
+                            {scanStatusMessage}
+                        </LoadingIndicatorText>
+                        <UIActivityIndicator
+                            size={indicatorSize}
+                            color={globalWhite}
+                        />
                     </LoadingIndicator>
                 ) : (
                     <ScanButtonText>{t('buttons.scan')}</ScanButtonText>

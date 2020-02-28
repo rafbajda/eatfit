@@ -11,7 +11,14 @@ import {
 } from '../styles/legendStyles';
 
 const Legend = () => {
-    const { veryBadImpact, badImpact, neutralImpact, goodImpact, veryGoodImpact, t } = {
+    const {
+        veryBadImpact,
+        badImpact,
+        neutralImpact,
+        goodImpact,
+        veryGoodImpact,
+        t
+    } = {
         ...emojis,
         ...I18n
     };
@@ -56,7 +63,9 @@ const Legend = () => {
         {
             id: 4,
             rightElement: (
-                <LegendIconDescriptionHeader>{t('info.veryBadImpact')}</LegendIconDescriptionHeader>
+                <LegendIconDescriptionHeader>
+                    {t('info.veryBadImpact')}
+                </LegendIconDescriptionHeader>
             ),
             leftElement: <LegendIcon>{veryBadImpact}</LegendIcon>
         }
@@ -64,7 +73,9 @@ const Legend = () => {
     return (
         <LegendRow>
             <LegendHeader>{t('labels.instruction')}</LegendHeader>
-            <LegendDescription>{t('info.instructionDetails')}</LegendDescription>
+            <LegendDescription>
+                {t('info.instructionDetails')}
+            </LegendDescription>
             {list.map(l => (
                 <LegendListElement
                     key={l.id}

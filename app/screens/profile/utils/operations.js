@@ -36,7 +36,10 @@ const openImagePicker = async dispatch => {
 };
 
 const openCamera = async dispatch => {
-    const { status } = await Permissions.askAsync(Permissions.CAMERA, Permissions.CAMERA_ROLL);
+    const { status } = await Permissions.askAsync(
+        Permissions.CAMERA,
+        Permissions.CAMERA_ROLL
+    );
     if (status === 'granted') {
         const result = await ImagePicker.launchCameraAsync({
             allowsEditing: true,
@@ -87,9 +90,14 @@ const updateUserProfile = async (data, dispatch) => {
     firebaseOps
         .updateUser(data.authUser.uid, normalizedData)
         .then(async () => {
-            const updateUserSuccess = () => dispatch(actions.updateUserSuccess());
+            const updateUserSuccess = () =>
+                dispatch(actions.updateUserSuccess());
             const setUser = user => dispatch(globalActions.setUser(user));
-            await firebaseOps.reloadUser(data.authUser.uid, setUser, updateUserSuccess);
+            await firebaseOps.reloadUser(
+                data.authUser.uid,
+                setUser,
+                updateUserSuccess
+            );
         })
         .catch(error => dispatch(actions.updateUserError(error)));
 };

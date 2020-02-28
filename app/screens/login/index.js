@@ -69,7 +69,10 @@ class LoginScreen extends React.Component {
                     isKeyboardVisible={isKeyboardVisible}
                 />
                 <LoginDivider />
-                <SocialLogin loginFacebook={loginSocialFacebook} loginGoogle={loginSocialGoogle} />
+                <SocialLogin
+                    loginFacebook={loginSocialFacebook}
+                    loginGoogle={loginSocialGoogle}
+                />
                 <SignUp nav={navigation} />
             </GlobalContainer>
         );
@@ -86,12 +89,15 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
     login: payload => dispatch(actions.loginEmail(payload)),
-    setCurrentLanguage: language => dispatch(globalActions.setLanguage(language)),
+    setCurrentLanguage: language =>
+        dispatch(globalActions.setLanguage(language)),
     setUserState: user => dispatch(globalActions.setUser(user)),
     loginSocialFacebook: () => dispatch(actions.loginFacebook()),
     loginSocialGoogle: () => dispatch(actions.loginGoogle()),
-    setUpKeyboardListeners: () => dispatch(globalActions.setUpKeyboardListeners()),
-    removeKeyboardListeners: () => dispatch(globalActions.removeKeyboardListeners())
+    setUpKeyboardListeners: () =>
+        dispatch(globalActions.setUpKeyboardListeners()),
+    removeKeyboardListeners: () =>
+        dispatch(globalActions.removeKeyboardListeners())
 });
 
 export default compose(

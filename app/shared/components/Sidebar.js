@@ -17,11 +17,16 @@ const SideBar = props => {
         () => navigation.navigate(screens.ScansHistory),
         signOut
     ];
-    const items = hps.completeSideBarListWithActions(lists.SIDE_BAR_LIST, sideBarActions);
+    const items = hps.completeSideBarListWithActions(
+        lists.SIDE_BAR_LIST,
+        sideBarActions
+    );
 
     const sideBarItems = items.map(item => {
         const { id, icon, action, label } = { ...item };
-        return <ListItem key={id} leftIcon={icon} onPress={action} title={label} />;
+        return (
+            <ListItem key={id} leftIcon={icon} onPress={action} title={label} />
+        );
     });
 
     return (

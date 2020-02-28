@@ -23,7 +23,9 @@ const ScanInformations = props => {
                 <ScanRate color={color}>{roundedScore}</ScanRate>
                 <ScanRatingIcon>{emoji}</ScanRatingIcon>
             </ScanInformationInfo>
-            <ScanInformationDescription color={color}>{description}</ScanInformationDescription>
+            <ScanInformationDescription color={color}>
+                {description}
+            </ScanInformationDescription>
         </ScanInformationContainer>
     );
 };

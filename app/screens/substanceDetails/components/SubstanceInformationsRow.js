@@ -12,7 +12,10 @@ const SubstanceInformationsRow = props => {
                 <SubstanceImage imageUrl={imageUrl} />
             </Col>
             <Col>
-                <SubstanceInformation substanceName={substanceName} score={score} />
+                <SubstanceInformation
+                    substanceName={substanceName}
+                    score={score}
+                />
             </Col>
         </Row>
     );

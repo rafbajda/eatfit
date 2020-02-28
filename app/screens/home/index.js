@@ -1,7 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import GlobalHeader from '../../shared/components/GlobalHeader';
-import { CenterContainer, LoggedInGlobalContainer } from '../../shared/styles/common';
+import {
+    CenterContainer,
+    LoggedInGlobalContainer
+} from '../../shared/styles/common';
 import globalSelectors from '../../shared/state/selectors';
 import GlobalLoader from '../../shared/components/GlobalLoader';
 import actions from './state/actions';
@@ -10,7 +13,14 @@ import ScanButtonElement from './components/ScanButton';
 import Legend from './components/Legend';
 
 const HomeScreen = props => {
-    const { navigation, user, isAuthLoading, isScanLoading, scan, scanStatusMessage } = {
+    const {
+        navigation,
+        user,
+        isAuthLoading,
+        isScanLoading,
+        scan,
+        scanStatusMessage
+    } = {
         ...props
     };
 
@@ -20,7 +30,10 @@ const HomeScreen = props => {
 
     return (
         <LoggedInGlobalContainer>
-            <GlobalHeader nav={navigation} avatar={user && user.photoUrl ? user.photoUrl : null} />
+            <GlobalHeader
+                nav={navigation}
+                avatar={user && user.photoUrl ? user.photoUrl : null}
+            />
             <CenterContainer>
                 <ScanButtonElement
                     isScanLoading={isScanLoading}

@@ -59,7 +59,9 @@ const getAllSubstances = dispatch => {
         .collection(`/substances`)
         .get()
         .then(querySnap => {
-            const substances = querySnap.docs.map(doc => hps.normalizeKeysToCamelCase(doc.data()));
+            const substances = querySnap.docs.map(doc =>
+                hps.normalizeKeysToCamelCase(doc.data())
+            );
             dispatch(actions.getAllSubstancesSuccess(substances));
         })
         .catch(err => dispatch(actions.getAllSubstancesError(err)));

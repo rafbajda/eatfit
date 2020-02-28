@@ -14,7 +14,12 @@ import { globalWhite } from '../../../shared/constants/colors';
 import validationSchemas from '../../../shared/utils/validationSchemas';
 
 const ForgotPasswordForm = props => {
-    const { resetPassword, isAuthLoading, forgotPasswordInitialValues, forgotPasswordSchema } = {
+    const {
+        resetPassword,
+        isAuthLoading,
+        forgotPasswordInitialValues,
+        forgotPasswordSchema
+    } = {
         ...props,
         ...initialFormValues,
         ...validationSchemas
@@ -34,13 +39,16 @@ const ForgotPasswordForm = props => {
                                 <Input
                                     keyboardType="email-address"
                                     placeholder={t('placeholders.email')}
-                                    onChangeText={formikProps.handleChange('email')}
+                                    onChangeText={formikProps.handleChange(
+                                        'email'
+                                    )}
                                     onBlur={formikProps.handleBlur('email')}
                                     disabled={isAuthLoading}
                                 />
                             </Item>
                             <ErrorText>
-                                {formikProps.touched.email && formikProps.errors.email}
+                                {formikProps.touched.email &&
+                                    formikProps.errors.email}
                             </ErrorText>
                         </CenterFormContainerPaddingTop>
                     </CenterRow>
@@ -50,7 +58,10 @@ const ForgotPasswordForm = props => {
                             disabled={isAuthLoading}
                         >
                             {isAuthLoading ? (
-                                <UIActivityIndicator size={30} color={globalWhite} />
+                                <UIActivityIndicator
+                                    size={30}
+                                    color={globalWhite}
+                                />
                             ) : (
                                 <Text>{t('buttons.resetPassword')}</Text>
                             )}

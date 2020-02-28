@@ -12,7 +12,9 @@ const SendEmailButton = props => {
     return (
         <Row style={OtherActionRowStyle}>
             <OtherActionButton onPress={() => sendEmail()} rounded>
-                <Text style={OtherActionTextStyle}>{t('buttons.sendAnotherEmail')}</Text>
+                <Text style={OtherActionTextStyle}>
+                    {t('buttons.sendAnotherEmail')}
+                </Text>
             </OtherActionButton>
         </Row>
     );

@@ -13,7 +13,10 @@ const ScanDetailsScreen = props => {
         <Container>
             <Grid>
                 {scan ? (
-                    <ScanInformationsRow scanUrl={scan.scanUrl} scanScore={scan.score} />
+                    <ScanInformationsRow
+                        scanUrl={scan.scanUrl}
+                        scanScore={scan.score}
+                    />
                 ) : null}
                 <Row>
                     {scan ? (
@@ -33,7 +36,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-    goToSubstanceDetails: substance => dispatch(actions.setSubstanceDetails(substance))
+    goToSubstanceDetails: substance =>
+        dispatch(actions.setSubstanceDetails(substance))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ScanDetailsScreen);

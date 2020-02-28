@@ -15,7 +15,11 @@ const ProfileLanguagePicker = props => {
     const finalLanguages = isArray(languages) ? languages : [];
 
     const PickerItems = finalLanguages.map(language => (
-        <Picker.Item label={language.label} value={language.id} key={language.id} />
+        <Picker.Item
+            label={language.label}
+            value={language.id}
+            key={language.id}
+        />
     ));
 
     return (

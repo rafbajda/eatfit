@@ -11,7 +11,6 @@ describe('HomeScreen snapshot', () => {
     beforeEach(() => {
         NavigationTestUtils.resetInternalState();
     });
-
     it('renders component', async () => {
         const tree = renderer
             .create(

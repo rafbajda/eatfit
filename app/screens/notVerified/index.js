@@ -14,7 +14,14 @@ import LogoutButton from './components/LogoutButton';
 import { CenterContainer } from '../../shared/styles/common';
 
 const NotVerifiedScreen = props => {
-    const { user, signOut, sendEmail, checkVerification, isAuthLoading, mailIconStyle } = {
+    const {
+        user,
+        signOut,
+        sendEmail,
+        checkVerification,
+        isAuthLoading,
+        mailIconStyle
+    } = {
         ...props,
         ...styles
     };

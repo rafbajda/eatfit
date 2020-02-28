@@ -1,5 +1,13 @@
 import React from 'react';
-import { Header, Left, Button, Icon, Body, Right, Thumbnail } from 'native-base';
+import {
+    Header,
+    Left,
+    Button,
+    Icon,
+    Body,
+    Right,
+    Thumbnail
+} from 'native-base';
 import { Image } from 'react-native-elements';
 import Constants from 'expo-constants';
 import { globalGreen } from '../constants/colors';
@@ -29,7 +37,10 @@ const GlobalHeader = props => {
                 />
             </Body>
             <Right style={{ flex: 1 }}>
-                <Button onPress={() => nav.navigate(screens.Profile)} transparent>
+                <Button
+                    onPress={() => nav.navigate(screens.Profile)}
+                    transparent
+                >
                     <Thumbnail
                         small
                         source={{

@@ -12,7 +12,10 @@ const ForgotPasswordScreen = props => {
     return (
         <CenterContainer>
             {isKeyboardVisible ? null : message}
-            <ForgotPasswordForm isAuthLoading={isAuthLoading} resetPassword={resetPassword} />
+            <ForgotPasswordForm
+                isAuthLoading={isAuthLoading}
+                resetPassword={resetPassword}
+            />
         </CenterContainer>
     );
 };
@@ -26,4 +29,7 @@ const mapDispatchToProps = dispatch => ({
     resetPassword: email => dispatch(actions.sendResetPasswordMail(email))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(ForgotPasswordScreen);
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(ForgotPasswordScreen);

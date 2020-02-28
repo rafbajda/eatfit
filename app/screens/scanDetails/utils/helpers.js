@@ -26,9 +26,14 @@ const defaultSubstanceImage = require('../../../assets/images/default_substance.
 const getSubstanceList = (substances, goToSubstanceDetails, locale) =>
     isArray(substances)
         ? substances.map(sub => {
-              const source = sub.imageUrl ? { uri: sub.imageUrl } : defaultSubstanceImage;
+              const source = sub.imageUrl
+                  ? { uri: sub.imageUrl }
+                  : defaultSubstanceImage;
 
-              const { name } = globalHps.getNameDescriptionByLocale(sub, locale);
+              const { name } = globalHps.getNameDescriptionByLocale(
+                  sub,
+                  locale
+              );
               return (
                   <ListItem
                       containerStyle={{
@@ -45,7 +50,8 @@ const getSubstanceList = (substances, goToSubstanceDetails, locale) =>
           })
         : [];
 
-const getUserFriendlyDate = date => moment(date).format('MMMM Do YYYY, h:mm:ss a');
+const getUserFriendlyDate = date =>
+    moment(date).format('MMMM Do YYYY, h:mm:ss a');
 
 const changeComaToBreak = str => str.split(', ').join(`\n`);
 
@@ -56,7 +62,13 @@ const getScanDate = date => {
 };
 
 const getEmoji = score => {
-    const { veryBadImpact, badImpact, neutralImpact, goodImpact, veryGoodImpact } = emojis;
+    const {
+        veryBadImpact,
+        badImpact,
+        neutralImpact,
+        goodImpact,
+        veryGoodImpact
+    } = emojis;
 
     switch (true) {
         case score <= 2:

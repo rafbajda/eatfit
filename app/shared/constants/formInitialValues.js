@@ -16,7 +16,10 @@ const signUpInitialValues = {
 
 const getProfileInitialValues = user => {
     const { firstName, lastName } = { ...user };
-    const birthday = user && user.birthday ? hps.getDateFromFirebaseTimestamp(user.birthday) : null;
+    const birthday =
+        user && user.birthday
+            ? hps.getDateFromFirebaseTimestamp(user.birthday)
+            : null;
     return { firstName, lastName, birthday };
 };
 

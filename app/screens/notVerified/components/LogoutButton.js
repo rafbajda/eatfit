@@ -12,7 +12,9 @@ const LogoutButton = props => {
     return (
         <Row style={OtherActionRowStyle}>
             <OtherActionButton onPress={() => signOut()} rounded>
-                <Text style={OtherActionTextStyle}>{t('buttons.logIntoAnotherAccount')}</Text>
+                <Text style={OtherActionTextStyle}>
+                    {t('buttons.logIntoAnotherAccount')}
+                </Text>
             </OtherActionButton>
         </Row>
     );

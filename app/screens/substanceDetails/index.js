@@ -9,7 +9,10 @@ import globalHps from '../../shared/utils/helpers';
 
 const SubstanceDetailsScreen = props => {
     const { substance, locale } = { ...props, ...Localization };
-    const { name, description } = globalHps.getNameDescriptionByLocale(substance, locale);
+    const { name, description } = globalHps.getNameDescriptionByLocale(
+        substance,
+        locale
+    );
     return (
         <Container>
             <Grid>
@@ -34,4 +37,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = () => ({});
 
-export default connect(mapStateToProps, mapDispatchToProps)(SubstanceDetailsScreen);
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(SubstanceDetailsScreen);

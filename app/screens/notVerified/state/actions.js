@@ -1,13 +1,19 @@
 export const actionTypes = {
     SEND_VERIFICATION_MAIL: '[verification] send verification email',
-    SEND_VERIFICATION_MAIL_SUCCESS: '[verification] send verification email success',
-    SEND_VERIFICATION_MAIL_ERROR: '[verification] send verification email error',
+    SEND_VERIFICATION_MAIL_SUCCESS:
+        '[verification] send verification email success',
+    SEND_VERIFICATION_MAIL_ERROR:
+        '[verification] send verification email error',
     UPDATE_USER_VERIFICATION: '[verification] update user verification',
-    UPDATE_USER_VERIFICATION_SUCCESS: '[verification] update user verification success',
-    UPDATE_USER_VERIFICATION_ERROR: '[verification] update user verification error',
+    UPDATE_USER_VERIFICATION_SUCCESS:
+        '[verification] update user verification success',
+    UPDATE_USER_VERIFICATION_ERROR:
+        '[verification] update user verification error',
     CHECK_VERIFICATION_STATUS: '[verification] check verification status',
-    CHECK_VERIFICATION_STATUS_SUCCESS: '[verification] check verification status success',
-    CHECK_VERIFICATION_STATUS_ERROR: '[verification] check verification status error'
+    CHECK_VERIFICATION_STATUS_SUCCESS:
+        '[verification] check verification status success',
+    CHECK_VERIFICATION_STATUS_ERROR:
+        '[verification] check verification status error'
 };
 
 const checkVerificationStatus = () => ({

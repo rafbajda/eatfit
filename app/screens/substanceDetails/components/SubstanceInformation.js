@@ -21,13 +21,17 @@ const SubstanceInformation = props => {
     const description = hps.getDescription(score, t);
     return (
         <SubstanceInformationContainer>
-            <SubstanceInformationLabel>{t('labels.name')}</SubstanceInformationLabel>
+            <SubstanceInformationLabel>
+                {t('labels.name')}
+            </SubstanceInformationLabel>
             <Text>{substanceName}</Text>
             <ScanInformationInfo>
                 <ScanRate color={color}>{roundedScore}</ScanRate>
                 <ScanRatingIcon>{emoji}</ScanRatingIcon>
             </ScanInformationInfo>
-            <ScanInformationDescription color={color}>{description}</ScanInformationDescription>
+            <ScanInformationDescription color={color}>
+                {description}
+            </ScanInformationDescription>
         </SubstanceInformationContainer>
     );
 };

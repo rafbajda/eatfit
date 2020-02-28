@@ -67,7 +67,9 @@ const createUserObjectByProvider = (provider, data) => {
 
 const getNameDescriptionByLocale = (substance, locale) => {
     const language = _.camelCase(locale);
-    const { name, description } = substance ? substance[language] : DEFAULT_DESCRIPTION_LOCALE;
+    const { name, description } = substance
+        ? substance[language]
+        : DEFAULT_DESCRIPTION_LOCALE;
 
     return { name, description };
 };

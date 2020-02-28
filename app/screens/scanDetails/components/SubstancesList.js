@@ -8,7 +8,11 @@ const SubstancesList = props => {
         ...props,
         ...Localization
     };
-    const substanceList = hps.getSubstanceList(substances, goToSubstanceDetails, locale);
+    const substanceList = hps.getSubstanceList(
+        substances,
+        goToSubstanceDetails,
+        locale
+    );
 
     return <Content>{substanceList}</Content>;
 };
