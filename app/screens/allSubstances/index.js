@@ -8,8 +8,6 @@ const AllSubstancesScreen = props => {
     // eslint-disable-next-line react/prop-types
     const { substances, goToSubstanceDetails } = props;
 
-    console.log('temp log');
-
     return (
         <SubstancesList
             substances={substances}
