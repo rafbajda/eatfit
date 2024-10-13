@@ -1,57 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="67b918fd-ce01-470b-83af-d4f08040e0ba" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.expo/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/.expo/settings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/__tests__/home/HomeScreen.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/__tests__/home/HomeScreen.test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/navigation/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/navigation/reducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/screens/allSubstances/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/allSubstances/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/forgotPassword/components/ForgotPasswordForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/forgotPassword/components/ForgotPasswordForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/forgotPassword/components/ResetPasswordMessage.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/forgotPassword/components/ResetPasswordMessage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/forgotPassword/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/forgotPassword/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/forgotPassword/state/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/forgotPassword/state/actions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/home/components/Legend.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/home/components/Legend.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/home/components/ScanButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/home/components/ScanButton.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/home/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/home/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/home/state/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/home/state/reducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/login/components/LanguagePicker.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/login/components/LanguagePicker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/login/components/LoginForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/login/components/LoginForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/login/components/SignUp.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/login/components/SignUp.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/login/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/login/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/notVerified/components/LogoutButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/notVerified/components/LogoutButton.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/notVerified/components/RefreshVerificationButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/notVerified/components/RefreshVerificationButton.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/notVerified/components/SendEmailButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/notVerified/components/SendEmailButton.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/notVerified/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/notVerified/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/notVerified/state/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/notVerified/state/actions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/notVerified/utils/operations.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/notVerified/utils/operations.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/profile/components/ProfileForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/profile/components/ProfileForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/profile/components/ProfileImage.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/profile/components/ProfileImage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/profile/components/ProfileLanguagePicker.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/profile/components/ProfileLanguagePicker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/profile/state/middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/profile/state/middleware.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/profile/utils/helpers.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/profile/utils/helpers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/profile/utils/operations.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/profile/utils/operations.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/scanDetails/components/ScanInformations.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/scanDetails/components/ScanInformations.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/scanDetails/components/ScanInformationsRow.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/scanDetails/components/ScanInformationsRow.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/scanDetails/components/SubstancesList.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/scanDetails/components/SubstancesList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/scanDetails/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/scanDetails/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/scanDetails/utils/helpers.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/scanDetails/utils/helpers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/scanDetails/utils/operations.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/scanDetails/utils/operations.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/scansHistory/utils/helpers.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/scansHistory/utils/helpers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/signUp/components/SignUpForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/signUp/components/SignUpForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/substanceDetails/components/SubstanceDescription.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/substanceDetails/components/SubstanceDescription.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/substanceDetails/components/SubstanceInformation.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/substanceDetails/components/SubstanceInformation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/substanceDetails/components/SubstanceInformationsRow.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/substanceDetails/components/SubstanceInformationsRow.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/screens/substanceDetails/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/substanceDetails/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/shared/components/GlobalHeader.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/shared/components/GlobalHeader.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/shared/components/Sidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/shared/components/Sidebar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/shared/constants/formInitialValues.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/shared/constants/formInitialValues.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/shared/modules/socialService.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/shared/modules/socialService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/shared/state/selectors.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/shared/state/selectors.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/shared/state/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/shared/state/store.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/shared/utils/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/shared/utils/api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/shared/utils/helpers.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/shared/utils/helpers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/shared/utils/operations.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/shared/utils/operations.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,42 +16,31 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="JsFlowSettings">
-    <service-enabled>true</service-enabled>
-    <exe-path />
-    <other-services-enabled>true</other-services-enabled>
-    <auto-save>true</auto-save>
-  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="1SWYyCzhBtS160waMUp0iYm2Pka" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="android.sdk.path" value="$PROJECT_DIR$/../Android/Sdk" />
-    <property name="js.linters.configure.manually.selectedeslint" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.standard" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.path.for.package.eslint" value="project" />
-    <property name="node.js.path.for.package.standard" value="project" />
-    <property name="node.js.path.for.package.tslint" value="project" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.standard" value="" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="nodejs.jest.jest_package" value="$PROJECT_DIR$/node_modules/jest" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
-    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "/Users/rafal/eatfit",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "/Applications/WebStorm.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/__tests__/home-components" />
@@ -108,7 +52,6 @@
   <component name="RunManager">
     <configuration default="true" type="JavaScriptTestRunnerJest">
       <node-interpreter value="project" />
-      <node-options value="" />
       <jest-package value="$PROJECT_DIR$/node_modules/jest" />
       <working-dir value="$PROJECT_DIR$/__tests__" />
       <envs />
@@ -116,6 +59,14 @@
       <method v="2" />
     </configuration>
   </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-410509235cf1-JavaScript-WS-242.20224.426" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -165,6 +116,8 @@
       <workItem from="1581071502203" duration="541000" />
       <workItem from="1581154608975" duration="13000" />
       <workItem from="1582731534383" duration="2371000" />
+      <workItem from="1728804441293" duration="494000" />
+      <workItem from="1728805002597" duration="16000" />
     </task>
     <task id="LOCAL-00001" summary="status messaging works">
       <created>1572216147756</created>
@@ -212,7 +165,7 @@
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.History.Properties">
     <option name="COLUMN_ORDER">
@@ -229,9 +182,7 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
